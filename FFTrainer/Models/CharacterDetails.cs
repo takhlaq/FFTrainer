@@ -253,7 +253,7 @@ namespace FFTrainer.Models
         public Address<byte> HighlightTone { get; set; }
         public Address<byte> Skintone { get; set; }
         public Address<byte> FacialFeatures { get; set; }
-        public static Address<long> Emote { get; set; }
+        public static Address<int> Emote { get; set; }
         public static Address<float> EmoteSpeed1 { get; set; }
         public static Address<float> EmoteSpeed2 { get; set; }
         public Address<byte> Eye { get; set; }
@@ -284,30 +284,30 @@ namespace FFTrainer.Models
         public Address<float> WeaponX { get; set; }
         public Address<float> WeaponY { get; set; }
         public Address<float> WeaponZ { get; set; }
-        public Address<long> HeadPiece { get; set; }
+        public Address<int> HeadPiece { get; set; }
         public Address<byte> HeadV { get; set; }
         public Address<Dyes> HeadDye { get; set; }
-        public Address<long> Chest { get; set; }
+        public Address<int> Chest { get; set; }
         public Address<byte> ChestV { get; set; }
         public Address<Dyes> ChestDye { get; set; }
-        public Address<long> Arms { get; set; }
+        public Address<int> Arms { get; set; }
         public Address<byte> ArmsV { get; set; }
         public Address<Dyes> ArmsDye { get; set; }
-        public Address<long> Legs { get; set; }
+        public Address<int> Legs { get; set; }
         public Address<byte> LegsV { get; set; }
         public Address<Dyes> LegsDye { get; set; }
-        public Address<long> Feet { get; set; }
+        public Address<int> Feet { get; set; }
         public Address<byte> FeetVa { get; set; }
         public Address<Dyes> FeetDye { get; set; }
-        public Address<long> Ear { get; set; }
+        public Address<int> Ear { get; set; }
         public Address<byte> EarVa { get; set; }
-        public Address<long> Neck { get; set; }
+        public Address<int> Neck { get; set; }
         public Address<byte> NeckVa { get; set; }
-        public Address<long> Wrist { get; set; }
+        public Address<int> Wrist { get; set; }
         public Address<byte> WristVa { get; set; }
-        public Address<long> RFinger { get; set; }
+        public Address<int> RFinger { get; set; }
         public Address<byte> RFingerVa { get; set; }
-        public Address<long> LFinger { get; set; }
+        public Address<int> LFinger { get; set; }
         public Address<byte> LFingerVa { get; set; }
         public Address<float> WeaponRed { get; set; }
         public Address<float> WeaponGreen { get; set; }
@@ -369,30 +369,30 @@ namespace FFTrainer.Models
             WeaponGreen = new Address<float>();
             WeaponBlue = new Address<float>();
             LFingerVa = new Address<byte>();
-            LFinger = new Address<long>();
+            LFinger = new Address<int>();
             RFingerVa = new Address<byte>();
-            RFinger = new Address<long>();
+            RFinger = new Address<int>();
             WristVa = new Address<byte>();
-            Wrist = new Address<long>();
+            Wrist = new Address<int>();
             NeckVa = new Address<byte>();
-            Neck = new Address<long>();
+            Neck = new Address<int>();
             EarVa = new Address<byte>();
-            Ear = new Address<long>();
+            Ear = new Address<int>();
             FeetDye = new Address<Dyes>();
             FeetVa = new Address<byte>();
-            Feet = new Address<long>();
+            Feet = new Address<int>();
             LegsDye = new Address<Dyes>();
             LegsV = new Address<byte>();
-            Legs = new Address<long>();
+            Legs = new Address<int>();
             ArmsDye = new Address<Dyes>();
             ArmsV = new Address<byte>();
-            Arms = new Address<long>();
+            Arms = new Address<int>();
             ChestDye = new Address<Dyes>();
             ChestV = new Address<byte>();
-            Chest = new Address<long>();
+            Chest = new Address<int>();
             HeadV = new Address<byte>();
             HeadDye = new Address<Dyes>();
-            HeadPiece = new Address<long>();
+            HeadPiece = new Address<int>();
             WeaponX = new Address<float>();
             WeaponY = new Address<float>();
             WeaponZ = new Address<float>();
@@ -446,7 +446,7 @@ namespace FFTrainer.Models
             Nose = new Address<byte>();
             Lips = new Address<byte>();
             TailType = new Address<byte>();
-            Emote = new Address<long>();
+            Emote = new Address<int>();
             EmoteSpeed1 = new Address<float>();
             EmoteSpeed2 = new Address<float>();
         }

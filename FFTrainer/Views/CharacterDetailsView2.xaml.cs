@@ -49,10 +49,5 @@ namespace FFTrainer.Views
             if (WeaponBlue.IsMouseOver || WeaponBlue.IsKeyboardFocusWithin)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBlue), "float", WeaponBlue.Value.ToString());
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
