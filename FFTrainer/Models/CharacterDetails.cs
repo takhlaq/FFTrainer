@@ -340,12 +340,14 @@ namespace FFTrainer.Models
         public Address<float> LipsB { get; set; }
         public Address<float> LipsG { get; set; }
         public Address<float> CameraYAMin { get; set; }
+        public Address<float> FOV2 { get; set; }
         public Address<float> CameraYAMax { get; set; }
 
         public CharacterDetails()
         {
             Voices = new Address<byte>();
             CameraYAMin = new Address<float>();
+            FOV2 = new Address<float>();
             CameraYAMax = new Address<float>();
             SkinRedPigment = new Address<float>();
             SkinGreenPigment = new Address<float>();

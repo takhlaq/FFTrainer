@@ -203,6 +203,13 @@ namespace FFTrainer.Views
                 if (CamYMax.IsMouseOver || CamYMax.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), "float", CamYMax.Value.ToString());
         }
+
+        private void FOV2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (FOV2.Value.HasValue)
+                if (FOV2.IsMouseOver || FOV2.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), "float", FOV2.Value.ToString());
+        }
     }
 }
 

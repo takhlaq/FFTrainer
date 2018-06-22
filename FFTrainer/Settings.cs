@@ -46,6 +46,7 @@ namespace FFTrainer
         public string Highlights { get; set; }
         public string HighlightTone { get; set; }
         public string Skintone { get; set; }
+        public string FOV2 { get; set; }
         public string HairTone { get; set; }
         public string RightEye { get; set; }
         public string LeftEye { get; set; }

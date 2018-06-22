@@ -409,6 +409,9 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.CameraYAMax.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), CharacterDetails.CameraYAMax.GetBytes());
                 else CharacterDetails.CameraYAMax.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax));
 
+                if (CharacterDetails.FOV2.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), CharacterDetails.FOV2.GetBytes());
+                else CharacterDetails.FOV2.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2));
+
                 if (CharacterDetails.Voices.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices), CharacterDetails.Voices.GetBytes());
                 else CharacterDetails.Voices.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices));
 
