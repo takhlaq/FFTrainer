@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="FFTrainer.Views.CharacterDetailsView2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FFTrainer.Views"
+             xmlns:Models="clr-namespace:FFTrainer.Models"
+             xmlns:util="clr-namespace:FFTrainer.Util"
+             xmlns:Converters="clr-namespace:FFTrainer.Converters"
+             xmlns:Xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
+             mc:Ignorable="d" Height="450" Width="1000">
+    <Grid Margin="0,-10,0,10">
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="127" Margin="10,31,0,0" VerticalAlignment="Top" Width="580"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Job.freeze}" Content="" HorizontalAlignment="Left" Margin="22,58,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Jobs}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.Job.value}" HorizontalAlignment="Left" Margin="47,54,0,0" VerticalAlignment="Top" Width="116" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="Main Hand" HorizontalAlignment="Left" Margin="177,0,0,0" VerticalAlignment="Top" Width="118" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Job Type" HorizontalAlignment="Left" Margin="72,31,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="Head_Copy4" Text="{Binding Path=CharacterDetails.CharacterDetails.WeaponBase.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="168,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy" Text="{Binding Path=CharacterDetails.CharacterDetails.WeaponV.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="217,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.WeaponDye.value}" HorizontalAlignment="Left" Margin="263,54,0,0" VerticalAlignment="Top" Width="132" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="Base" HorizontalAlignment="Left" Margin="168,30,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Variant" HorizontalAlignment="Left" Margin="212,30,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Dyes" HorizontalAlignment="Left" Margin="300,30,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.535,0.537"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponX.freeze}" HorizontalAlignment="Left" Margin="22,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="X" HorizontalAlignment="Left" Margin="54,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
+        <Xceed:DecimalUpDown x:Name="XPos2" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponX.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="44,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_ValueChanged"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponY.freeze}" HorizontalAlignment="Left" Margin="116,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="Y" HorizontalAlignment="Left" Margin="150,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
+        <Xceed:DecimalUpDown x:Name="XPos2_Copy" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponY.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="138,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy_ValueChanged"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponZ.freeze}" HorizontalAlignment="Left" Margin="212,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="Z" HorizontalAlignment="Left" Margin="246,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
+        <Xceed:DecimalUpDown x:Name="XPos2_Copy1" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="234,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy1_ValueChanged"/>
+        <Label Content="Scale" HorizontalAlignment="Left" Height="38" Margin="138,65,0,0" VerticalAlignment="Top" Width="63" FontWeight="Bold" FontSize="20"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="192" Margin="10,184,0,0" VerticalAlignment="Top" Width="397"/>
+        <Label Content="Equipment Left Sides" HorizontalAlignment="Left" Margin="121,153,0,0" VerticalAlignment="Top" Width="170" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Base" HorizontalAlignment="Left" Margin="89,189,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Variant" HorizontalAlignment="Left" Margin="150,189,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Dyes" HorizontalAlignment="Left" Margin="246,189,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.535,0.537"/>
+        
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.HeadPiece.freeze}" Content="Head" HorizontalAlignment="Left" Margin="22,221,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="Head_Copy1" Text="{Binding Path=CharacterDetails.CharacterDetails.HeadPiece.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="77,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy2" Text="{Binding Path=CharacterDetails.CharacterDetails.HeadV.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="150,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.HeadDye.value}" HorizontalAlignment="Left" Margin="217,219,0,0" VerticalAlignment="Top" Width="132"/>
+        
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Chest.freeze}" Content="Chest" HorizontalAlignment="Left" Margin="22,252,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="Head_Copy3" Text="{Binding Path=CharacterDetails.CharacterDetails.Chest.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="77,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy5" Text="{Binding Path=CharacterDetails.CharacterDetails.ChestV.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="150,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.ChestDye.value}" HorizontalAlignment="Left" Margin="217,246,0,0" VerticalAlignment="Top" Width="132"/>
+        
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Arms.freeze}" Content="Arm" HorizontalAlignment="Left" Margin="22,279,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="Head_Copy6" Text="{Binding Path=CharacterDetails.CharacterDetails.Arms.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="77,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy7" Text="{Binding Path=CharacterDetails.CharacterDetails.ArmsV.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="150,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.ArmsDye.value}" HorizontalAlignment="Left" Margin="217,274,0,0" VerticalAlignment="Top" Width="132"/>
+        
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Legs.freeze}" Content="Leg" HorizontalAlignment="Left" Margin="22,306,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="Head_Copy8" Text="{Binding Path=CharacterDetails.CharacterDetails.Legs.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="77,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy9" Text="{Binding Path=CharacterDetails.CharacterDetails.LegsV.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="150,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.LegsDye.value}" HorizontalAlignment="Left" Margin="216,303,0,0" VerticalAlignment="Top" Width="132"/>
+        
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Feet.freeze}" Content="Feet" HorizontalAlignment="Left" Margin="22,333,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="Head_Copy10" Text="{Binding Path=CharacterDetails.CharacterDetails.Feet.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="77,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy11" Text="{Binding Path=CharacterDetails.CharacterDetails.FeetVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="150,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <ComboBox ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Dyes}}}" SelectedValue="{Binding Path=CharacterDetails.CharacterDetails.FeetDye.value}" HorizontalAlignment="Left" Margin="217,331,0,0" VerticalAlignment="Top" Width="132"/>
+        
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="192" Margin="436,184,0,0" VerticalAlignment="Top" Width="235"/>
+        <Label Content="Equipment Right Side" HorizontalAlignment="Left" Margin="468,153,0,0" VerticalAlignment="Top" Width="183" FontSize="16" FontWeight="Bold"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Ear.freeze}" Content="Ear" HorizontalAlignment="Left" Margin="445,221,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Neck.freeze}" Content="Neck" HorizontalAlignment="Left" Margin="445,252,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Wrist.freeze}" Content="Wrist" HorizontalAlignment="Left" Margin="445,279,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.RFinger.freeze}" Content="R Ring Finger" HorizontalAlignment="Left" Margin="445,306,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="11"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.LFinger.freeze}" Content="L Ring Finger" HorizontalAlignment="Left" Margin="445,336,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="11"/>
+        <Label Content="Base" HorizontalAlignment="Left" Margin="534,181,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Variant" HorizontalAlignment="Left" Margin="595,181,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="Head_Copy12" Text="{Binding Path=CharacterDetails.CharacterDetails.Ear.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="529,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy13" Text="{Binding Path=CharacterDetails.CharacterDetails.Neck.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="529,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy14" Text="{Binding Path=CharacterDetails.CharacterDetails.Wrist.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="529,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy15" Text="{Binding Path=CharacterDetails.CharacterDetails.RFinger.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="540,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy16" Text="{Binding Path=CharacterDetails.CharacterDetails.LFinger.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="540,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy17" Text="{Binding Path=CharacterDetails.CharacterDetails.EarVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="595,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy18" Text="{Binding Path=CharacterDetails.CharacterDetails.NeckVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="595,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy19" Text="{Binding Path=CharacterDetails.CharacterDetails.WristVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="595,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy20" Text="{Binding Path=CharacterDetails.CharacterDetails.RFingerVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="595,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <TextBox x:Name="Head_Copy21" Text="{Binding Path=CharacterDetails.CharacterDetails.LFingerVa.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="595,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.477,0.523"/>
+        <Label Content="Coloring" HorizontalAlignment="Left" Height="38" Margin="408,69,0,0" VerticalAlignment="Top" Width="87" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Red" HorizontalAlignment="Left" Margin="328,119,0,0" VerticalAlignment="Top" Height="29" Width="35" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Green" HorizontalAlignment="Left" Margin="426,119,0,0" VerticalAlignment="Top" Height="29" Width="50" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Blue" HorizontalAlignment="Left" Margin="521,119,0,0" VerticalAlignment="Top" Height="29" Width="45" FontWeight="Bold" FontSize="14"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponRed.freeze}" HorizontalAlignment="Left" Margin="306,102,0,0" VerticalAlignment="Top"/>
+        <Xceed:DecimalUpDown x:Name="WeaponRed" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponRed.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="328,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponRed_ValueChanged"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponGreen.freeze}" HorizontalAlignment="Left" Margin="404,102,0,0" VerticalAlignment="Top"/>
+        <Xceed:DecimalUpDown x:Name="WeaponGreen" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponGreen.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="426,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponGreen_ValueChanged"/>
+        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponBlue.freeze}" HorizontalAlignment="Left" Margin="500,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.533"/>
+        <Xceed:DecimalUpDown x:Name="WeaponBlue" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponBlue.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="521,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponBlue_ValueChanged"/>
+
+    </Grid>
+</UserControl>

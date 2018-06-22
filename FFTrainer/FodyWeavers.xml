@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Weavers>
+  <PropertyChanged />
+  <Costura CreateTemporaryAssemblies='true' />
+  <Costura IncludeDebugSymbols='false' />
+  <Costura>
+    <IncludeAssemblies>
+      Memory
+      Xceed
+      FontAwesome5
+      PropetyuChanged
+    </IncludeAssemblies>
+</Costura>
+ <Costura />
+</Weavers>
