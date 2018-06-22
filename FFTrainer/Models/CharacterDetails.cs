@@ -263,11 +263,13 @@ namespace FFTrainer.Models
         public Address<byte> FacePaintColor { get; set; }
         public Address<byte> Nose { get; set; }
         public Address<byte> Lips { get; set; }
+        public Address<byte> Voices { get; set; }
         public Address<float> Rotation { get; set; }
         public Address<float> Rotation2 { get; set; }
         public Address<float> Rotation3 { get; set; }
         public Address<float> Rotation4 { get; set; }
         public Address<float> CameraHeight { get; set; }
+        public Address<float> CameraHeight2 { get; set; }
         public Address<float> CamX { get; set; }
         public Address<float> CamY { get; set; }
         public Address<float> CamZ { get; set; }
@@ -337,9 +339,14 @@ namespace FFTrainer.Models
         public Address<float> LipsR { get; set; }
         public Address<float> LipsB { get; set; }
         public Address<float> LipsG { get; set; }
+        public Address<float> CameraYAMin { get; set; }
+        public Address<float> CameraYAMax { get; set; }
 
         public CharacterDetails()
         {
+            Voices = new Address<byte>();
+            CameraYAMin = new Address<float>();
+            CameraYAMax = new Address<float>();
             SkinRedPigment = new Address<float>();
             SkinGreenPigment = new Address<float>();
             SkinBluePigment = new Address<float>();
@@ -410,6 +417,7 @@ namespace FFTrainer.Models
             CamY = new Address<float>();
             CamZ = new Address<float>();
             CameraHeight = new Address<float>();
+            CameraHeight2 = new Address<float>();
             GposeMode = new Address<float>();
             Wetness = new Address<float>();
             SWetness = new Address<float>();

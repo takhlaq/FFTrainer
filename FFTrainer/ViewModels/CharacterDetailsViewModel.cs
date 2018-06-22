@@ -397,17 +397,21 @@ namespace FFTrainer.ViewModels
                 }
                 else
                     CharacterDetails.CamX.value = mem.readFloat(camX);
+                if (CharacterDetails.CameraHeight.freeze) mem.writeBytes(cameraHeight, CharacterDetails.CameraHeight.GetBytes());
+                else CharacterDetails.CameraHeight.value = mem.readFloat(cameraHeight);
 
-                if (CharacterDetails.CameraHeight.freeze)
-                {
-                    mem.writeBytes(cameraHeight, CharacterDetails.CameraHeight.GetBytes());;
-                }
-                else
-                    CharacterDetails.CameraHeight.value = mem.readFloat(cameraHeight);
+                if (CharacterDetails.CameraHeight2.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight), CharacterDetails.CameraHeight2.GetBytes());
+                else CharacterDetails.CameraHeight2.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight));
 
-              /*  if (CharacterDetails.Emote.freeze)
-                    mem.writeBytes(Emmote, CharacterDetails.Emote.GetBytes());
-                else CharacterDetails.Emote.value = (long)mem.read2Byte(Emmote);*/
+                if (CharacterDetails.CameraYAMin.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMin), CharacterDetails.CameraYAMin.GetBytes());
+                else CharacterDetails.CameraYAMin.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMin));
+
+                if (CharacterDetails.CameraYAMax.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), CharacterDetails.CameraYAMax.GetBytes());
+                else CharacterDetails.CameraYAMax.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax));
+
+                if (CharacterDetails.Voices.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices), CharacterDetails.Voices.GetBytes());
+                else CharacterDetails.Voices.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices));
+
                 if (CharacterDetails.TailType.freeze)
                     mem.writeBytes(tailType, CharacterDetails.TailType.GetBytes());
                 else CharacterDetails.TailType.value = (byte)mem.readByte(tailType);

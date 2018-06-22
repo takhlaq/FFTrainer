@@ -26,7 +26,6 @@ namespace FFTrainer
         {
             while (true)
             {
-
                 if (CharacterDetails.EmoteSpeed1.freeze)
                 {
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1), CharacterDetails.EmoteSpeed1.GetBytes());

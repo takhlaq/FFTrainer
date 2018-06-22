@@ -59,6 +59,9 @@ namespace FFTrainer
         public string EmoteSpeed1 { get; set; }
         public string EmoteSpeed2 { get; set; }
         public string CameraHeight { get; set; }
+        public string CameraYAMin { get; set; }
+        public string CameraYAMax { get; set; }
+        public string Voices { get; set; }
         public string CamX { get; set; }
         public string CamY { get; set; }
         public string CamZ { get; set; }
