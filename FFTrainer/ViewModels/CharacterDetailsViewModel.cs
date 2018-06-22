@@ -10,7 +10,6 @@ namespace FFTrainer.ViewModels
         public CharacterDetails CharacterDetails { get => (CharacterDetails)model; set => model = value; }
         private RefreshEntitiesCommand refreshEntitiesCommand;
         public static string eOffset = "8";
-        public static string TestBust = Settings.Instance.Character.Body.Bust.ToString();
         public static string baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
 
         public RefreshEntitiesCommand RefreshEntitiesCommand
@@ -532,6 +531,7 @@ namespace FFTrainer.ViewModels
                         nameX = nameX.Substring(0, nameX.IndexOf('\0'));
                     CharacterDetails.Name.value = nameX;
                 }
+
                 if (CharacterDetails.Wetness.Activated) MemoryManager.Instance.MemLib.writeMemory(Wetness, "float", "1");
                 if (CharacterDetails.SWetness.Activated) MemoryManager.Instance.MemLib.writeMemory(SWetness, "float", "5");
             }

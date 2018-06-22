@@ -26,7 +26,6 @@ namespace FFTrainer
         {
             while (true)
             {
-                // sleep for 200 ms
                 if (CharacterDetails.EmoteSpeed1.freeze)
                 {
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1), CharacterDetails.EmoteSpeed1.GetBytes());
@@ -39,7 +38,6 @@ namespace FFTrainer
                 if(CharacterDetails.Emote.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
                 else CharacterDetails.Emote.value = (long)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 Thread.Sleep(1);
-                // check if our memory manager is set
             }
         }
         private void GposeMode_Checked(object sender, RoutedEventArgs e)
