@@ -97,7 +97,7 @@ namespace FFTrainer.Views
         {
             if (Height2x.Value.HasValue)
                 if (HeightSlider.IsMouseOver || HeightSlider.IsKeyboardFocusWithin || Height2x.IsKeyboardFocusWithin || Height2x.IsMouseOver)
-                if (Height2x.Value >= 0) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", Height2x.Value.ToString());
+                    if (Height2x.Value > 0) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", Height2x.Value.ToString());
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)

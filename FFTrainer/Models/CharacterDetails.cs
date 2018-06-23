@@ -148,25 +148,18 @@ namespace FFTrainer.Models
             Warrior = 401,
             Dragoon = 501,
             Bard = 601,
-            [Description("White Mage")]
-            WHM = 801,
-            [Description("White Mage-2")]
-            WHM2 = 814,
-            [Description("Black Mage")]
-            BLM = 1001,
-            [Description("Dark Knight")]
-            DRK = 1501,
-            [Description("Scholar/Summoner")]
-            Scholar = 1701,
-            [Description("Scholar/Summoner 2")]
-            Scholarx = 1717,
+            [Description("White Mage")]WHM = 801,
+            [Description("White Mage-2")]WHM2 = 814,
+            [Description("Black Mage")]BLM = 1001,
+            [Description("Dark Knight")]DRK = 1501,
+            [Description("Scholar/Summoner")]Scholar = 1701,
+            [Description("Scholar/Summoner 2")] Scholarx = 1717,
             Ninja = 1801,
             Machinist = 2001,
             Astrologian = 2101,
             Astrologian2 = 2110,
             Samurai = 2201,
-            [Description("Red Mage")]
-            RDM = 2301,
+            [Description("Red Mage")]RDM = 2301,
         }
         /// <summary>
         /// The clans of FFXIV

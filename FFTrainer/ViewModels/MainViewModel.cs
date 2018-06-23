@@ -142,6 +142,10 @@ namespace FFTrainer.ViewModels
             AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
             // initialize a background worker
             // load the settings
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "FFXIVTrainer.zip");
+            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "ZipExtractor.exe");
+            if (File.Exists(path))File.Delete(path);
+            if (File.Exists(path2))File.Delete(path2);
             LoadSettings();
             worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWork;

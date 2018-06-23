@@ -45,6 +45,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.1" HorizontalAlignment="Left" Margin="909,5,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Version 1.1.0.1" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
     </Grid>
 </Window>
