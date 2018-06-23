@@ -320,9 +320,9 @@ namespace FFTrainer.ViewModels
                 }
                 if (CharacterDetails.HeadPiece.freeze)
                 {
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadDye), CharacterDetails.HeadDye.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadV), CharacterDetails.HeadV.GetBytes());
                     mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadPiece), CharacterDetails.HeadPiece.GetBytes());
+                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadV), CharacterDetails.HeadV.GetBytes());
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadDye), CharacterDetails.HeadDye.GetBytes());
                 }
                 else
                 {
