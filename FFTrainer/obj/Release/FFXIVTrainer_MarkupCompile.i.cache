@@ -1,4 +1,4 @@
-﻿FFXIV Trainer
+﻿FFXIVTrainer
 
 
 winexe
@@ -16,5 +16,5 @@ C:\Users\Johto\Desktop\FFTraine\FFTrainer - Copy\FFTrainer\App.xaml
 25-1561637782
 Views\CharacterDetailsView.xaml;MainWindow.xaml;Views\CharacterDetailsView2.xaml;Views\CharacterDetailsView3.xaml;
 
-False
+True
 

@@ -295,7 +295,7 @@ namespace FFTrainer.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FFXIV Trainer;component/views/characterdetailsview2.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FFXIVTrainer;component/views/characterdetailsview2.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Views\CharacterDetailsView2.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

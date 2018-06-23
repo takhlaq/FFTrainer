@@ -503,7 +503,7 @@ namespace FFTrainer.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FFXIV Trainer;component/views/characterdetailsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FFXIVTrainer;component/views/characterdetailsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Views\CharacterDetailsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

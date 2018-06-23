@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FFXIV Trainer")]
+[assembly: AssemblyTitle("FFXIVTrainer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FFXIV Trainer")]
+[assembly: AssemblyProduct("FFXIVTrainer")]
 [assembly: AssemblyCopyright("Copyright (c) 2018 James Stine")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
