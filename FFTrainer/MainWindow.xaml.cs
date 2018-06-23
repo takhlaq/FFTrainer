@@ -57,5 +57,10 @@ namespace FFTrainer
             // run the worker
             worker2.RunWorkerAsync();
         }
+
+        private void Hyperlink_RequestNavigate(object sender,System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/nxu2Ydp");
+        }
     }
 }
