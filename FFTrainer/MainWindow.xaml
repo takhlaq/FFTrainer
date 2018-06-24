@@ -45,7 +45,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.1.0.2" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Version 1.1.0.3" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
         <TextBlock  Margin="768,6,87,439">    
             <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Discord Server</Hyperlink>

@@ -335,9 +335,11 @@ namespace FFTrainer.Models
         public Address<float> CameraYAMin { get; set; }
         public Address<float> FOV2 { get; set; }
         public Address<float> CameraYAMax { get; set; }
+        public Address<float> CameraUpDown { get; set; }
 
         public CharacterDetails()
         {
+            CameraUpDown = new Address<float>();
             Voices = new Address<byte>();
             CameraYAMin = new Address<float>();
             FOV2 = new Address<float>();

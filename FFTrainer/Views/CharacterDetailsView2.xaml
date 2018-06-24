@@ -24,13 +24,13 @@
         <Label Content="Dyes" HorizontalAlignment="Left" Margin="300,30,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.535,0.537"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponX.freeze}" HorizontalAlignment="Left" Margin="22,102,0,0" VerticalAlignment="Top"/>
         <Label Content="X" HorizontalAlignment="Left" Margin="54,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
-        <Xceed:DecimalUpDown x:Name="XPos2" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponX.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="44,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="XPos2" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponX.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="44,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_ValueChanged"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponY.freeze}" HorizontalAlignment="Left" Margin="116,102,0,0" VerticalAlignment="Top"/>
         <Label Content="Y" HorizontalAlignment="Left" Margin="150,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
-        <Xceed:DecimalUpDown x:Name="XPos2_Copy" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponY.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="138,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="XPos2_Copy" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponY.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="138,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy_ValueChanged"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponZ.freeze}" HorizontalAlignment="Left" Margin="212,102,0,0" VerticalAlignment="Top"/>
         <Label Content="Z" HorizontalAlignment="Left" Margin="246,119,0,0" VerticalAlignment="Top" Height="29" Width="21" FontWeight="Bold" FontSize="14"/>
-        <Xceed:DecimalUpDown x:Name="XPos2_Copy1" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="234,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy1_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="XPos2_Copy1" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="234,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="XPos2_Copy1_ValueChanged"/>
         <Label Content="Scale" HorizontalAlignment="Left" Height="38" Margin="138,65,0,0" VerticalAlignment="Top" Width="63" FontWeight="Bold" FontSize="20"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="192" Margin="10,184,0,0" VerticalAlignment="Top" Width="397"/>
         <Label Content="Equipment Left Sides" HorizontalAlignment="Left" Margin="121,153,0,0" VerticalAlignment="Top" Width="170" FontSize="16" FontWeight="Bold"/>
@@ -87,11 +87,11 @@
         <Label Content="Green" HorizontalAlignment="Left" Margin="426,119,0,0" VerticalAlignment="Top" Height="29" Width="50" FontWeight="Bold" FontSize="14"/>
         <Label Content="Blue" HorizontalAlignment="Left" Margin="521,119,0,0" VerticalAlignment="Top" Height="29" Width="45" FontWeight="Bold" FontSize="14"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponRed.freeze}" HorizontalAlignment="Left" Margin="306,102,0,0" VerticalAlignment="Top"/>
-        <Xceed:DecimalUpDown x:Name="WeaponRed" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponRed.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="328,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponRed_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="WeaponRed" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponRed.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="328,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponRed_ValueChanged"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponGreen.freeze}" HorizontalAlignment="Left" Margin="404,102,0,0" VerticalAlignment="Top"/>
-        <Xceed:DecimalUpDown x:Name="WeaponGreen" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponGreen.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="426,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponGreen_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="WeaponGreen" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponGreen.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="426,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponGreen_ValueChanged"/>
         <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.WeaponBlue.freeze}" HorizontalAlignment="Left" Margin="500,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.533"/>
-        <Xceed:DecimalUpDown x:Name="WeaponBlue" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponBlue.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="521,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponBlue_ValueChanged" AllowTextInput="False"/>
+        <Xceed:DecimalUpDown x:Name="WeaponBlue" Value="{Binding Path=CharacterDetails.CharacterDetails.WeaponBlue.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="521,99,0,0" VerticalAlignment="Top" Width="57" Increment="0.1" ValueChanged="WeaponBlue_ValueChanged"/>
 
     </Grid>
 </UserControl>

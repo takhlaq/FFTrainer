@@ -135,6 +135,7 @@ namespace FFTrainer
         public string LipsR { get; set; }
         public string LipsG { get; set; }
         public string LipsB { get; set; }
+        public string CameraUpDown { get; set; }
     }
 
     [Serializable]
