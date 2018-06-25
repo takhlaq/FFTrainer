@@ -4,6 +4,7 @@ using FFTrainer.Models;
 using System.ComponentModel;
 using System.Threading;
 using FFTrainer.ViewModels;
+
 namespace FFTrainer
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.EmoteSpeed1.value = MemoryManager.Instance.MemLib.readFloat((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1)));
                 }
-                if(CharacterDetails.Emote.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
+                if (CharacterDetails.Emote.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
                 else CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 Thread.Sleep(1);
             }
@@ -58,7 +59,7 @@ namespace FFTrainer
             worker2.RunWorkerAsync();
         }
 
-        private void Hyperlink_RequestNavigate(object sender,System.Windows.Navigation.RequestNavigateEventArgs e)
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
             System.Diagnostics.Process.Start("https://discord.gg/nxu2Ydp");
         }

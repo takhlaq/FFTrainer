@@ -14,7 +14,7 @@
         xmlns:Converters="clr-namespace:FFTrainer.Converters"
         mc:Ignorable="d"
 		x:Name="Window"
-        Title="FFXIV Trainer" Height="500" Width="1000" ResizeMode="NoResize" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized">
+        Title="FFXIV Trainer" Height="500" Width="1000" ResizeMode="CanMinimize" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized">
 
     <Window.DataContext>
         <ViewModels:MainViewModel/>
