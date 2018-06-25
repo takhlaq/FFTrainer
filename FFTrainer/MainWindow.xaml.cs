@@ -4,6 +4,8 @@ using FFTrainer.Models;
 using System.ComponentModel;
 using System.Threading;
 using FFTrainer.ViewModels;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FFTrainer
 {
@@ -18,7 +20,6 @@ namespace FFTrainer
             InitializeComponent();
 
         }
-
         private void CharacterDetailsView_Loaded()
         {
 

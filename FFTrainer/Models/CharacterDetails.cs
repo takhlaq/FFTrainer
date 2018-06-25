@@ -1,10 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using FFTrainer.Converters;
 using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 namespace FFTrainer.Models
 {
     public class CharacterDetails : BaseModel
     {
+
         #region CharacterDetails Enums
         /// <summary>
         /// The Dyes of FFXIVr

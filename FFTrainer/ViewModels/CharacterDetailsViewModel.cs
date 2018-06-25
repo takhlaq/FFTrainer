@@ -2,6 +2,9 @@
 using FFTrainer.Models;
 using FFTrainer.Commands;
 using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 namespace FFTrainer.ViewModels
 {
     public class CharacterDetailsViewModel : BaseViewModel
@@ -11,7 +14,6 @@ namespace FFTrainer.ViewModels
         private RefreshEntitiesCommand refreshEntitiesCommand;
         public static string eOffset = "8";
         public static string baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
-
         public RefreshEntitiesCommand RefreshEntitiesCommand
         {
             get => refreshEntitiesCommand;
