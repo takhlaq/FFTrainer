@@ -53,6 +53,7 @@ namespace FFTrainer
         public string Eye { get; set; }
         public string Nose { get; set; }
         public string Lips { get; set; }
+        public string LipsTone { get; set; }
         public string FacePaint { get; set; }
         public string FacePaintColor { get; set; }
         public string FacialFeatures { get; set; }

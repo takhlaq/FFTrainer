@@ -26,8 +26,8 @@
         <Button Command="{Binding Path= CharacterDetails.RefreshEntitiesCommand}" HorizontalAlignment="Left" Margin="135,9,0,0" VerticalAlignment="Top" Width="26" Height="22" RenderTransformOrigin="0.596,0.545">
             <fa5:FontAwesome Icon="Solid_SyncAlt" />
         </Button>
-        <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="Gpose Mode" HorizontalAlignment="Left" Margin="206,13,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked"/>
-        <Label Content="NOTE: Gpose Mode changes all these &#xA;values to the Targeted player in GPOSE" HorizontalAlignment="Left" Margin="338,6,0,0" VerticalAlignment="Top" Width="240" Height="43" FontWeight="Bold"/>
+        <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="Gpose Mode" HorizontalAlignment="Left" Margin="178,11,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked"/>
+        <Label Content="NOTE: Gpose Mode changes all these &#xA;values to the Targeted player in GPOSE" HorizontalAlignment="Left" Margin="310,6,0,0" VerticalAlignment="Top" Width="240" Height="43" FontWeight="Bold"/>
         <TabControl Margin="10,37,10,10">
             <TabItem Header="Character">
                 <Grid>
@@ -45,10 +45,12 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.1.0.3" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Version 1.2.0.0" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
         <TextBlock  Margin="768,6,87,439">    
             <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Discord Server</Hyperlink>
         </TextBlock>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="637,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Load" HorizontalAlignment="Left" Margin="550,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
     </Grid>
 </Window>

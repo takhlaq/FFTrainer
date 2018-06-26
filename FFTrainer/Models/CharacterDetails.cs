@@ -3,6 +3,7 @@ using FFTrainer.Converters;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 
 namespace FFTrainer.Models
 {
@@ -191,7 +192,7 @@ namespace FFTrainer.Models
             [Description("Dark Knight")]DRK = 1501,
             [Description("Dark Knight-2")] DRK2 = 1505,
             [Description("Scholar/Summoner")]Scholar = 1701,
-            [Description("Scholar/Summoner")] Scholar2 = 1705,
+            [Description("Scholar/Summoner 2")] Scholar2 = 1705,
             [Description("Scholar/Summoner 3")] Scholarx = 1717,
             Ninja = 1801,
             Ninja2 = 1803,
@@ -233,6 +234,14 @@ namespace FFTrainer.Models
             [Description("Warrior5 NPC")] Warx5 = 8028,
             [Description("Warrior6 NPC")] Warx6 = 8029,
             [Description("Warrior7 NPC")] Warx7 = 8033,
+            Props = 9001,
+            Scroll = 9013,
+            [Description("Leaf Fan")] Leaffan = 9016,
+            [Description("Maelstrom Flag")] MaelFlag = 9023,
+            Bomb = 9030,
+            Umbrella = 9032,
+            Tanto = 9052,
+            [Description("Pots/Food")] Pots = 9901,
         }
         /// <summary>
         /// The clans of FFXIV
@@ -267,50 +276,55 @@ namespace FFTrainer.Models
         }
 
         #endregion
-        private long size;
+        [JsonIgnore] private long size;
+        [JsonIgnore]
         public long Size
         {
             get => size;
             set => size = value;
         }
 
-        private ObservableCollection<string> names;
+        [JsonIgnore] private ObservableCollection<string> names;
+        [JsonIgnore]
         public ObservableCollection<string> Names
         {
             get => names;
             set => names = value;
         }
 
-        private string selectedValue;
+        [JsonIgnore] private string selectedValue;
+        [JsonIgnore]
         public string SelectedValue
         {
             get => selectedValue;
             set => selectedValue = value;
         }
 
-        private int selectedIndex;
+        [JsonIgnore] private int selectedIndex;
+        [JsonIgnore]
         public int SelectedIndex
         {
             get => selectedIndex;
             set => selectedIndex = value;
         }
 
-        public bool IsEnabled { get; set; }
-        public Address<float> GposeMode { get; set; }
+
+        [JsonIgnore] public bool IsEnabled { get; set; }
+        [JsonIgnore] public Address<float> GposeMode { get; set; }
         public Address<float> TailSize { get; set; }
-        public Address<string> Name { get; set; }
+        [JsonIgnore] public Address<string> Name { get; set; }
         public Address<Races> Race { get; set; }
         public Address<Clans> Clan { get; set; }
         public Address<Genders> Gender { get; set; }
-        public Address<float> Wetness { get; set; }
-        public Address<float> SWetness { get; set; }
+        [JsonIgnore]  public Address<float> Wetness { get; set; }
+        [JsonIgnore]  public Address<float> SWetness { get; set; }
         public Address<float> Height { get; set; }
         public Address<float> BustX { get; set; }
         public Address<float> BustY { get; set; }
         public Address<float> BustZ { get; set; }
-        public Address<float> X { get; set; }
-        public Address<float> Y { get; set; }
-        public Address<float> Z { get; set; }
+        [JsonIgnore]  public Address<float> X { get; set; }
+        [JsonIgnore]  public Address<float> Y { get; set; }
+        [JsonIgnore]  public Address<float> Z { get; set; }
         public Address<byte> Head { get; set; }
         public Address<byte> Hair { get; set; }
         public Address<byte> TailType { get; set; }
@@ -319,9 +333,9 @@ namespace FFTrainer.Models
         public Address<byte> HighlightTone { get; set; }
         public Address<byte> Skintone { get; set; }
         public Address<byte> FacialFeatures { get; set; }
-        public static Address<int> Emote { get; set; }
-        public static Address<float> EmoteSpeed1 { get; set; }
-        public static Address<float> EmoteSpeed2 { get; set; }
+        [JsonIgnore]  public static Address<int> Emote { get; set; }
+        [JsonIgnore]  public static Address<float> EmoteSpeed1 { get; set; }
+        [JsonIgnore]  public static Address<float> EmoteSpeed2 { get; set; }
         public Address<byte> Eye { get; set; }
         public Address<byte> RightEye { get; set; }
         public Address<byte> LeftEye { get; set; }
@@ -329,21 +343,22 @@ namespace FFTrainer.Models
         public Address<byte> FacePaintColor { get; set; }
         public Address<byte> Nose { get; set; }
         public Address<byte> Lips { get; set; }
+        public Address<byte> LipsTone { get; set; }
         public Address<byte> Voices { get; set; }
-        public Address<float> Rotation { get; set; }
-        public Address<float> Rotation2 { get; set; }
-        public Address<float> Rotation3 { get; set; }
-        public Address<float> Rotation4 { get; set; }
-        public Address<float> CameraHeight { get; set; }
-        public Address<float> CameraHeight2 { get; set; }
-        public Address<float> CamX { get; set; }
-        public Address<float> CamY { get; set; }
-        public Address<float> CamZ { get; set; }
-        public Address<float> Max { get; set; }
-        public Address<float> Min { get; set; }
-        public Address<float> CZoom { get; set; }
-        public Address<float> FOVC { get; set; }
-        public Address<float> FOVMAX { get; set; }
+        [JsonIgnore] public Address<float> Rotation { get; set; }
+        [JsonIgnore] public Address<float> Rotation2 { get; set; }
+        [JsonIgnore] public Address<float> Rotation3 { get; set; }
+        [JsonIgnore] public Address<float> Rotation4 { get; set; }
+        [JsonIgnore] public Address<float> CameraHeight { get; set; }
+        [JsonIgnore] public Address<float> CameraHeight2 { get; set; }
+        [JsonIgnore] public Address<float> CamX { get; set; }
+        [JsonIgnore] public Address<float> CamY { get; set; }
+        [JsonIgnore] public Address<float> CamZ { get; set; }
+        [JsonIgnore] public Address<float> Max { get; set; }
+        [JsonIgnore] public Address<float> Min { get; set; }
+        [JsonIgnore] public Address<float> CZoom { get; set; }
+        [JsonIgnore] public Address<float> FOVC { get; set; }
+        [JsonIgnore] public Address<float> FOVMAX { get; set; }
         public Address<float> MuscleTone { get; set; }
         public Address<Jobs> Job { get; set; }
         public Address<byte> WeaponBase { get; set; }
@@ -405,10 +420,10 @@ namespace FFTrainer.Models
         public Address<float> LipsR { get; set; }
         public Address<float> LipsB { get; set; }
         public Address<float> LipsG { get; set; }
-        public Address<float> CameraYAMin { get; set; }
-        public Address<float> FOV2 { get; set; }
-        public Address<float> CameraYAMax { get; set; }
-        public Address<float> CameraUpDown { get; set; }
+        [JsonIgnore] public Address<float> CameraYAMin { get; set; }
+        [JsonIgnore] public Address<float> FOV2 { get; set; }
+        [JsonIgnore] public Address<float> CameraYAMax { get; set; }
+        [JsonIgnore] public Address<float> CameraUpDown { get; set; }
 
         public CharacterDetails()
         {
@@ -523,6 +538,7 @@ namespace FFTrainer.Models
             FacePaintColor = new Address<byte>();
             Nose = new Address<byte>();
             Lips = new Address<byte>();
+            LipsTone = new Address<byte>();
             TailType = new Address<byte>();
             Emote = new Address<int>();
             EmoteSpeed1 = new Address<float>();

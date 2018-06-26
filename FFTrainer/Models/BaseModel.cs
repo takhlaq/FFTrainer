@@ -15,7 +15,7 @@ namespace FFTrainer.Models
 
     public class Address<T> : INotifyPropertyChanged
     {
-        public string offset { get; set; }
+        //public string offset { get; set; }
         public T value { get; set; }
         public bool freeze { get; set; }
         public bool Activated { get; set; }

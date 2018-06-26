@@ -4,7 +4,7 @@ namespace FFTrainer.ViewModels
 {
     public class BaseViewModel
     {
-        protected BaseModel model;
+        public static BaseModel model;
         protected Mediator mediator;
 
         public BaseViewModel(Mediator mediator)

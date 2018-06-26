@@ -442,6 +442,10 @@ namespace FFTrainer.ViewModels
                     mem.writeBytes(lips, CharacterDetails.Lips.GetBytes());
                 else CharacterDetails.Lips.value = (byte)mem.readByte(lips);
 
+                if (CharacterDetails.LipsTone.freeze)
+                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsTone), CharacterDetails.LipsTone.GetBytes());
+                else CharacterDetails.LipsTone.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsTone));
+
                 if (CharacterDetails.Nose.freeze)
                     mem.writeBytes(nose, CharacterDetails.Nose.GetBytes());
                 else CharacterDetails.Nose.value = (byte)mem.readByte(nose);
