@@ -13,6 +13,7 @@ namespace FFTrainer.ViewModels
         public CharacterDetails CharacterDetails { get => (CharacterDetails)model; set => model = value; }
         private RefreshEntitiesCommand refreshEntitiesCommand;
         public static string eOffset = "8";
+        public static bool TestxD = false;
         public static string baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
         public RefreshEntitiesCommand RefreshEntitiesCommand
         {
@@ -102,23 +103,7 @@ namespace FFTrainer.ViewModels
                 var rotation2 = MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation2);
                 var rotation3 = MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation3);
                 var rotation4 = MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation4);
-                var raceAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Race);
-                var clanAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Clan);
-                var genderAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Gender);
                 var nameAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Name);
-                var hairTone = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HairTone);
-                var highlights = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Highlights);
-                var highlightTone = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HighlightTone);
-                var skintone = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Skintone);
-                var facialFeatures = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FacialFeatures);
-                var eye = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Eye);
-                var rightEye = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.RightEye);
-                var leftEye = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LeftEye);
-                var facePaint = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FacePaint);
-                var facePaintColor = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FacePaintColor);
-                var nose = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Nose);
-                var lips = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Lips);
-                var tailType = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.TailType);
                 var cameraHeight = MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CameraHeight);
                 var camX = MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamX);
                 var camY = MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamY);
@@ -129,7 +114,6 @@ namespace FFTrainer.ViewModels
                 var fovC = MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVC);
                 var fovMAX = MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVMAX);
                 var muscleTone = MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.MuscleTone);
-                var JobAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Job);
 
                 if (CharacterDetails.LipsB.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB), CharacterDetails.LipsB.GetBytes());
                 else CharacterDetails.LipsB.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB));
@@ -218,120 +202,6 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.TailSize.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.TailSize), CharacterDetails.TailSize.GetBytes());
                 else CharacterDetails.TailSize.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.TailSize));
 
-                if (CharacterDetails.LFinger.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LFinger), CharacterDetails.LFinger.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LFingerVa), CharacterDetails.LFingerVa.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.LFinger.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LFinger));
-                    CharacterDetails.LFingerVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LFingerVa));
-                }
-                if (CharacterDetails.RFinger.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.RFinger), CharacterDetails.RFinger.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.RFingerVa), CharacterDetails.RFingerVa.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.RFinger.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.RFinger));
-                    CharacterDetails.RFingerVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.RFingerVa));
-                }
-                if (CharacterDetails.Wrist.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Wrist), CharacterDetails.Wrist.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WristVa), CharacterDetails.WristVa.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Wrist.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Wrist));
-                    CharacterDetails.WristVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WristVa));
-                }
-                if (CharacterDetails.Neck.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Neck), CharacterDetails.Neck.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.NeckVa), CharacterDetails.NeckVa.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Neck.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Neck));
-                    CharacterDetails.NeckVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.NeckVa));
-                }
-                if (CharacterDetails.Ear.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Ear), CharacterDetails.Ear.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.EarVa), CharacterDetails.EarVa.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Ear.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Ear));
-                    CharacterDetails.EarVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.EarVa));
-                }
-
-                if (CharacterDetails.Feet.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Feet), CharacterDetails.Feet.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FeetVa), CharacterDetails.FeetVa.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FeetDye), CharacterDetails.FeetDye.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Feet.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Feet));
-                    CharacterDetails.FeetVa.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FeetVa));
-                    CharacterDetails.FeetDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.FeetDye));
-                }
-
-                if (CharacterDetails.Legs.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Legs), CharacterDetails.Legs.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LegsV), CharacterDetails.LegsV.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LegsDye), CharacterDetails.LegsDye.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Legs.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Legs));
-                    CharacterDetails.LegsV.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LegsV));
-                    CharacterDetails.LegsDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LegsDye));
-                }
-
-                if (CharacterDetails.Arms.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Arms), CharacterDetails.Arms.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ArmsV), CharacterDetails.ArmsV.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ArmsDye), CharacterDetails.ArmsDye.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Arms.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Arms));
-                    CharacterDetails.ArmsV.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ArmsV));
-                    CharacterDetails.ArmsDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ArmsDye));
-                }
-
-                if (CharacterDetails.Chest.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Chest), CharacterDetails.Chest.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ChestV), CharacterDetails.ChestV.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ChestDye), CharacterDetails.ChestDye.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.Chest.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Chest));
-                    CharacterDetails.ChestV.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ChestV));
-                    CharacterDetails.ChestDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.ChestDye));
-                }
-                if (CharacterDetails.HeadPiece.freeze)
-                {
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadPiece), CharacterDetails.HeadPiece.GetBytes());
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadV), CharacterDetails.HeadV.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadDye), CharacterDetails.HeadDye.GetBytes());
-                }
-                else
-                {
-                    CharacterDetails.HeadPiece.value = (int)mem.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadPiece));
-                    CharacterDetails.HeadV.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadV));
-                    CharacterDetails.HeadDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.HeadDye));
-                }
                 if (CharacterDetails.WeaponZ.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponZ), CharacterDetails.WeaponZ.GetBytes());
                 else CharacterDetails.WeaponZ.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponZ));
 
@@ -340,24 +210,6 @@ namespace FFTrainer.ViewModels
 
                 if (CharacterDetails.WeaponX.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponX), CharacterDetails.WeaponX.GetBytes());
                 else CharacterDetails.WeaponX.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponX));
-
-                if (!CharacterDetails.Job.freeze)
-                {
-                    CharacterDetails.Job.value = (CharacterDetails.Jobs)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Job));
-                    CharacterDetails.WeaponBase.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponBase));
-                    CharacterDetails.WeaponV.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponV));
-                    CharacterDetails.WeaponDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponDye));
-                }
-
-                else
-                {
-                    int xd = (int)CharacterDetails.Job.value;
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Job), "int", xd.ToString());
-                  //  MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Job), CharacterDetails.Job.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponBase), CharacterDetails.WeaponBase.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponV), CharacterDetails.WeaponV.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.WeaponDye), CharacterDetails.WeaponDye.GetBytes());
-                }
 
 
                 if (CharacterDetails.MuscleTone.freeze) mem.writeBytes(muscleTone, CharacterDetails.MuscleTone.GetBytes());
@@ -420,60 +272,6 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.Voices.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices), CharacterDetails.Voices.GetBytes());
                 else CharacterDetails.Voices.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Voices));
 
-                if (CharacterDetails.TailType.freeze)
-                    mem.writeBytes(tailType, CharacterDetails.TailType.GetBytes());
-                else CharacterDetails.TailType.value = (byte)mem.readByte(tailType);
-
-                if (CharacterDetails.HairTone.freeze)
-                    mem.writeBytes(hairTone, CharacterDetails.HairTone.GetBytes());
-                else CharacterDetails.HairTone.value = (byte)mem.readByte(hairTone);
-
-                CharacterDetails.Highlights.value = (byte)mem.readByte(highlights);
-
-                if (CharacterDetails.HighlightTone.freeze)
-                    mem.writeBytes(highlightTone, CharacterDetails.HighlightTone.GetBytes());
-                else CharacterDetails.HighlightTone.value = (byte)mem.readByte(highlightTone);
-
-                if (CharacterDetails.Skintone.freeze)
-                    mem.writeBytes(skintone, CharacterDetails.Skintone.GetBytes());
-                else CharacterDetails.Skintone.value = (byte)mem.readByte(skintone);
-
-                if (CharacterDetails.Lips.freeze)
-                    mem.writeBytes(lips, CharacterDetails.Lips.GetBytes());
-                else CharacterDetails.Lips.value = (byte)mem.readByte(lips);
-
-                if (CharacterDetails.LipsTone.freeze)
-                    mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsTone), CharacterDetails.LipsTone.GetBytes());
-                else CharacterDetails.LipsTone.value = (byte)mem.readByte(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsTone));
-
-                if (CharacterDetails.Nose.freeze)
-                    mem.writeBytes(nose, CharacterDetails.Nose.GetBytes());
-                else CharacterDetails.Nose.value = (byte)mem.readByte(nose);
-
-                if (CharacterDetails.FacePaintColor.freeze)
-                    mem.writeBytes(facePaintColor, CharacterDetails.FacePaintColor.GetBytes());
-                else CharacterDetails.FacePaintColor.value = (byte)mem.readByte(facePaintColor);
-
-                if (CharacterDetails.FacePaint.freeze)
-                    mem.writeBytes(facePaint, CharacterDetails.FacePaint.GetBytes());
-                else CharacterDetails.FacePaint.value = (byte)mem.readByte(facePaint);
-
-                if (CharacterDetails.LeftEye.freeze)
-                    mem.writeBytes(leftEye, CharacterDetails.LeftEye.GetBytes());
-                else CharacterDetails.LeftEye.value = (byte)mem.readByte(leftEye);
-
-                if (CharacterDetails.RightEye.freeze)
-                    mem.writeBytes(rightEye, CharacterDetails.RightEye.GetBytes());
-                else CharacterDetails.RightEye.value = (byte)mem.readByte(rightEye);
-
-                if (CharacterDetails.Eye.freeze)
-                    mem.writeBytes(eye, CharacterDetails.Eye.GetBytes());
-                else CharacterDetails.Eye.value = (byte)mem.readByte(eye);
-
-                if (CharacterDetails.FacialFeatures.freeze)
-                    mem.writeBytes(facialFeatures, CharacterDetails.FacialFeatures.GetBytes());
-                else CharacterDetails.FacialFeatures.value = (byte)mem.readByte(facialFeatures);
-
                 if (CharacterDetails.Height.freeze) mem.writeBytes(height, CharacterDetails.Height.GetBytes());
                 else CharacterDetails.Height.value = mem.readFloat(height);
 
@@ -495,12 +293,6 @@ namespace FFTrainer.ViewModels
                     mem.writeBytes(x, CharacterDetails.X.GetBytes());
                 else
                     CharacterDetails.X.value = mem.readFloat(x);
-                if (CharacterDetails.Head.freeze)
-                    mem.writeBytes(head, CharacterDetails.Head.GetBytes());
-                else CharacterDetails.Head.value = (byte)mem.readByte(head);
-
-                if (CharacterDetails.Hair.freeze) mem.writeBytes(hair, CharacterDetails.Hair.GetBytes());
-                else CharacterDetails.Hair.value = (byte)mem.readByte(hair);
                 if (CharacterDetails.Y.freeze) mem.writeBytes(y, CharacterDetails.Y.GetBytes());
                 else CharacterDetails.Y.value = mem.readFloat(y);
 
@@ -524,20 +316,6 @@ namespace FFTrainer.ViewModels
                     mem.writeBytes(rotation4, CharacterDetails.Rotation4.GetBytes());
                 else
                     CharacterDetails.Rotation4.value = mem.readFloat(rotation4);
-                if (!CharacterDetails.Race.freeze)
-                    CharacterDetails.Race.value = (CharacterDetails.Races)MemoryManager.Instance.MemLib.readByte(raceAddr);
-                else
-                    MemoryManager.Instance.MemLib.writeBytes(raceAddr, CharacterDetails.Race.GetBytes());
-
-                if (!CharacterDetails.Clan.freeze)
-                    CharacterDetails.Clan.value = (CharacterDetails.Clans)MemoryManager.Instance.MemLib.readByte(clanAddr);
-                else
-                    MemoryManager.Instance.MemLib.writeBytes(clanAddr, CharacterDetails.Clan.GetBytes());
-
-                if (!CharacterDetails.Gender.freeze)
-                    CharacterDetails.Gender.value = (CharacterDetails.Genders)MemoryManager.Instance.MemLib.readByte(genderAddr);
-                else
-                    MemoryManager.Instance.MemLib.writeBytes(genderAddr, CharacterDetails.Gender.GetBytes());
 
                 if (!CharacterDetails.Name.freeze)
                 {
@@ -547,7 +325,6 @@ namespace FFTrainer.ViewModels
                         nameX = nameX.Substring(0, nameX.IndexOf('\0'));
                     CharacterDetails.Name.value = nameX;
                 }
-
                 if (CharacterDetails.Wetness.Activated) MemoryManager.Instance.MemLib.writeMemory(Wetness, "float", "1");
                 if (CharacterDetails.SWetness.Activated) MemoryManager.Instance.MemLib.writeMemory(SWetness, "float", "5");
             }

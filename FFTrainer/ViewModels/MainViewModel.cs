@@ -191,7 +191,7 @@ namespace FFTrainer.ViewModels
             while (true)
             {
                 // sleep for 200 ms
-                Thread.Sleep(450);
+                Thread.Sleep(500);
                 // check if our memory manager is set
                 mediator.SendWork();
 
