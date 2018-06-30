@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using FFTrainer.Models;
 using FFTrainer.ViewModels;
@@ -12,6 +14,7 @@ namespace FFTrainer.Views
     /// 
     public partial class CharacterDetailsView : UserControl
     {
+        public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public CharacterDetailsView()
         {
             InitializeComponent();
@@ -20,26 +23,6 @@ namespace FFTrainer.Views
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-        private void BustZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver)
-                if (BustZ.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
-        }
-
-        private void BustY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver)
-                if (BustY.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
-        }
-
-        private void BustX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver)
-                if (BustX.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
         }
 
         private void XPos_ValueChanged(object sender, EventArgs e)
@@ -331,5 +314,123 @@ namespace FFTrainer.Views
                 if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
                     CharacterDetails.EmoteX.value = (CharacterDetails.Emotes)Emote.Value;
         }
+
+        private void AddBust_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterDetails.BustX.value += (float)0.0016;
+            CharacterDetails.BustY.value += (float)0.004;
+            CharacterDetails.BustZ.value += (float)0.00368;
+            var bustx = CharacterDetails.BustX.value;
+            var busty = CharacterDetails.BustY.value;
+            var bustz = CharacterDetails.BustZ.value;
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", bustz.ToString());
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", busty.ToString());
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", bustx.ToString());
+        }
+
+        private void MinusBust_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterDetails.BustX.value -= (float)0.0016;
+            CharacterDetails.BustY.value -= (float)0.004;
+            CharacterDetails.BustZ.value -= (float)0.00368;
+            var bustx = CharacterDetails.BustX.value;
+            var busty = CharacterDetails.BustY.value;
+            var bustz = CharacterDetails.BustZ.value;
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", bustz.ToString());
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", busty.ToString());
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", bustx.ToString());
+        }
+
+        private void BustZ2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustZ.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
+        }
+
+
+        private void BustY2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustY.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
+        }
+
+
+        private void BustX2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustX.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
+        }
+
+        private void BustSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BustSelect.SelectedIndex == 0)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "1F 85 6B 3F CD CC 4C 3F 60 E5 50 3F");
+            if (BustSelect.SelectedIndex == 1)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "B2 9D 6F 3F 3D 0A 57 3F 1A 51 5A 3F");
+            if (BustSelect.SelectedIndex == 2)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "46 B6 73 3F AE 47 61 3F 12 BE 63 3F");
+            if (BustSelect.SelectedIndex == 3)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "D9 CE 77 3F 1F 85 6B 3F DC 29 6D 3F");
+            if (BustSelect.SelectedIndex == 4)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "6D E7 7B 3F 8F C2 75 3F 3E 96 76 3F");
+            if (BustSelect.SelectedIndex == 5)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "00 00 80 3F 00 00 80 3F 00 00 80 3F");
+            if (BustSelect.SelectedIndex == 6)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "4A 0C 82 3F B8 1E 85 3F D3 B7 84 3F");
+            if (BustSelect.SelectedIndex == 7)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "93 18 84 3F 71 3D 8A 3F 04 6E 89 3F");
+            if (BustSelect.SelectedIndex == 8)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "DD 24 86 3F 29 5C 8F 3F 35 24 8E 3F");
+            if (BustSelect.SelectedIndex == 9)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "27 31 88 3F E1 7A 94 3F 65 DA 92 3F");
+            if (BustSelect.SelectedIndex == 10)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "71 3D 8A 3F 9A 99 99 3F 50 8D 97 3F");
+            if (BustSelect.SelectedIndex == 11)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "29 5C 8F 3F 66 66 A6 3F 10 58 A3 3F");
+            if (BustSelect.SelectedIndex == 12)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "E1 7A 94 3F 33 33 B3 3F A0 1A AF 3F");
+            if (BustSelect.SelectedIndex == 13)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "9A 99 99 3F 00 00 C0 3F 04 E7 BA 3F");
+            if (BustSelect.SelectedIndex == 14)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "52 B8 9E 3F CD CC CC 3F 7D AE C6 3F");
+            if (BustSelect.SelectedIndex == 15)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "0A D7 A3 3F 9A 99 D9 3F F7 75 D2 3F");
+            if (BustSelect.SelectedIndex == 16)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "C3 F5 A8 3F 66 66 E6 3F 71 3D DE 3F");
+            if (BustSelect.SelectedIndex == 17)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "7B 14 AE 3F 33 33 F3 3F EA 04 EA 3F");
+            if (BustSelect.SelectedIndex == 18)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "33 33 B3 3F 00 00 00 40 64 CC F5 3F");
+            if (BustSelect.SelectedIndex == 19)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "CD CC CC 3F 00 00 20 40 E2 58 18 40");
+            if (BustSelect.SelectedIndex == 20)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "66 66 E6 3F 00 00 40 40 92 CB 35 40");
+        }
     }
 }
+
+/*
+        private void BustZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || TestxDdada.IsMouseOver)
+                if (BustZ.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
+        }
+
+        private void BustY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || TestxDdada.IsMouseOver)
+                if (BustY.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
+        }
+
+        private void BustX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || TestxDdada.IsMouseOver)
+                if (BustX.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
+        }
+*/

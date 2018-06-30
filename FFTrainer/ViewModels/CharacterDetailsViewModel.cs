@@ -336,7 +336,7 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.X.freeze)
                     mem.writeBytes(x, CharacterDetails.X.GetBytes());
                 else
-                    CharacterDetails.X.value = mem.readFloat(x);
+                    CharacterDetails.X.value = mem.readFloat(x); 
                 if (CharacterDetails.Y.freeze) mem.writeBytes(y, CharacterDetails.Y.GetBytes());
                 else CharacterDetails.Y.value = mem.readFloat(y);
 
