@@ -3,15 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:local="clr-namespace:FFTrainer"
-		xmlns:Views="clr-namespace:FFTrainer.Views"
+        xmlns:Views="clr-namespace:FFTrainer.Views"
 		xmlns:ViewModels="clr-namespace:FFTrainer.ViewModels"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
 		x:Class="FFTrainer.MainWindow"
-        xmlns:Sideshit="FFTrainer.Views.CharacterDetailsView"
-        xmlns:Models="clr-namespace:FFTrainer.Models"
-        xmlns:util="clr-namespace:FFTrainer.Util"
-        xmlns:Converters="clr-namespace:FFTrainer.Converters"
         mc:Ignorable="d"
 		x:Name="Window"
         Title="FFXIV Trainer" Height="500" Width="1000" ResizeMode="CanMinimize" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized">
@@ -45,12 +40,12 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.2.0.2" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Version 1.3.0.1" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
         <TextBlock  Margin="768,6,87,439">    
             <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Discord Server</Hyperlink>
         </TextBlock>
         <Button Content="Save" HorizontalAlignment="Left" Margin="637,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Load" HorizontalAlignment="Left" Margin="550,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="Loadbutton" Content="Load" HorizontalAlignment="Left" Margin="550,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
     </Grid>
 </Window>

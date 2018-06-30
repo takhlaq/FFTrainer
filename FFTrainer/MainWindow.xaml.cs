@@ -5,13 +5,9 @@ using System.ComponentModel;
 using System.Threading;
 using FFTrainer.ViewModels;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using Newtonsoft;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using Microsoft.Win32;
+using System.Threading.Tasks;
 
 namespace FFTrainer
 {
@@ -38,18 +34,31 @@ namespace FFTrainer
             {
                 if (!CharacterDetails.Job.freeze)
                 {
-                    CharacterDetails.Job.value = (CharacterDetails.Jobs)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
+                    CharacterDetails.Job.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
                     CharacterDetails.WeaponBase.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBase));
                     CharacterDetails.WeaponV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponV));
                     CharacterDetails.WeaponDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye));
                 }
                 else
                 {
-                    int xd = (int)CharacterDetails.Job.value;
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job), "int", xd.ToString());
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job), CharacterDetails.Job.GetBytes());
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBase), CharacterDetails.WeaponBase.GetBytes());
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponV), CharacterDetails.WeaponV.GetBytes());
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye), CharacterDetails.WeaponDye.GetBytes());
+                }
+                if (!CharacterDetails.Offhand.freeze)
+                {
+                    CharacterDetails.Offhand.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
+                    CharacterDetails.OffhandBase.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBase));
+                    CharacterDetails.OffhandV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV));
+                    CharacterDetails.OffhandDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye));
+                }
+                else
+                {
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand), CharacterDetails.Offhand.GetBytes());
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBase), CharacterDetails.OffhandBase.GetBytes());
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV), CharacterDetails.OffhandV.GetBytes());
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye), CharacterDetails.OffhandDye.GetBytes());
                 }
                 if (CharacterDetails.HeadPiece.freeze)
                 {
@@ -243,17 +252,17 @@ namespace FFTrainer
         {
             while (true)
             {
-                if (CharacterDetails.EmoteSpeed1.freeze)
+                if (CharacterDetails.Emote.freeze)
                 {
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1), CharacterDetails.EmoteSpeed1.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed2), CharacterDetails.EmoteSpeed1.GetBytes());
+                    int xd = (int)CharacterDetails.EmoteX.value;
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), "int", xd.ToString());
                 }
                 else
                 {
-                    CharacterDetails.EmoteSpeed1.value = MemoryManager.Instance.MemLib.readFloat((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1)));
+                    CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
+                    CharacterDetails.EmoteX.value= (CharacterDetails.Emotes)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 }
-                if (CharacterDetails.Emote.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
-                else CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 Thread.Sleep(1);
             }
         }
@@ -305,11 +314,8 @@ namespace FFTrainer
             if (dig.ShowDialog() == true)
             {
                 CharacterDetails load1 = JsonConvert.DeserializeObject<CharacterDetails>(File.ReadAllText(dig.FileName));
-                CharacterDetailsViewModel.TestxD = true; // This will check Files are being loaded in
-                CharacterDetails.Height.value = load1.Height.value;
-                CharacterDetails.BustX.value = load1.BustX.value;
-                CharacterDetails.BustY.value = load1.BustY.value;
-                CharacterDetails.BustZ.value = load1.BustZ.value;
+                Loadbutton.IsEnabled = false;
+                CharacterDetailsViewModel.Testxda();
                 CharacterDetails.Race.freeze = true;
                 CharacterDetails.Clan.freeze = true;
                 CharacterDetails.Gender.freeze = true;
@@ -327,6 +333,7 @@ namespace FFTrainer
                 CharacterDetails.Eye.freeze = true;
                 CharacterDetails.RightEye.freeze = true;
                 CharacterDetails.LeftEye.freeze = true;
+                CharacterDetails.Offhand.freeze = true;
                 CharacterDetails.FacePaint.freeze = true;
                 CharacterDetails.FacePaintColor.freeze = true;
                 CharacterDetails.Job.freeze = true;
@@ -340,115 +347,160 @@ namespace FFTrainer
                 CharacterDetails.Wrist.freeze = true;
                 CharacterDetails.RFinger.freeze = true;
                 CharacterDetails.LFinger.freeze = true;
-                CharacterDetails.TailSize.value = load1.TailSize.value;
-                CharacterDetails.MuscleTone.value = load1.MuscleTone.value;
+                Task.Delay(450).Wait();
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", load1.Height.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone), "float", load1.MuscleTone.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.TailSize), "float", load1.TailSize.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", load1.BustX.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", load1.BustY.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", load1.BustZ.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairRedPigment), "float", load1.HairRedPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairBluePigment), "float", load1.HairBluePigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairGreenPigment), "float", load1.HairGreenPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairGlowRed), "float", load1.HairGlowRed.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairGlowGreen), "float", load1.HairGlowGreen.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairGlowBlue), "float", load1.HairGlowBlue.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightRedPigment), "float", load1.HighlightRedPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightGreenPigment), "float", load1.HighlightGreenPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightBluePigment), "float", load1.HighlightBluePigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinRedPigment), "float", load1.SkinRedPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinGreenPigment), "float", load1.SkinGreenPigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinBluePigment), "float", load1.SkinBluePigment.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinRedGloss), "float", load1.SkinRedGloss.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinGreenGloss), "float", load1.SkinGreenGloss.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.SkinBlueGloss), "float", load1.SkinBlueGloss.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsBrightness), "float", load1.LipsBrightness.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsR), "float", load1.LipsR.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsG), "float", load1.LipsG.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsB), "float", load1.LipsB.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LeftEyeRed), "float", load1.LeftEyeRed.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LeftEyeGreen), "float", load1.LeftEyeGreen.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LeftEyeBlue), "float", load1.LeftEyeBlue.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeRed), "float", load1.RightEyeRed.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeGreen), "float", load1.RightEyeGreen.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeBlue), "float", load1.RightEyeBlue.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponX), "float", load1.WeaponX.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponY), "float", load1.WeaponY.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponZ), "float", load1.WeaponZ.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponRed), "float", load1.WeaponRed.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBlue), "float", load1.WeaponBlue.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponGreen), "float", load1.WeaponGreen.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBlue), "float", load1.OffhandBlue.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandGreen), "float", load1.OffhandGreen.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed), "float", load1.OffhandRed.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandX), "float", load1.OffhandX.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandY), "float", load1.OffhandY.value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandZ), "float", load1.OffhandZ.value.ToString());
                 CharacterDetails.Ear.value = load1.Ear.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear), load1.Ear.GetBytes());
                 CharacterDetails.EarVa.value = load1.EarVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EarVa), load1.EarVa.GetBytes());
                 CharacterDetails.Neck.value = load1.Neck.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck), load1.Neck.GetBytes());
                 CharacterDetails.NeckVa.value = load1.NeckVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.NeckVa), load1.NeckVa.GetBytes());
                 CharacterDetails.Wrist.value = load1.Wrist.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist), load1.Wrist.GetBytes());
                 CharacterDetails.WristVa.value = load1.WristVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WristVa), load1.WristVa.GetBytes());
                 CharacterDetails.RFinger.value = load1.RFinger.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger), load1.RFinger.GetBytes());
                 CharacterDetails.RFingerVa.value = load1.RFingerVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFingerVa), load1.RFingerVa.GetBytes());
                 CharacterDetails.LFinger.value = load1.LFinger.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger), load1.LFinger.GetBytes());
                 CharacterDetails.LFingerVa.value = load1.LFingerVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFingerVa), load1.LFingerVa.GetBytes());
                 CharacterDetails.Job.value = load1.Job.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job), load1.Job.GetBytes());
                 CharacterDetails.WeaponBase.value = load1.WeaponBase.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBase), load1.WeaponBase.GetBytes());
                 CharacterDetails.WeaponV.value = load1.WeaponV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponV), load1.WeaponV.GetBytes());
                 CharacterDetails.WeaponDye.value = load1.WeaponDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye), load1.WeaponDye.GetBytes());
                 CharacterDetails.HeadPiece.value = load1.HeadPiece.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece), load1.HeadPiece.GetBytes());
                 CharacterDetails.HeadV.value = load1.HeadV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadV), load1.HeadV.GetBytes());
                 CharacterDetails.HeadDye.value = load1.HeadDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadDye), load1.HeadDye.GetBytes());
                 CharacterDetails.Chest.value = load1.Chest.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest), load1.Chest.GetBytes());
                 CharacterDetails.ChestV.value = load1.ChestV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestV), load1.ChestV.GetBytes());
                 CharacterDetails.ChestDye.value = load1.ChestDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestDye), load1.ChestDye.GetBytes());
                 CharacterDetails.Arms.value = load1.Arms.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms), load1.Arms.GetBytes());
                 CharacterDetails.ArmsV.value = load1.ArmsV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsV), load1.ArmsV.GetBytes());
                 CharacterDetails.ArmsDye.value = load1.ArmsDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsDye), load1.ArmsDye.GetBytes());
                 CharacterDetails.Legs.value = load1.Legs.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs), load1.Legs.GetBytes());
                 CharacterDetails.LegsV.value = load1.LegsV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsV), load1.LegsV.GetBytes());
                 CharacterDetails.LegsDye.value = load1.LegsDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsDye), load1.LegsDye.GetBytes());
                 CharacterDetails.Feet.value = load1.Feet.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet), load1.Feet.GetBytes());
                 CharacterDetails.FeetVa.value = load1.FeetVa.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetVa), load1.FeetVa.GetBytes());
                 CharacterDetails.FeetDye.value = load1.FeetDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye), load1.FeetDye.GetBytes());
                 CharacterDetails.Race.value = load1.Race.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), load1.Race.GetBytes());
                 CharacterDetails.Clan.value = load1.Clan.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan), load1.Clan.GetBytes());
                 CharacterDetails.Gender.value = load1.Gender.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Gender), load1.Gender.GetBytes());
                 CharacterDetails.Head.value = load1.Head.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Head), load1.Head.GetBytes());
                 CharacterDetails.TailType.value = load1.TailType.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailType), load1.TailType.GetBytes());
                 CharacterDetails.Nose.value = load1.Nose.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Nose), load1.Nose.GetBytes());
                 CharacterDetails.Lips.value = load1.Lips.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Lips), load1.Lips.GetBytes());
                 CharacterDetails.LipsTone.value = load1.LipsTone.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsTone), load1.LipsTone.GetBytes());
                 CharacterDetails.Voices.value = load1.Voices.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Voices), load1.Voices.GetBytes());
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Hair), load1.Hair.GetBytes());
                 CharacterDetails.Hair.value = load1.Hair.value;
                 CharacterDetails.HairTone.value = load1.HairTone.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairTone), load1.HairTone.GetBytes());
                 CharacterDetails.Highlights.value = load1.Highlights.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Highlights), load1.Highlights.GetBytes());
                 CharacterDetails.HighlightTone.value = load1.HighlightTone.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightTone), load1.HighlightTone.GetBytes());
                 CharacterDetails.Skintone.value = load1.Skintone.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Skintone), load1.Skintone.GetBytes());
                 CharacterDetails.FacialFeatures.value = load1.FacialFeatures.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacialFeatures), load1.FacialFeatures.GetBytes());
                 CharacterDetails.Eye.value = load1.Eye.value;
-                CharacterDetails.RightEye.value = load1.LeftEye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Eye), load1.Eye.GetBytes());
+                CharacterDetails.RightEye.value = load1.RightEye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEye), load1.RightEye.GetBytes());
                 CharacterDetails.LeftEye.value = load1.LeftEye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LeftEye), load1.LeftEye.GetBytes());
                 CharacterDetails.FacePaint.value = load1.FacePaint.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaint), load1.FacePaint.GetBytes());
                 CharacterDetails.FacePaintColor.value = load1.FacePaintColor.value;
-                CharacterDetails.WeaponRed.value = load1.WeaponRed.value;
-                CharacterDetails.WeaponBlue.value = load1.WeaponBlue.value;
-                CharacterDetails.WeaponGreen.value = load1.WeaponGreen.value;
-                CharacterDetails.SkinRedGloss.value = load1.SkinRedGloss.value;
-                CharacterDetails.SkinRedPigment.value = load1.SkinRedPigment.value;
-                CharacterDetails.SkinGreenGloss.value = load1.SkinGreenGloss.value;
-                CharacterDetails.SkinBlueGloss.value = load1.SkinBlueGloss.value;
-                CharacterDetails.SkinBluePigment.value = load1.SkinBluePigment.value;
-                CharacterDetails.HairBluePigment.value = load1.HairBluePigment.value;
-                CharacterDetails.HairGreenPigment.value = load1.HairGreenPigment.value;
-                CharacterDetails.HairRedPigment.value = load1.HairRedPigment.value;
-                CharacterDetails.HairGlowRed.value = load1.HairGlowRed.value;
-                CharacterDetails.HairGlowBlue.value = load1.HairGlowBlue.value;
-                CharacterDetails.HairGlowGreen.value = load1.HairGlowGreen.value;
-                CharacterDetails.HighlightRedPigment.value = load1.HighlightRedPigment.value;
-                CharacterDetails.HighlightBluePigment.value = load1.HighlightBluePigment.value;
-                CharacterDetails.HighlightGreenPigment.value = load1.HighlightGreenPigment.value;
-                CharacterDetails.LeftEyeBlue.value = load1.LeftEyeBlue.value;
-                CharacterDetails.LeftEyeGreen.value = load1.LeftEyeGreen.value;
-                CharacterDetails.LeftEyeRed.value = load1.LeftEyeRed.value;
-                CharacterDetails.RightEyeRed.value = load1.RightEyeRed.value;
-                CharacterDetails.RightEyeGreen.value = load1.RightEyeGreen.value;
-                CharacterDetails.RightEyeBlue.value = load1.RightEyeBlue.value;
-                CharacterDetails.LipsBrightness.value = load1.LipsBrightness.value;
-                CharacterDetails.LipsR.value = load1.LipsR.value;
-                CharacterDetails.LipsB.value = load1.LipsB.value;
-                CharacterDetails.LipsG.value = load1.LipsG.value;
-                CharacterDetailsViewModel.TestxD = false; // This will check Files finshed loading
-
-
-                /* using (StreamReader reader = File.OpenText(dig.FileName))
-                 {
-                     JsonSerializer serializer = new JsonSerializer();
-                     CharacterDetails load1 = (CharacterDetails)serializer.Deserialize(reader, typeof(CharacterDetails));
-                     CharacterDetails = load1;
-                 }*/
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), load1.FacePaintColor.GetBytes());
+                CharacterDetails.Offhand.value = load1.Offhand.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand), load1.Offhand.GetBytes());
+                CharacterDetails.OffhandBase.value = load1.OffhandBase.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBase), load1.OffhandBase.GetBytes());
+                CharacterDetails.OffhandV.value = load1.OffhandV.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV), load1.OffhandV.GetBytes());
+                CharacterDetails.OffhandDye.value = load1.OffhandDye.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV), load1.OffhandDye.GetBytes());
+                Task.Delay(400).Wait();
+                CharacterDetailsViewModel.Hahaxd();
+                Loadbutton.IsEnabled = true;
             }
         }
     }
 }
-/*
- *             var serializer = new XmlSerializer(typeof(Settings), "");
-            // create namespace to remove it for the serializer
-            var ns = new XmlSerializerNamespaces();
-            // add blank namespaces
-            ns.Add("", "");
-           // string xmlData = Properties.Resources.Settings;
-            var document = XDocument.Load(@"https://raw.githubusercontent.com/SaberNaut/xd/master/Settings.xml");
-            // using a stream reader
-            using (StringReader reader = new StringReader(document.ToString()))
-            {
-                try
-                {
-                    Settings.Instance = (Settings)serializer.Deserialize(reader);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-            }
-*/

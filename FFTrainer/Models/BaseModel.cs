@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -17,8 +18,9 @@ namespace FFTrainer.Models
     {
         //public string offset { get; set; }
         public T value { get; set; }
-        public bool freeze { get; set; }
-        public bool Activated { get; set; }
+        [JsonIgnore] public bool freeze { get; set; }
+        [JsonIgnore] public bool Activated { get; set; }
+        [JsonIgnore] public bool freezetest { get; set; }
 
         /// <summary>
         /// Get a byte array of this address

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using FFTrainer.Models;
 using FFTrainer.ViewModels;
 namespace FFTrainer.Views
 {
@@ -22,22 +23,22 @@ namespace FFTrainer.Views
         }
         private void BustZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || CharacterDetailsViewModel.TestxD == true)
+            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver)
                 if (BustZ.Value > 0)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
         }
 
         private void BustY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || CharacterDetailsViewModel.TestxD == true)
+            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver)
                 if (BustY.Value > 0)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
         }
 
         private void BustX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || CharacterDetailsViewModel.TestxD == true)
-                if (BustX.Value>0)
+            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver)
+                if (BustX.Value > 0)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
         }
 
@@ -66,8 +67,8 @@ namespace FFTrainer.Views
         private void ZPos_ValueChanged(object sender, EventArgs e)
         {
             if (Zpos2.Value.HasValue)
-                if (ZPos.IsMouseOver || ZPos.IsKeyboardFocusWithin||Zpos2.IsKeyboardFocusWithin||Zpos2.IsMouseOver)
-                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Z), "float", ZPos.Value.ToString());
+                if (ZPos.IsMouseOver || ZPos.IsKeyboardFocusWithin || Zpos2.IsKeyboardFocusWithin || Zpos2.IsMouseOver)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Z), "float", ZPos.Value.ToString());
         }
 
         private void Rotation2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -93,14 +94,14 @@ namespace FFTrainer.Views
 
         private void HeightSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-         //   if (HeightSlider.IsMouseOver || HeightSlider.IsKeyboardFocusWithin || Height2x.IsKeyboardFocusWithin || Height2x.IsMouseOver)
-               // if (HeightSlider.Value>=0.00001)MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", HeightSlider.Value.ToString());
+            //   if (HeightSlider.IsMouseOver || HeightSlider.IsKeyboardFocusWithin || Height2x.IsKeyboardFocusWithin || Height2x.IsMouseOver)
+            // if (HeightSlider.Value>=0.00001)MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", HeightSlider.Value.ToString());
         }
 
         private void Height2x_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (Height2x.Value.HasValue)
-                if (Height2x.IsMouseOver || Height2x.IsKeyboardFocusWithin || HeightSlider.IsKeyboardFocusWithin || HeightSlider.IsMouseOver || CharacterDetailsViewModel.TestxD == true)
+                if (Height2x.IsMouseOver || Height2x.IsKeyboardFocusWithin || HeightSlider.IsKeyboardFocusWithin || HeightSlider.IsMouseOver)
                     if (Height2x.Value > 0) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", Height2x.Value.ToString());
         }
 
@@ -146,14 +147,14 @@ namespace FFTrainer.Views
         {
             if (MaxZoom.Value.HasValue)
                 if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
-                  MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
         }
 
         private void Min_Zoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (Min_Zoom.Value.HasValue)
                 if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
-                   MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
         }
 
         private void CurrentZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -176,14 +177,14 @@ namespace FFTrainer.Views
         private void Muscletone_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (Muscletone.Value.HasValue)
-               if (Muscletone.IsMouseOver || Muscletone.IsKeyboardFocusWithin || CharacterDetailsViewModel.TestxD == true)
+                if (Muscletone.IsMouseOver || Muscletone.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone), "float", Muscletone.Value.ToString());
         }
 
         private void TailSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (TailSize.Value.HasValue)
-                if (TailSize.IsMouseOver || TailSize.IsKeyboardFocusWithin || CharacterDetailsViewModel.TestxD == true)
+                if (TailSize.IsMouseOver || TailSize.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.TailSize), "float", TailSize.Value.ToString());
         }
 
@@ -311,32 +312,24 @@ namespace FFTrainer.Views
                 if (CamUpDown.IsMouseOver || CamUpDown.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraUpDown), "float", CamUpDown.Value.ToString());
         }
+
+        private void HighlightTone_Copy6_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (EmoteBox.IsMouseOver)
+                CharacterDetails.Emote.value = (int)EmoteBox.SelectedValue;
+        }
+
+        private void Emote_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (Emote.Value.HasValue)
+                if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
+                    CharacterDetails.EmoteX.value = (CharacterDetails.Emotes)Emote.Value;
+        }
     }
 }
-    
-/*
- * MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base,Settings.Instance.Character.Body.Position.Rotation), "float", Rotation1.Value.ToString());
- * MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.X), "float", HeightSlider.Value.ToString());
-                var CharacterDetailsViewModel.baseAddr = MemoryManager.Add(MemoryManager.Instance.CharacterDetailsViewModel.baseAddress, eOffset);
-                var bodyBase = Settings.Instance.Character.Body.Base;
-                var body = Settings.Instance.Character.Body;
-                var bust = body.Bust;
-                var mem = MemoryManager.Instance.MemLib;
-                var height = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Height);
-                var Wetness = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Wetness);
-                var SWetness = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.SWetness);
-                var xAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, body.Base, bust.Base, bust.X);
-                var yAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, body.Base, bust.Base, bust.Y);
-                var zAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, body.Base, bust.Base, bust.Z);
-                var x = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.X);
-                var y = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Y);
-                var z = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Z);
-                var rotation = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation);
-                var rotation2 = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation2);
-                var rotation3 = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation3);
-                var rotation4 = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, bodyBase, Settings.Instance.Character.Body.Position.Rotation4);
-                var raceAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race);
-                var clanAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan);
-                var genderAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Gender);
-                var nameAddr = MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Name);
-*/

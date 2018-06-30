@@ -108,6 +108,12 @@ namespace FFTrainer
         public string OffhandBase { get; set; }
         public string OffhandV { get; set; }
         public string OffhandDye { get; set; }
+        public string OffhandX { get; set; }
+        public string OffhandY { get; set; }
+        public string OffhandZ { get; set; }
+        public string OffhandRed { get; set; }
+        public string OffhandGreen { get; set; }
+        public string OffhandBlue { get; set; }
         public string WeaponRed { get; set; }
         public string WeaponBlue { get; set; }
         public string WeaponGreen { get; set; }

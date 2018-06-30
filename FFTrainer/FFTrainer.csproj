@@ -75,6 +75,7 @@
     <Reference Include="Memory, Version=1.2.16.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Memory.dll.1.2.16\lib\Memory.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -122,6 +123,10 @@
     </ApplicationDefinition>
     <Compile Include="Converters\EnumBooleanConverter.cs" />
     <Compile Include="Converters\EnumDescriptionTypeConverter.cs" />
+    <Compile Include="ExdCsvReader.cs" />
+    <Compile Include="GearPicker.xaml.cs">
+      <DependentUpon>GearPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +150,10 @@
     <Compile Include="Views\CharacterDetailsView3.xaml.cs">
       <DependentUpon>CharacterDetailsView3.xaml</DependentUpon>
     </Compile>
+    <Page Include="GearPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CharacterDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -188,6 +197,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Item.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config" />
