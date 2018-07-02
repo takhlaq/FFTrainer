@@ -31,11 +31,12 @@
         <Slider x:Name="FOV2S" Value="{Binding Path=CharacterDetails.CharacterDetails.FOV2.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="256,172,0,0" VerticalAlignment="Top" Width="145" Maximum="1" Minimum="-1" TickFrequency="0.1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Interval="1"/>
         <Slider x:Name="CZoom2" Value="{Binding Path=CharacterDetails.CharacterDetails.CZoom.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="256,112,0,0" VerticalAlignment="Top" Width="145" IsSnapToTickEnabled="True" Interval="1" TickFrequency="0.1" Maximum="100"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="275" Margin="10,37,0,0" VerticalAlignment="Top" Width="401"/>
-        <Slider x:Name="Timexd" Value="{Binding Path=CharacterDetails.CharacterDetails.TimeControl.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="508,78,0,0" VerticalAlignment="Top" Width="106" Maximum="20" SmallChange="1" TickPlacement="BottomRight" Interval="1" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
-        <Label Content="TIME CONTROL" HorizontalAlignment="Left" Margin="515,50,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="99"/>
+        <Slider x:Name="Timexd" Value="{Binding Path=CharacterDetails.CharacterDetails.TimeControl.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="473,78,0,0" VerticalAlignment="Top" Width="190" Maximum="20" SmallChange="1" TickPlacement="BottomRight" Interval="1" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
+        <Label Content="TIME CONTROL" HorizontalAlignment="Left" Margin="526,52,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="99"/>
         <Label Content="Set this slider to minimum for real Eorzea time" HorizontalAlignment="Left" Margin="437,102,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="274" Height="26"/>
         <CheckBox  IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Weather.freeze}" Content="Weather" HorizontalAlignment="Left" Margin="438,145,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Not all Weather IDs&#xD;&#xA;work on X Zone" HorizontalAlignment="Left" Margin="645,133,-24,0" VerticalAlignment="Top" FontWeight="Bold" Width="179" Height="40"/>
         <mah:NumericUpDown Value="{Binding Path=CharacterDetails.CharacterDetails.Weather.value}" x:Name="Weather" HorizontalAlignment="Left" Margin="515,142,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.507,0.487" TextAlignment="Justify" Maximum="140" Minimum="0" ValueChanged="NumericUpDown_ValueChanged"/>
+        <Button Content="Weather" HorizontalAlignment="Left" Margin="515,172,0,0" VerticalAlignment="Top" Width="110" Height="30" FontSize="14" RenderTransformOrigin="0.5,0.5" Click="Button_Click"/>
     </Grid>
 </UserControl>

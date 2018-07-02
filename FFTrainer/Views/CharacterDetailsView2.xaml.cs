@@ -25,15 +25,18 @@ namespace FFTrainer.Views
         public static GearSet _cGearSet = new GearSet();
         public void WriteGear_Click()
         {
-            if (HeadCheck.IsChecked == true) HeadCheck.IsChecked = false;
-            if (ChestCheck.IsChecked == true) ChestCheck.IsChecked = false; 
-            if (ArmCheck.IsChecked == true) ArmCheck.IsChecked = false;
-            if (LegCheck.IsChecked == true) LegCheck.IsChecked = false;
-            if (FeetCheck.IsChecked == true) FeetCheck.IsChecked = false; 
-            if (NeckCheck.IsChecked == true) NeckCheck.IsChecked = false; 
-            if (EarCheck.IsChecked == true) EarCheck.IsChecked = false;
-            if (WristCheck.IsChecked == true) WristCheck.IsChecked = false;
-            if (RRingCheck.IsChecked == true) RRingCheck.IsChecked = false;
+            if (HeadCheck.IsChecked == true) { HeadCheck.IsChecked = false; HeadCheck.IsEnabled = false; }
+            if (ChestCheck.IsChecked == true) { ChestCheck.IsChecked = false; ChestCheck.IsEnabled = false; }
+            if (ArmCheck.IsChecked == true) { ArmCheck.IsChecked = false; ArmCheck.IsEnabled = false; }
+            if (LegCheck.IsChecked == true) { LegCheck.IsChecked = false; LegCheck.IsEnabled = false; }
+            if (FeetCheck.IsChecked == true) { FeetCheck.IsChecked = false; FeetCheck.IsEnabled = false; }
+            if (NeckCheck.IsChecked == true) { NeckCheck.IsChecked = false; NeckCheck.IsEnabled = false; }
+            if (EarCheck.IsChecked == true) { EarCheck.IsChecked = false; EarCheck.IsEnabled = false; }
+            if (WristCheck.IsChecked == true) { WristCheck.IsChecked = false; WristCheck.IsEnabled = false; }
+            if (RRingCheck.IsChecked == true) { RRingCheck.IsChecked = false; RRingCheck.IsEnabled = false; }
+            if (LRingCheck.IsChecked == true) { LRingCheck.IsChecked = false; LRingCheck.IsEnabled = false; }
+            if (JobBox.IsChecked == true) { JobBox.IsChecked = false; JobBox.IsEnabled = false; }
+            if (OffBox.IsChecked == true) { OffBox.IsChecked = false; OffBox.IsEnabled = false; }
             _cGearSet.HeadGear = CommaToGearTuple(headGearTextBox.Text);
             _cGearSet.BodyGear = CommaToGearTuple(bodyGearTextBox.Text);
             _cGearSet.HandsGear = CommaToGearTuple(handsGearTextBox.Text);
@@ -66,15 +69,18 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger), GearTupleToByteAry(_cGearSet.RRingGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger), GearTupleToByteAry(_cGearSet.LRingGear));
             Task.Delay(100).Wait();
-            if (HeadCheck.IsChecked == false) HeadCheck.IsChecked = true; 
-            if (ChestCheck.IsChecked == false) ChestCheck.IsChecked = true; 
-            if (ArmCheck.IsChecked == false) ArmCheck.IsChecked = true;
-            if (LegCheck.IsChecked == false) LegCheck.IsChecked = true;
-            if (FeetCheck.IsChecked == false) FeetCheck.IsChecked = true;
-            if (NeckCheck.IsChecked == false) NeckCheck.IsChecked = true;
-            if (EarCheck.IsChecked == false) EarCheck.IsChecked = true;
-            if (WristCheck.IsChecked == false) WristCheck.IsChecked = true;
-            if (RRingCheck.IsChecked == false) RRingCheck.IsChecked = true;
+            if (HeadCheck.IsEnabled == false) { HeadCheck.IsChecked = true; HeadCheck.IsEnabled = true; }
+            if (ChestCheck.IsEnabled == false) { ChestCheck.IsChecked = true; ChestCheck.IsEnabled = true; }
+            if (ArmCheck.IsEnabled == false) { ArmCheck.IsChecked = true; ArmCheck.IsEnabled = true; }
+            if (LegCheck.IsEnabled == false) { LegCheck.IsChecked = true; LegCheck.IsEnabled = true; }
+            if (FeetCheck.IsEnabled == false) { FeetCheck.IsChecked = true; FeetCheck.IsEnabled = true; }
+            if (NeckCheck.IsEnabled == false) { NeckCheck.IsChecked = true; NeckCheck.IsEnabled = true; }
+            if (EarCheck.IsEnabled == false) { EarCheck.IsChecked = true; EarCheck.IsEnabled = true; }
+            if (WristCheck.IsEnabled == false) { WristCheck.IsChecked = true; WristCheck.IsEnabled = true; }
+            if (RRingCheck.IsEnabled == false) { RRingCheck.IsChecked = true; RRingCheck.IsEnabled = true; }
+            if (LRingCheck.IsEnabled == false) { LRingCheck.IsChecked = true; LRingCheck.IsEnabled = true; }
+            if (JobBox.IsEnabled == false) { JobBox.IsChecked = true; JobBox.IsEnabled = true; }
+            if (OffBox.IsEnabled == false) { OffBox.IsChecked = true; OffBox.IsEnabled = true; }
         }
         public void SetupDefaults()
         {
@@ -344,6 +350,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Head).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -372,6 +379,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Body).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -387,6 +395,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Hands).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -402,6 +411,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Legs).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -417,6 +427,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Wep && !c.ModelMain.Contains("0,0,0,0")).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -432,6 +443,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Ears).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -447,6 +459,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Neck).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -462,6 +475,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Wrists).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -477,6 +491,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Ring).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -492,6 +507,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Ring).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -507,6 +523,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Wep && !c.ModelMain.Contains("0,0,0,0")).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)
@@ -588,6 +605,7 @@ namespace FFTrainer.Views
                 return;
 
             GearPicker p = new GearPicker(_exdProvider.Items.Values.Where(c => c.Type == ExdCsvReader.ItemType.Feet).ToArray());
+            p.Owner = Application.Current.MainWindow;
             p.ShowDialog();
 
             if (p.Choice != null)

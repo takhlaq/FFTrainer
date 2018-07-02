@@ -27,7 +27,7 @@ namespace FFTrainer
         public MainWindow()
         {
             InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(2) };
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(10) };
             timer.Tick += delegate
             {
                 AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");

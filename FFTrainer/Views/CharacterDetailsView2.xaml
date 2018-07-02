@@ -9,7 +9,7 @@
              mc:Ignorable="d" Height="450" Width="1075">
     <Grid Margin="0,-10,0,10" RenderTransformOrigin="0.471,0.597">
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="126" Margin="16,24,0,0" VerticalAlignment="Top" Width="835"/>
-        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Job.freeze}" Content="" HorizontalAlignment="Left" Margin="22,58,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
+        <CheckBox x:Name="JobBox" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Job.freeze}" Content="" HorizontalAlignment="Left" Margin="22,58,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
         <Label Content="Main Hand" HorizontalAlignment="Left" Margin="177,0,0,0" VerticalAlignment="Top" Width="118" FontSize="16" FontWeight="Bold"/>
         <Label Content="Model ID" HorizontalAlignment="Left" Margin="64,29,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
         <TextBox x:Name="MainHand" Text="{Binding Path=CharacterDetails.CharacterDetails.Job.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="47,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.477,0.523" PreviewTextInput="MainHand_PreviewTextInput"/>
@@ -44,7 +44,7 @@
         <Label Content="Dyes" HorizontalAlignment="Left" Margin="246,189,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.535,0.537"/>
 
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="219" Margin="741,161,0,0" VerticalAlignment="Top" Width="309"/>
-        <CheckBox IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Offhand.freeze}" Content="" HorizontalAlignment="Left" Margin="757,183,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
+        <CheckBox x:Name="OffBox" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Offhand.freeze}" Content="" HorizontalAlignment="Left" Margin="757,183,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
         <Label Content="Off Hand" HorizontalAlignment="Left" Margin="856,133,0,0" VerticalAlignment="Top" Width="104" FontSize="16" FontWeight="Bold"/>
         <Label Content="Model ID" HorizontalAlignment="Left" Margin="786,155,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
         <TextBox x:Name="OffhandID" Text="{Binding Path=CharacterDetails.CharacterDetails.Offhand.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="786,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" RenderTransformOrigin="0.477,0.523" PreviewTextInput="OffhandID_PreviewTextInput"/>

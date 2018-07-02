@@ -10,6 +10,13 @@ using Newtonsoft.Json;
 
 namespace FFTrainer
 {
+
+    public class CharaMakeCustomizeFeature
+    {
+        public int Index { get; set; }
+        public int FeatureID { get; set; }
+        public System.Drawing.Bitmap Icon { get; set; }
+    }
     public class GearSet
     {
         public GearTuple HeadGear { get; set; }
@@ -66,7 +73,29 @@ namespace FFTrainer
                 return Name;
             }
         }
+
+        public class Weather
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
+
+        public class TerritoryType
+        {
+            public int Index { get; set; }
+            public WeatherRate WeatherRate { get; set; }
+        }
+
+        public class WeatherRate
+        {
+            public int Index { get; set; }
+            public List<Weather> AllowedWeathers { get; set; }
+        }
         public Dictionary<int, Item> Items = null;
+        public Dictionary<int, Weather> Weathers = null;
+        public Dictionary<int, WeatherRate> WeatherRates = null;
+        public Dictionary<int, TerritoryType> TerritoryTypes = null;
+
         public void MakeItemList()
         {
             Items = new Dictionary<int, Item>();
@@ -192,6 +221,161 @@ namespace FFTrainer
             else
             {
                 return null;
+            }
+        }
+
+        public void MakeWeatherList()
+        {
+            Weathers = new Dictionary<int, Weather>();
+
+            try
+            {
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weather_0_exh_en)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        Weather weather = new Weather();
+
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+                        int fCount = 0;
+
+                        weather.Index = int.Parse(fields[0]);
+
+                        foreach (string field in fields)
+                        {
+                            fCount++;
+
+                            if (fCount == 3)
+                            {
+                                weather.Name = field;
+                            }
+                        }
+
+                        Console.WriteLine($"{rowCount} - {weather.Name}");
+                        Weathers.Add(weather.Index, weather);
+                    }
+
+                    Console.WriteLine($"{rowCount} weathers read");
+                }
+            }
+            catch (Exception exc)
+            {
+                Weathers = null;
+#if DEBUG
+                throw exc;
+#endif
+            }
+        }
+
+        public void MakeWeatherRateList()
+        {
+            if (Weathers == null)
+                throw new Exception("Weathers has to be loaded for WeatherRates to be read");
+
+            WeatherRates = new Dictionary<int, WeatherRate>();
+
+            try
+            {
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weatherrate_exh)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        WeatherRate rate = new WeatherRate();
+
+                        rate.AllowedWeathers = new List<Weather>();
+
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+
+                        rate.Index = int.Parse(fields[0]);
+
+                        for (int i = 1; i < 17;)
+                        {
+                            int weatherId = int.Parse(fields[i]);
+
+                            if (weatherId == 0)
+                                break;
+
+                            rate.AllowedWeathers.Add(Weathers[weatherId]);
+
+                            i += 2;
+                        }
+
+                        WeatherRates.Add(rate.Index, rate);
+                    }
+
+                    Console.WriteLine($"{rowCount} weatherRates read");
+                }
+            }
+            catch (Exception exc)
+            {
+                WeatherRates = null;
+#if DEBUG
+                throw exc;
+#endif
+            }
+        }
+
+        public void MakeTerritoryTypeList()
+        {
+            if (WeatherRates == null)
+                throw new Exception("WeatherRates has to be loaded for TerritoryTypes to be read");
+
+            TerritoryTypes = new Dictionary<int, TerritoryType>();
+
+            try
+            {
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.territorytype_exh)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        TerritoryType territory = new TerritoryType();
+
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+                        int fCount = 0;
+
+                        territory.Index = int.Parse(fields[0]);
+
+                        foreach (string field in fields)
+                        {
+                            fCount++;
+
+                            if (fCount == 14)
+                            {
+                                if (field != "0")
+                                    territory.WeatherRate = WeatherRates[int.Parse(field)];
+                            }
+                        }
+
+                        TerritoryTypes.Add(territory.Index, territory);
+                    }
+
+                    Console.WriteLine($"{rowCount} TerritoryTypes read");
+                }
+            }
+            catch (Exception exc)
+            {
+                TerritoryTypes = null;
+#if DEBUG
+                throw exc;
+#endif
             }
         }
     }

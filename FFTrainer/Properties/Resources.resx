@@ -121,4 +121,13 @@
   <data name="Item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="territorytype_exh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\territorytype.exh.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weatherrate_exh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weatherrate.exh.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weather_0_exh_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weather_0.exh_en.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

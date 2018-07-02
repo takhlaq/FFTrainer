@@ -9,7 +9,7 @@
                       Title="Change Theme"
                       SizeToContent="WidthAndHeight"
                       GlowBrush="{DynamicResource AccentColorBrush}"
-                      ResizeMode="CanResizeWithGrip">
+                      ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterOwner">
 
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>

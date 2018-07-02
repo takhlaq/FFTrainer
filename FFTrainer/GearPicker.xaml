@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FFTrainer"
         mc:Ignorable="d"
-        Title="Gear Finder" Height="428" Width="372.917">
+        Title="Gear Finder" Height="428" Width="372.917" WindowStartupLocation="CenterOwner">
     <Grid Margin="0,0,2,-2">
         <ListBox  x:Name="listBox1"  HorizontalAlignment="Left" Height="341" Margin="10,18,0,0" VerticalAlignment="Top" Width="345"/>
         <TextBox x:Name="searchTextBox" HorizontalAlignment="Left" Height="23" Margin="10,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265" TextChanged="searchTextBox_TextChanged"/>

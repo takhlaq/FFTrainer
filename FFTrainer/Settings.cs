@@ -30,6 +30,7 @@ namespace FFTrainer
         public string CameraOffset { get; set; }
         public string TimeOffset { get; set; }
         public string WeatherOffset { get; set; }
+        public string TerritoryOffset { get; set; }
         public CharacterOffsets Character { get; set; }
     }
 
@@ -42,6 +43,7 @@ namespace FFTrainer
         public string Weather { get; set; }
         public string Gender { get; set; }
         public string Clan { get; set; }
+        public string Territory { get; set; }
         public BodyOffsets Body { get; set; }
         public string NameHeight { get; set; }
         public string TailType { get; set; }

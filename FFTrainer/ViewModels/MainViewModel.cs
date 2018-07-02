@@ -63,6 +63,7 @@ namespace FFTrainer.ViewModels
         public string EmoteAddress { get; set; }
         public string WeatherAddress { get; set; }
         public string TimeAddress { get; set; }
+        public string TerritoryAddress { get; set; }
 
         /// <summary>
         /// Constructor for the singleton memory manager
@@ -182,20 +183,14 @@ namespace FFTrainer.ViewModels
         }
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            string baseAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.AoBOffset, NumberStyles.HexNumber));
-            string GposeAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeOffset, NumberStyles.HexNumber));
-            string CameraAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.CameraOffset, NumberStyles.HexNumber));
-            string EmoteAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeEmoteOffset, NumberStyles.HexNumber));
-            string TimeAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TimeOffset, NumberStyles.HexNumber));
-            string WeatherAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.WeatherOffset, NumberStyles.HexNumber));
             // no fancy tricks here boi
-            MemoryManager.Instance.BaseAddress = baseAddr;
-            MemoryManager.Instance.CameraAddress = CameraAddr;
-            MemoryManager.Instance.EmoteAddress = EmoteAddr;
-            MemoryManager.Instance.GposeAddress = GposeAddr;
-            MemoryManager.Instance.TimeAddress = TimeAddr;
-            MemoryManager.Instance.WeatherAddress = WeatherAddr;
-            // no fancy tricks here boi
+            MemoryManager.Instance.BaseAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.AoBOffset, NumberStyles.HexNumber)); ;
+            MemoryManager.Instance.CameraAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.CameraOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.EmoteAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeEmoteOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.GposeAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.TimeAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TimeOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.WeatherAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.WeatherOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.TerritoryAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TerritoryOffset, NumberStyles.HexNumber));
             while (true)
             {
                 // sleep for 200 ms

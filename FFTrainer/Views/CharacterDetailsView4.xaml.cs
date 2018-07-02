@@ -1,8 +1,10 @@
 ﻿using FFTrainer.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,11 +23,14 @@ namespace FFTrainer.Views
     /// </summary>
     public partial class CharacterDetailsView4 : UserControl
     {
+        private ExdCsvReader _exdProvider = new ExdCsvReader();
         public CharacterDetailsView4()
         {
             InitializeComponent();
+            _exdProvider.MakeWeatherList();
+            _exdProvider.MakeWeatherRateList();
+            _exdProvider.MakeTerritoryTypeList();
         }
-
         private void MaxZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (MaxZoom.Value.HasValue)
@@ -104,5 +109,46 @@ namespace FFTrainer.Views
             if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int territory = MemoryManager.Instance.MemLib.readInt(MemoryManager.GetAddressString(MemoryManager.Instance.TerritoryAddress, Settings.Instance.Character.Territory));
+
+            if (!_exdProvider.TerritoryTypes.ContainsKey(territory))
+            {
+                //ShowError("Could not find your current zone. Make sure you are using the latest version.");
+                return;
+            }
+
+            if (_exdProvider.TerritoryTypes[territory].WeatherRate == null)
+            {
+               // Util.ShowError("Setting weather is not supported for your current zone.");
+                return;
+            }
+
+            var c = new WeatherSelector(_exdProvider.TerritoryTypes[territory].WeatherRate.AllowedWeathers, MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather)));
+            c.Owner = Application.Current.MainWindow;
+            c.ShowDialog();
+
+            if (c.Choice != null)
+            {
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", c.Choice.Index.ToString());
+            }
+        }
     }
 }
+/*
+        public int GetTerritoryType()
+        {
+            return _memory.readInt(Definitions.TERRITORYTYPEOFFSETPTR);
+        }
+
+        public int GetWeather()
+        {
+            return _memory.readByte(Definitions.WEATHEROFFSETPTR);
+        }
+
+        public void SetWeather(byte id)
+        {
+            _memory.writeBytes(Definitions.WEATHEROFFSETPTR, new[] {id});
+*/

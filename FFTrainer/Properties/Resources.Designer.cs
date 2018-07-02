@@ -68,5 +68,51 @@ namespace FFTrainer.Properties {
                 return ResourceManager.GetString("Item", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [0x0][0x0],1 [0x0][0x4],2 [0x3][0x2c],3 [0x5][0x1c],4 [0x5][0x1e],5 [0x5][0x20],6 [0x5][0x22],7 [0x3][0x2d],8 [0x3][0x2e],9 [0x3][0x2f],10 [0x5][0x24],11 [0x19][0x37],12 [0x3][0x30],13 [0x1a][0x37],14 [0x3][0x31],15 [0x1b][0x37],16 [0x1c][0x37],17 [0x1d][0x37],18 [0x1e][0x37],19 [0x5][0x26],20 [0x6][0xc],21 [0x6][0x10],22 [0x7][0x8],23 [0x5][0x28],24 [0x6][0x14],25 [0x6][0x18],26 [0x5][0x2a],27 [0x2][0x36],28 [0x1f][0x37],29 [0x3][0x32],30 [0x3][0x33],31 [0x3][0x34],32 [0x3][0x35],33 [0x20][0x37]
+        ///1, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string territorytype_exh {
+            get {
+                return ResourceManager.GetString("territorytype_exh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [0x6][0x18],1 [0x0][0x0],2 [0x0][0x4],3 [0x0][0x8],4 [0x0][0xc],5 [0x0][0x10],6 [0x0][0x14]
+        ///0,0,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///1,60201,&quot;Clear Skies&quot;,&quot;clear&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///2,60202,&quot;Fair Skies&quot;,&quot;fair&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///3,60203,&quot;Clouds&quot;,&quot;overcast&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///4,60204,&quot;Fog&quot;,&quot;foggy&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///5,60205,&quot;Wind&quot;,&quot;windy&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///6,60206,&quot;Gales&quot;,&quot;gusty&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///7,60207,&quot;Rain&quot;,&quot;rainy&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///8,60208,&quot;Showers&quot;,&quot;showery&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///9,60209,&quot;Thunder&quot;,&quot;thundery&quot;,&quot;&q....
+        /// </summary>
+        public static string weather_0_exh_en {
+            get {
+                return ResourceManager.GetString("weather_0_exh_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [0x6][0x0],1 [0x3][0x20],2 [0x6][0x4],3 [0x3][0x21],4 [0x6][0x8],5 [0x3][0x22],6 [0x6][0xc],7 [0x3][0x23],8 [0x6][0x10],9 [0x3][0x24],10 [0x6][0x14],11 [0x3][0x25],12 [0x6][0x18],13 [0x3][0x26],14 [0x6][0x1c],15 [0x3][0x27]
+        ///0,2,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+        ///1,7,5,7,15,4,10,3,10,2,15,1,30,2,15,0,0
+        ///2,7,5,7,15,4,10,3,10,2,15,1,30,2,15,0,0
+        ///3,9,5,7,15,4,10,3,10,2,15,1,30,2,15,0,0
+        ///4,9,5,7,15,4,10,3,10,2,15,1,30,2,15,0,0
+        ///5,4,5,10,5,9,15,4,5,3,10,2,30,1,30,0,0
+        ///6,4,5,8,5,7,15,4,5,3,10,2,30,1,30,0,0
+        ///7,1,40, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string weatherrate_exh {
+            get {
+                return ResourceManager.GetString("weatherrate_exh", resourceCulture);
+            }
+        }
     }
 }

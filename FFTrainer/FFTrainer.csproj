@@ -149,6 +149,9 @@
     <Compile Include="Views\CharacterDetailsView4.xaml.cs">
       <DependentUpon>CharacterDetailsView4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WeatherSelector.xaml.cs">
+      <DependentUpon>WeatherSelector.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccentStyleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CharacterDetailsView4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeatherSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +212,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Item.csv" />
+    <None Include="Resources\territorytype.exh.csv" />
+    <None Include="Resources\weatherrate.exh.csv" />
+    <None Include="Resources\weather_0.exh_en.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config" />
