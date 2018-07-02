@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.Net;
 using AutoUpdaterDotNET;
+using FFTrainer.Models;
 
 namespace FFTrainer.ViewModels
 {
@@ -17,6 +18,7 @@ namespace FFTrainer.ViewModels
     {
         public event WorkEventHandler Work;
         public event EntitySelectionEventHandler EntitySelection;
+        public CharacterDetails Characterdetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
 
         public void SendEntitySelection(string offset)
         {
@@ -59,6 +61,8 @@ namespace FFTrainer.ViewModels
         public string CameraAddress { get; set; }
         public string GposeAddress { get; set; }
         public string EmoteAddress { get; set; }
+        public string WeatherAddress { get; set; }
+        public string TimeAddress { get; set; }
 
         /// <summary>
         /// Constructor for the singleton memory manager
@@ -182,11 +186,15 @@ namespace FFTrainer.ViewModels
             string GposeAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeOffset, NumberStyles.HexNumber));
             string CameraAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.CameraOffset, NumberStyles.HexNumber));
             string EmoteAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.GposeEmoteOffset, NumberStyles.HexNumber));
+            string TimeAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TimeOffset, NumberStyles.HexNumber));
+            string WeatherAddr = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.WeatherOffset, NumberStyles.HexNumber));
             // no fancy tricks here boi
             MemoryManager.Instance.BaseAddress = baseAddr;
             MemoryManager.Instance.CameraAddress = CameraAddr;
             MemoryManager.Instance.EmoteAddress = EmoteAddr;
             MemoryManager.Instance.GposeAddress = GposeAddr;
+            MemoryManager.Instance.TimeAddress = TimeAddr;
+            MemoryManager.Instance.WeatherAddress = WeatherAddr;
             // no fancy tricks here boi
             while (true)
             {

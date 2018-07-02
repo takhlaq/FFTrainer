@@ -6,6 +6,7 @@ using WepTuple = System.Tuple<int, int, int, int>;
 using System;
 using System.Linq;
 using FFTrainer.Models;
+using System.Threading.Tasks;
 
 namespace FFTrainer.Views
 {
@@ -24,6 +25,15 @@ namespace FFTrainer.Views
         public static GearSet _cGearSet = new GearSet();
         public void WriteGear_Click()
         {
+            if (HeadCheck.IsChecked == true) HeadCheck.IsChecked = false;
+            if (ChestCheck.IsChecked == true) ChestCheck.IsChecked = false; 
+            if (ArmCheck.IsChecked == true) ArmCheck.IsChecked = false;
+            if (LegCheck.IsChecked == true) LegCheck.IsChecked = false;
+            if (FeetCheck.IsChecked == true) FeetCheck.IsChecked = false; 
+            if (NeckCheck.IsChecked == true) NeckCheck.IsChecked = false; 
+            if (EarCheck.IsChecked == true) EarCheck.IsChecked = false;
+            if (WristCheck.IsChecked == true) WristCheck.IsChecked = false;
+            if (RRingCheck.IsChecked == true) RRingCheck.IsChecked = false;
             _cGearSet.HeadGear = CommaToGearTuple(headGearTextBox.Text);
             _cGearSet.BodyGear = CommaToGearTuple(bodyGearTextBox.Text);
             _cGearSet.HandsGear = CommaToGearTuple(handsGearTextBox.Text);
@@ -55,6 +65,16 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist), GearTupleToByteAry(_cGearSet.WristGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger), GearTupleToByteAry(_cGearSet.RRingGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger), GearTupleToByteAry(_cGearSet.LRingGear));
+            Task.Delay(100).Wait();
+            if (HeadCheck.IsChecked == false) HeadCheck.IsChecked = true; 
+            if (ChestCheck.IsChecked == false) ChestCheck.IsChecked = true; 
+            if (ArmCheck.IsChecked == false) ArmCheck.IsChecked = true;
+            if (LegCheck.IsChecked == false) LegCheck.IsChecked = true;
+            if (FeetCheck.IsChecked == false) FeetCheck.IsChecked = true;
+            if (NeckCheck.IsChecked == false) NeckCheck.IsChecked = true;
+            if (EarCheck.IsChecked == false) EarCheck.IsChecked = true;
+            if (WristCheck.IsChecked == false) WristCheck.IsChecked = true;
+            if (RRingCheck.IsChecked == false) RRingCheck.IsChecked = true;
         }
         public void SetupDefaults()
         {
@@ -144,42 +164,42 @@ namespace FFTrainer.Views
 
             return bytes;
         }
-        private void XPos2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void XPos2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (XPos2.Value.HasValue)
                 if (XPos2.IsMouseOver || XPos2.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponX), "float", XPos2.Value.ToString());
         }
 
-        private void XPos2_Copy_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void XPos2_Copy_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (XPos2_Copy.Value.HasValue)
                 if (XPos2_Copy.IsMouseOver || XPos2_Copy.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponY), "float", XPos2_Copy.Value.ToString());
         }
 
-        private void XPos2_Copy1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void XPos2_Copy1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (XPos2_Copy1.Value.HasValue)
                 if (XPos2_Copy1.IsMouseOver || XPos2_Copy1.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponZ), "float", XPos2_Copy1.Value.ToString());
         }
 
-        private void WeaponRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void WeaponRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (WeaponRed.Value.HasValue)
                 if (WeaponRed.IsMouseOver || WeaponRed.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponRed), "float", WeaponRed.Value.ToString());
         }
 
-        private void WeaponGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void WeaponGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (WeaponGreen.Value.HasValue)
                 if (WeaponGreen.IsMouseOver || WeaponGreen.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponGreen), "float", WeaponGreen.Value.ToString());
         }
 
-        private void WeaponBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void WeaponBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (WeaponBlue.Value.HasValue)
                 if (WeaponBlue.IsMouseOver || WeaponBlue.IsKeyboardFocusWithin)
@@ -496,42 +516,42 @@ namespace FFTrainer.Views
             }
         }
 
-        private void OXPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OXPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OXPos.Value.HasValue)
                 if (OXPos.IsMouseOver || OXPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandX), "float", OXPos.Value.ToString());
         }
 
-        private void OYPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OYPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OYPos.Value.HasValue)
                 if (OYPos.IsMouseOver || OYPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandY), "float", OYPos.Value.ToString());
         }
 
-        private void OZPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OZPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OZPos.Value.HasValue)
                 if (OZPos.IsMouseOver || OZPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandZ), "float", OZPos.Value.ToString());
         }
 
-        private void OffRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OffRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OffRed.Value.HasValue)
                 if (OffRed.IsMouseOver || OffRed.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed), "float", OffRed.Value.ToString());
         }
 
-        private void OffGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OffGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OffGreen.Value.HasValue)
                 if (OffGreen.IsMouseOver || OffGreen.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandGreen), "float", OffGreen.Value.ToString());
         }
 
-        private void OffBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void OffBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OffBlue.Value.HasValue)
                 if (OffBlue.IsMouseOver || OffBlue.IsKeyboardFocusWithin)

@@ -11,10 +11,9 @@ namespace FFTrainer.ViewModels
     public class CharacterDetailsViewModel : BaseViewModel
     {
  
-        public static CharacterDetails CharacterDetails { get => (CharacterDetails)model; set => model = value; }
+        public  CharacterDetails CharacterDetails { get => (CharacterDetails)model; set => model = value; }
         private RefreshEntitiesCommand refreshEntitiesCommand;
         public static string eOffset = "8";
-        public static bool TestxD = false;
         public static string baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
         public RefreshEntitiesCommand RefreshEntitiesCommand
         {
@@ -298,6 +297,11 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.CameraHeight.freeze) mem.writeBytes(cameraHeight, CharacterDetails.CameraHeight.GetBytes());
                 else CharacterDetails.CameraHeight.value = mem.readFloat(cameraHeight);
 
+                CharacterDetails.TimeControl.value = (byte)mem.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl));
+
+                if (CharacterDetails.Weather.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), CharacterDetails.Weather.GetBytes());
+                else CharacterDetails.Weather.value = (byte)mem.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather));
+
                 if (CharacterDetails.CameraHeight2.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight), CharacterDetails.CameraHeight2.GetBytes());
                 else CharacterDetails.CameraHeight2.value = mem.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight));
 
@@ -378,104 +382,6 @@ namespace FFTrainer.ViewModels
                 System.Windows.MessageBox.Show("Disabling " + this.GetType().Name, "Oh no!");
                 mediator.Work -= Work;
             }
-        }
-        public static void Hahaxd()
-        {
-            var characterDetailsView = new CharacterDetailsView();
-            var characterDetailsView2 = new CharacterDetailsView2();
-            var characterDetailsView3 = new CharacterDetailsView3();
-            if (CharacterDetails.MuscleTone.freezetest == true) { CharacterDetails.MuscleTone.freeze = true; CharacterDetails.MuscleTone.freezetest = false; characterDetailsView.MuscleCheck.IsChecked = true; }
-            if (CharacterDetails.TailSize.freezetest == true) { CharacterDetails.TailSize.freeze = true; CharacterDetails.TailSize.freezetest = false; characterDetailsView.TailSizeCheck.IsChecked = true; }
-            if (CharacterDetails.BustX.freezetest == true) { CharacterDetails.BustX.freeze = true; CharacterDetails.BustX.freezetest = false; characterDetailsView.BustXCheck.IsChecked = true; }
-            if (CharacterDetails.BustY.freezetest == true) { CharacterDetails.BustY.freeze = true; CharacterDetails.BustY.freezetest = false; characterDetailsView.BustYCheck.IsChecked = true; }
-            if (CharacterDetails.BustZ.freezetest == true) { CharacterDetails.BustZ.freeze = true; CharacterDetails.BustZ.freezetest = false; characterDetailsView.BustZCheck.IsChecked = true; }
-            if (CharacterDetails.LipsBrightness.freezetest == true) { CharacterDetails.LipsBrightness.freeze = true; CharacterDetails.LipsBrightness.freezetest = false; characterDetailsView3.LipBright.IsChecked = true; }
-            if (CharacterDetails.SkinBlueGloss.freezetest == true) { CharacterDetails.SkinBlueGloss.freeze = true; CharacterDetails.SkinBlueGloss.freezetest = false; characterDetailsView3.BlueGloss.IsChecked = true; }
-            if (CharacterDetails.SkinGreenGloss.freezetest == true) { CharacterDetails.SkinGreenGloss.freeze = true; CharacterDetails.SkinGreenGloss.freezetest = false; characterDetailsView3.GreenGloss.IsChecked = true; }
-            if (CharacterDetails.SkinRedGloss.freezetest == true) { CharacterDetails.SkinRedGloss.freeze = true; CharacterDetails.SkinRedGloss.freezetest = false; characterDetailsView3.RedGloss.IsChecked = true; }
-            if (CharacterDetails.SkinBluePigment.freezetest == true) { CharacterDetails.SkinBluePigment.freeze = true; CharacterDetails.SkinBluePigment.freezetest = false; characterDetailsView3.SkinBlue.IsChecked = true; }
-            if (CharacterDetails.SkinGreenPigment.freezetest == true) { CharacterDetails.SkinGreenPigment.freeze = true; CharacterDetails.SkinGreenPigment.freezetest = false; characterDetailsView3.SkinGreen.IsChecked = true; }
-            if (CharacterDetails.SkinRedPigment.freezetest == true) { CharacterDetails.SkinRedPigment.freeze = true; CharacterDetails.SkinRedPigment.freezetest = false; characterDetailsView3.SkinRed.IsChecked = true; }
-            if (CharacterDetails.HighlightBluePigment.freezetest == true) { CharacterDetails.HighlightBluePigment.freeze = true; CharacterDetails.HighlightBluePigment.freezetest = false; characterDetailsView3.HLBP.IsChecked = true; }
-            if (CharacterDetails.HighlightGreenPigment.freezetest == true) { CharacterDetails.HighlightGreenPigment.freeze = true; CharacterDetails.HighlightGreenPigment.freezetest = false; characterDetailsView3.HLGP.IsChecked = true; }
-            if (CharacterDetails.HighlightRedPigment.freezetest == true) { CharacterDetails.HighlightRedPigment.freeze = true; CharacterDetails.HighlightRedPigment.freezetest = false; characterDetailsView3.HLRP.IsChecked = true; }
-            if (CharacterDetails.HairGlowBlue.freezetest == true) { CharacterDetails.HairGlowBlue.freeze = true; CharacterDetails.HairGlowBlue.freezetest = false; characterDetailsView3.HairBGCheck.IsChecked = true; }
-            if (CharacterDetails.HairGlowGreen.freezetest == true) { CharacterDetails.HairGlowGreen.freeze = true; CharacterDetails.HairGlowGreen.freezetest = false; characterDetailsView3.HairGGCheck.IsChecked = true; }
-            if (CharacterDetails.HairGlowRed.freezetest == true) { CharacterDetails.HairGlowRed.freeze = true; CharacterDetails.HairGlowRed.freezetest = false; characterDetailsView3.HairRGCheck.IsChecked = true; }
-            if (CharacterDetails.HairGreenPigment.freezetest == true) { CharacterDetails.HairGreenPigment.freeze = true; CharacterDetails.HairGreenPigment.freezetest = false; characterDetailsView3.HairGreenP.IsChecked = true; }
-            if (CharacterDetails.HairBluePigment.freezetest == true) { CharacterDetails.HairBluePigment.freeze = true; CharacterDetails.HairBluePigment.freezetest = false; characterDetailsView3.HairBlueP.IsChecked = true; }
-            if (CharacterDetails.HairRedPigment.freezetest == true) { CharacterDetails.HairRedPigment.freeze = true; CharacterDetails.HairRedPigment.freezetest = false; characterDetailsView3.HairRedP.IsChecked = true; }
-            if (CharacterDetails.Height.freezetest == true) { CharacterDetails.Height.freeze = true; CharacterDetails.Height.freezetest = false; characterDetailsView.HeightCheck.IsChecked = false; }
-            if (CharacterDetails.WeaponGreen.freezetest == true) { CharacterDetails.WeaponGreen.freeze = true; CharacterDetails.WeaponGreen.freezetest = false; characterDetailsView2.Green.IsChecked = true; }
-            if (CharacterDetails.WeaponBlue.freezetest == true) { CharacterDetails.WeaponBlue.freeze = true; CharacterDetails.WeaponBlue.freezetest = false; characterDetailsView2.Blue.IsChecked = true; }
-            if (CharacterDetails.WeaponRed.freezetest == true) { CharacterDetails.WeaponRed.freeze = true; CharacterDetails.WeaponRed.freezetest = false; characterDetailsView2.Red.IsChecked = true; }
-            if (CharacterDetails.WeaponZ.freezetest == true) { CharacterDetails.WeaponZ.freeze = true; CharacterDetails.WeaponZ.freezetest = false; characterDetailsView2.ScaleZ.IsChecked = true; }
-            if (CharacterDetails.WeaponY.freezetest == true) { CharacterDetails.WeaponY.freeze = true; CharacterDetails.WeaponY.freezetest = false; characterDetailsView2.ScaleY.IsChecked = true; }
-            if (CharacterDetails.WeaponX.freezetest == true) { CharacterDetails.WeaponX.freeze = true; CharacterDetails.WeaponX.freezetest = false; characterDetailsView2.ScaleX.IsChecked = true; }
-            if (CharacterDetails.OffhandZ.freezetest == true) { CharacterDetails.OffhandZ.freeze = true; CharacterDetails.OffhandZ.freezetest = false; characterDetailsView2.ScaleZ2.IsChecked = true; }
-            if (CharacterDetails.OffhandY.freezetest == true) { CharacterDetails.OffhandY.freeze = true; CharacterDetails.OffhandY.freezetest = false; characterDetailsView2.ScaleY2.IsChecked = true; }
-            if (CharacterDetails.OffhandX.freezetest == true) { CharacterDetails.OffhandX.freeze = true; CharacterDetails.OffhandX.freezetest = false; characterDetailsView2.ScaleX2.IsChecked = true; }
-            if (CharacterDetails.OffhandRed.freezetest == true) { CharacterDetails.OffhandRed.freeze = true; CharacterDetails.OffhandRed.freezetest = false; characterDetailsView2.Red2.IsChecked = true; }
-            if (CharacterDetails.OffhandBlue.freezetest == true) { CharacterDetails.OffhandBlue.freeze = true; CharacterDetails.OffhandBlue.freezetest = false; characterDetailsView2.Blue2.IsChecked = true; }
-            if (CharacterDetails.OffhandGreen.freezetest == true) { CharacterDetails.OffhandGreen.freeze = true; CharacterDetails.OffhandGreen.freezetest = false; characterDetailsView2.Green2.IsChecked = true; }
-            if (CharacterDetails.RightEyeBlue.freezetest == true) { CharacterDetails.RightEyeBlue.freeze = true; CharacterDetails.RightEyeBlue.freezetest = false; characterDetailsView3.BluePigment2.IsChecked = true; }
-            if (CharacterDetails.RightEyeGreen.freezetest == true) { CharacterDetails.RightEyeGreen.freeze = true; CharacterDetails.RightEyeGreen.freezetest = false; characterDetailsView3.GreenPigment2.IsChecked = true; }
-            if (CharacterDetails.RightEyeRed.freezetest == true) { CharacterDetails.RightEyeRed.freeze = true; CharacterDetails.RightEyeRed.freezetest = false; characterDetailsView3.RedPigment2.IsChecked = true; }
-            if (CharacterDetails.LeftEyeBlue.freezetest == true) { CharacterDetails.LeftEyeBlue.freeze = true; CharacterDetails.LeftEyeBlue.freezetest = false; characterDetailsView3.BEyePigment.IsChecked = true; }
-            if (CharacterDetails.LeftEyeGreen.freezetest == true) { CharacterDetails.LeftEyeGreen.freeze = true; CharacterDetails.LeftEyeGreen.freezetest = false; characterDetailsView3.GEyePigment.IsChecked = true; }
-            if (CharacterDetails.LeftEyeRed.freezetest == true) { CharacterDetails.LeftEyeRed.freeze = true; CharacterDetails.LeftEyeRed.freezetest = false; characterDetailsView3.REyePigment.IsChecked = true; }
-            if (CharacterDetails.LipsB.freezetest == true) { CharacterDetails.LipsB.freeze = true; CharacterDetails.LipsB.freezetest = false; characterDetailsView3.BluePigment.IsChecked = true; }
-            if (CharacterDetails.LipsG.freezetest == true) { CharacterDetails.LipsG.freeze = true; CharacterDetails.LipsG.freezetest = false; characterDetailsView3.GreenPigment.IsChecked = true; }
-            if (CharacterDetails.LipsR.freezetest == true) { CharacterDetails.LipsR.freeze = true; CharacterDetails.LipsR.freezetest = false; characterDetailsView3.RedPigment.IsChecked = true; }
-        }
-        public static void Testxda()
-        {
-            var characterDetailsView = new CharacterDetailsView();
-            var characterDetailsView2 = new CharacterDetailsView2();
-            var characterDetailsView3 = new CharacterDetailsView3();
-            if (CharacterDetails.MuscleTone.freeze == true) { CharacterDetails.MuscleTone.freeze = false; CharacterDetails.MuscleTone.freezetest = true; characterDetailsView.MuscleCheck.IsChecked = false; }
-            if (CharacterDetails.TailSize.freeze == true) { CharacterDetails.TailSize.freeze = false; CharacterDetails.TailSize.freezetest = true; characterDetailsView.TailSizeCheck.IsChecked = false; }
-            if (CharacterDetails.BustX.freeze == true) { CharacterDetails.BustX.freeze = false; CharacterDetails.BustX.freezetest = true; characterDetailsView.BustXCheck.IsChecked = false; }
-            if (CharacterDetails.BustY.freeze == true) { CharacterDetails.BustY.freeze = false; CharacterDetails.BustY.freezetest = true; characterDetailsView.BustYCheck.IsChecked = false; }
-            if (CharacterDetails.BustZ.freeze == true) { CharacterDetails.BustZ.freeze = false; CharacterDetails.BustZ.freezetest = true; characterDetailsView.BustZCheck.IsChecked = false; }
-            if (CharacterDetails.LipsBrightness.freeze == true) { CharacterDetails.LipsBrightness.freeze = false; CharacterDetails.LipsBrightness.freezetest = true; characterDetailsView3.LipBright.IsChecked = false; }
-            if (CharacterDetails.SkinBlueGloss.freeze == true) { CharacterDetails.SkinBlueGloss.freeze = false; CharacterDetails.SkinBlueGloss.freezetest = true; characterDetailsView3.BlueGloss.IsChecked = false; }
-            if (CharacterDetails.SkinGreenGloss.freeze == true) { CharacterDetails.SkinGreenGloss.freeze = false; CharacterDetails.SkinGreenGloss.freezetest = true; characterDetailsView3.GreenGloss.IsChecked = false; }
-            if (CharacterDetails.SkinRedGloss.freeze == true) { CharacterDetails.SkinRedGloss.freeze = false; CharacterDetails.SkinRedGloss.freezetest = true; characterDetailsView3.RedGloss.IsChecked = false; }
-            if (CharacterDetails.SkinBluePigment.freeze == true) { CharacterDetails.SkinBluePigment.freeze = false; CharacterDetails.SkinBluePigment.freezetest = true; characterDetailsView3.SkinBlue.IsChecked = false; }
-            if (CharacterDetails.SkinGreenPigment.freeze == true) { CharacterDetails.SkinGreenPigment.freeze = false; CharacterDetails.SkinGreenPigment.freezetest = true; characterDetailsView3.SkinGreen.IsChecked = false; }
-            if (CharacterDetails.SkinRedPigment.freeze == true) { CharacterDetails.SkinRedPigment.freeze = false; CharacterDetails.SkinRedPigment.freezetest = true; characterDetailsView3.SkinRed.IsChecked = false; }
-            if (CharacterDetails.HighlightBluePigment.freeze == true) { CharacterDetails.HighlightBluePigment.freeze = false; CharacterDetails.HighlightBluePigment.freezetest = true; characterDetailsView3.HLBP.IsChecked = false; }
-            if (CharacterDetails.HighlightGreenPigment.freeze == true) { CharacterDetails.HighlightGreenPigment.freeze = false; CharacterDetails.HighlightGreenPigment.freezetest = true; characterDetailsView3.HLGP.IsChecked = false; }
-            if (CharacterDetails.HighlightRedPigment.freeze == true) { CharacterDetails.HighlightRedPigment.freeze = false; CharacterDetails.HighlightRedPigment.freezetest = true; characterDetailsView3.HLRP.IsChecked = false; }
-            if (CharacterDetails.HairGlowBlue.freeze == true) { CharacterDetails.HairGlowBlue.freeze = false; CharacterDetails.HairGlowBlue.freezetest = true; characterDetailsView3.HairBGCheck.IsChecked = false; }
-            if (CharacterDetails.HairGlowGreen.freeze == true) { CharacterDetails.HairGlowGreen.freeze = false; CharacterDetails.HairGlowGreen.freezetest = true; characterDetailsView3.HairGGCheck.IsChecked = false; }
-            if (CharacterDetails.HairGlowRed.freeze == true) { CharacterDetails.HairGlowRed.freeze = false; CharacterDetails.HairGlowRed.freezetest = true; characterDetailsView3.HairRGCheck.IsChecked = false; }
-            if (CharacterDetails.HairGreenPigment.freeze == true) { CharacterDetails.HairGreenPigment.freeze = false; CharacterDetails.HairGreenPigment.freezetest = true; characterDetailsView3.HairGreenP.IsChecked = false; }
-            if (CharacterDetails.HairBluePigment.freeze == true) { CharacterDetails.HairBluePigment.freeze = false; CharacterDetails.HairBluePigment.freezetest = true; characterDetailsView3.HairBlueP.IsChecked = false; }
-            if (CharacterDetails.HairRedPigment.freeze == true) { CharacterDetails.HairRedPigment.freeze = false; CharacterDetails.HairRedPigment.freezetest = true; characterDetailsView3.HairRedP.IsChecked = false; }
-            if (CharacterDetails.Height.freeze == true) { CharacterDetails.Height.freeze = false; CharacterDetails.Height.freezetest = true; characterDetailsView.HeightCheck.IsChecked = false; }
-            if (CharacterDetails.WeaponGreen.freeze == true) { CharacterDetails.WeaponGreen.freeze = false; CharacterDetails.WeaponGreen.freezetest = true; characterDetailsView2.Green.IsChecked = false; }
-            if (CharacterDetails.WeaponBlue.freeze == true) { CharacterDetails.WeaponBlue.freeze = false; CharacterDetails.WeaponBlue.freezetest = true; characterDetailsView2.Blue.IsChecked = false; }
-            if (CharacterDetails.WeaponRed.freeze == true) { CharacterDetails.WeaponRed.freeze = false; CharacterDetails.WeaponRed.freezetest = true; characterDetailsView2.Red.IsChecked = false; }
-            if (CharacterDetails.WeaponZ.freeze == true) { CharacterDetails.WeaponZ.freeze = false; CharacterDetails.WeaponZ.freezetest = true; characterDetailsView2.ScaleZ.IsChecked = false; }
-            if (CharacterDetails.WeaponY.freeze == true) { CharacterDetails.WeaponY.freeze = false; CharacterDetails.WeaponY.freezetest = true; characterDetailsView2.ScaleY.IsChecked = false; }
-            if (CharacterDetails.WeaponX.freeze == true) { CharacterDetails.WeaponX.freeze = false; CharacterDetails.WeaponX.freezetest = true; characterDetailsView2.ScaleX.IsChecked = false; }
-            if (CharacterDetails.OffhandZ.freeze == true) { CharacterDetails.OffhandZ.freeze = false; CharacterDetails.OffhandZ.freezetest = true; characterDetailsView2.ScaleZ2.IsChecked = false; }
-            if (CharacterDetails.OffhandY.freeze == true) { CharacterDetails.OffhandY.freeze = false; CharacterDetails.OffhandY.freezetest = true; characterDetailsView2.ScaleY2.IsChecked = false; }
-            if (CharacterDetails.OffhandX.freeze == true) { CharacterDetails.OffhandX.freeze = false; CharacterDetails.OffhandX.freezetest = true; characterDetailsView2.ScaleX2.IsChecked = false; }
-            if (CharacterDetails.OffhandRed.freeze == true) { CharacterDetails.OffhandRed.freeze = false; CharacterDetails.OffhandRed.freezetest = true; characterDetailsView2.Red2.IsChecked = false; }
-            if (CharacterDetails.OffhandBlue.freeze == true) { CharacterDetails.OffhandBlue.freeze = false; CharacterDetails.OffhandBlue.freezetest = true; characterDetailsView2.Blue2.IsChecked = false; }
-            if (CharacterDetails.OffhandGreen.freeze == true) { CharacterDetails.OffhandGreen.freeze = false; CharacterDetails.OffhandGreen.freezetest = true; characterDetailsView2.Green2.IsChecked = false; }
-            if (CharacterDetails.RightEyeBlue.freeze == true) { CharacterDetails.RightEyeBlue.freeze = false; CharacterDetails.RightEyeBlue.freezetest = true; characterDetailsView3.BluePigment2.IsChecked = false; }
-            if (CharacterDetails.RightEyeGreen.freeze == true) { CharacterDetails.RightEyeGreen.freeze = false; CharacterDetails.RightEyeGreen.freezetest = true; characterDetailsView3.GreenPigment2.IsChecked = false; }
-            if (CharacterDetails.RightEyeRed.freeze == true) { CharacterDetails.RightEyeRed.freeze = false; CharacterDetails.RightEyeRed.freezetest = true; characterDetailsView3.RedPigment2.IsChecked = false; }
-            if (CharacterDetails.LeftEyeBlue.freeze == true) { CharacterDetails.LeftEyeBlue.freeze = false; CharacterDetails.LeftEyeBlue.freezetest = true; characterDetailsView3.BEyePigment.IsChecked = false; }
-            if (CharacterDetails.LeftEyeGreen.freeze == true) { CharacterDetails.LeftEyeGreen.freeze = false; CharacterDetails.LeftEyeGreen.freezetest = true; characterDetailsView3.GEyePigment.IsChecked = false; }
-            if (CharacterDetails.LeftEyeRed.freeze == true) { CharacterDetails.LeftEyeRed.freeze = false; CharacterDetails.LeftEyeRed.freezetest = true; characterDetailsView3.REyePigment.IsChecked = false; }
-            if (CharacterDetails.LipsB.freeze == true) { CharacterDetails.LipsB.freeze = false; CharacterDetails.LipsB.freezetest = true; characterDetailsView3.BluePigment.IsChecked = false; }
-            if (CharacterDetails.LipsG.freeze == true) { CharacterDetails.LipsG.freeze = false; CharacterDetails.LipsG.freezetest = true; characterDetailsView3.GreenPigment.IsChecked = false; }
-            if (CharacterDetails.LipsR.freeze == true) { CharacterDetails.LipsR.freeze = false; CharacterDetails.LipsR.freezetest = true; characterDetailsView3.RedPigment.IsChecked = false; }
         }
     }
 }

@@ -909,9 +909,13 @@ namespace FFTrainer.Models
         [JsonIgnore] public static Address<string> HeadSlot { get; set; }
         [JsonIgnore] public static Address<string> BodySlot { get; set; }
         [JsonIgnore] public static Address<string> ArmSlot { get; set; }
+        [JsonIgnore] public Address<byte> TimeControl { get; set; }
+        [JsonIgnore] public Address<byte> Weather { get; set; }
 
         public CharacterDetails()
         {
+            TimeControl = new Address<byte>();
+            Weather = new Address<byte>();
             LFingerSlot = new Address<string>();
             RFingerSlot = new Address<string>();
             NeckSlot = new Address<string>();

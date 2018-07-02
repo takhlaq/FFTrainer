@@ -1,51 +1,66 @@
-﻿<Window
+﻿<Controls:MetroWindow
+        x:Class="FFTrainer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Views="clr-namespace:FFTrainer.Views"
-		xmlns:ViewModels="clr-namespace:FFTrainer.ViewModels"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
-		x:Class="FFTrainer.MainWindow"
-        mc:Ignorable="d"
-		x:Name="Window"
-        Title="FFXIV Trainer" Height="500" Width="1000" ResizeMode="CanMinimize" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized">
-
+		xmlns:ViewModels="clr-namespace:FFTrainer.ViewModels"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        TitleCharacterCasing="Normal"
+         xmlns:FFTrainer="clr-namespace:FFTrainer.Models"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        RenderOptions.ClearTypeHint="Enabled"
+        Title="FFXIV Trainer" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Click="ChangeAppStyleButtonClick">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Change Theme..." />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
     <Window.DataContext>
         <ViewModels:MainViewModel/>
     </Window.DataContext>
-
     <Grid>
-        <Label Content="Made by Johto#0001 / @JohtoFFXIV and LeonBlade" HorizontalAlignment="Left" Margin="637,29,-25,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
-        <ComboBox ItemsSource="{Binding Path= CharacterDetails.CharacterDetails.Names}" SelectedIndex="{Binding Path=CharacterDetails.CharacterDetails.SelectedIndex}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,9,0,0" Height="22"/>
-        <Button Command="{Binding Path= CharacterDetails.RefreshEntitiesCommand}" HorizontalAlignment="Left" Margin="135,9,0,0" VerticalAlignment="Top" Width="26" Height="22" RenderTransformOrigin="0.596,0.545">
-            <fa5:FontAwesome Icon="Solid_SyncAlt" />
-        </Button>
         <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="Gpose Mode" HorizontalAlignment="Left" Margin="178,11,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked"/>
-        <Label Content="NOTE: Gpose Mode changes all these &#xA;values to the Targeted player in GPOSE" HorizontalAlignment="Left" Margin="310,6,0,0" VerticalAlignment="Top" Width="240" Height="43" FontWeight="Bold"/>
+        <Label Content="NOTE: Gpose Mode changes all these &#xA;values to the Targeted player in GPOSE" HorizontalAlignment="Left" Margin="309,2,0,0" VerticalAlignment="Top" Width="240" Height="43" FontWeight="Bold"/>
+        <Label Content="Made by Johto#0001 / @JohtoFFXIV and LeonBlade" HorizontalAlignment="Left" Margin="748,18,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
+        <ComboBox ItemsSource="{Binding Path=CharacterDetails.CharacterDetails.Names}" SelectedIndex="{Binding Path=CharacterDetails.CharacterDetails.SelectedIndex}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,9,0,0" Height="22"/>
+        <Button Command="{Binding Path= CharacterDetails.RefreshEntitiesCommand}" HorizontalAlignment="Left" Margin="135,9,0,0" VerticalAlignment="Top" Width="26" Height="22" RenderTransformOrigin="0.596,0.545">
+            <DockPanel>
+                <Image Source="http://simpleicon.com/wp-content/uploads/refresh.png"/>
+            </DockPanel>
+        </Button>
         <TabControl Margin="10,37,10,10">
             <TabItem Header="Character">
                 <Grid>
-                    <Views:CharacterDetailsView DataContext="{Binding CharacterDetails}" Height="Auto" Margin="0,0,10,0" Width="Auto"/>
+                    <Views:CharacterDetailsView DataContext="{Binding CharacterDetails}" Height="Auto" Margin="0,0,10,-10" Width="Auto"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Character 2+">
                 <Grid>
-                    <Views:CharacterDetailsView3 HorizontalAlignment="Left" Height="396" VerticalAlignment="Top" Width="968"/>
+                    <Views:CharacterDetailsView3 HorizontalAlignment="Left" Height="396" VerticalAlignment="Top" Width="1073"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Equipment">
                 <Grid>
-                    <Views:CharacterDetailsView2 HorizontalAlignment="Left" Height="376" Margin="0,10,0,0" VerticalAlignment="Top" Width="958"/>
+                    <Views:CharacterDetailsView2 HorizontalAlignment="Left" Height="389" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="The World">
+                <Grid>
+                    <Views:CharacterDetailsView4 HorizontalAlignment="Left" Height="389" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.3.0.2" HorizontalAlignment="Left" Margin="894,5,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBlock  Margin="768,6,87,439">    
+        <Label Content="Version 1.4.0.0" HorizontalAlignment="Left" Margin="994,1,0,0" VerticalAlignment="Top" Width="105" FontSize="14"/>
+        <TextBlock  Margin="776,2,120,470">    
             <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
-               NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Discord Server</Hyperlink>
+               NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Join Our Discord Server!</Hyperlink>
         </TextBlock>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="637,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button x:Name="Loadbutton" Content="Load" HorizontalAlignment="Left" Margin="550,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="668,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="Loadbutton" Content="Load" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
     </Grid>
-</Window>
+    </Controls:MetroWindow>

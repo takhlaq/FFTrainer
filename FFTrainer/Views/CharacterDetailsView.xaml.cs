@@ -81,7 +81,7 @@ namespace FFTrainer.Views
             // if (HeightSlider.Value>=0.00001)MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", HeightSlider.Value.ToString());
         }
 
-        private void Height2x_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void Height2x_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Height2x.Value.HasValue)
                 if (Height2x.IsMouseOver || Height2x.IsKeyboardFocusWithin || HeightSlider.IsKeyboardFocusWithin || HeightSlider.IsMouseOver)
@@ -98,105 +98,46 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Highlights), "byte", "80");
         }
 
-        private void CameraHeight_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void CameraHeight_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CameraHeight.Value.HasValue)
                 if (CameraHeight.IsMouseOver || CameraHeight.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CameraHeight), "float", CameraHeight.Value.ToString());
         }
 
-        private void CamX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void CamX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamX.Value.HasValue)
                 if (CamX.IsMouseOver || CamX.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamX), "float", CamX.Value.ToString());
         }
 
-        private void CamY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void CamY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamY.Value.HasValue)
                 if (CamY.IsMouseOver || CamY.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamY), "float", CamY.Value.ToString());
         }
 
-        private void CamZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void CamZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamZ.Value.HasValue)
                 if (CamZ.IsMouseOver || CamZ.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamZ), "float", CamZ.Value.ToString());
         }
-
-        private void MaxZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (MaxZoom.Value.HasValue)
-                if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
-        }
-
-        private void Min_Zoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (Min_Zoom.Value.HasValue)
-                if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
-        }
-
-        private void CurrentZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CurrentZoom.Value.HasValue)
-                if (CurrentZoom.IsMouseOver || CurrentZoom.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CurrentZoom.Value.ToString());
-        }
-
-        private void CurrentFOV_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CurrentFOV.Value.HasValue)
-                if (CurrentFOV.IsMouseOver || CurrentFOV.IsKeyboardFocusWithin)
-                {
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVC), "float", CurrentFOV.Value.ToString());
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVMAX), "float", CurrentFOV.Value.ToString());
-                }
-        }
-
-        private void Muscletone_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        
+        private void Muscletone_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Muscletone.Value.HasValue)
                 if (Muscletone.IsMouseOver || Muscletone.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone), "float", Muscletone.Value.ToString());
         }
 
-        private void TailSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void TailSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (TailSize.Value.HasValue)
                 if (TailSize.IsMouseOver || TailSize.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.TailSize), "float", TailSize.Value.ToString());
-        }
-
-        private void CameraHeight2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CameraHeight2.Value.HasValue)
-                if (CameraHeight2.IsMouseOver || CameraHeight2.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight), "float", CameraHeight2.Value.ToString());
-        }
-
-        private void CamYMin_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CamYMin.Value.HasValue)
-                if (CamYMin.IsMouseOver || CamYMin.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMin), "float", CamYMin.Value.ToString());
-        }
-
-        private void CamYMax_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CamYMax.Value.HasValue)
-                if (CamYMax.IsMouseOver || CamYMax.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), "float", CamYMax.Value.ToString());
-        }
-
-        private void FOV2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (FOV2.Value.HasValue)
-                if (FOV2.IsMouseOver || FOV2.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), "float", FOV2.Value.ToString());
         }
 
         private void HighlightTone_Copy5_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -289,13 +230,6 @@ namespace FFTrainer.Views
                 e.Handled = true;
         }
 
-        private void CamUpDown_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (CamUpDown.Value.HasValue)
-                if (CamUpDown.IsMouseOver || CamUpDown.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraUpDown), "float", CamUpDown.Value.ToString());
-        }
-
         private void HighlightTone_Copy6_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (!char.IsDigit(e.Text, e.Text.Length - 1))
@@ -305,10 +239,11 @@ namespace FFTrainer.Views
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (EmoteBox.IsMouseOver)
-                CharacterDetails.Emote.value = (int)EmoteBox.SelectedValue;
+                if(EmoteBox.SelectedValue!=null&&(int)EmoteBox.SelectedValue>=1)
+                    CharacterDetails.Emote.value = (int)EmoteBox.SelectedValue;
         }
 
-        private void Emote_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void Emote_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Emote.Value.HasValue)
                 if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
@@ -341,28 +276,6 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", bustx.ToString());
         }
 
-        private void BustZ2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustZ.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
-        }
-
-
-        private void BustY2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustY.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
-        }
-
-
-        private void BustX2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustX.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
-        }
 
         private void BustSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -408,6 +321,27 @@ namespace FFTrainer.Views
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "CD CC CC 3F 00 00 20 40 E2 58 18 40");
             if (BustSelect.SelectedIndex == 20)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "bytes", "66 66 E6 3F 00 00 40 40 92 CB 35 40");
+        }
+
+        private void BustX2_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustX.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
+        }
+
+        private void BustY2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustY.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
+        }
+
+        private void BustZ2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || AddBust.IsMouseOver)
+                if (BustZ.Value > 0)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
         }
     }
 }
