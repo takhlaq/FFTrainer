@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
-//haha xd
+
 namespace FFTrainer
 {
     [XmlRoot]
