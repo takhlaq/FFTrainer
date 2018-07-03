@@ -807,6 +807,7 @@ namespace FFTrainer.Models
         public Address<byte> Nose { get; set; }
         public Address<byte> Lips { get; set; }
         public Address<byte> LipsTone { get; set; }
+        public Address<byte> EyeBrowType { get; set; }
         public Address<byte> Voices { get; set; }
         [JsonIgnore] public Address<float> Rotation { get; set; }
         [JsonIgnore] public Address<float> Rotation2 { get; set; }
@@ -930,6 +931,7 @@ namespace FFTrainer.Models
             HeadSlot = new Address<string>();
             OffhandBase = new Address<byte>();
             OffhandV = new Address<byte>();
+            EyeBrowType = new Address<byte>();
             OffhandDye = new Address<Dyes>();
             Offhand = new Address<int>();
             OffhandX = new Address<float>();

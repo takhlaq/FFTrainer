@@ -55,7 +55,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Version 1.4.0.0" HorizontalAlignment="Left" Margin="994,1,0,0" VerticalAlignment="Top" Width="105" FontSize="14"/>
+        <Label Content="Version 1.4.0.1" HorizontalAlignment="Left" Margin="994,1,0,0" VerticalAlignment="Top" Width="105" FontSize="14"/>
         <TextBlock  Margin="776,2,120,470">    
             <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold" FontSize="18">Join Our Discord Server!</Hyperlink>

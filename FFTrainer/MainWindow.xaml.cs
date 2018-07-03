@@ -12,6 +12,7 @@ using MahApps.Metro.Controls;
 using FFTrainer.Views;
 using System.Windows.Threading;
 using AutoUpdaterDotNET;
+using System.Net;
 
 namespace FFTrainer
 {
@@ -27,9 +28,13 @@ namespace FFTrainer
         public MainWindow()
         {
             InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(10) };
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5) };
             timer.Tick += delegate
             {
+                ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
+                AutoUpdater.Mandatory = true;
+                AutoUpdater.RunUpdateAsAdmin = true;
+                AutoUpdater.DownloadPath = Environment.CurrentDirectory;
                 AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
             };
             timer.Start();
@@ -251,6 +256,10 @@ namespace FFTrainer
                 if (CharacterDetails.Eye.freeze)
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Eye), CharacterDetails.Eye.GetBytes());
                 else CharacterDetails.Eye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Eye));
+
+                if (CharacterDetails.EyeBrowType.freeze)
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EyeBrowType), CharacterDetails.EyeBrowType.GetBytes());
+                else CharacterDetails.EyeBrowType.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EyeBrowType));
 
                 if (CharacterDetails.FacialFeatures.freeze)
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacialFeatures), CharacterDetails.FacialFeatures.GetBytes());

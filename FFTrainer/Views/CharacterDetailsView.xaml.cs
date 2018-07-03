@@ -343,6 +343,12 @@ namespace FFTrainer.Views
                 if (BustZ.Value > 0)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
         }
+
+        private void HighlightTone_Copy7_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
     }
 }
 
