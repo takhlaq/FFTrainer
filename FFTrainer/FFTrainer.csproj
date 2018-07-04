@@ -128,6 +128,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ThemeManagerHelper.cs" />
+    <Compile Include="ThemeSettings.cs" />
     <Compile Include="Util\EnumBindingSourceExtension.cs" />
     <Compile Include="Views\CharacterDetailsView.xaml.cs">
       <DependentUpon>CharacterDetailsView.xaml</DependentUpon>

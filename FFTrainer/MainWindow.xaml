@@ -10,7 +10,7 @@
          xmlns:FFTrainer="clr-namespace:FFTrainer.Models"
         GlowBrush="{DynamicResource AccentColorBrush}"
         RenderOptions.ClearTypeHint="Enabled"
-        Title="FFXIV Trainer" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize">
+        Title="FFXIV Trainer" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded">
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Click="ChangeAppStyleButtonClick">

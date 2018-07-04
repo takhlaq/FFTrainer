@@ -13,6 +13,8 @@ using FFTrainer.Views;
 using System.Windows.Threading;
 using AutoUpdaterDotNET;
 using System.Net;
+using MahApps.Metro;
+using System.Drawing;
 
 namespace FFTrainer
 {
@@ -349,6 +351,14 @@ namespace FFTrainer
                 string details = JsonConvert.SerializeObject(Save1,Formatting.Indented);
                 File.WriteAllText(dig.FileName, details);
             }
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var appTheme = ThemeManager.GetAppTheme(Properties.Settings.Default.AppThemeName);
+            var accent = ThemeManager.GetAccent(Properties.Settings.Default.Accent);
+            ThemeManager.ChangeAppStyle(Application.Current, accent, appTheme);
+      //      Properties.Settings.Default.Save();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

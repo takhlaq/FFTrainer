@@ -58,12 +58,17 @@ namespace FFTrainer
         {
             var theme = ThemeManager.DetectAppStyle(Application.Current);
             ThemeManager.ChangeAppStyle(Application.Current, theme.Item2, ThemeManager.GetAppTheme("Base" + ((Button)sender).Content));
+            Properties.Settings.Default.AppThemeName = "Base" + ((Button)sender).Content;
+            Properties.Settings.Default.Save();
         }
 
         private void ChangeAppAccentButtonClick(object sender, RoutedEventArgs e)
         {
             var theme = ThemeManager.DetectAppStyle(Application.Current);
             ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(((Button)sender).Content.ToString()), theme.Item1);
+            // Properties.Settings.Default.AccentName = ((Button)sender).Content.ToString();
+            Properties.Settings.Default.Accent = ((Button)sender).Content.ToString();
+            Properties.Settings.Default.Save();
         }
 
         private void AccentSelectionChanged(object sender, SelectionChangedEventArgs e)
