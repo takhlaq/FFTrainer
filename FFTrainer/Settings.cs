@@ -49,6 +49,12 @@ namespace FFTrainer
         public string TailType { get; set; }
         public string Head { get; set; }
         public string Hair { get; set; }
+        public string Jaw { get; set; }
+        public string LimbalR { get; set; }
+        public string LimbalG { get; set; }
+        public string LimbalB { get; set; }
+        public string RHeight { get; set; }
+        public string RBust { get; set; }
         public string Highlights { get; set; }
         public string HighlightTone { get; set; }
         public string Skintone { get; set; }

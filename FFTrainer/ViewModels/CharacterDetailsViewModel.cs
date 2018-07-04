@@ -141,6 +141,16 @@ namespace FFTrainer.ViewModels
                     CharacterDetailsView2._gearSet.OffWep = CharacterDetailsView2.ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
                     CharacterDetails.OffhandSlot.value = CharacterDetailsView2.WepTupleToComma(CharacterDetailsView2._gearSet.OffWep);
                 }
+                if (CharacterDetails.LimbalG.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalG), CharacterDetails.LimbalG.GetBytes());
+                else CharacterDetails.LimbalG.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalG));
+
+                if (CharacterDetails.LimbalB.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalB), CharacterDetails.LimbalB.GetBytes());
+                else CharacterDetails.LimbalB.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalB));
+
+                if (CharacterDetails.LimbalR.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalR), CharacterDetails.LimbalR.GetBytes());
+                else CharacterDetails.LimbalR.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalR));
+
+
                 if (CharacterDetails.LipsB.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB), CharacterDetails.LipsB.GetBytes());
                 else CharacterDetails.LipsB.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB));
 

@@ -193,5 +193,26 @@ namespace FFTrainer.Views
         {
 
         }
+
+        private void LR_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (LR.Value.HasValue)
+                if (LR.IsMouseOver || LR.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalR), "float", LR.Value.ToString());
+        }
+
+        private void GR_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (GR.Value.HasValue)
+                if (GR.IsMouseOver || GR.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalG), "float", GR.Value.ToString());
+        }
+
+        private void BR_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BR.Value.HasValue)
+                if (BR.IsMouseOver || BR.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalB), "float", BR.Value.ToString());
+        }
     }
 }

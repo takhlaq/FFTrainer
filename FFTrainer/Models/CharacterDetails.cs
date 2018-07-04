@@ -593,7 +593,6 @@ namespace FFTrainer.Models
             [Description("Lilac Purple Dye")] xd6,
             [Description("Rolanberry Red Dye")] xd7,
             [Description("Dalamud Red Dye")] xd8,
-            [Description("Rolanberry Red Dye")] xd9,
             [Description("Rust Red Dye")] xd10,
             [Description("Wine Red Dye")] xd11,
             [Description("Coral Pink Dye")] xd12,
@@ -791,6 +790,9 @@ namespace FFTrainer.Models
         public Address<byte> Head { get; set; }
         public Address<byte> Hair { get; set; }
         public Address<byte> TailType { get; set; }
+        public Address<byte> Jaw { get; set; }
+        public Address<byte> RHeight { get; set; }
+        public Address<byte> RBust { get; set; }
         public Address<byte> HairTone { get; set; }
         public Address<byte> Highlights { get; set; }
         public Address<byte> HighlightTone { get; set; }
@@ -894,6 +896,9 @@ namespace FFTrainer.Models
         public Address<float> LipsR { get; set; }
         public Address<float> LipsB { get; set; }
         public Address<float> LipsG { get; set; }
+        public Address<float> LimbalR { get; set; }
+        public Address<float> LimbalG { get; set; }
+        public Address<float> LimbalB { get; set; }
         [JsonIgnore] public Address<float> CameraYAMin { get; set; }
         [JsonIgnore] public Address<float> FOV2 { get; set; }
         [JsonIgnore] public Address<float> CameraYAMax { get; set; }
@@ -915,6 +920,14 @@ namespace FFTrainer.Models
 
         public CharacterDetails()
         {
+            LimbalB = new Address<float>();
+            LimbalG = new Address<float>();
+            LimbalR = new Address<float>();
+            RHeight = new Address<byte>();
+            Jaw = new Address<byte>();
+            RBust = new Address<byte>();
+            RHeight = new Address<byte>();
+            Jaw = new Address<byte>();
             TimeControl = new Address<byte>();
             Weather = new Address<byte>();
             LFingerSlot = new Address<string>();
