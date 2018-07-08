@@ -15,6 +15,6 @@
         <Label Content="言語を選択してください" HorizontalAlignment="Left" Margin="75,20,0,0" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <Label Content="Ändere deine Sprache!" HorizontalAlignment="Left" Margin="68,34,0,0" VerticalAlignment="Top" Width="173" FontSize="16"/>
         <Button Content="Español(Spanish)" Command="{Binding LanguageChangeCommand}" CommandParameter="Spanish" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
-        <Button Content="Deutsche(German)" Command="{Binding LanguageChangeCommand}" CommandParameter="German" HorizontalAlignment="Left" Margin="151,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="12" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
+        <Button Content="Deutsch(German)" Command="{Binding LanguageChangeCommand}" CommandParameter="German" HorizontalAlignment="Left" Margin="151,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="12" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
     </Grid>
 </Window>

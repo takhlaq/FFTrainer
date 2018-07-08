@@ -70,9 +70,9 @@
     <system:String x:Key="LeftEye">Linkes Auge</system:String>
     <system:String x:Key="RightEye">Rechtes Auge</system:String>
     <system:String x:Key="LimbalEye">Limbus-Ring</system:String>
-    <system:String x:Key="RedP">Rotes Pigment</system:String>
-    <system:String x:Key="GreenP">Grünes Pigment</system:String>
-    <system:String x:Key="BlueP">Blaues Pigment</system:String>
+    <system:String x:Key="RedP">Rot</system:String>
+    <system:String x:Key="GreenP">Grün</system:String>
+    <system:String x:Key="BlueP">Blau</system:String>
     <system:String x:Key="LipB">Lippen-Betonung</system:String>
     <system:String x:Key="RedG">Rotes Leuchten</system:String>
     <system:String x:Key="GreenG">Grünes Leuchten</system:String>
@@ -120,6 +120,6 @@
     <system:String x:Key="A5">A.) Du kannst dich im Moment nicht in einen NPC verwandeln, da Square Enix dieses Feature entfernt hat. Du kannst jedoch ihre Kleidung tragen.</system:String>
     <system:String x:Key="A6">A.) Wenn du einen Fehler melden willst oder einen Vorschlag hast, schick mir eine Nachricht auf Discord oder poste in unserem Server in den dafür vorgesehenen Kanälen.</system:String>
     <system:String x:Key="faq">FAQ</system:String>
-    <system:String x:Key="Aboutx">Über diesen Trainer:</system:String>
-    <system:String x:Key="AboutText">Die Basis dieses Trainers wurde von LeonBlade verfasst und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
+    <system:String x:Key="Aboutx">Über:</system:String>
+    <system:String x:Key="AboutText">Dieser Trainer wurde von LeonBlade aufgebaut und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
 </ResourceDictionary>

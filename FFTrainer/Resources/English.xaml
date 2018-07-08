@@ -70,9 +70,9 @@
     <system:String x:Key="LeftEye">Left Eye</system:String>
     <system:String x:Key="RightEye">Right Eye</system:String>
     <system:String x:Key="LimbalEye">Limbal Eyes</system:String>
-    <system:String x:Key="RedP">Red Pigment</system:String>
-    <system:String x:Key="GreenP">Green Pigment</system:String>
-    <system:String x:Key="BlueP">Blue Pigment</system:String>
+    <system:String x:Key="RedP">Red</system:String>
+    <system:String x:Key="GreenP">Green</system:String>
+    <system:String x:Key="BlueP">Blue</system:String>
     <system:String x:Key="LipB">Lip Brightness</system:String>
     <system:String x:Key="RedG">Red Glow</system:String>
     <system:String x:Key="GreenG">Green Glow</system:String>

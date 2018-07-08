@@ -38,7 +38,7 @@
     <system:String x:Key="FacePaintTone">Tono de pintura</system:String>
     <system:String x:Key="FacialFeatures">Características faciales</system:String>
     <system:String x:Key="TailType">Tipo de cola</system:String>
-    <system:String x:Key="TailSize">Tamaño de la cola</system:String>
+    <system:String x:Key="TailSize">Tamaño de cola</system:String>
     <system:String x:Key="VoiceType">Tipo de voz</system:String>
     <system:String x:Key="MuscleTone">Músculo</system:String>
     <system:String x:Key="Emote">Emote</system:String>
@@ -70,9 +70,9 @@
     <system:String x:Key="LeftEye">Ojo izquierdo</system:String>
     <system:String x:Key="RightEye">Ojo derecho</system:String>
     <system:String x:Key="LimbalEye">Ojos limbales</system:String>
-    <system:String x:Key="RedP">Pigmento rojo</system:String>
-    <system:String x:Key="GreenP">Pigmento verde</system:String>
-    <system:String x:Key="BlueP">Pigmento azul</system:String>
+    <system:String x:Key="RedP">Rojo</system:String>
+    <system:String x:Key="GreenP">Verde</system:String>
+    <system:String x:Key="BlueP">Azul</system:String>
     <system:String x:Key="LipB">Brillo de labios</system:String>
     <system:String x:Key="RedG">Rojo resplandor</system:String>
     <system:String x:Key="GreenG">Verde resplandor</system:String>
