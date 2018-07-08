@@ -143,7 +143,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Settings1.cs" />
     <Compile Include="ThemeManagerHelper.cs" />
     <Compile Include="Util\EnumBindingSourceExtension.cs" />
     <Compile Include="Views\CharacterDetailsView.xaml.cs">

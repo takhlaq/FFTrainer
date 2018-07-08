@@ -14,10 +14,6 @@ using System.Windows.Threading;
 using AutoUpdaterDotNET;
 using System.Net;
 using MahApps.Metro;
-using System.Drawing;
-using System.Windows.Input;
-using System.Configuration;
-using System.Linq;
 
 namespace FFTrainer
 {
