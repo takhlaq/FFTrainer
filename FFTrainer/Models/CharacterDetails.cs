@@ -774,7 +774,7 @@ namespace FFTrainer.Models
         [JsonIgnore] public Address<float> GposeMode { get; set; }
         public Address<float> TailSize { get; set; }
         [JsonIgnore] public Address<string> Name { get; set; }
-        [JsonIgnore] public static Address<Emotes> EmoteX { get; set; }
+        [JsonIgnore] public Address<Emotes> EmoteX { get; set; }
         public Address<Races> Race { get; set; }
         public Address<Clans> Clan { get; set; }
         public Address<Genders> Gender { get; set; }
@@ -798,9 +798,9 @@ namespace FFTrainer.Models
         public Address<byte> HighlightTone { get; set; }
         public Address<byte> Skintone { get; set; }
         public Address<byte> FacialFeatures { get; set; }
-        [JsonIgnore]  public static Address<int> Emote { get; set; }
-        [JsonIgnore]  public static Address<float> EmoteSpeed1 { get; set; }
-        [JsonIgnore]  public static Address<float> EmoteSpeed2 { get; set; }
+        [JsonIgnore]  public Address<int> Emote { get; set; }
+        [JsonIgnore]  public Address<float> EmoteSpeed1 { get; set; }
+        [JsonIgnore]  public Address<float> EmoteSpeed2 { get; set; }
         public Address<byte> Eye { get; set; }
         public Address<byte> RightEye { get; set; }
         public Address<byte> LeftEye { get; set; }

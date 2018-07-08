@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -367,6 +368,9 @@ namespace FFTrainer.Views
             if (!char.IsDigit(e.Text, e.Text.Length - 1))
                 e.Handled = true;
         }
+
+        private void Namexd_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { }
     }
 }
 

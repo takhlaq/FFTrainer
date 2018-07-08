@@ -15,6 +15,9 @@ using AutoUpdaterDotNET;
 using System.Net;
 using MahApps.Metro;
 using System.Drawing;
+using System.Windows.Input;
+using System.Configuration;
+using System.Linq;
 
 namespace FFTrainer
 {
@@ -30,6 +33,13 @@ namespace FFTrainer
         public MainWindow()
         {
             InitializeComponent();
+            Properties.Settings.Default.Upgrade();
+            //load our settings
+            var language = Properties.Settings.Default.Language;
+            var dictionary = new ResourceDictionary();
+            language = string.IsNullOrEmpty(language) ? "English" : language;
+            dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
+            Application.Current.Resources.MergedDictionaries[0] = dictionary;
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5) };
             timer.Tick += delegate
             {
@@ -40,7 +50,6 @@ namespace FFTrainer
                 AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
             };
             timer.Start();
-
         }
         private void CharacterDetailsView_Loaded()
         {
@@ -307,6 +316,7 @@ namespace FFTrainer
                     CharacterDetails.EmoteX.value= (CharacterDetails.Emotes)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 }
                 Thread.Sleep(1);
+
             }
         }
         private void GposeMode_Checked(object sender, RoutedEventArgs e)
@@ -335,6 +345,7 @@ namespace FFTrainer
             System.Diagnostics.Process.Start("https://discord.gg/nxu2Ydp");
         }
         private MetroWindow accentThemeTestWindow;
+        private Window LanguageWindow;
         private void ChangeAppStyleButtonClick(object sender, RoutedEventArgs e)
         {
             if (accentThemeTestWindow != null)
@@ -370,7 +381,32 @@ namespace FFTrainer
             var appTheme = ThemeManager.GetAppTheme(Properties.Settings.Default.AppThemeName);
             var accent = ThemeManager.GetAccent(Properties.Settings.Default.Accent);
             ThemeManager.ChangeAppStyle(Application.Current, accent, appTheme);
-      //      Properties.Settings.Default.Save();
+            if ((bool)Properties.Settings.Default["FirstRun"] == true)
+            {
+                //First application run
+                //Update setting
+                Properties.Settings.Default["FirstRun"] = false;
+                //Save setting
+                Properties.Settings.Default.Save();
+                //Create new instance of Dialog you want to show
+                var fdf = new Culture();
+                //Show the dialog
+                fdf.ShowDialog();
+            }
+            else
+            {
+                //Not first time of running application.
+            }
+        }
+
+        private void ChangeLang(object sender, RoutedEventArgs e)
+        {
+            LanguageWindow = new Culture();
+            LanguageWindow.Owner = this;
+            LanguageWindow.Closed += (o, args) => LanguageWindow = null;
+            LanguageWindow.Left = this.Left + this.ActualWidth / 2.0;
+            LanguageWindow.Top = this.Top + this.ActualHeight / 2.0;
+            LanguageWindow.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -452,6 +488,7 @@ namespace FFTrainer
                 CharacterDetails.FacialFeatures.freeze = true;
                 CharacterDetails.Eye.freeze = true;
                 CharacterDetails.RightEye.freeze = true;
+                CharacterDetails.EyeBrowType.freeze = true;
                 CharacterDetails.LeftEye.freeze = true;
                 CharacterDetails.Offhand.freeze = true;
                 CharacterDetails.FacePaint.freeze = true;
@@ -518,7 +555,9 @@ namespace FFTrainer
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Jaw), load1.Jaw.GetBytes());
                 CharacterDetails.RHeight.value = load1.RHeight.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RHeight), load1.RHeight.GetBytes());
-                CharacterDetails.RBust.value = load1.RHeight.value;
+                CharacterDetails.EyeBrowType.value = load1.EyeBrowType.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EyeBrowType), load1.EyeBrowType.GetBytes());
+                CharacterDetails.RBust.value = load1.RBust.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RBust), load1.RBust.GetBytes());
                 CharacterDetails.Ear.value = load1.Ear.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear), load1.Ear.GetBytes());

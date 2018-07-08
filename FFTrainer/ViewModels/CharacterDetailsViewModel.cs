@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using FFTrainer.Views;
+using System.Text.RegularExpressions;
 
 namespace FFTrainer.ViewModels
 {
@@ -377,11 +378,12 @@ namespace FFTrainer.ViewModels
 
                 if (!CharacterDetails.Name.freeze)
                 {
-                    var nameX = MemoryManager.Instance.MemLib.readString(nameAddr);
-
-                    if (nameX.IndexOf('\0') != -1)
-                        nameX = nameX.Substring(0, nameX.IndexOf('\0'));
-                    CharacterDetails.Name.value = nameX;
+                    var name = MemoryManager.Instance.MemLib.readString(nameAddr);
+                    if (name.IndexOf('\0') != -1)
+                    {
+                        name = name.Substring(0, name.IndexOf('\0'));
+                    }
+                    CharacterDetails.Name.value = name;
                 }
                 if (CharacterDetails.Wetness.Activated) MemoryManager.Instance.MemLib.writeMemory(Wetness, "float", "1");
                 if (CharacterDetails.SWetness.Activated) MemoryManager.Instance.MemLib.writeMemory(SWetness, "float", "5");
