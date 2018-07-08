@@ -811,6 +811,7 @@ namespace FFTrainer.Models
         public Address<byte> LipsTone { get; set; }
         public Address<byte> EyeBrowType { get; set; }
         public Address<byte> Voices { get; set; }
+        public Address<byte> TailorMuscle { get; set; }
         [JsonIgnore] public Address<float> Rotation { get; set; }
         [JsonIgnore] public Address<float> Rotation2 { get; set; }
         [JsonIgnore] public Address<float> Rotation3 { get; set; }
@@ -917,9 +918,12 @@ namespace FFTrainer.Models
         [JsonIgnore] public static Address<string> ArmSlot { get; set; }
         [JsonIgnore] public Address<byte> TimeControl { get; set; }
         [JsonIgnore] public Address<byte> Weather { get; set; }
+        [JsonIgnore] public Address<int> Territoryxd { get; set; }
 
         public CharacterDetails()
         {
+            Territoryxd = new Address<int>();
+            TailorMuscle = new Address<byte>();
             LimbalB = new Address<float>();
             LimbalG = new Address<float>();
             LimbalR = new Address<float>();
@@ -1069,7 +1073,10 @@ namespace FFTrainer.Models
             TailType = new Address<byte>();
             Emote = new Address<int>();
             EmoteSpeed1 = new Address<float>();
-            EmoteSpeed2 = new Address<float>();
+            EmoteSpeed2 = new Address<float>(); 
+            Max.Checker = true;
+            Min.Checker = true;
+            CZoom.Checker = true;
         }
     }
 }

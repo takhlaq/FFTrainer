@@ -60,7 +60,7 @@
     <system:String x:Key="CameraSettings">Camera Settings</system:String>
     <system:String x:Key="TimeControl">Time Control</system:String>
     <system:String x:Key="TimeC">Set this slider to minimum for real Eorzea Time</system:String>
-    <system:String x:Key="WeatherNote">Not all Weather IDs&#xD;&#xA;work on X Zone</system:String>
+    <system:String x:Key="WeatherNote">Not all Weather ID work on X Zone</system:String>
     <system:String x:Key="WeatherB">Weather</system:String>
     <system:String x:Key="SelectWeather">Select a weather for your current zone</system:String>
     <system:String x:Key="SkinColor">Skin Color</system:String>
@@ -107,6 +107,7 @@
     <system:String x:Key="Red">Red</system:String>
     <system:String x:Key="Green">Green</system:String>
     <system:String x:Key="Blue">Blue</system:String>
+    <system:String x:Key="TailorMuscle">Tail/Muscle</system:String>
     <system:String x:Key="Question1">1.) How do I edit my Emote/Animation in /gpose?</system:String>
     <system:String x:Key="Question2">2.) Will I get banned by using this Trainer which is Third-Party Tool?</system:String>
     <system:String x:Key="Question3">3.) How do I find the IDs for Appearances/Emote/Equipment etc?</system:String>

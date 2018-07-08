@@ -2,10 +2,7 @@
 using FFTrainer.Models;
 using FFTrainer.Commands;
 using System.ComponentModel;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using FFTrainer.Views;
-using System.Text.RegularExpressions;
 
 namespace FFTrainer.ViewModels
 {
@@ -78,11 +75,6 @@ namespace FFTrainer.ViewModels
         {
             try
             {
-                /*
-                 *             MemoryManager.Instance.BaseAddress = baseAddr;
-            MemoryManager.Instance.CameraAddress = CameraAddr;
-            MemoryManager.Instance.EmoteAddress = EmoteAddr;
-            MemoryManager.Instance.GposeAddress = GposeAddr;*/
                 baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
                 var bodyBase = Settings.Instance.Character.Body.Base;
                 var body = Settings.Instance.Character.Body;
@@ -280,13 +272,13 @@ namespace FFTrainer.ViewModels
                     CharacterDetails.FOVC.value = mem.readFloat(fovC);
                 }
 
-                if (CharacterDetails.CZoom.freeze) mem.writeBytes(cZoom, CharacterDetails.CZoom.GetBytes());
+                if (CharacterDetails.CZoom.freeze && MainWindow.NotAllowed == false) mem.writeBytes(cZoom, CharacterDetails.CZoom.GetBytes());
                 else CharacterDetails.CZoom.value = mem.readFloat(cZoom);
 
-                if (CharacterDetails.Min.freeze) mem.writeBytes(min, CharacterDetails.Min.GetBytes());
+                if (CharacterDetails.Min.freeze && MainWindow.NotAllowed == false) mem.writeBytes(min, CharacterDetails.Min.GetBytes());
                 else CharacterDetails.Min.value = mem.readFloat(min);
 
-                if (CharacterDetails.Max.freeze) mem.writeBytes(max, CharacterDetails.Max.GetBytes());
+                if (CharacterDetails.Max.freeze && MainWindow.NotAllowed == false) mem.writeBytes(max, CharacterDetails.Max.GetBytes());
                 else CharacterDetails.Max.value = mem.readFloat(max);
 
                 if (CharacterDetails.CamZ.freeze)mem.writeBytes(camZ, CharacterDetails.CamZ.GetBytes());

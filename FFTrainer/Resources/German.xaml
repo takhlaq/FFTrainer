@@ -60,7 +60,7 @@
     <system:String x:Key="CameraSettings">Kamera-Einstellungen</system:String>
     <system:String x:Key="TimeControl">Eorzea-Zeit</system:String>
     <system:String x:Key="TimeC">Stell diesen Regler auf 0 zurück, um zur echten Eorzea-Zeit zurückzukehren.</system:String>
-    <system:String x:Key="WeatherNote">Nicht alle Wetter-IDs&#xD;&#xA;funktionieren in einem Gebiet.</system:String>
+    <system:String x:Key="WeatherNote">Nicht alle Wetter-IDs funktionieren in einem Gebiet.</system:String>
     <system:String x:Key="WeatherB">Wetter</system:String>
     <system:String x:Key="SelectWeather">Wähle ein Wetter für dein momentanes Gebiet.</system:String>
     <system:String x:Key="SkinColor">Hautfarbe</system:String>
@@ -120,6 +120,7 @@
     <system:String x:Key="A5">A.) Du kannst dich im Moment nicht in einen NPC verwandeln, da Square Enix dieses Feature entfernt hat. Du kannst jedoch ihre Kleidung tragen.</system:String>
     <system:String x:Key="A6">A.) Wenn du einen Fehler melden willst oder einen Vorschlag hast, schick mir eine Nachricht auf Discord oder poste in unserem Server in den dafür vorgesehenen Kanälen.</system:String>
     <system:String x:Key="faq">FAQ</system:String>
+    <system:String x:Key="TailorMuscle">Schwanz/Muskel</system:String>
     <system:String x:Key="Aboutx">Über:</system:String>
     <system:String x:Key="AboutText">Dieser Trainer wurde von LeonBlade aufgebaut und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
 </ResourceDictionary>

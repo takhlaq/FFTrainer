@@ -45,6 +45,7 @@ namespace FFTrainer
         public string Clan { get; set; }
         public string Territory { get; set; }
         public BodyOffsets Body { get; set; }
+        public string TailorMuscle { get; set; }
         public string NameHeight { get; set; }
         public string TailType { get; set; }
         public string Head { get; set; }

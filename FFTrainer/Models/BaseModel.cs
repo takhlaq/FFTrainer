@@ -20,8 +20,8 @@ namespace FFTrainer.Models
         public T value { get; set; }
         [JsonIgnore] public bool freeze { get; set; }
         [JsonIgnore] public bool Activated { get; set; }
+        [JsonIgnore] public bool Checker { get; set; }
         [JsonIgnore] public bool freezetest { get; set; }
-
         /// <summary>
         /// Get a byte array of this address
         /// </summary>

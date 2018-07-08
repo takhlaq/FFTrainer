@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 using FFTrainer.Models;
 using FFTrainer.ViewModels;

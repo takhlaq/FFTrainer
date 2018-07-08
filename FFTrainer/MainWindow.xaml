@@ -29,8 +29,8 @@
         <ViewModels:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="{DynamicResource GposeMode}" HorizontalAlignment="Left" Margin="178,11,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked"/>
-        <TextBlock Text="{DynamicResource GposeNote}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="324,2,0,0" VerticalAlignment="Top" Width="240" Height="43" FontWeight="Bold"/>
+        <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="{DynamicResource GposeMode}" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked" Width="149"/>
+        <TextBlock Text="{DynamicResource GposeNote}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="329,3,0,0" VerticalAlignment="Top" Width="233" Height="34" FontWeight="Bold"/>
         <Label Content="{DynamicResource Madeby}" HorizontalAlignment="Left" Margin="748,18,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
         <ComboBox ItemsSource="{Binding Path=CharacterDetails.CharacterDetails.Names}" SelectedIndex="{Binding Path=CharacterDetails.CharacterDetails.SelectedIndex}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,9,0,0" Height="22"/>
         <Button Command="{Binding Path= CharacterDetails.RefreshEntitiesCommand}" HorizontalAlignment="Left" Margin="135,9,0,0" VerticalAlignment="Top" Width="26" Height="22" RenderTransformOrigin="0.596,0.545">
@@ -61,8 +61,8 @@
             </TabItem>
             <TabItem Header="{DynamicResource About}">
                 <Grid>
-                    <Label Content="{DynamicResource Aboutx}" HorizontalAlignment="Left" Margin="1,5,0,0" VerticalAlignment="Top" Width="135" FontSize="14"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="131,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="846" FontSize="14" RenderTransformOrigin="0.5,0.5"><Run Text="{DynamicResource AboutText}"/><LineBreak/><Run/></TextBlock>
+                    <Label Content="{DynamicResource Aboutx}" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="127" FontSize="14"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="846" FontSize="14" RenderTransformOrigin="0.5,0.5"><Run Text="{DynamicResource AboutText}"/><LineBreak/><Run/></TextBlock>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="293" Margin="6,106,0,0" VerticalAlignment="Top" Width="1067"/>
                     <Label Content="{DynamicResource faq}" HorizontalAlignment="Left" Margin="419,67,0,0" VerticalAlignment="Top" Width="279" FontSize="22"/>
                     <TextBlock HorizontalAlignment="Left" Height="82" Margin="48,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438"><Run Text="{DynamicResource A1}"/><LineBreak/><Run/></TextBlock>
@@ -71,7 +71,7 @@
                     <TextBlock HorizontalAlignment="Left" Height="82" Margin="48,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A2}"/>
                     <Label Content="{DynamicResource Question4}" HorizontalAlignment="Left" Margin="561,115,0,0" VerticalAlignment="Top" FontSize="16"/>
                     <TextBlock HorizontalAlignment="Left" Height="39" Margin="584,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A4}"/>
-                    <Label Content="{DynamicResource Question6}" HorizontalAlignment="Left" Margin="561,253,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="{DynamicResource Question6}" HorizontalAlignment="Left" Margin="561,253,0,0" VerticalAlignment="Top" FontSize="16" Width="453"/>
                     <TextBlock HorizontalAlignment="Left" Height="64" Margin="584,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A6}"/>
                     <TextBlock  Margin="839,319,27,57" FontSize="14"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}"/></Hyperlink></TextBlock>
@@ -88,6 +88,6 @@
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}" FontSize="16"/></Hyperlink></TextBlock>
         <Button Content="{DynamicResource Save}" HorizontalAlignment="Left" Margin="668,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button x:Name="Loadbutton" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.1.0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.2.0" VerticalAlignment="Top" FontSize="14"/>
     </Grid>
 </Controls:MetroWindow>

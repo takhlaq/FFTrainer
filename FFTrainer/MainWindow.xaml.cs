@@ -14,6 +14,7 @@ using System.Windows.Threading;
 using AutoUpdaterDotNET;
 using System.Net;
 using MahApps.Metro;
+using System.Collections.Generic;
 
 namespace FFTrainer
 {
@@ -25,7 +26,10 @@ namespace FFTrainer
     {
 
         private BackgroundWorker worker2, worker3;
+        public static bool NotAllowed = false;
+        public static bool CheckAble = true;
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
+        HashSet<int> ZoneBlacklist = new HashSet<int> {691, 692, 693, 694, 695, 696, 697, 698, 733, 734, 725, 748, 749, 750, 751, 752, 753, 754, 755, 758, 765, 766, 767, 777, 791};
         public MainWindow()
         {
             InitializeComponent();
@@ -55,6 +59,41 @@ namespace FFTrainer
         {
             while (true)
             {
+                CharacterDetails.Territoryxd.value = MemoryManager.Instance.MemLib.readInt(MemoryManager.GetAddressString(MemoryManager.Instance.TerritoryAddress, Settings.Instance.Character.Territory));
+                if (ZoneBlacklist.Contains(CharacterDetails.Territoryxd.value))
+                {
+                    if (CheckAble == true)
+                    {
+                        NotAllowed = true;
+                        CheckAble = false;
+                        CharacterDetails.Max.Checker = false;
+                        CharacterDetails.Min.Checker = false;
+                        CharacterDetails.CZoom.Checker = false;
+                        CharacterDetails.CZoom.freeze = false;
+                        if (CharacterDetails.CZoom.value > 20) // Maximum you Can zoom so lets check if value is higher
+                        {
+                            CharacterDetails.CZoom.value = (float)20;
+                            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", "20");
+                        }
+                        CharacterDetails.Max.value = (float)20; //Maximum you can zoom out
+                        CharacterDetails.Min.value = (float)1.5; // minimum you can zoom out
+                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", "20");
+                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", "1.5");
+                        CharacterDetails.Max.freeze = false;
+                        CharacterDetails.Min.freeze = false;
+                    }
+                }
+                else
+                {
+                    if(CheckAble==false)
+                    {
+                        CheckAble = true;
+                        NotAllowed = false;
+                        CharacterDetails.Max.Checker = true;
+                        CharacterDetails.Min.Checker = true;
+                        CharacterDetails.CZoom.Checker = true;
+                    }
+                }
                 if (!CharacterDetails.Job.freeze)
                 {
                     CharacterDetails.Job.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
@@ -284,6 +323,10 @@ namespace FFTrainer
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Jaw), CharacterDetails.Jaw.GetBytes());
                 else CharacterDetails.Jaw.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Jaw));
 
+                if (CharacterDetails.TailorMuscle.freeze)
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailorMuscle), CharacterDetails.TailorMuscle.GetBytes());
+                else CharacterDetails.TailorMuscle.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailorMuscle));
+
                 Thread.Sleep(100);
             }
         }
@@ -311,7 +354,7 @@ namespace FFTrainer
                     CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                     CharacterDetails.EmoteX.value= (CharacterDetails.Emotes)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 }
-                Thread.Sleep(1);
+                Thread.Sleep(10);
 
             }
         }
@@ -482,6 +525,7 @@ namespace FFTrainer
                 CharacterDetails.LipsTone.freeze = true;
                 CharacterDetails.Skintone.freeze = true;
                 CharacterDetails.FacialFeatures.freeze = true;
+                CharacterDetails.TailorMuscle.freeze = true;
                 CharacterDetails.Eye.freeze = true;
                 CharacterDetails.RightEye.freeze = true;
                 CharacterDetails.EyeBrowType.freeze = true;
@@ -615,6 +659,8 @@ namespace FFTrainer
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye), load1.FeetDye.GetBytes());
                 CharacterDetails.Race.value = load1.Race.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), load1.Race.GetBytes());
+                CharacterDetails.TailorMuscle.value = load1.TailorMuscle.value;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailorMuscle), load1.TailorMuscle.GetBytes());
                 CharacterDetails.Clan.value = load1.Clan.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan), load1.Clan.GetBytes());
                 CharacterDetails.Gender.value = load1.Gender.value;

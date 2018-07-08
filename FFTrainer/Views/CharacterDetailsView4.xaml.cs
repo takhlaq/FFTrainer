@@ -1,20 +1,6 @@
 ﻿using FFTrainer.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FFTrainer.Views
 {
@@ -33,21 +19,21 @@ namespace FFTrainer.Views
         }
         private void MaxZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (MaxZoom.Value.HasValue)
+            if (MaxZoom.Value.HasValue && MainWindow.NotAllowed == false)
                 if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
         }
 
         private void Min_Zoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (Min_Zoom.Value.HasValue)
+            if (Min_Zoom.Value.HasValue && MainWindow.NotAllowed == false)
                 if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
         }
 
         private void CurrentZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (CurrentZoom.Value.HasValue)
+            if (CurrentZoom.Value.HasValue && MainWindow.NotAllowed == false)
                 if (CurrentZoom.IsMouseOver || CurrentZoom.IsKeyboardFocusWithin || CZoom2.IsKeyboardFocusWithin||CZoom2.IsMouseOver)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CurrentZoom.Value.ToString());
         }
@@ -116,13 +102,13 @@ namespace FFTrainer.Views
 
             if (!_exdProvider.TerritoryTypes.ContainsKey(territory))
             {
-                //ShowError("Could not find your current zone. Make sure you are using the latest version.");
+                System.Windows.MessageBox.Show("Could not find your current zone. Make sure you are using the latest version.", "Oh no!");
                 return;
             }
 
             if (_exdProvider.TerritoryTypes[territory].WeatherRate == null)
             {
-               // Util.ShowError("Setting weather is not supported for your current zone.");
+                System.Windows.MessageBox.Show("Setting weather is not supported for your current zone.", "Oh no!");
                 return;
             }
 
@@ -137,18 +123,3 @@ namespace FFTrainer.Views
         }
     }
 }
-/*
-        public int GetTerritoryType()
-        {
-            return _memory.readInt(Definitions.TERRITORYTYPEOFFSETPTR);
-        }
-
-        public int GetWeather()
-        {
-            return _memory.readByte(Definitions.WEATHEROFFSETPTR);
-        }
-
-        public void SetWeather(byte id)
-        {
-            _memory.writeBytes(Definitions.WEATHEROFFSETPTR, new[] {id});
-*/

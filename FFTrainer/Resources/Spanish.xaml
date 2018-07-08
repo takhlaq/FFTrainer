@@ -121,5 +121,6 @@
     <system:String x:Key="A6">A.) Si desea hacer un informe o una sugerencia para ayudar a que este capacitador mejore, envíeme un mensaje en desacuerdo o realice una publicación en nuestro servidor de discordia en el canal apropiado.</system:String>
     <system:String x:Key="faq">Preguntas frecuentes</system:String>
     <system:String x:Key="Aboutx">Acerca de:</system:String>
+    <system:String x:Key="TailorMuscle">Cola/muscular</system:String>
     <system:String x:Key="AboutText">El código base de este entrenador fue hecho por LeonBlade y luego el proyecto continuó con Johto trabajando en él. Esta aplicación utiliza las siguientes bibliotecas en este proyecto: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json y Memory.dll. Este proyecto usa partes del código del armario, gracias a la ayuda de Cabra.</system:String>
 </ResourceDictionary>
