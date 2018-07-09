@@ -273,6 +273,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Item.csv" />
+    <None Include="Resources\ItemG.csv" />
+    <None Include="Resources\itemJP.csv" />
     <None Include="Resources\territorytype.exh.csv" />
     <None Include="Resources\weatherrate.exh.csv" />
     <None Include="Resources\weather_0.exh_en.csv" />

@@ -85,7 +85,6 @@ namespace FFTrainer
             public int Index { get; set; }
             public WeatherRate WeatherRate { get; set; }
         }
-
         public class WeatherRate
         {
             public int Index { get; set; }
@@ -99,117 +98,350 @@ namespace FFTrainer
         public void MakeItemList()
         {
             Items = new Dictionary<int, Item>();
-            try
+            if (Properties.Settings.Default.Language == "English"|| Properties.Settings.Default.Language == "Spanish")
             {
-                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.Item)))
+                try
                 {
-                    parser.TextFieldType = FieldType.Delimited;
-                    parser.SetDelimiters(",");
-                    int rowCount = 0;
-                    while (!parser.EndOfData)
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.Item)))
                     {
-                        //Processing row
-                        rowCount++;
-                        string[] fields = parser.ReadFields();
-                        int fCount = 0;
-
-                        int index = 0;
-                        var item = new Item();
-
-                        if (rowCount == 1)
-                            continue;
-
-                        foreach (string field in fields)
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        while (!parser.EndOfData)
                         {
-                            fCount++;
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
 
-                            if (fCount == 1)
-                            {
-                                int.TryParse(field, out index);
-                            }
+                            int index = 0;
+                            var item = new Item();
 
-                            if (fCount == 2)
-                            {
-                                item.Name = field;
-                            }
+                            if (rowCount == 1)
+                                continue;
 
-                            if (fCount == 17)
+                            foreach (string field in fields)
                             {
-                                int cat = int.Parse(field);
-                                switch (cat)
+                                fCount++;
+
+                                if (fCount == 1)
                                 {
-                                    case 34:
-                                        item.Type = ItemType.Head;
-                                        break;
-                                    case 35:
-                                        item.Type = ItemType.Body;
-                                        break;
-                                    case 37:
-                                        item.Type = ItemType.Hands;
-                                        break;
-                                    case 36:
-                                        item.Type = ItemType.Legs;
-                                        break;
-                                    case 38:
-                                        item.Type = ItemType.Feet;
-                                        break;
-                                    case 41:
-                                        item.Type = ItemType.Ears;
-                                        break;
-                                    case 40:
-                                        item.Type = ItemType.Neck;
-                                        break;
-                                    case 42:
-                                        item.Type = ItemType.Wrists;
-                                        break;
-                                    case 43:
-                                        item.Type = ItemType.Ring;
-                                        break;
-                                    default:
-                                        item.Type = ItemType.Wep;
-                                        break;
+                                    int.TryParse(field, out index);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    item.Name = field;
+                                }
+
+                                if (fCount == 17)
+                                {
+                                    int cat = int.Parse(field);
+                                    switch (cat)
+                                    {
+                                        case 34:
+                                            item.Type = ItemType.Head;
+                                            break;
+                                        case 35:
+                                            item.Type = ItemType.Body;
+                                            break;
+                                        case 37:
+                                            item.Type = ItemType.Hands;
+                                            break;
+                                        case 36:
+                                            item.Type = ItemType.Legs;
+                                            break;
+                                        case 38:
+                                            item.Type = ItemType.Feet;
+                                            break;
+                                        case 41:
+                                            item.Type = ItemType.Ears;
+                                            break;
+                                        case 40:
+                                            item.Type = ItemType.Neck;
+                                            break;
+                                        case 42:
+                                            item.Type = ItemType.Wrists;
+                                            break;
+                                        case 43:
+                                            item.Type = ItemType.Ring;
+                                            break;
+                                        default:
+                                            item.Type = ItemType.Wep;
+                                            break;
+                                    }
+                                }
+
+                                if (fCount == 47)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                }
+
+                                if (fCount == 48)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
                                 }
                             }
 
-                            if (fCount == 47)
-                            {
-                                var tfield = field.Replace(" ", "");
-                                if (item.Type == ItemType.Wep)
-                                {
-                                    item.ModelMain = tfield;
-                                }
-                                else
-                                {
-                                    item.ModelMain = tfield;
-                                }
-                            }
-
-                            if (fCount == 48)
-                            {
-                                var tfield = field.Replace(" ", "");
-                                if (item.Type == ItemType.Wep)
-                                {
-                                    item.ModelOff = tfield;
-                                }
-                                else
-                                {
-                                    item.ModelOff = tfield;
-                                }
-                            }
+                            Debug.WriteLine(item.Name + " - " + item.Type);
+                            Items.Add(index, item);
                         }
-
-                        Debug.WriteLine(item.Name + " - " + item.Type);
-                        Items.Add(index, item);
+                        Debug.WriteLine($"ExdCsvReader: {rowCount} items read");
                     }
-                    Debug.WriteLine($"ExdCsvReader: {rowCount} items read");
+                }
+                catch (Exception exc)
+                {
+                    Items = null;
+#if DEBUG
+                    throw exc;
+#endif
                 }
             }
-            catch (Exception exc)
+            if (Properties.Settings.Default.Language == "Japanese")
             {
-                Items = null;
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.itemJP)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int index = 0;
+                            var item = new Item();
+
+                            if (rowCount == 1)
+                                continue;
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    int.TryParse(field, out index);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    item.Name = field;
+                                }
+
+                                if (fCount == 17)
+                                {
+                                    int cat = int.Parse(field);
+                                    switch (cat)
+                                    {
+                                        case 34:
+                                            item.Type = ItemType.Head;
+                                            break;
+                                        case 35:
+                                            item.Type = ItemType.Body;
+                                            break;
+                                        case 37:
+                                            item.Type = ItemType.Hands;
+                                            break;
+                                        case 36:
+                                            item.Type = ItemType.Legs;
+                                            break;
+                                        case 38:
+                                            item.Type = ItemType.Feet;
+                                            break;
+                                        case 41:
+                                            item.Type = ItemType.Ears;
+                                            break;
+                                        case 40:
+                                            item.Type = ItemType.Neck;
+                                            break;
+                                        case 42:
+                                            item.Type = ItemType.Wrists;
+                                            break;
+                                        case 43:
+                                            item.Type = ItemType.Ring;
+                                            break;
+                                        default:
+                                            item.Type = ItemType.Wep;
+                                            break;
+                                    }
+                                }
+
+                                if (fCount == 47)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                }
+
+                                if (fCount == 48)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                }
+                            }
+
+                            Debug.WriteLine(item.Name + " - " + item.Type);
+                            Items.Add(index, item);
+                        }
+                        Debug.WriteLine($"ExdCsvReader: {rowCount} items read");
+                    }
+                }
+                catch (Exception exc)
+                {
+                    Items = null;
 #if DEBUG
-                throw exc;
+                    throw exc;
 #endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "German")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.ItemG)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int index = 0;
+                            var item = new Item();
+
+                            if (rowCount == 1)
+                                continue;
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    int.TryParse(field, out index);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    item.Name = field;
+                                }
+
+                                if (fCount == 17)
+                                {
+                                    int cat = int.Parse(field);
+                                    switch (cat)
+                                    {
+                                        case 34:
+                                            item.Type = ItemType.Head;
+                                            break;
+                                        case 35:
+                                            item.Type = ItemType.Body;
+                                            break;
+                                        case 37:
+                                            item.Type = ItemType.Hands;
+                                            break;
+                                        case 36:
+                                            item.Type = ItemType.Legs;
+                                            break;
+                                        case 38:
+                                            item.Type = ItemType.Feet;
+                                            break;
+                                        case 41:
+                                            item.Type = ItemType.Ears;
+                                            break;
+                                        case 40:
+                                            item.Type = ItemType.Neck;
+                                            break;
+                                        case 42:
+                                            item.Type = ItemType.Wrists;
+                                            break;
+                                        case 43:
+                                            item.Type = ItemType.Ring;
+                                            break;
+                                        default:
+                                            item.Type = ItemType.Wep;
+                                            break;
+                                    }
+                                }
+
+                                if (fCount == 47)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                }
+
+                                if (fCount == 48)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                }
+                            }
+
+                            Debug.WriteLine(item.Name + " - " + item.Type);
+                            Items.Add(index, item);
+                        }
+                        Debug.WriteLine($"ExdCsvReader: {rowCount} items read");
+                    }
+                }
+                catch (Exception exc)
+                {
+                    Items = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
             }
         }
         public Item GetItemName(int id)
