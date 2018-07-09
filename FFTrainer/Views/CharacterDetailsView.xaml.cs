@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using FFTrainer.Models;
 using FFTrainer.ViewModels;
 namespace FFTrainer.Views
@@ -10,12 +13,35 @@ namespace FFTrainer.Views
     /// Interaction logic for CharacterDetailsView.xaml
     /// </summary>
     /// 
+
     public partial class CharacterDetailsView : UserControl
     {
+        private ExdCsvReader _exdProvider = new ExdCsvReader();
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public CharacterDetailsView()
         {
             InitializeComponent();
+            _exdProvider.RaceList();
+            _exdProvider.TribeList();
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20)};
+            timer.Tick += delegate
+            {
+                for (int i = 0; i < _exdProvider.Races.Count; i++)
+                {
+                    RaceBox.Items.Add(_exdProvider.Races[i].Name);
+
+                    if (_exdProvider.Races[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race)))
+                        RaceBox.SelectedIndex = i;
+                }
+                for (int i = 0; i < _exdProvider.Tribes.Count; i++)
+                {
+                    ClanBox.Items.Add(_exdProvider.Tribes[i].Name);
+                    if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
+                        ClanBox.SelectedIndex = i;
+                }
+                timer.IsEnabled = false;
+            };
+            timer.Start();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -368,6 +394,23 @@ namespace FFTrainer.Views
 
         private void Namexd_PreviewTextInput(object sender, TextCompositionEventArgs e)
         { }
+
+        public void LoadingUpXd()
+        {
+            for (int i = 0; i < _exdProvider.Races.Count; i++)
+            {
+                RaceBox.Items.Add(_exdProvider.Races[i].Name);
+
+                if (_exdProvider.Races[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race)))
+                    RaceBox.SelectedIndex = i;
+            }
+            for (int i = 0; i < _exdProvider.Tribes.Count; i++)
+            {
+                ClanBox.Items.Add(_exdProvider.Tribes[i].Name);
+                if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
+                    ClanBox.SelectedIndex = i;
+            }
+        }
     }
 }
 

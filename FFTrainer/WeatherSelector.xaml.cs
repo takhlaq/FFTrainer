@@ -22,7 +22,8 @@ namespace FFTrainer
         public ExdCsvReader.Weather Choice = null;
 
         private readonly List<ExdCsvReader.Weather> AllowedWeathers;
-
+        // var c = new WeatherSelector(_exdProvider.TerritoryTypes[territory].WeatherRate.AllowedWeathers, 
+        //MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather)));
         public WeatherSelector(List<ExdCsvReader.Weather> allowedWeathers, int currentWeather)
         {
             InitializeComponent();

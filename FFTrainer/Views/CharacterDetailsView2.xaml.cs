@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using FFTrainer.Models;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace FFTrainer.Views
 {
@@ -18,6 +19,37 @@ namespace FFTrainer.Views
         public CharacterDetailsView2()
         {
             InitializeComponent();
+            _exdProvider.DyeList();
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
+            timer.Tick += delegate
+            {
+                for (int i = 0; i < _exdProvider.Dyes.Count; i++)
+                {
+                    HeadDye.Items.Add(_exdProvider.Dyes[i].Name);
+                    ChestBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    ArmBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    MHBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    OHBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    LegBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    FeetBox.Items.Add(_exdProvider.Dyes[i].Name);
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadDye)))
+                        HeadDye.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestDye)))
+                        ChestBox.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsDye)))
+                        ArmBox.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye)))
+                        MHBox.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye)))
+                        OHBox.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsDye)))
+                        LegBox.SelectedIndex = i;
+                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye)))
+                        FeetBox.SelectedIndex = i;
+                }
+                timer.IsEnabled = false;
+            };
+            timer.Start();
         }
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         private ExdCsvReader _exdProvider = new ExdCsvReader();
@@ -613,6 +645,15 @@ namespace FFTrainer.Views
                 feetGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -193,7 +193,7 @@ namespace FFTrainer.ViewModels
             MemoryManager.Instance.TerritoryAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TerritoryOffset, NumberStyles.HexNumber));
             while (true)
             {
-                // sleep for 200 ms
+                // sleep for 500 ms
                 Thread.Sleep(500);
                 // check if our memory manager is set
                 mediator.SendWork();

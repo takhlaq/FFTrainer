@@ -21,6 +21,7 @@
     <system:String x:Key="Male">Male</system:String>
     <system:String x:Key="Female">Female</system:String>
     <system:String x:Key="Head">Head</system:String>
+    <system:String x:Key="HeadPiece">Head</system:String>
     <system:String x:Key="Jaw">Jaw</system:String>
     <system:String x:Key="Hair">Hair</system:String>
     <system:String x:Key="HairTone">Hair Tone</system:String>

@@ -21,6 +21,7 @@
     <system:String x:Key="Male">男</system:String>
     <system:String x:Key="Female">女</system:String>
     <system:String x:Key="Head">顔のタイプ</system:String>
+    <system:String x:Key="HeadPiece">防具</system:String>
     <system:String x:Key="Jaw">顔の輪郭</system:String>
     <system:String x:Key="Hair">髪型</system:String>
     <system:String x:Key="HairTone">髪の色</system:String>

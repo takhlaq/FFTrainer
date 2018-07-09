@@ -24,7 +24,6 @@ namespace FFTrainer
     ///
     public partial class MainWindow : MetroWindow
     {
-
         private BackgroundWorker worker2, worker3;
         public static bool NotAllowed = false;
         public static bool CheckAble = true;
@@ -66,17 +65,18 @@ namespace FFTrainer
                     {
                         NotAllowed = true;
                         CheckAble = false;
+                        //These are the checkbox to freeze addresses
                         CharacterDetails.Max.Checker = false;
                         CharacterDetails.Min.Checker = false;
                         CharacterDetails.CZoom.Checker = false;
                         CharacterDetails.CZoom.freeze = false;
-                        if (CharacterDetails.CZoom.value > 20) // Maximum you Can zoom so lets check if value is higher
+                        if (CharacterDetails.CZoom.value > 20) // 20 is the maxmimum you can zoom out. 
                         {
                             CharacterDetails.CZoom.value = (float)20;
                             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", "20");
                         }
                         CharacterDetails.Max.value = (float)20; //Maximum you can zoom out
-                        CharacterDetails.Min.value = (float)1.5; // minimum you can zoom out
+                        CharacterDetails.Min.value = (float)1.5; // minimum you can zoom in
                         MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", "20");
                         MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", "1.5");
                         CharacterDetails.Max.freeze = false;
@@ -99,7 +99,7 @@ namespace FFTrainer
                     CharacterDetails.Job.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
                     CharacterDetails.WeaponBase.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBase));
                     CharacterDetails.WeaponV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponV));
-                    CharacterDetails.WeaponDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye));
+                    CharacterDetails.WeaponDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye));
                 }
                 else
                 {
@@ -113,7 +113,7 @@ namespace FFTrainer
                     CharacterDetails.Offhand.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
                     CharacterDetails.OffhandBase.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBase));
                     CharacterDetails.OffhandV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV));
-                    CharacterDetails.OffhandDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye));
+                    CharacterDetails.OffhandDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye));
                 }
                 else
                 {
@@ -132,7 +132,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.HeadPiece.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
                     CharacterDetails.HeadV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadV));
-                    CharacterDetails.HeadDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadDye));
+                    CharacterDetails.HeadDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadDye));
                 }
                 if (CharacterDetails.Chest.freeze)
                 {
@@ -144,7 +144,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.Chest.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
                     CharacterDetails.ChestV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestV));
-                    CharacterDetails.ChestDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestDye));
+                    CharacterDetails.ChestDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestDye));
                 }
                 if (CharacterDetails.Arms.freeze)
                 {
@@ -156,7 +156,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.Arms.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
                     CharacterDetails.ArmsV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsV));
-                    CharacterDetails.ArmsDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsDye));
+                    CharacterDetails.ArmsDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsDye));
                 }
                 if (CharacterDetails.Legs.freeze)
                 {
@@ -168,7 +168,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.Legs.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
                     CharacterDetails.LegsV.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsV));
-                    CharacterDetails.LegsDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsDye));
+                    CharacterDetails.LegsDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsDye));
                 }
                 if (CharacterDetails.Feet.freeze)
                 {
@@ -180,7 +180,7 @@ namespace FFTrainer
                 {
                     CharacterDetails.Feet.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
                     CharacterDetails.FeetVa.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetVa));
-                    CharacterDetails.FeetDye.value = (CharacterDetails.Dyes)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye));
+                    CharacterDetails.FeetDye.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye));
                 }
 
                 if (CharacterDetails.LFinger.freeze)
@@ -234,12 +234,12 @@ namespace FFTrainer
                     CharacterDetails.EarVa.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EarVa));
                 }
                 if (!CharacterDetails.Race.freeze)
-                    CharacterDetails.Race.value = (CharacterDetails.Races)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race));
+                    CharacterDetails.Race.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race));
                 else
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), CharacterDetails.Race.GetBytes());
-
+                    
                 if (!CharacterDetails.Clan.freeze)
-                    CharacterDetails.Clan.value = (CharacterDetails.Clans)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan));
+                    CharacterDetails.Clan.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan));
                 else
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan), CharacterDetails.Clan.GetBytes());
 
@@ -436,6 +436,7 @@ namespace FFTrainer
             {
                 //Not first time of running application.
             }
+
         }
 
         private void ChangeLang(object sender, RoutedEventArgs e)

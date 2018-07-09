@@ -5,7 +5,6 @@ namespace FFTrainer
 {
     public class DelegateCommand : ICommand
     {
-        #pragma warning disable CS00067 
         public event EventHandler CanExecuteChanged;
 
         Action<object> command;

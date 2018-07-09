@@ -79,7 +79,21 @@ namespace FFTrainer
             public int Index { get; set; }
             public string Name { get; set; }
         }
-
+        public class Race
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
+        public class Tribe
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
+        public class Dye
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
         public class TerritoryType
         {
             public int Index { get; set; }
@@ -94,11 +108,14 @@ namespace FFTrainer
         public Dictionary<int, Weather> Weathers = null;
         public Dictionary<int, WeatherRate> WeatherRates = null;
         public Dictionary<int, TerritoryType> TerritoryTypes = null;
+        public Dictionary<int, Race> Races = null;
+        public Dictionary<int, Tribe> Tribes = null;
+        public Dictionary<int, Dye> Dyes = null;
 
         public void MakeItemList()
         {
             Items = new Dictionary<int, Item>();
-            if (Properties.Settings.Default.Language == "English"|| Properties.Settings.Default.Language == "Spanish")
+            if (Properties.Settings.Default.Language == "English" || Properties.Settings.Default.Language == "Spanish")
             {
                 try
                 {
@@ -459,49 +476,146 @@ namespace FFTrainer
         public void MakeWeatherList()
         {
             Weathers = new Dictionary<int, Weather>();
-
-            try
+            if (Properties.Settings.Default.Language == "English" || Properties.Settings.Default.Language == "Spanish")
             {
-                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weather_0_exh_en)))
+                try
                 {
-                    parser.TextFieldType = FieldType.Delimited;
-                    parser.SetDelimiters(",");
-                    int rowCount = 0;
-                    parser.ReadFields();
-                    while (!parser.EndOfData)
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weather_0_exh_en)))
                     {
-                        Weather weather = new Weather();
-
-                        //Processing row
-                        rowCount++;
-                        string[] fields = parser.ReadFields();
-                        int fCount = 0;
-
-                        weather.Index = int.Parse(fields[0]);
-
-                        foreach (string field in fields)
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
                         {
-                            fCount++;
+                            Weather weather = new Weather();
 
-                            if (fCount == 3)
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            weather.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
                             {
-                                weather.Name = field;
+                                fCount++;
+
+                                if (fCount == 3)
+                                {
+                                    weather.Name = field;
+                                }
                             }
+
+                            Console.WriteLine($"{rowCount} - {weather.Name}");
+                            Weathers.Add(weather.Index, weather);
                         }
 
-                        Console.WriteLine($"{rowCount} - {weather.Name}");
-                        Weathers.Add(weather.Index, weather);
+                        Console.WriteLine($"{rowCount} weathers read");
                     }
+                }
 
-                    Console.WriteLine($"{rowCount} weathers read");
+                catch (Exception exc)
+                {
+                    Weathers = null;
+#if DEBUG
+                    throw exc;
+#endif
                 }
             }
-            catch (Exception exc)
+            if (Properties.Settings.Default.Language == "German")
             {
-                Weathers = null;
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weatherDE)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            Weather weather = new Weather();
+
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            weather.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 3)
+                                {
+                                    weather.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {weather.Name}");
+                            Weathers.Add(weather.Index, weather);
+                        }
+
+                        Console.WriteLine($"{rowCount} weathers read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Weathers = null;
 #if DEBUG
-                throw exc;
+                    throw exc;
 #endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "Japanese")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weatherJP)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            Weather weather = new Weather();
+
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            weather.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 3)
+                                {
+                                    weather.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {weather.Name}");
+                            Weathers.Add(weather.Index, weather);
+                        }
+
+                        Console.WriteLine($"{rowCount} weathers read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Weathers = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
             }
         }
 
@@ -608,6 +722,423 @@ namespace FFTrainer
 #if DEBUG
                 throw exc;
 #endif
+            }
+        }
+        public void RaceList()
+        {
+            Races = new Dictionary<int, Race>();
+            if (Properties.Settings.Default.Language == "English" || Properties.Settings.Default.Language == "Spanish")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.raceEN)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Race race = new Race();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            race.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    race.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {race.Name}");
+                            Races.Add(race.Index, race);
+                        }
+
+                        Console.WriteLine($"{rowCount} Races read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Races = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "Japanese")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.raceJP)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Race race = new Race();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            race.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    race.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {race.Name}");
+                            Races.Add(race.Index, race);
+                        }
+
+                        Console.WriteLine($"{rowCount} Races read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Races = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "German")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.raceDE)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Race race = new Race();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            race.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    race.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {race.Name}");
+                            Races.Add(race.Index, race);
+                        }
+
+                        Console.WriteLine($"{rowCount} Races read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Races = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+        }
+        public void TribeList()
+        {
+            Tribes = new Dictionary<int, Tribe>();
+            if (Properties.Settings.Default.Language == "English" || Properties.Settings.Default.Language == "Spanish")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.tribe_exh_en)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Tribe tribe = new Tribe();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            tribe.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    tribe.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {tribe.Name}");
+                            Tribes.Add(tribe.Index, tribe);
+                        }
+
+                        Console.WriteLine($"{rowCount} Tribes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Tribes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "Japanese")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.tribe_exh_ja)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Tribe tribe = new Tribe();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            tribe.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    tribe.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {tribe.Name}");
+                            Tribes.Add(tribe.Index, tribe);
+                        }
+
+                        Console.WriteLine($"{rowCount} Tribes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Tribes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "German")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.tribe_exh_de)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Tribe tribe = new Tribe();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            tribe.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    tribe.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {tribe.Name}");
+                            Tribes.Add(tribe.Index, tribe);
+                        }
+
+                        Console.WriteLine($"{rowCount} Tribes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Tribes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+        }
+        public void DyeList()
+        {
+            Dyes = new Dictionary<int, Dye>();
+            if (Properties.Settings.Default.Language == "English" || Properties.Settings.Default.Language == "Spanish")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.stain_exh_en)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Dye dye = new Dye();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            dye.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 4)
+                                {
+                                    dye.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {dye.Name}");
+                            Dyes.Add(dye.Index, dye);
+                        }
+
+                        Console.WriteLine($"{rowCount} Dyes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Dyes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "Japanese")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.stain_exh_ja)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Dye dye = new Dye();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            dye.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 4)
+                                {
+                                    dye.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {dye.Name}");
+                            Dyes.Add(dye.Index, dye);
+                        }
+
+                        Console.WriteLine($"{rowCount} Dyes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Dyes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "German")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.stain_exh_de)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Dye dye = new Dye();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            dye.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 4)
+                                {
+                                    dye.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {dye.Name}");
+                            Dyes.Add(dye.Index, dye);
+                        }
+
+                        Console.WriteLine($"{rowCount} Dyes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Dyes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
             }
         }
     }

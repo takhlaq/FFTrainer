@@ -66,19 +66,19 @@
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="293" Margin="6,106,0,0" VerticalAlignment="Top" Width="1067"/>
                     <Label Content="{DynamicResource faq}" HorizontalAlignment="Left" Margin="419,67,0,0" VerticalAlignment="Top" Width="279" FontSize="22"/>
                     <TextBlock HorizontalAlignment="Left" Height="82" Margin="48,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438"><Run Text="{DynamicResource A1}"/><LineBreak/><Run/></TextBlock>
-                    <Label Content="{DynamicResource Question1}" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <Label Content="{DynamicResource Question2}" HorizontalAlignment="Left" Margin="21,222,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="{DynamicResource Question1}" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" FontSize="16" Width="499"/>
+                    <Label Content="{DynamicResource Question2}" HorizontalAlignment="Left" Margin="21,222,0,0" VerticalAlignment="Top" FontSize="16" Width="499"/>
                     <TextBlock HorizontalAlignment="Left" Height="82" Margin="48,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A2}"/>
-                    <Label Content="{DynamicResource Question4}" HorizontalAlignment="Left" Margin="561,115,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBlock HorizontalAlignment="Left" Height="39" Margin="584,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A4}"/>
-                    <Label Content="{DynamicResource Question6}" HorizontalAlignment="Left" Margin="561,253,0,0" VerticalAlignment="Top" FontSize="16" Width="453"/>
-                    <TextBlock HorizontalAlignment="Left" Height="64" Margin="584,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A6}"/>
-                    <TextBlock  Margin="839,319,27,57" FontSize="14"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
+                    <Label Content="{DynamicResource Question4}" HorizontalAlignment="Left" Margin="549,115,0,0" VerticalAlignment="Top" FontSize="16" Width="512"/>
+                    <TextBlock HorizontalAlignment="Left" Height="39" Margin="572,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Text="{DynamicResource A4}"/>
+                    <Label Content="{DynamicResource Question6}" HorizontalAlignment="Left" Margin="549,251,0,0" VerticalAlignment="Top" FontSize="16" Width="507"/>
+                    <TextBlock HorizontalAlignment="Left" Height="64" Margin="572,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Text="{DynamicResource A6}"/>
+                    <TextBlock  Margin="827,317,39,59" FontSize="14"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}"/></Hyperlink></TextBlock>
-                    <Label Content="{DynamicResource Question3}" HorizontalAlignment="Left" Margin="21,319,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="{DynamicResource Question3}" HorizontalAlignment="Left" Margin="21,319,0,0" VerticalAlignment="Top" FontSize="16" Width="499"/>
                     <TextBlock HorizontalAlignment="Left" Height="49" Margin="48,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472"><Run Text="{DynamicResource A3}"/><LineBreak/><Run/></TextBlock>
-                    <Label Content="{DynamicResource Question5}" HorizontalAlignment="Left" Margin="561,183,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBlock HorizontalAlignment="Left" Height="39" Margin="584,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" Text="{DynamicResource A5}"/>
+                    <Label Content="{DynamicResource Question5}" HorizontalAlignment="Left" Margin="549,183,0,0" VerticalAlignment="Top" FontSize="16" Width="507"/>
+                    <TextBlock HorizontalAlignment="Left" Height="39" Margin="572,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Text="{DynamicResource A5}"/>
 
                 </Grid>
             </TabItem>

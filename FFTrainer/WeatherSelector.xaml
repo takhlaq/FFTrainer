@@ -9,7 +9,7 @@
     <Grid>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="15,38,0,0" VerticalAlignment="Top" Width="197"/>
         <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="137,76,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Label Content="{DynamicResource SelectWeather}" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource SelectWeather}" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" FontSize="10"/>
 
     </Grid>
 </Window>

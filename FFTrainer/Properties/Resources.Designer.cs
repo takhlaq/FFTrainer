@@ -88,12 +88,171 @@ namespace FFTrainer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [INT(0x6)][0x8],3 [INT(0x6)][0x10],4 [INT(0x6)][0x18],5 [INT(0x6)][0x20],6 [INT(0x6)][0xc],7 [INT(0x6)][0x14],8 [INT(0x6)][0x1c],9 [INT(0x6)][0x24]
+        ///0,&quot;Keiner&quot;,&quot;Keiner&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;Hyuran&quot;,&quot;Hyuran&quot;,2983,3520,3296,3750,2984,3521,3297,3751
+        ///2,&quot;Elezen&quot;,&quot;Elezen&quot;,2985,3522,3298,3752,2986,3523,3299,3753
+        ///3,&quot;Lalafell&quot;,&quot;Lalafell&quot;,2987,3524,3300,3754,2988,3525,3301,3755
+        ///4,&quot;Miqo&apos;te&quot;,&quot;Miqo&apos;te&quot;,2989,3526,3302,3756,2990,3527,3303,3757
+        ///5,&quot;Roegadyn&quot;,&quot;Roegadyn&quot;,29 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string raceDE {
+            get {
+                return ResourceManager.GetString("raceDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [INT(0x6)][0x8],3 [INT(0x6)][0x10],4 [INT(0x6)][0x18],5 [INT(0x6)][0x20],6 [INT(0x6)][0xc],7 [INT(0x6)][0x14],8 [INT(0x6)][0x1c],9 [INT(0x6)][0x24]
+        ///0,&quot;None&quot;,&quot;None&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;Hyur&quot;,&quot;Hyur&quot;,2983,3520,3296,3750,2984,3521,3297,3751
+        ///2,&quot;Elezen&quot;,&quot;Elezen&quot;,2985,3522,3298,3752,2986,3523,3299,3753
+        ///3,&quot;Lalafell&quot;,&quot;Lalafell&quot;,2987,3524,3300,3754,2988,3525,3301,3755
+        ///4,&quot;Miqo&apos;te&quot;,&quot;Miqo&apos;te&quot;,2989,3526,3302,3756,2990,3527,3303,3757
+        ///5,&quot;Roegadyn&quot;,&quot;Roegadyn&quot;,2991,3528, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string raceEN {
+            get {
+                return ResourceManager.GetString("raceEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [INT(0x6)][0x8],3 [INT(0x6)][0x10],4 [INT(0x6)][0x18],5 [INT(0x6)][0x20],6 [INT(0x6)][0xc],7 [INT(0x6)][0x14],8 [INT(0x6)][0x1c],9 [INT(0x6)][0x24]
+        ///0,&quot;なし&quot;,&quot;なし&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;ヒューラン&quot;,&quot;ヒューラン&quot;,2983,3520,3296,3750,2984,3521,3297,3751
+        ///2,&quot;エレゼン&quot;,&quot;エレゼン&quot;,2985,3522,3298,3752,2986,3523,3299,3753
+        ///3,&quot;ララフェル&quot;,&quot;ララフェル&quot;,2987,3524,3300,3754,2988,3525,3301,3755
+        ///4,&quot;ミコッテ&quot;,&quot;ミコッテ&quot;,2989,3526,3302,3756,2990,3527,3303,3757
+        ///5,&quot;ルガディン&quot;,&quot;ルガディン&quot;,2991,3528,3304,3758,2992,3529,3305 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string raceJP {
+            get {
+                return ResourceManager.GetString("raceJP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)][0x9],4 [BBOOL(0x1a)][0x9]
+        ///0,0,2,&quot;Keiner&quot;,false,true
+        ///1,14999504,2,&quot;Schneeweiß&quot;,false,true
+        ///2,11315362,2,&quot;Aschgrau&quot;,false,true
+        ///3,9013124,2,&quot;Goobbuegrau&quot;,false,true
+        ///4,6645093,2,&quot;Schiefergrau&quot;,false,true
+        ///5,4736834,2,&quot;Anthrazit&quot;,false,true
+        ///6,2828579,2,&quot;Rußschwarz&quot;,false,true
+        ///7,15114134,4,&quot;Rosarot&quot;,false,true
+        ///8,8612201,4,&quot;Altrosa&quot;,false,true
+        ///9,5969705,4,&quot;Rolanbeerenrot&quot;,false,true
+        ///10,7871002,4,&quot;Dalamudrot&quot;,false,true
+        ///11,6 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string stain_exh_de {
+            get {
+                return ResourceManager.GetString("stain_exh_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)][0x9],4 [BBOOL(0x1a)][0x9]
+        ///0,0,2,&quot;None&quot;,false,true
+        ///1,14999504,2,&quot;Snow White&quot;,false,true
+        ///2,11315362,2,&quot;Ash Grey&quot;,false,true
+        ///3,9013124,2,&quot;Goobbue Grey&quot;,false,true
+        ///4,6645093,2,&quot;Slate Grey&quot;,false,true
+        ///5,4736834,2,&quot;Charcoal Grey&quot;,false,true
+        ///6,2828579,2,&quot;Soot Black&quot;,false,true
+        ///7,15114134,4,&quot;Rose Pink&quot;,false,true
+        ///8,8612201,4,&quot;Lilac Purple&quot;,false,true
+        ///9,5969705,4,&quot;Rolanberry Red&quot;,false,true
+        ///10,7871002,4,&quot;Dalamud Red&quot;,false,t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string stain_exh_en {
+            get {
+                return ResourceManager.GetString("stain_exh_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)][0x9],4 [BBOOL(0x1a)][0x9]
+        ///0,0,2,&quot;なし&quot;,false,true
+        ///1,14999504,2,&quot;スノウホワイト&quot;,false,true
+        ///2,11315362,2,&quot;アッシュグレイ&quot;,false,true
+        ///3,9013124,2,&quot;グゥーブーグレイ&quot;,false,true
+        ///4,6645093,2,&quot;スレートグレイ&quot;,false,true
+        ///5,4736834,2,&quot;チャコールグレイ&quot;,false,true
+        ///6,2828579,2,&quot;スートブラック&quot;,false,true
+        ///7,15114134,4,&quot;ローズピンク&quot;,false,true
+        ///8,8612201,4,&quot;ライラックパープル&quot;,false,true
+        ///9,5969705,4,&quot;ロランベリーレッド&quot;,false,true
+        ///10,7871002,4,&quot;ダラガブレッド&quot;,false,true
+        ///11,6431239,4,&quot;ラストレッド&quot;,false,tru [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string stain_exh_ja {
+            get {
+                return ResourceManager.GetString("stain_exh_ja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Index,0 [0x0][0x0],1 [0x0][0x4],2 [0x3][0x2c],3 [0x5][0x1c],4 [0x5][0x1e],5 [0x5][0x20],6 [0x5][0x22],7 [0x3][0x2d],8 [0x3][0x2e],9 [0x3][0x2f],10 [0x5][0x24],11 [0x19][0x37],12 [0x3][0x30],13 [0x1a][0x37],14 [0x3][0x31],15 [0x1b][0x37],16 [0x1c][0x37],17 [0x1d][0x37],18 [0x1e][0x37],19 [0x5][0x26],20 [0x6][0xc],21 [0x6][0x10],22 [0x7][0x8],23 [0x5][0x28],24 [0x6][0x14],25 [0x6][0x18],26 [0x5][0x2a],27 [0x2][0x36],28 [0x1f][0x37],29 [0x3][0x32],30 [0x3][0x33],31 [0x3][0x34],32 [0x3][0x35],33 [0x20][0x37]
         ///1, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string territorytype_exh {
             get {
                 return ResourceManager.GetString("territorytype_exh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [BYTE(0x2)][0x8],3 [BYTE(0x2)][0x9],4 [BYTE(0x2)][0xa],5 [BYTE(0x2)][0xb],6 [BYTE(0x2)][0xc],7 [BYTE(0x2)][0xd],8 [BYTE(0x2)][0xe],9 [BYTE(0x2)][0xf]
+        ///0,&quot;Keiner&quot;,&quot;Keiner&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;Wiesländer&quot;,&quot;Wiesländer&quot;,0,0,2,0,-1,3,-1,0
+        ///2,&quot;Hochländer&quot;,&quot;Hochländer&quot;,0,0,3,2,0,-2,0,0
+        ///3,&quot;Erlschatten&quot;,&quot;Erlschatten&quot;,0,0,0,-1,3,2,-1,0
+        ///4,&quot;Dunkelalb&quot;,&quot;Dunkelalb&quot;,0,0,0,-1,0,3,1,0
+        ///5,&quot;Halmling&quot;,&quot;Halmling&quot;,0,0,-1,-1,3,2,0,0
+        ///6,&quot;Sandling&quot;,&quot;Sandling&quot;,0,0,-1,-2,1,2,3,0
+        ///7, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tribe_exh_de {
+            get {
+                return ResourceManager.GetString("tribe_exh_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [BYTE(0x2)][0x8],3 [BYTE(0x2)][0x9],4 [BYTE(0x2)][0xa],5 [BYTE(0x2)][0xb],6 [BYTE(0x2)][0xc],7 [BYTE(0x2)][0xd],8 [BYTE(0x2)][0xe],9 [BYTE(0x2)][0xf]
+        ///0,&quot;None&quot;,&quot;None&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;Midlander&quot;,&quot;Midlander&quot;,0,0,2,0,-1,3,-1,0
+        ///2,&quot;Highlander&quot;,&quot;Highlander&quot;,0,0,3,2,0,-2,0,0
+        ///3,&quot;Wildwood&quot;,&quot;Wildwood&quot;,0,0,0,-1,3,2,-1,0
+        ///4,&quot;Duskwight&quot;,&quot;Duskwight&quot;,0,0,0,-1,0,3,1,0
+        ///5,&quot;Plainsfolk&quot;,&quot;Plainsfolk&quot;,0,0,-1,-1,3,2,0,0
+        ///6,&quot;Dunesfolk&quot;,&quot;Dunesfolk&quot;,0,0,-1,-2,1,2,3,0
+        ///7,&quot;Seeke [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tribe_exh_en {
+            get {
+                return ResourceManager.GetString("tribe_exh_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [BYTE(0x2)][0x8],3 [BYTE(0x2)][0x9],4 [BYTE(0x2)][0xa],5 [BYTE(0x2)][0xb],6 [BYTE(0x2)][0xc],7 [BYTE(0x2)][0xd],8 [BYTE(0x2)][0xe],9 [BYTE(0x2)][0xf]
+        ///0,&quot;なし&quot;,&quot;なし&quot;,0,0,0,0,0,0,0,0
+        ///1,&quot;ミッドランダー &quot;,&quot;ミッドランダー &quot;,0,0,2,0,-1,3,-1,0
+        ///2,&quot;ハイランダー&quot;,&quot;ハイランダー&quot;,0,0,3,2,0,-2,0,0
+        ///3,&quot;フォレスター&quot;,&quot;フォレスター&quot;,0,0,0,-1,3,2,-1,0
+        ///4,&quot;シェーダー&quot;,&quot;シェーダー&quot;,0,0,0,-1,0,3,1,0
+        ///5,&quot;プレーンフォーク&quot;,&quot;プレーンフォーク&quot;,0,0,-1,-1,3,2,0,0
+        ///6,&quot;デューンフォーク&quot;,&quot;デューンフォーク&quot;,0,0,-1,-2,1,2,3,0
+        ///7,&quot;サンシーカー&quot;,&quot;サンシーカー&quot;,0,0,2,0,3,-1,-1,0
+        ///8 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tribe_exh_ja {
+            get {
+                return ResourceManager.GetString("tribe_exh_ja", resourceCulture);
             }
         }
         
@@ -113,6 +272,43 @@ namespace FFTrainer.Properties {
         public static string weather_0_exh_en {
             get {
                 return ResourceManager.GetString("weather_0_exh_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [INT(0x6)][0x18],1 [STRING(0x0)][0x0],2 [STRING(0x0)][0x4],3 [STRING(0x0)][0x8],4 [STRING(0x0)][0xc],5 [STRING(0x0)][0x10],6 [STRING(0x0)][0x14]
+        ///0,0,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///1,60201,&quot;Klar&quot;,&quot;klar&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///2,60202,&quot;Heiter&quot;,&quot;heiter&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///3,60203,&quot;Wolkig&quot;,&quot;wolkig&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///4,60204,&quot;Neblig&quot;,&quot;nebelig&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///5,60205,&quot;Windig&quot;,&quot;windig&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///6,60206,&quot;Stürmisch&quot;,&quot;stürmisch&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///7,60207,&quot;Regnerisch&quot;,&quot;regnerisch&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///8,60208,&quot;Wolkenbruch&quot;,&quot;wolkenbruchartig&quot;,&quot;&quot;,&quot;....
+        /// </summary>
+        public static string weatherDE {
+            get {
+                return ResourceManager.GetString("weatherDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [INT(0x6)][0x18],1 [STRING(0x0)][0x0],2 [STRING(0x0)][0x4],3 [STRING(0x0)][0x8],4 [STRING(0x0)][0xc],5 [STRING(0x0)][0x10],6 [STRING(0x0)][0x14]
+        ///0,0,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///1,60201,&quot;快晴&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///2,60202,&quot;晴れ&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///3,60203,&quot;曇り&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///4,60204,&quot;霧&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///5,60205,&quot;風&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///6,60206,&quot;暴風&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///7,60207,&quot;雨&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///8,60208,&quot;暴雨&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
+        ///9,60209,&quot;雷&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&....
+        /// </summary>
+        public static string weatherJP {
+            get {
+                return ResourceManager.GetString("weatherJP", resourceCulture);
             }
         }
         
