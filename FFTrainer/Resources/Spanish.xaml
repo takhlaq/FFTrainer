@@ -123,5 +123,6 @@
     <system:String x:Key="faq">Preguntas frecuentes</system:String>
     <system:String x:Key="Aboutx">Acerca de:</system:String>
     <system:String x:Key="TailorMuscle">Cola/muscular</system:String>
+    <system:String x:Key="Unfreeze">Deselecciona todo</system:String>
     <system:String x:Key="AboutText">El código base de este entrenador fue hecho por LeonBlade y luego el proyecto continuó con Johto trabajando en él. Esta aplicación utiliza las siguientes bibliotecas en este proyecto: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json y Memory.dll. Este proyecto usa partes del código del armario, gracias a la ayuda de Cabra.</system:String>
 </ResourceDictionary>

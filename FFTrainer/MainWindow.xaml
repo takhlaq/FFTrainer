@@ -37,10 +37,10 @@
                 <Image Source="http://simpleicon.com/wp-content/uploads/refresh.png"/>
             </DockPanel>
         </Button>
-        <TabControl Margin="10,35,10,17">
+        <TabControl Margin="10,37,10,10">
             <TabItem Header="{DynamicResource Character}">
                 <Grid>
-                    <Views:CharacterDetailsView DataContext="{Binding CharacterDetails}" Height="Auto" Margin="0,0,10,-16" Width="Auto"/>
+                    <Views:CharacterDetailsView DataContext="{Binding CharacterDetails}" Height="Auto" Margin="0,0,10,-10" Width="Auto"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{DynamicResource Character2}">
@@ -62,7 +62,7 @@
                 <Grid>
                     <Label Content="{DynamicResource Aboutx}" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="127" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="846" FontSize="14" RenderTransformOrigin="0.5,0.5"><Run Text="{DynamicResource AboutText}"/><LineBreak/><Run/></TextBlock>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="293" Margin="6,106,0,0" VerticalAlignment="Top" Width="1067"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="303" Margin="6,106,0,0" VerticalAlignment="Top" Width="1067"/>
                     <Label Content="{DynamicResource faq}" HorizontalAlignment="Left" Margin="419,67,0,0" VerticalAlignment="Top" Width="279" FontSize="22"/>
                     <TextBlock HorizontalAlignment="Left" Height="82" Margin="48,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438"><Run Text="{DynamicResource A1}"/><LineBreak/><Run/></TextBlock>
                     <Label Content="{DynamicResource Question1}" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" FontSize="16" Width="499"/>

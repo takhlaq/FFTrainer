@@ -43,7 +43,7 @@
         <Label Content="{DynamicResource Variant}" HorizontalAlignment="Left" Margin="150,189,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="14"/>
         <Label Content="{DynamicResource Dyes}" HorizontalAlignment="Left" Margin="246,189,0,0" VerticalAlignment="Top" Width="86" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.535,0.537"/>
 
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="219" Margin="741,161,0,0" VerticalAlignment="Top" Width="309"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="213" Margin="741,161,0,0" VerticalAlignment="Top" Width="309"/>
         <CheckBox x:Name="OffBox" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Offhand.freeze}" Content="" HorizontalAlignment="Left" Margin="757,183,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.374,0.448"/>
         <Label Content="{DynamicResource OH}" HorizontalAlignment="Left" Margin="856,133,0,0" VerticalAlignment="Top" Width="140" FontSize="16" FontWeight="Bold"/>
         <Label Content="{DynamicResource ModelID}" HorizontalAlignment="Left" Margin="772,155,0,0" VerticalAlignment="Top" Width="103" FontWeight="Bold" FontSize="14"/>
