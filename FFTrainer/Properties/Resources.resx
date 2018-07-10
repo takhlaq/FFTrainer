@@ -169,4 +169,19 @@
   <data name="tribe_exh_ja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tribe.exh_ja.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="item_0_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item_0.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="race_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\race.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="stain_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stain.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tribe_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tribe.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="weather_0_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weather_0.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -1,0 +1,122 @@
+Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)][0x9],4 [BBOOL(0x1a)][0x9]
+0,0,2,"Aucun",false,true
+1,14999504,2,"blanc neige",false,true
+2,11315362,2,"gris cendre",false,true
+3,9013124,2,"gris goobbue",false,true
+4,6645093,2,"gris ardoise",false,true
+5,4736834,2,"gris charbon",false,true
+6,2828579,2,"noir suie",false,true
+7,15114134,4,"rose floral",false,true
+8,8612201,4,"lilas",false,true
+9,5969705,4,"rouge rolanbaie",false,true
+10,7871002,4,"rouge Dalamud",false,true
+11,6431239,4,"rouille",false,true
+12,4527377,4,"lie-de-vin",false,true
+13,13397086,4,"rose corail",false,true
+14,9517863,4,"rouge sang",false,true
+15,14985866,4,"rose saumon",false,true
+16,12016685,5,"orange couchant",false,true
+17,8206598,5,"vermillon terne",false,true
+18,6966071,5,"marron écorce",false,true
+19,7224612,5,"chocolat",false,true
+20,5188895,5,"brun fauve",false,true
+21,3154203,5,"brun kobold",false,true
+22,13209942,5,"brun liège",false,true
+23,10055231,5,"brun qiqirn",false,true
+24,8084525,5,"brun opo-opo",false,true
+25,10651484,5,"brun bouquetin",false,true
+26,12940324,5,"orange citrouille",false,true
+27,9328667,5,"brun noisette",false,true
+28,6570518,5,"feuille-morte",false,true
+29,4008205,5,"brun châtaigne",false,true
+30,12166281,5,"brun gobelin",false,true
+31,9601388,5,"brun schiste",false,true
+32,6378053,5,"brun taupe",false,true
+33,4141865,5,"brun argile",false,true
+34,15455136,6,"ivoire",false,true
+35,12034928,6,"ocre uldien",false,true
+36,14398551,6,"jaune chocobo",false,true
+37,16434731,6,"jaune miel",false,true
+38,14982708,6,"jaune milli-maïs",false,true
+39,12355588,6,"jaune coeurl",false,true
+40,15914864,6,"jaune crème",false,true
+41,10847280,6,"jaune Halatali",false,true
+42,4207377,6,"raisin sec",false,true
+43,5788208,7,"kaki",false,true
+44,12303242,7,"vert sylphe",false,true
+45,11251796,7,"vert citron",false,true
+46,7369510,7,"vert mousse",false,true
+47,9149539,7,"vert prairie",false,true
+48,4936242,7,"vert olive",false,true
+49,3290657,7,"vert viridien",false,true
+50,10204003,7,"vert pomme",false,true
+51,6652481,7,"vert cactuar",false,true
+52,2640684,7,"vert chasseur",false,true
+53,4219705,7,"vert otyugh",false,true
+54,6255960,7,"vert adamankhélone",false,true
+55,3886396,7,"vert Nophica",false,true
+56,1976865,7,"vert sapin",false,true
+57,9878969,7,"vert céleste",false,true
+58,4420210,7,"turquoise",false,true
+59,2049606,7,"vert morbol",false,true
+60,11715790,8,"bleu glace",false,true
+61,8630482,8,"bleu ciel",false,true
+62,6586784,8,"bleu horizon",false,true
+63,3893382,8,"bleu paon",false,true
+64,1850708,8,"bleu de Rhotano",false,true
+65,9345964,8,"bleu charron",false,true
+66,5199718,8,"bleu céruleum",false,true
+67,3094609,8,"bleu guède",false,true
+68,1711911,8,"bleu encre",false,true
+69,5996480,8,"bleu raptor",false,true
+70,3102857,8,"bleu d'Othard",false,true
+71,2310514,8,"bleu tempête",false,true
+72,1124676,8,"bleu du néant",false,true
+73,2568295,8,"bleu royal",false,true
+74,1579319,8,"bleu de minuit",false,true
+75,3618631,8,"bleu turquin",false,true
+76,3222871,8,"bleu marine",false,true
+77,8880046,9,"lavande",false,true
+78,5326176,9,"colombin",false,true
+79,3288123,9,"cassis",false,true
+80,12033724,9,"iris",false,true
+81,3877437,9,"raisin",false,true
+82,16699125,9,"mauve lotus",false,true
+83,14457802,9,"mauve colibri",false,true
+84,7950956,9,"prune",false,true
+85,6697038,9,"byzantium",false,true
+86,0,0,"Aucun",false,false
+87,0,0,"Aucun",false,false
+88,0,0,"Aucun",false,false
+89,0,0,"Aucun",false,false
+90,0,0,"Aucun",false,false
+91,0,0,"Aucun",false,false
+92,0,0,"Aucun",false,false
+93,0,0,"Aucun",false,false
+94,0,0,"Aucun",false,false
+95,0,0,"Aucun",false,false
+96,0,0,"Aucun",false,false
+97,0,0,"Aucun",false,false
+98,0,0,"Aucun",false,false
+99,0,0,"Aucun",false,false
+100,0,0,"Aucun",false,false
+101,16382196,10,"blanc immaculé",false,true
+102,1973790,10,"noir de jais",false,true
+103,16632006,10,"rose pastel",false,true
+104,3283225,10,"rouge foncé",false,true
+105,2629916,10,"brun foncé",false,true
+106,12242858,10,"vert pastel",false,true
+107,1387564,10,"vert foncé",false,true
+108,9872601,10,"bleu pastel",false,true
+109,1187629,10,"bleu foncé",false,true
+110,12301786,10,"violet pastel",false,true
+111,2301990,10,"violet foncé",false,true
+112,10987431,10,"argent brillant",true,false
+113,15590973,10,"or brillant",true,false
+114,11935051,10,"rouge métallique",true,false
+115,14978095,10,"orange métallique",true,false
+116,16046662,10,"jaune métallique",true,false
+117,2271063,10,"vert métallique",true,false
+118,6214886,10,"bleu ciel métallique",true,false
+119,5264089,10,"bleu métallique",true,false
+120,10708674,10,"violet métallique",true,false

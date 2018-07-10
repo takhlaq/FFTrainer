@@ -429,6 +429,7 @@ namespace FFTrainer
                 Properties.Settings.Default.Save();
                 //Create new instance of Dialog you want to show
                 var fdf = new Culture();
+                fdf.Owner = this;
                 //Show the dialog
                 fdf.ShowDialog();
             }
@@ -441,6 +442,11 @@ namespace FFTrainer
 
         private void ChangeLang(object sender, RoutedEventArgs e)
         {
+            if (LanguageWindow != null)
+            {
+                LanguageWindow.Activate();
+                return;
+            }
             LanguageWindow = new Culture();
             LanguageWindow.Owner = this;
             LanguageWindow.Closed += (o, args) => LanguageWindow = null;

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FFTrainer"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="FFTrainer.Culture"
         mc:Ignorable="d"
-        Title="Language Selector" Height="180" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Language Selector" Height="222.666" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid>
         <Button Content="English" Command="{Binding LanguageChangeCommand}" CommandParameter="English" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="16" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
         <Button Content="日本語(Japanese)" Command="{Binding LanguageChangeCommand}" CommandParameter="Japanese" HorizontalAlignment="Left" Margin="151,62,0,0" VerticalAlignment="Top" Width="131" Height="38" RenderTransformOrigin="0.511,0.509" FontSize="14"  Click="Button_Click" mah:ButtonHelper.PreserveTextCase="True"/>
@@ -16,5 +16,6 @@
         <Label Content="Ändere deine Sprache!" HorizontalAlignment="Left" Margin="68,34,0,0" VerticalAlignment="Top" Width="173" FontSize="16"/>
         <Button Content="Español(Spanish)" Command="{Binding LanguageChangeCommand}" CommandParameter="Spanish" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
         <Button Content="Deutsch(German)" Command="{Binding LanguageChangeCommand}" CommandParameter="German" HorizontalAlignment="Left" Margin="151,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="12" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
+        <Button Content="French(Français)" Command="{Binding LanguageChangeCommand}" CommandParameter="French" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
     </Grid>
 </Window>

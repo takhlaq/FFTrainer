@@ -460,6 +460,121 @@ namespace FFTrainer
 #endif
                 }
             }
+            if (Properties.Settings.Default.Language == "French")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.item_0_exh_fr)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int index = 0;
+                            var item = new Item();
+
+                            if (rowCount == 1)
+                                continue;
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    int.TryParse(field, out index);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    item.Name = field;
+                                }
+
+                                if (fCount == 17)
+                                {
+                                    int cat = int.Parse(field);
+                                    switch (cat)
+                                    {
+                                        case 34:
+                                            item.Type = ItemType.Head;
+                                            break;
+                                        case 35:
+                                            item.Type = ItemType.Body;
+                                            break;
+                                        case 37:
+                                            item.Type = ItemType.Hands;
+                                            break;
+                                        case 36:
+                                            item.Type = ItemType.Legs;
+                                            break;
+                                        case 38:
+                                            item.Type = ItemType.Feet;
+                                            break;
+                                        case 41:
+                                            item.Type = ItemType.Ears;
+                                            break;
+                                        case 40:
+                                            item.Type = ItemType.Neck;
+                                            break;
+                                        case 42:
+                                            item.Type = ItemType.Wrists;
+                                            break;
+                                        case 43:
+                                            item.Type = ItemType.Ring;
+                                            break;
+                                        default:
+                                            item.Type = ItemType.Wep;
+                                            break;
+                                    }
+                                }
+
+                                if (fCount == 47)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelMain = tfield;
+                                    }
+                                }
+
+                                if (fCount == 48)
+                                {
+                                    var tfield = field.Replace(" ", "");
+                                    if (item.Type == ItemType.Wep)
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                    else
+                                    {
+                                        item.ModelOff = tfield;
+                                    }
+                                }
+                            }
+
+                            Debug.WriteLine(item.Name + " - " + item.Type);
+                            Items.Add(index, item);
+                        }
+                        Debug.WriteLine($"ExdCsvReader: {rowCount} items read");
+                    }
+                }
+                catch (Exception exc)
+                {
+                    Items = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
         }
         public Item GetItemName(int id)
         {
@@ -575,6 +690,53 @@ namespace FFTrainer
                 try
                 {
                     using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weatherJP)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            Weather weather = new Weather();
+
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            weather.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 3)
+                                {
+                                    weather.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {weather.Name}");
+                            Weathers.Add(weather.Index, weather);
+                        }
+
+                        Console.WriteLine($"{rowCount} weathers read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Weathers = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "French")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.weather_0_exh_fr)))
                     {
                         parser.TextFieldType = FieldType.Delimited;
                         parser.SetDelimiters(",");
@@ -862,6 +1024,51 @@ namespace FFTrainer
 #endif
                 }
             }
+            if (Properties.Settings.Default.Language == "French")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.race_exh_fr)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Race race = new Race();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            race.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    race.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {race.Name}");
+                            Races.Add(race.Index, race);
+                        }
+
+                        Console.WriteLine($"{rowCount} Races read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Races = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
         }
         public void TribeList()
         {
@@ -1001,6 +1208,51 @@ namespace FFTrainer
 #endif
                 }
             }
+            if (Properties.Settings.Default.Language == "French")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.tribe_exh_fr)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Tribe tribe = new Tribe();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            tribe.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    tribe.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {tribe.Name}");
+                            Tribes.Add(tribe.Index, tribe);
+                        }
+
+                        Console.WriteLine($"{rowCount} Tribes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Tribes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
         }
         public void DyeList()
         {
@@ -1100,6 +1352,51 @@ namespace FFTrainer
                 try
                 {
                     using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.stain_exh_de)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Dye dye = new Dye();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            dye.Index = int.Parse(fields[0]);
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 4)
+                                {
+                                    dye.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {dye.Name}");
+                            Dyes.Add(dye.Index, dye);
+                        }
+
+                        Console.WriteLine($"{rowCount} Dyes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Dyes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+            if (Properties.Settings.Default.Language == "French")
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.stain_exh_fr)))
                     {
                         parser.TextFieldType = FieldType.Delimited;
                         parser.SetDelimiters(",");

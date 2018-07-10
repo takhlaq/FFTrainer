@@ -85,21 +85,21 @@ Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)
 83,14457802,9,"Colibri Pink",false,true
 84,7950956,9,"Plum Purple",false,true
 85,6697038,9,"Regal Purple",false,true
-86,0,0,"",false,false
-87,0,0,"",false,false
-88,0,0,"",false,false
-89,0,0,"",false,false
-90,0,0,"",false,false
-91,0,0,"",false,false
-92,0,0,"",false,false
-93,0,0,"",false,false
-94,0,0,"",false,false
-95,0,0,"",false,false
-96,0,0,"",false,false
-97,0,0,"",false,false
-98,0,0,"",false,false
-99,0,0,"",false,false
-100,0,0,"",false,false
+86,0,0,"None",false,false
+87,0,0,"None",false,false
+88,0,0,"None",false,false
+89,0,0,"None",false,false
+90,0,0,"None",false,false
+91,0,0,"None",false,false
+92,0,0,"None",false,false
+93,0,0,"None",false,false
+94,0,0,"None",false,false
+95,0,0,"None",false,false
+96,0,0,"None",false,false
+97,0,0,"None",false,false
+98,0,0,"None",false,false
+99,0,0,"None",false,false
+100,0,0,"None",false,false
 101,16382196,10,"Pure White",false,true
 102,1973790,10,"Jet Black",false,true
 103,16632006,10,"Pastel Pink",false,true

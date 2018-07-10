@@ -209,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\French.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\German.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -275,20 +279,25 @@
     <None Include="Resources\Item.csv" />
     <None Include="Resources\ItemG.csv" />
     <None Include="Resources\itemJP.csv" />
+    <None Include="Resources\item_0.exh_fr.csv" />
+    <None Include="Resources\race.exh_fr.csv" />
     <None Include="Resources\raceDE.csv" />
     <None Include="Resources\raceEN.csv" />
     <None Include="Resources\raceJP.csv" />
     <None Include="Resources\stain.exh_de.csv" />
     <None Include="Resources\stain.exh_en.csv" />
+    <None Include="Resources\stain.exh_fr.csv" />
     <None Include="Resources\stain.exh_ja.csv" />
     <None Include="Resources\territorytype.exh.csv" />
     <None Include="Resources\tribe.exh_de.csv" />
     <None Include="Resources\tribe.exh_en.csv" />
+    <None Include="Resources\tribe.exh_fr.csv" />
     <None Include="Resources\tribe.exh_ja.csv" />
     <None Include="Resources\weatherDE.csv" />
     <None Include="Resources\weatherJP.csv" />
     <None Include="Resources\weatherrate.exh.csv" />
     <None Include="Resources\weather_0.exh_en.csv" />
+    <None Include="Resources\weather_0.exh_fr.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config" />

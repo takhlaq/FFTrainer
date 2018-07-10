@@ -10,7 +10,6 @@ namespace FFTrainer.ViewModels
     {
  
         public  CharacterDetails CharacterDetails { get => (CharacterDetails)model; set => model = value; }
-        private bool Testxd = false;
         private RefreshEntitiesCommand refreshEntitiesCommand;
         public static string eOffset = "8";
         public static string baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);

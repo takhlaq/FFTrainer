@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +29,13 @@ namespace FFTrainer
                 Properties.Settings.Default.Save();
 
                 // Current resource change
-                language = string.IsNullOrEmpty(language) ? "English" : language;
+              /*  language = string.IsNullOrEmpty(language) ? "English" : language;
                 dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
                 Application.Current.Resources.MergedDictionaries[0] = dictionary;
+                */
+                //Restart application.
+                Process.Start(System.Windows.Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
             });
         }
     }
