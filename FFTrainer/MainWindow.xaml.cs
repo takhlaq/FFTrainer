@@ -39,16 +39,6 @@ namespace FFTrainer
             language = string.IsNullOrEmpty(language) ? "English" : language;
             dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5) };
-            timer.Tick += delegate
-            {
-                ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
-                AutoUpdater.Mandatory = true;
-                AutoUpdater.RunUpdateAsAdmin = true;
-                AutoUpdater.DownloadPath = Environment.CurrentDirectory;
-                AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
-            };
-            timer.Start();
         }
         private void CharacterDetailsView_Loaded()
         {
@@ -453,6 +443,14 @@ namespace FFTrainer
             LanguageWindow.Left = this.Left + this.ActualWidth / 2.0;
             LanguageWindow.Top = this.Top + this.ActualHeight / 2.0;
             LanguageWindow.Show();
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
+            AutoUpdater.RunUpdateAsAdmin = true;
+            AutoUpdater.DownloadPath = Environment.CurrentDirectory;
+            AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

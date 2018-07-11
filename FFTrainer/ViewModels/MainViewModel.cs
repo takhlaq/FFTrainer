@@ -141,7 +141,6 @@ namespace FFTrainer.ViewModels
             int gameProcId = MemLib.getProcIDFromName("ffxiv_dx11");
             MemoryManager.Instance.MemLib.OpenProcess(gameProcId);
             ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
-            AutoUpdater.Mandatory = true;
             AutoUpdater.RunUpdateAsAdmin = true;
             AutoUpdater.DownloadPath = Environment.CurrentDirectory;
             AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");

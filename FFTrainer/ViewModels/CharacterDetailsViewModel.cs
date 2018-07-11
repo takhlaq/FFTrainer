@@ -300,7 +300,6 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.CameraHeight.freeze) mem.writeBytes(cameraHeight, CharacterDetails.CameraHeight.GetBytes());
                 else CharacterDetails.CameraHeight.value = mem.readFloat(cameraHeight);
 
-                CharacterDetails.TimeControl.value = (byte)mem.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl));
 
                 if (CharacterDetails.Weather.freeze) mem.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), CharacterDetails.Weather.GetBytes());
                 else CharacterDetails.Weather.value = (byte)mem.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather));
@@ -367,7 +366,7 @@ namespace FFTrainer.ViewModels
                     mem.writeBytes(rotation4, CharacterDetails.Rotation4.GetBytes());
                 else
                     CharacterDetails.Rotation4.value = mem.readFloat(rotation4);
-
+                CharacterDetails.TimeControl.value = (byte)mem.readByte(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl));
                 if (!CharacterDetails.Name.freeze)
                 {
                     var name = MemoryManager.Instance.MemLib.readString(nameAddr);

@@ -92,7 +92,8 @@ namespace FFTrainer.Views
 
         private void NumericUpDown_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
+            if (Weather.Value.HasValue)
+                if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
         }
 
