@@ -145,7 +145,6 @@
         <mah:ToggleSwitch IsChecked="{Binding CharacterDetails.SWetness.Activated}" Header="{DynamicResource SWetness}" HorizontalAlignment="Left" Height="56" Margin="876,259,0,0" VerticalAlignment="Top" Width="100" mah:ControlsHelper.HeaderMargin="0,0,0,0" ContentPadding="0,0,4,0" mah:ControlsHelper.HeaderFontSize="12"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="226" Margin="758,25,0,0" VerticalAlignment="Top" Width="290"/>
         <CheckBox IsChecked="{Binding CharacterDetails.Emote.freeze}" Content="{DynamicResource Emote}" HorizontalAlignment="Left" Margin="769,49,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" ToolTip="Make sure you do Non-Presistent emote first like /yes before using this." Width="102" Height="29"/>
-        <ComboBox x:Name="EmoteBox" ItemsSource="{Binding Source={util:EnumBindingSource {x:Type Models:CharacterDetails+Emotes}}}" SelectedValue="{Binding Path=CharacterDetails.EmoteX.value}" HorizontalAlignment="Left" Margin="876,71,0,0" VerticalAlignment="Top" Width="164" Height="20" SelectionChanged="ComboBox_SelectionChanged_1" ToolTip="You can also search for Emote you want by typing in this Combobox. " IsTabStop="True"/>
         <mah:NumericUpDown x:Name="Emote" Value="{Binding CharacterDetails.Emote.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="925,37,0,0" VerticalAlignment="Top" Width="115" Minimum="1" Maximum="6558" ValueChanged="Emote_ValueChanged" TextAlignment="Justify"/>
         <Label Content="{DynamicResource GposeOnly}" HorizontalAlignment="Left" Margin="839,-5,0,0" VerticalAlignment="Top" Width="192" FontSize="20" FontWeight="Bold"/>
         <CheckBox IsChecked="{Binding CharacterDetails.EmoteSpeed1.freeze}" Content="{DynamicResource EmoteSpeed}" HorizontalAlignment="Left" Margin="765,109,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -159,5 +158,13 @@
         <CheckBox IsChecked="{Binding CharacterDetails.CamZ.freeze}" Content="{DynamicResource CamZ}" HorizontalAlignment="Left" Margin="766,219,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="92"/>
         <mah:NumericUpDown StringFormat="F7" x:Name="CamZ" Value="{Binding CharacterDetails.CamZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="868,218,0,0" VerticalAlignment="Top" Width="172" Interval="0.01" ValueChanged="CamZ_ValueChanged" TextAlignment="Justify"/>
         <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="823,352,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click"/>
+        <mah:Flyout Name="EmoteFlyout" Header="Emote" Position="Right" Margin="833,24,1,117" IsOpen="False">
+            <StackPanel Margin="10,0" Height="244">
+                <ListBox Name="EmoteBox"  Height="189" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Width="211" SelectionChanged="EmoteBox_SelectionChanged"/>
+                <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Margin="0,5,10,5"/>
+
+            </StackPanel>
+        </mah:Flyout>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="765,77,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="Button_Click"/>
     </Grid>
 </UserControl>

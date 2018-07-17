@@ -23,6 +23,7 @@ namespace FFTrainer.Views
             InitializeComponent();
             _exdProvider.RaceList();
             _exdProvider.TribeList();
+            _exdProvider.EmoteList();
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20)};
             timer.Tick += delegate
             {
@@ -271,7 +272,7 @@ namespace FFTrainer.Views
         {
             if (Emote.Value.HasValue)
                 if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
-                    CharacterDetails.EmoteX.value = (CharacterDetails.Emotes)Emote.Value;
+                    CharacterDetails.EmoteX.value = (int)Emote.Value;
         }
 
         private void AddBust_Click(object sender, RoutedEventArgs e)
@@ -410,6 +411,10 @@ namespace FFTrainer.Views
                 if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
                     ClanBox.SelectedIndex = i;
             }
+            for (int i = 0; i < _exdProvider.Emotes.Count; i++)
+            {
+                EmoteBox.Items.Add(_exdProvider.Emotes[i].Name);
+            }
         }
 
         private void Unfreeze_Click(object sender, RoutedEventArgs e)
@@ -514,6 +519,27 @@ namespace FFTrainer.Views
             CharacterDetails.Wrist.freeze = false;
             CharacterDetails.RFinger.freeze = false;
             CharacterDetails.LFinger.freeze = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EmoteFlyout.IsOpen = true;
+            EmoteBox.DisplayMemberPath = "Text";
+            EmoteBox.SelectedValuePath = "Value";
+            for (int i = 0; i < _exdProvider.Emotes.Count; i++)
+            {
+                if (_exdProvider.Emotes[i].Name.Contains("normal/") || _exdProvider.Emotes[i].Name.Contains("emote/") || _exdProvider.Emotes[i].Name.Contains("event_base/"))
+                    EmoteBox.Items.Add(new { Text = _exdProvider.Emotes[i].Name, Value = _exdProvider.Emotes[i].Index });
+
+            }
+        }
+        private ExdCsvReader.Emote Choice = null;
+        private void EmoteBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EmoteBox.SelectedItem == null)
+                return;
+            Choice = EmoteBox.SelectedItem as ExdCsvReader.Emote;
+            CharacterDetails.EmoteX.value = (int)Choice.Index;
         }
     }
 }

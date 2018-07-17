@@ -79,6 +79,11 @@ namespace FFTrainer
             public int Index { get; set; }
             public string Name { get; set; }
         }
+        public class Emote
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
         public class Race
         {
             public int Index { get; set; }
@@ -111,6 +116,8 @@ namespace FFTrainer
         public Dictionary<int, Race> Races = null;
         public Dictionary<int, Tribe> Tribes = null;
         public Dictionary<int, Dye> Dyes = null;
+        public Dictionary<int, Emote> Emotes = null;
+        private object contine;
 
         public void MakeItemList()
         {
@@ -1432,6 +1439,53 @@ namespace FFTrainer
                 catch (Exception exc)
                 {
                     Dyes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+        }
+        public void EmoteList()
+        {
+            Emotes = new Dictionary<int, Emote>();
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.actiontimeline)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Emote emote = new Emote();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            emote.Index = int.Parse(fields[0]);
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 8)
+                                {
+                                    emote.Name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{rowCount} - {emote.Name}");
+                            Emotes.Add(emote.Index, emote);
+                        }
+
+                        Console.WriteLine($"{rowCount} Emotes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Emotes = null;
 #if DEBUG
                     throw exc;
 #endif
