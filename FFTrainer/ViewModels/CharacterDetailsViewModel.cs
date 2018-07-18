@@ -325,7 +325,7 @@ namespace FFTrainer.ViewModels
 
                 if (CharacterDetails.Height.freeze) mem.writeBytes(height, CharacterDetails.Height.GetBytes());
                 else CharacterDetails.Height.value = mem.readFloat(height);
-
+                CharacterDetails.EmoteX.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Emote)));
                 if (CharacterDetails.BustX.freeze)
                     mem.writeBytes(xAddr, CharacterDetails.BustX.GetBytes());
                 else

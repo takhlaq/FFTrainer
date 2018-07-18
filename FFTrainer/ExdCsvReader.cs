@@ -1481,7 +1481,7 @@ namespace FFTrainer
                             }
                             if (emote.Name.Contains("normal/")){emote.Name = emote.Name.Remove(0, 7).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("gs/")) { emote.Name = emote.Name.Remove(0, 3).ToString(); emote.Realist = true; }
-                            if (emote.Name.Contains("cardgame/")) { emote.Name = emote.Name.Remove(0, 9).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("cardgame/")|| emote.Name.Contains("emote_sp/")) { emote.Name = emote.Name.Remove(0, 9).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("pc_contentsaction/")) { emote.Name = emote.Name.Remove(0, 18).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("ability/")) { emote.Name = emote.Name.Remove(0, 8).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("emote/")|| emote.Name.Contains("magic/") || emote.Name.Contains("event/") || emote.Name.Contains("music/")) { emote.Name=emote.Name.Remove(0, 6).ToString(); emote.Realist = true; }

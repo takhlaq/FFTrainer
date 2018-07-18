@@ -125,5 +125,7 @@
     <system:String x:Key="Aboutx">このトレーナーについて:</system:String>
     <system:String x:Key="AboutText">このトレーナーのベースコードはLeonBladeによって作成されました。プロジェクトはJohtoがそれに取り組むことを続けました。このアプリケーションでは、このプロジェクトでMahApps、Fody、AutoUpdater.Net、Newtonsoft.Json、Memory.dllというライブラリを使用しています。このプロジェクトでは、Wardrobeのコードの一部を使用しています。</system:String>
     <system:String x:Key="Unfreeze">すべての選択を解除</system:String>
+    <system:String x:Key="AlwaysTop">常に上がる</system:String>
     <system:String x:Key="Update">アプデ</system:String>
+    <system:String x:Key="EmoteChecker">エモートチェッカー:</system:String>
 </ResourceDictionary>

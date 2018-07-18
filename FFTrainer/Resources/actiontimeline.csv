@@ -1,102 +1,102 @@
 Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3)][0x8],4 [UBYTE(0x3)][0x9],5 [UBYTE(0x3)][0xa],6 [STRING(0x0)][0x0],7 [UBYTE(0x3)][0xb],8 [UBYTE(0x3)][0xc],9 [UBYTE(0x3)][0xd],10 [UBYTE(0x3)][0xe],11 [UBYTE(0x3)][0xf],12 [USHORT(0x5)][0x4],13 [BBOOL(0x1a)][0x10],14 [BBOOL(0x1b)][0x10],15 [BBOOL(0x1c)][0x10],16 [BBOOL(0x1d)][0x10],17 [BBOOL(0x1e)][0x10]
 0,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,true,false,true
-1,0,1,false,0,1,0,"battle/battle_start",0,0,0,2,3,0,false,false,true,false,true
-2,0,1,false,0,1,0,"battle/battle_end",0,0,0,1,3,0,false,false,true,false,true
-3,0,0,true,0,0,0,"normal/idle",0,2,0,2,3,55,false,false,true,false,true
-4,0,1,false,0,0,0,"normal/idle_inactive1",0,2,0,2,3,0,false,false,true,false,true
-5,0,1,false,0,0,0,"normal/idle_inactive2",0,2,0,2,3,0,false,false,true,false,true
-6,0,1,false,0,0,0,"normal/idle_inactive3",0,2,0,2,3,0,false,false,true,false,true
-7,0,0,true,0,0,0,"normal/turn_loop_l",0,2,0,2,3,0,false,false,true,false,true
-8,0,0,true,0,0,0,"normal/turn_loop_r",0,2,0,2,3,0,false,false,true,false,true
+1,0,1,false,0,1,0,"battle/Battle Start",0,0,0,2,3,0,false,false,true,false,true
+2,0,1,false,0,1,0,"battle/Battle End",0,0,0,1,3,0,false,false,true,false,true
+3,0,0,true,0,0,0,"normal/Idle",0,2,0,2,3,55,false,false,true,false,true
+4,0,1,false,0,0,0,"normal/Idle inactive 1",0,2,0,2,3,0,false,false,true,false,true
+5,0,1,false,0,0,0,"normal/idle inactive 2",0,2,0,2,3,0,false,false,true,false,true
+6,0,1,false,0,0,0,"normal/idle inactive 3",0,2,0,2,3,0,false,false,true,false,true
+7,0,0,true,0,0,0,"normal/Turning Left",0,2,0,2,3,0,false,false,true,false,true
+8,0,0,true,0,0,0,"normal/Turning Right",0,2,0,2,3,0,false,false,true,false,true
 9,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 10,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 11,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 12,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-13,0,0,true,0,0,0,"normal/walk",0,2,0,2,3,0,false,false,true,false,true
-14,0,0,true,0,0,0,"normal/walk_l",0,2,0,2,3,0,false,false,true,false,true
-15,0,0,true,0,0,0,"normal/walk_r",0,2,0,2,3,0,false,false,true,false,true
-16,0,0,true,0,0,0,"normal/walk_b",0,2,0,2,3,0,false,false,true,false,true
-17,0,1,false,0,0,0,"normal/walk_start",0,2,0,2,3,0,false,false,true,false,true
-18,0,1,false,0,0,0,"normal/walk_start_br",0,2,0,2,3,0,false,false,true,false,true
-19,0,1,false,0,0,0,"normal/walk_start_bl",0,2,0,2,3,0,false,false,true,false,true
+13,0,0,true,0,0,0,"normal/Walking",0,2,0,2,3,0,false,false,true,false,true
+14,0,0,true,0,0,0,"normal/Walking Left",0,2,0,2,3,0,false,false,true,false,true
+15,0,0,true,0,0,0,"normal/Walking Right",0,2,0,2,3,0,false,false,true,false,true
+16,0,0,true,0,0,0,"normal/Walking Back",0,2,0,2,3,0,false,false,true,false,true
+17,0,1,false,0,0,0,"normal/Walk Start",0,2,0,2,3,0,false,false,true,false,true
+18,0,1,false,0,0,0,"normal/Walk Start Right",0,2,0,2,3,0,false,false,true,false,true
+19,0,1,false,0,0,0,"normal/Walk Start Left",0,2,0,2,3,0,false,false,true,false,true
 20,0,1,false,0,0,0,"normal/walk_end_l",0,2,0,2,3,0,false,false,true,false,true
 21,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-22,0,0,true,0,0,0,"normal/run",0,2,0,2,3,0,false,false,true,false,true
-23,0,0,true,0,0,0,"normal/run_l",0,2,0,2,3,0,false,false,true,false,true
-24,0,0,true,0,0,0,"normal/run_r",0,2,0,2,3,0,false,false,true,false,true
-25,0,1,false,0,0,0,"normal/run_start",0,2,0,2,3,0,false,false,true,false,true
-26,0,1,false,0,0,0,"normal/run_start_br",0,2,0,2,3,0,false,false,true,false,true
-27,0,1,false,0,0,0,"normal/run_start_bl",0,2,0,2,3,0,false,false,true,false,true
-28,0,1,false,0,0,0,"normal/run_end_l",0,2,0,2,3,0,false,false,true,false,true
+22,0,0,true,0,0,0,"normal/Run",0,2,0,2,3,0,false,false,true,false,true
+23,0,0,true,0,0,0,"normal/Run Left",0,2,0,2,3,0,false,false,true,false,true
+24,0,0,true,0,0,0,"normal/Run Right",0,2,0,2,3,0,false,false,true,false,true
+25,0,1,false,0,0,0,"normal/Run Start",0,2,0,2,3,0,false,false,true,false,true
+26,0,1,false,0,0,0,"normal/Run Start Right",0,2,0,2,3,0,false,false,true,false,true
+27,0,1,false,0,0,0,"normal/Run Start Left",0,2,0,2,3,0,false,false,true,false,true
+28,0,1,false,0,0,0,"normal/Run End",0,2,0,2,3,0,false,false,true,false,true
 29,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-30,0,0,true,0,0,0,"normal/sprint",0,2,0,2,3,0,false,false,true,true,true
-31,0,1,false,0,0,0,"normal/jump_start",0,2,0,2,3,0,false,false,true,false,true
-32,0,0,false,0,0,0,"normal/jump_falling",0,2,0,2,3,0,false,false,true,false,true
-33,0,1,false,0,0,0,"normal/jump_landing",0,2,0,2,3,0,false,false,true,false,true
-34,0,0,true,0,0,2,"battle/idle",0,1,0,1,3,0,false,false,true,false,true
-35,0,0,true,0,0,0,"battle/turn_loop_l",0,1,0,1,3,0,false,false,true,false,true
-36,0,0,true,0,0,0,"battle/turn_loop_r",0,1,0,1,3,0,false,false,true,false,true
-37,0,3,true,0,0,1,"event_base/event_base_knee_suffering",1,2,1,2,3,0,true,false,true,false,true
+30,0,0,true,0,0,0,"normal/Sprint",0,2,0,2,3,0,false,false,true,true,true
+31,0,1,false,0,0,0,"normal/Jump Start",0,2,0,2,3,0,false,false,true,false,true
+32,0,0,false,0,0,0,"normal/Jump Fall",0,2,0,2,3,0,false,false,true,false,true
+33,0,1,false,0,0,0,"normal/Jump Land",0,2,0,2,3,0,false,false,true,false,true
+34,0,0,true,0,0,2,"battle/Battle Idle",0,1,0,1,3,0,false,false,true,false,true
+35,0,0,true,0,0,0,"battle/Battle Turn Left",0,1,0,1,3,0,false,false,true,false,true
+36,0,0,true,0,0,0,"battle/Battle Turn Right",0,1,0,1,3,0,false,false,true,false,true
+37,0,3,true,0,0,1,"event_base/Knee Suffering",1,2,1,2,3,0,true,false,true,false,true
 38,0,5,false,0,0,1,"mount/mount_dead",0,2,0,2,1,0,false,false,true,false,true
 39,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 40,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-41,0,0,true,0,0,0,"battle/walk",0,1,0,1,3,0,false,false,true,false,true
-42,0,0,true,0,0,0,"battle/walk_l",0,1,0,1,3,0,false,false,true,false,true
-43,0,0,true,0,0,0,"battle/walk_r",0,1,0,1,3,0,false,false,true,false,true
-44,0,0,true,0,0,0,"battle/walk_b",0,1,0,1,3,0,false,false,true,false,true
-45,0,1,false,0,0,0,"battle/walk_start",0,1,0,1,3,0,false,false,true,false,true
-46,0,1,false,0,0,0,"battle/walk_start_br",0,1,0,1,3,0,false,false,true,false,true
-47,0,1,false,0,0,0,"battle/walk_start_bl",0,1,0,1,3,0,false,false,true,false,true
-48,0,1,false,0,0,0,"battle/walk_end_l",0,1,0,1,3,0,false,false,true,false,true
+41,0,0,true,0,0,0,"battle/Battle Walk",0,1,0,1,3,0,false,false,true,false,true
+42,0,0,true,0,0,0,"battle/Battle Walk Left",0,1,0,1,3,0,false,false,true,false,true
+43,0,0,true,0,0,0,"battle/Battle Walk Right",0,1,0,1,3,0,false,false,true,false,true
+44,0,0,true,0,0,0,"battle/Battle Walk Back",0,1,0,1,3,0,false,false,true,false,true
+45,0,1,false,0,0,0,"battle/Battle Walk Start",0,1,0,1,3,0,false,false,true,false,true
+46,0,1,false,0,0,0,"battle/Battle Walk BackRight",0,1,0,1,3,0,false,false,true,false,true
+47,0,1,false,0,0,0,"battle/Battle Walk BackLeft",0,1,0,1,3,0,false,false,true,false,true
+48,0,1,false,0,0,0,"battle/Battle Walk End",0,1,0,1,3,0,false,false,true,false,true
 49,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-50,0,0,true,0,0,0,"battle/run",0,1,0,1,3,0,false,false,true,false,true
-51,0,0,true,0,0,0,"battle/run_l",0,1,0,1,3,0,false,false,true,false,true
-52,0,0,true,0,0,0,"battle/run_r",0,1,0,1,3,0,false,false,true,false,true
-53,0,1,false,0,0,0,"battle/run_start",0,1,0,1,3,0,false,false,true,false,true
-54,0,1,false,0,0,0,"battle/run_start_br",0,1,0,1,3,0,false,false,true,false,true
-55,0,1,false,0,0,0,"battle/run_start_bl",0,1,0,1,3,0,false,false,true,false,true
-56,0,1,false,0,0,0,"battle/run_end_l",0,1,0,1,3,0,false,false,true,false,true
+50,0,0,true,0,0,0,"battle/Battle Run",0,1,0,1,3,0,false,false,true,false,true
+51,0,0,true,0,0,0,"battle/Battle Run Left",0,1,0,1,3,0,false,false,true,false,true
+52,0,0,true,0,0,0,"battle/Battle Run Right",0,1,0,1,3,0,false,false,true,false,true
+53,0,1,false,0,0,0,"battle/Battle Run Start",0,1,0,1,3,0,false,false,true,false,true
+54,0,1,false,0,0,0,"battle/Battle Run Back Right",0,1,0,1,3,0,false,false,true,false,true
+55,0,1,false,0,0,0,"battle/Battle Run Back Left",0,1,0,1,3,0,false,false,true,false,true
+56,0,1,false,0,0,0,"battle/Battle Run Stop",0,1,0,1,3,0,false,false,true,false,true
 57,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-58,0,0,true,0,0,0,"battle/sprint",0,1,0,1,3,0,false,false,true,true,true
-59,0,1,false,0,0,0,"battle/jump_start",0,1,0,1,3,0,false,false,true,false,true
-60,0,0,false,0,0,0,"battle/jump_falling",0,1,0,1,3,0,false,false,true,false,true
-61,0,1,false,0,0,0,"battle/jump_landing",0,1,0,1,3,0,false,false,true,false,true
-62,0,1,false,0,3,0,"normal/damage",0,0,0,0,3,0,false,false,true,false,true
-63,0,1,false,0,3,0,"normal/damage_continuous",0,0,0,0,3,0,false,false,true,false,true
-64,0,1,false,0,3,1,"normal/knockback_start",0,0,0,0,3,0,false,false,true,false,true
-65,0,1,false,0,3,0,"normal/knockback_end",0,0,0,0,3,0,false,false,true,false,true
+58,0,0,true,0,0,0,"battle/Battle Sprint",0,1,0,1,3,0,false,false,true,true,true
+59,0,1,false,0,0,0,"battle/Battle Jump",0,1,0,1,3,0,false,false,true,false,true
+60,0,0,false,0,0,0,"battle/Battle Jump Fall",0,1,0,1,3,0,false,false,true,false,true
+61,0,1,false,0,0,0,"battle/Battle Jump Land",0,1,0,1,3,0,false,false,true,false,true
+62,0,1,false,0,3,0,"normal/Damage",0,0,0,0,3,0,false,false,true,false,true
+63,0,1,false,0,3,0,"normal/Damage Continuous",0,0,0,0,3,0,false,false,true,false,true
+64,0,1,false,0,3,1,"normal/knockback start",0,0,0,0,3,0,false,false,true,false,true
+65,0,1,false,0,3,0,"normal/knockback end",0,0,0,0,3,0,false,false,true,false,true
 66,0,5,false,0,0,1,"normal/dead",0,4,0,2,3,2,false,false,true,false,true
-67,0,5,true,0,0,1,"normal/dead_pose",0,4,0,2,3,3,false,false,true,false,true
-68,0,1,false,0,3,0,"battle/damage",0,0,0,0,3,0,false,false,true,false,true
-69,0,1,false,0,3,0,"battle/damage_continuous",0,0,0,0,3,0,false,false,true,false,true
-70,0,1,false,0,3,1,"battle/knockback_start",0,0,0,0,3,0,false,false,true,false,true
-71,0,1,false,0,3,0,"battle/knockback_end",0,0,0,0,3,0,false,false,true,false,true
-72,0,5,false,0,0,1,"battle/dead",0,3,0,1,3,0,false,false,true,false,true
-73,0,5,true,0,0,1,"battle/dead_pose",0,3,0,1,3,0,false,false,true,false,true
-74,0,1,false,0,0,1,"battle/mon_float_dead_start",0,2,0,2,3,0,false,false,true,false,true
-75,0,0,true,0,0,1,"battle/mon_float_dead_loop",0,2,0,2,3,0,false,false,true,false,true
-76,0,1,false,0,0,1,"battle/mon_float_dead_landing",0,2,0,2,3,0,false,false,true,false,true
-77,0,2,false,0,0,1,"normal/revive",0,2,1,2,3,4,false,false,true,true,true
-78,0,2,false,0,0,1,"battle/weapon_guard",0,1,0,1,3,0,false,false,true,false,true
-79,0,2,false,0,0,1,"battle/shield_guard",0,1,0,1,3,0,false,false,true,false,true
+67,0,5,true,0,0,1,"normal/dead pose",0,4,0,2,3,3,false,false,true,false,true
+68,0,1,false,0,3,0,"battle/Battle damage",0,0,0,0,3,0,false,false,true,false,true
+69,0,1,false,0,3,0,"battle/Battle damage continuous",0,0,0,0,3,0,false,false,true,false,true
+70,0,1,false,0,3,1,"battle/Battle knockback start",0,0,0,0,3,0,false,false,true,false,true
+71,0,1,false,0,3,0,"battle/Battle knockback end",0,0,0,0,3,0,false,false,true,false,true
+72,0,5,false,0,0,1,"battle/Battle dead",0,3,0,1,3,0,false,false,true,false,true
+73,0,5,true,0,0,1,"battle/Battle dead pose",0,3,0,1,3,0,false,false,true,false,true
+74,0,1,false,0,0,1,"battle/Battle mon_float_dead_start",0,2,0,2,3,0,false,false,true,false,true
+75,0,0,true,0,0,1,"battle/Battle mon_float_dead_loop",0,2,0,2,3,0,false,false,true,false,true
+76,0,1,false,0,0,1,"battle/Battle mon_float_dead_landing",0,2,0,2,3,0,false,false,true,false,true
+77,0,2,false,0,0,1,"normal/Revive",0,2,1,2,3,4,false,false,true,true,true
+78,0,2,false,0,0,1,"battle/Weapon Guard",0,1,0,1,3,0,false,false,true,false,true
+79,0,2,false,0,0,1,"battle/Shield Guard",0,1,0,1,3,0,false,false,true,false,true
 80,1,1,false,0,0,1,"normal/event_action_start",0,2,1,2,3,38,true,false,false,true,true
-81,2,0,true,0,0,1,"normal/event_action_loop",0,2,1,2,3,39,true,false,false,true,true
+81,2,0,true,0,0,1,"normal/Pickup something",0,2,1,2,3,39,true,false,false,true,true
 82,0,1,false,0,0,1,"normal/event_action_end",0,2,1,2,3,40,false,false,false,true,true
 83,1,3,false,0,0,1,"normal/item_start",0,2,1,2,3,14,true,false,true,true,true
 84,2,0,true,0,0,1,"normal/item_loop",0,2,1,2,3,15,true,false,true,true,true
-85,0,3,false,0,0,1,"normal/item_end",0,2,1,2,0,16,true,false,true,true,true
+85,0,3,false,0,0,1,"normal/Item use",0,2,1,2,0,16,true,false,true,true,true
 86,0,3,false,0,0,1,"normal/item_set",0,2,0,2,3,0,false,false,true,false,true
 87,0,3,false,0,0,1,"normal/item_eat",0,2,1,2,0,16,true,false,true,false,true
 88,0,3,false,0,0,1,"normal/item_drink",0,2,1,2,0,16,true,false,true,false,true
 89,1,3,false,0,0,1,"battle/item_start",0,1,0,1,3,0,true,true,true,false,true
 90,2,0,true,0,0,1,"battle/item_loop",0,1,0,0,3,0,true,true,true,false,true
-91,0,3,false,0,0,1,"battle/item_end",0,1,1,1,3,0,true,true,false,true,true
+91,0,3,false,0,0,1,"battle/Item use",0,1,1,1,3,0,true,true,false,true,true
 92,1,2,false,0,0,1,"normal/magic_cmn_start",0,2,0,2,3,0,true,true,true,false,true
 93,2,0,true,0,0,1,"normal/magic_cmn_loop",0,2,0,2,3,0,true,true,true,false,true
-94,1,2,false,0,0,1,"battle/magic_blk_start",0,1,0,1,3,0,true,true,true,false,true
-95,2,0,true,0,0,1,"battle/magic_blk_loop",0,1,0,1,3,0,true,true,true,false,true
-96,1,2,false,0,0,1,"battle/magic_sng_start",0,2,0,2,3,0,true,true,true,false,true
-97,2,0,true,0,0,1,"battle/magic_sng_loop",0,2,0,2,3,0,true,true,true,false,true
+94,1,2,false,0,0,1,"battle/FireIV part1",0,1,0,1,3,0,true,true,true,false,true
+95,2,0,true,0,0,1,"battle/FireIV part2",0,1,0,1,3,0,true,true,true,false,true
+96,1,2,false,0,0,1,"battle/Begin harp",0,2,0,2,3,0,true,true,true,false,true
+97,2,0,true,0,0,1,"battle/Swift harp strumming",0,2,0,2,3,0,true,true,true,false,true
 98,1,2,false,0,0,1,"battle/magic_cnj_start",0,1,0,1,3,0,true,true,true,false,true
 99,2,0,true,0,0,1,"battle/magic_cnj_loop",0,1,0,1,3,0,true,true,true,false,true
 100,1,2,false,0,0,1,"battle/magic_swl_start",0,1,0,1,3,0,true,true,true,false,true
@@ -175,7 +175,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 173,2,0,true,0,0,1,"normal/touchaction_loop",0,2,1,2,3,0,true,false,false,true,true
 174,0,1,false,0,0,1,"normal/touchaction_end",0,2,1,2,3,0,false,false,false,true,true
 175,1,1,false,0,0,1,"normal/lookaction_start",0,2,1,2,3,5,true,false,false,true,true
-176,2,0,true,0,0,1,"normal/lookaction_loop",0,2,1,2,3,6,true,false,false,true,true
+176,2,0,true,0,0,1,"normal/Look Around",0,2,1,2,3,6,true,false,false,true,true
 177,0,1,false,0,0,1,"normal/lookaction_end",0,2,1,2,3,7,true,false,false,true,true
 178,1,1,false,0,0,1,"normal/fueaction_start",0,2,1,2,3,8,true,false,false,true,true
 179,2,0,true,0,0,1,"normal/fueaction_loop",0,2,1,2,3,9,true,false,false,true,true
@@ -868,8 +868,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 866,0,0,true,10,0,1,"event_base/event_base_bad_ground_drink",2,1,1,1,3,0,true,false,false,false,true
 867,0,0,true,10,0,1,"event_base/event_base_chair_eat_delicious",3,2,1,2,3,0,true,false,false,false,true
 868,0,0,true,10,0,2,"event_base/event_base_scrub_deck",1,1,1,1,3,0,true,false,false,false,true
-869,0,0,true,4,0,2,"event_base/event_base_appeal_bust",0,2,1,2,3,0,true,false,false,false,true
-870,0,0,true,4,0,2,"event_base/event_base_appeal_head",0,2,1,2,3,0,true,false,false,false,true
+869,0,0,true,4,0,2,"event_base/Butt Swaying(Midlander/Miqote)",0,2,1,2,3,0,true,false,false,false,true
+870,0,0,true,4,0,2,"event_base/Come Hither(Midlander/Miqote)",0,2,1,2,3,0,true,false,false,false,true
 871,0,0,true,10,0,2,"event_base/event_base_bad_chair_harp",3,1,1,1,3,0,true,false,false,false,true
 872,0,0,true,10,0,2,"event_base/event_base_harp",0,1,1,1,3,0,true,false,false,false,true
 873,0,0,true,4,0,0,"event_base/event_base_bad_stir_up",0,2,1,2,3,0,true,false,false,false,true
@@ -4797,34 +4797,34 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4795,0,0,true,4,0,2,"emote/loop_emot05_loop",0,2,1,2,3,0,true,true,false,false,true
 4796,0,1,false,7,0,2,"emote/loop_emot06_start",0,2,1,2,3,0,true,true,false,false,true
 4797,0,0,true,4,0,2,"emote/loop_emot06_loop",0,2,1,2,3,0,true,true,false,false,true
-4798,0,1,false,7,0,1,"emote/loop_emot07_start",0,2,1,2,0,59,true,true,false,false,true
-4799,0,0,true,0,0,1,"emote/loop_emot07_loop",0,2,1,2,0,60,true,true,false,false,true
-4800,0,1,false,7,0,1,"emote/act_emot08",0,2,1,2,0,0,true,true,false,false,true
+4798,0,1,false,7,0,1,"emote/Play-Dead start",0,2,1,2,0,59,true,true,false,false,true
+4799,0,0,true,0,0,1,"emote/Play-Dead End/Loop",0,2,1,2,0,60,true,true,false,false,true
+4800,0,1,false,7,0,1,"emote/Pretty Please",0,2,1,2,0,0,true,true,false,false,true
 4801,0,1,false,0,1,2,"emote/u_act_emot08",0,2,1,2,0,0,true,false,false,false,true
-4802,0,1,false,7,0,1,"emote_sp/sp03",0,2,1,2,0,0,true,true,false,false,true
-4803,0,1,false,7,0,1,"emote/battle04",0,1,2,1,0,0,true,true,false,false,true
+4802,0,1,false,7,0,1,"emote_sp/Diamond (iceheart statue)",0,2,1,2,0,0,true,true,false,false,true
+4803,0,1,false,7,0,1,"emote/zantasuken (odin statue)",0,1,2,1,0,0,true,true,false,false,true
 4804,0,1,false,7,0,1,"emote/act_emot09",0,2,1,2,0,0,true,true,false,false,true
 4805,0,1,false,0,1,1,"emote/u_act_emot09",0,2,1,2,0,0,true,false,false,false,true
-4806,0,1,false,0,0,1,"emote/swim_on_emot01_start",0,2,1,2,0,0,true,true,false,false,true
+4806,0,1,false,0,0,1,"emote/Water Float",0,2,1,2,0,0,true,true,false,false,true
 4807,0,0,true,0,0,1,"emote/swim_on_emot01_loop",0,2,1,2,0,0,true,true,false,false,true
-4808,0,1,false,0,0,1,"emote/swim_under_emot01",0,2,1,2,0,0,true,true,false,false,true
+4808,0,1,false,0,0,1,"emote/Water flip",0,2,1,2,0,0,true,true,false,false,true
 4809,0,1,false,7,0,1,"emote/dance07_start",0,2,0,2,0,0,true,true,false,false,true
-4810,0,0,true,4,0,1,"emote/dance07_loop",0,2,1,2,0,0,true,true,false,false,true
+4810,0,0,true,4,0,1,"emote/Moonlift Dance",0,2,1,2,0,0,true,true,false,false,true
 4811,0,1,false,7,0,0,"emote/act_emot10",0,2,1,2,0,0,true,true,false,false,true
 4812,0,1,false,0,3,0,"emote/add_act_emot09",0,0,1,0,0,0,true,true,false,false,true
 4813,0,1,false,0,1,1,"emote/u_pray",0,2,1,2,0,0,true,false,false,false,true
 4814,0,1,false,0,3,0,"emote/add_pray",0,0,1,0,0,0,true,true,false,false,true
-4815,0,1,false,7,0,1,"emote_sp/sp04",0,2,1,2,0,0,true,true,false,false,true
-4816,0,1,false,7,0,1,"emote_sp/sp04_no_target",0,2,1,2,0,0,true,true,false,false,true
-4817,0,1,false,7,0,0,"emote_sp/sp05_start",0,2,1,2,0,0,true,true,false,false,true
+4815,0,1,false,7,0,1,"emote_sp/Dote",0,2,1,2,0,0,true,true,false,false,true
+4816,0,1,false,7,0,1,"emote_sp/Dote2",0,2,1,2,0,0,true,true,false,false,true
+4817,0,1,false,7,0,0,"emote_sp/songbird",0,2,1,2,0,0,true,true,false,false,true
 4818,0,0,true,4,0,0,"emote_sp/sp05_loop",0,2,1,2,0,0,true,true,false,false,true
 4819,0,1,false,0,0,1,"harpoon/swim_under_hr_start",0,2,2,2,0,0,false,false,false,false,true
 4820,0,0,true,0,0,1,"harpoon/swim_under_hr_idle",0,0,0,4,0,0,false,false,false,false,true
 4821,0,1,false,0,0,1,"harpoon/swim_under_hr_end",0,0,2,4,0,0,false,false,false,false,true
 4822,0,1,false,0,0,1,"harpoon/swim_under_hr_action_normal",0,0,2,4,0,0,false,false,false,false,true
-4823,0,1,false,0,3,0,"emote/add_act_emot08",0,0,1,0,0,0,true,true,false,false,true
+4823,0,1,false,0,3,0,"emote/Pretty Please (headmovement)",0,0,1,0,0,0,true,true,false,false,true
 4824,0,1,false,0,0,1,"fishing_chair/item",4,0,2,3,0,0,false,false,false,false,true
-4825,0,1,false,7,0,1,"emote_sp/sp06",0,2,1,2,0,0,true,true,false,false,true
+4825,0,1,false,7,0,1,"emote_sp/Goku Power up",0,2,1,2,0,0,true,true,false,false,true
 4826,0,1,false,0,0,1,"harpoon/swim_under_hr_buff",0,0,2,4,0,0,false,false,false,false,true
 4827,0,1,false,0,0,1,"harpoon/swim_under_hr_libura",0,0,2,4,0,0,false,false,false,false,true
 4828,0,1,false,0,0,1,"harpoon/swim_under_hr_switch",0,0,2,4,0,0,false,false,false,false,true
@@ -4985,12 +4985,12 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4983,0,1,false,0,0,0,"normal/swim_dive_end",0,2,0,2,2,0,false,false,true,false,true
 4984,0,1,false,0,0,0,"normal/swim_rise_start",0,2,0,2,2,0,false,false,true,false,true
 4985,0,1,false,0,0,0,"normal/swim_rise_end",0,2,0,2,2,0,false,false,true,false,true
-4986,0,3,true,0,0,1,"pc_contentsaction/cling_loop",0,2,1,2,0,0,false,false,false,false,true
-4987,0,3,true,0,0,1,"pc_contentsaction/ropeclip_loop",0,2,1,2,0,0,false,false,false,false,true
-4988,0,3,false,0,0,1,"pc_contentsaction/ether_start",0,2,1,2,0,0,false,false,false,false,true
-4989,0,3,true,0,0,1,"pc_contentsaction/ether_loop",0,2,1,2,0,0,false,false,false,false,true
-4990,0,3,false,0,0,1,"pc_contentsaction/ether_end",0,2,1,2,0,0,false,false,false,false,true
-4991,0,3,true,0,0,1,"pc_contentsaction/stoop_loop",0,2,1,2,0,0,false,false,false,false,true
+4986,0,3,true,0,0,1,"pc_contentsaction/Thordan XIIIth Death",0,2,1,2,0,0,false,false,false,false,true
+4987,0,3,true,0,0,1,"pc_contentsaction/Xelpahtol skyride",0,2,1,2,0,0,false,false,false,false,true
+4988,0,3,false,0,0,1,"pc_contentsaction/Interaction start",0,2,1,2,0,0,false,false,false,false,true
+4989,0,3,true,0,0,1,"pc_contentsaction/Interaction loop",0,2,1,2,0,0,false,false,false,false,true
+4990,0,3,false,0,0,1,"pc_contentsaction/Interaction end",0,2,1,2,0,0,false,false,false,false,true
+4991,0,3,true,0,0,1,"pc_contentsaction/Battle stance&looking",0,2,1,2,0,0,false,false,false,false,true
 4992,1,1,false,0,1,1,"normal/u_lookaction_start",0,2,1,2,0,0,true,false,false,true,true
 4993,2,0,true,0,1,1,"normal/u_lookaction_loop",0,2,1,2,0,0,true,false,false,true,true
 4994,0,1,false,0,1,1,"normal/u_lookaction_end",0,2,1,2,0,0,true,false,false,true,true
@@ -5488,9 +5488,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5486,0,1,false,7,0,2,"event/event_try_to_katana",0,2,1,2,0,0,true,false,false,false,true
 5487,0,0,true,10,0,1,"event_base/event_base_chair_sake_drunk",3,1,1,1,0,0,true,false,false,false,true
 5488,0,0,true,10,0,1,"event_base/event_base_eat_rice",3,1,1,1,0,0,true,false,false,false,true
-5489,0,0,true,0,0,1,"event_base/event_base_swu_talk",0,2,1,2,0,0,true,false,false,false,true
-5490,0,0,true,0,0,1,"event_base/event_base_swu_box_count",0,2,1,2,0,0,true,false,false,false,true
-5491,0,0,true,0,0,1,"event_base/event_base_swu_rack_check",0,2,1,2,0,0,true,false,false,false,true
+5489,0,0,true,0,0,1,"event_base/Floating talking",0,2,1,2,0,0,true,false,false,false,true
+5490,0,0,true,0,0,1,"event_base/Floating pointing",0,2,1,2,0,0,true,false,false,false,true
+5491,0,0,true,0,0,1,"event_base/Floating searching",0,2,1,2,0,0,true,false,false,false,true
 5492,0,0,true,0,0,1,"event_base/event_base_swu_guard",0,2,1,2,0,0,true,false,false,false,true
 5493,0,0,true,4,0,0,"event_base/event_base_stand_sake_drunk",0,1,1,1,0,0,true,false,false,false,true
 5494,0,0,true,10,0,1,"event_base/event_base_cannon_clerning",0,1,1,1,0,0,true,false,false,false,true
@@ -5500,14 +5500,14 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5498,0,0,true,10,0,1,"event_base/event_base_park_play4",1,1,1,1,0,0,true,false,false,false,true
 5499,0,0,true,10,0,0,"event_base/event_base_knee_healing",1,2,1,2,0,0,true,false,false,false,true
 5500,0,0,true,10,0,0,"event_base/event_base_pinwheel",0,1,1,1,0,0,true,false,false,false,true
-5501,0,1,false,7,0,1,"event/event_skillget3",0,1,1,1,0,0,true,false,false,false,true
+5501,0,1,false,7,0,1,"event/Class quest soulstone Cutscene",0,1,1,1,0,0,true,false,false,false,true
 5502,0,0,true,10,0,2,"event_base/event_base_milking",1,2,1,2,0,0,true,false,false,false,true
 5503,0,0,true,10,0,1,"event_base/event_base_swu_stab_harpoon",0,1,1,1,0,0,true,false,false,false,true
 5504,0,0,true,10,0,2,"event_base/event_base_harpoon_stand",0,1,1,1,0,0,true,false,false,false,true
 5505,0,0,true,10,0,2,"event_base/event_base_vender_talk",0,1,1,1,0,0,true,false,false,false,true
 5506,0,0,true,10,0,1,"event_base/event_base_broom",0,1,1,1,0,0,true,false,false,false,true
 5507,0,3,false,0,0,1,"normal/event_item_multibakuha",0,0,0,0,0,0,false,false,false,false,true
-5508,0,1,false,0,0,0,"event/event_sum_human_depop",0,0,0,0,0,0,false,false,false,false,true
+5508,0,1,false,0,0,0,"event/Become one with the aether",0,0,0,0,0,0,false,false,false,false,true
 5509,0,0,true,4,0,0,"event_base/event_base_cute_stand",0,2,1,2,0,0,true,false,false,false,true
 5510,0,0,true,10,0,2,"event_base/event_base_get_on_handrail",0,2,1,2,0,0,true,false,false,false,true
 5511,0,0,true,6,0,1,"event_base/event_base_chair_think1",3,2,1,2,0,0,true,false,false,false,true
@@ -5520,8 +5520,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5518,0,0,true,4,0,0,"event_base/event_base_stand_talk2",0,2,1,2,0,0,true,false,false,false,true
 5519,0,0,true,4,0,0,"event_base/event_base_stand_listen2",0,2,1,2,0,0,true,false,false,false,true
 5520,0,3,false,0,0,1,"normal/event_item_multienmaku",0,0,0,0,0,0,false,false,false,false,true
-5521,0,1,false,7,0,1,"event/event_take_look",0,1,1,1,0,0,true,false,false,false,true
-5522,0,1,false,0,3,0,"event/event_add_look_lr",0,0,0,0,0,0,false,false,false,false,true
+5521,0,1,false,7,0,1,"event/Look at item",0,1,1,1,0,0,true,false,false,false,true
+5522,0,1,false,0,3,0,"event/Look left&right",0,0,0,0,0,0,false,false,false,false,true
 5523,0,0,true,4,0,1,"event_base/event_base_look_down_scope",0,1,1,1,0,0,true,false,false,false,true
 5524,0,1,false,0,7,0,"speak/whisper_short_nolip",0,0,0,0,0,0,false,false,false,false,true
 5525,0,1,false,0,7,0,"speak/whisper_middle_nolip",0,0,0,0,0,0,false,false,false,false,true
@@ -5533,13 +5533,13 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5531,0,1,false,0,7,0,"speak/shout_middle_nolip",0,0,0,0,0,0,false,false,false,false,true
 5532,0,1,false,0,7,0,"speak/shout_long_nolip",0,0,0,0,0,0,false,false,false,false,true
 5533,0,1,false,7,0,1,"event/event_hand_chest",0,2,1,2,0,0,true,false,false,false,true
-5534,0,1,false,7,0,1,"event/event_m0176_box_attack",0,1,1,1,0,0,true,false,false,false,true
-5535,0,1,false,7,0,2,"event/event_knee_pc",0,2,1,2,0,0,true,false,false,false,true
-5536,0,1,true,4,0,2,"event_base/event_base_stand_suffering",0,2,1,2,0,0,true,false,false,false,true
+5534,0,1,false,7,0,1,"event/Free gifts",0,1,1,1,0,0,true,false,false,false,true
+5535,0,1,false,7,0,2,"event/Kneeling wounded",0,2,1,2,0,0,true,false,false,false,true
+5536,0,1,true,4,0,2,"event_base/Standing wounded",0,2,1,2,0,0,true,false,false,false,true
 5537,0,1,true,4,0,0,"event_base/event_base_stand_harp",0,1,1,1,0,0,true,false,false,false,true
 5538,0,0,true,4,0,2,"battle/idle",0,1,0,1,0,0,false,false,false,false,true
 5539,0,0,true,10,0,1,"event_base/event_base_lute_tuning",3,1,1,1,0,0,false,false,false,false,true
-5540,0,0,true,4,0,1,"event_base/event_base_rti_panel_operation",0,2,1,2,0,0,false,false,false,false,true
+5540,0,0,true,4,0,1,"event_base/Dj/use keyboard",0,2,1,2,0,0,false,false,false,false,true
 5541,0,0,true,10,0,1,"event_base/event_base_hammer_hit_floor",0,1,1,1,0,0,true,false,false,false,true
 5542,0,0,true,10,0,1,"event_base/event_base_hammer_hit_wall",0,1,1,1,0,0,true,false,false,false,true
 5543,0,0,true,4,0,0,"event_base/event_base_sledgehammer_stand",0,1,1,1,0,0,true,false,false,false,true
@@ -5559,20 +5559,20 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5557,0,0,true,9,0,1,"event_base/event_base_lantern_drawing",3,1,1,1,0,0,true,false,false,false,true
 5558,0,0,true,10,0,2,"event_base/event_base_stretch1",0,2,1,2,0,0,true,false,false,false,true
 5559,0,0,true,10,0,1,"event_base/event_base_pirouette",0,2,1,2,0,0,true,false,false,false,true
-5560,0,0,true,10,0,2,"event_base/event_base_ground_rest2",2,2,1,2,0,0,true,false,false,false,true
+5560,0,0,true,10,0,2,"event_base/Sit hands on rightleg",2,2,1,2,0,0,true,false,false,false,true
 5561,0,0,true,10,0,2,"event_base/event_base_stretch2",2,2,1,2,0,0,true,false,false,false,true
-5562,0,0,true,10,0,1,"event_base/event_base_lie3",2,2,1,2,3,0,true,false,false,false,true
-5563,0,0,true,4,0,0,"event_base/event_base_protect",0,2,1,2,0,0,true,false,false,false,true
-5564,0,1,false,0,0,1,"event/event_lie3_to_knee_suffering",1,2,1,2,0,0,true,false,false,false,true
-5565,0,0,true,10,0,1,"event_base/event_base_kitchen_range",1,1,1,1,0,0,true,false,false,false,true
-5566,0,1,false,7,0,0,"event/event_confetti",0,2,1,2,0,0,true,false,false,false,true
+5562,0,0,true,10,0,1,"event_base/Drunk on the floor",2,2,1,2,3,0,true,false,false,false,true
+5563,0,0,true,4,0,0,"event_base/Get rdy for dodgeball",0,2,1,2,0,0,true,false,false,false,true
+5564,0,1,false,0,0,1,"event/Stand up start",1,2,1,2,0,0,true,false,false,false,true
+5565,0,0,true,10,0,1,"event_base/Camera shake",1,1,1,1,0,0,true,false,false,false,true
+5566,0,1,false,7,0,0,"event/confete1",0,2,1,2,0,0,true,false,false,false,true
 5567,0,0,true,10,0,0,"event_base/event_base_cling",0,2,1,2,0,0,true,false,false,false,true
 5568,0,0,true,10,0,2,"event_base/event_base_lie_dying_down",0,2,1,2,0,0,true,false,false,false,true
 5569,0,0,true,10,0,0,"event_base/event_base_mongolian_sumo3",0,2,1,2,0,0,true,false,false,false,true
 5570,0,0,true,10,0,0,"event_base/event_base_mongolian_sumo4",0,2,1,2,0,0,true,false,false,false,true
 5571,0,0,true,10,0,1,"event_base/event_base_make_paper",0,1,1,1,0,0,true,false,false,false,true
 5572,0,0,true,10,0,0,"event_base/event_base_drum",0,1,1,1,0,0,true,false,false,false,true
-5573,0,0,false,7,0,1,"event/event_wa_syoi",0,2,1,2,0,0,false,false,false,false,true
+5573,0,0,false,7,0,1,"event/Confete2",0,2,1,2,0,0,false,false,false,false,true
 5574,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 5575,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 5576,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
@@ -5798,18 +5798,18 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5796,0,0,true,0,0,1,"emote/swim_on_emot02_loop",0,2,1,2,0,0,true,true,false,false,true
 5797,0,1,false,0,0,1,"emote/swim_under_emot02_start",0,2,1,2,0,0,true,true,false,false,true
 5798,0,0,true,0,0,1,"emote/swim_under_emot02_loop",0,2,1,2,0,0,true,true,false,false,true
-5799,0,1,false,0,0,2,"emote/loop_emot08_start",0,2,1,2,0,0,true,true,false,false,true
-5800,0,0,true,0,0,2,"emote/loop_emot08_loop",0,2,1,2,0,0,true,true,false,false,true
-5801,0,1,false,0,0,2,"emote/loop_emot09_start",0,2,1,2,0,0,true,true,false,false,true
-5802,0,0,true,0,0,2,"emote/loop_emot09_loop",0,2,1,2,0,0,true,true,false,false,true
-5803,0,0,true,0,0,2,"emote/loop_emot10_loop",0,2,1,2,0,0,true,true,false,false,true
-5804,0,0,true,0,0,2,"emote/loop_emot11_loop",0,2,1,2,0,0,true,true,false,false,true
-5805,0,1,false,0,0,2,"emote/loop_emot12_start",0,2,1,2,0,0,true,true,false,false,true
-5806,0,0,true,0,0,2,"emote/loop_emot12_loop",0,2,1,2,0,0,true,true,false,false,true
+5799,0,1,false,0,0,2,"emote/Push-up start",0,2,1,2,0,0,true,true,false,false,true
+5800,0,0,true,0,0,2,"emote/Push-up Loop",0,2,1,2,0,0,true,true,false,false,true
+5801,0,1,false,0,0,2,"emote/Stomach control start",0,2,1,2,0,0,true,true,false,false,true
+5802,0,0,true,0,0,2,"emote/Stomach control loop",0,2,1,2,0,0,true,true,false,false,true
+5803,0,0,true,0,0,2,"emote/Sets of squats",0,2,1,2,0,0,true,true,false,false,true
+5804,0,0,true,0,0,2,"emote/Breath in",0,2,1,2,0,0,true,true,false,false,true
+5805,0,1,false,0,0,2,"emote/Attention start",0,2,1,2,0,0,true,true,false,false,true
+5806,0,0,true,0,0,2,"emote/Attention start",0,2,1,2,0,0,true,true,false,false,true
 5807,0,1,false,0,0,2,"emote/loop_emot13_start",0,2,1,2,0,0,true,true,false,false,true
-5808,0,0,true,0,0,2,"emote/loop_emot13_loop",0,2,1,2,0,0,true,true,false,false,true
-5809,0,0,true,0,0,2,"emote/loop_emot14_loop",0,2,1,2,0,0,true,true,false,false,true
-5810,0,1,false,0,0,0,"emote/act_emot12",0,2,1,2,0,0,true,true,false,false,true
+5808,0,0,true,0,0,2,"emote/At Ease",0,2,1,2,0,0,true,true,false,false,true
+5809,0,0,true,0,0,2,"emote/Boxing",0,2,1,2,0,0,true,true,false,false,true
+5810,0,1,false,0,0,0,"emote/Converse",0,2,1,2,0,0,true,true,false,false,true
 5811,0,1,false,0,1,0,"emote/u_act_emot12",0,2,1,2,0,0,true,false,false,false,true
 5812,0,1,false,0,0,1,"emote/loop_emot10_start",0,2,0,2,0,0,true,true,false,false,true
 5813,0,1,false,0,0,1,"emote/loop_emot11_start",0,2,0,2,0,0,true,true,false,false,true
@@ -5925,15 +5925,15 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5923,2,0,true,0,0,1,"battle/mon_sp_g_loop",0,1,0,1,0,0,false,false,true,false,true
 5924,1,3,false,0,0,1,"battle/mon_sp_h_start",0,1,0,1,0,0,false,false,true,false,true
 5925,2,0,true,0,0,1,"battle/mon_sp_h_loop",0,1,0,1,0,0,false,false,true,false,true
-5926,0,3,false,0,0,1,"human_sp/c1401/human_sp001",0,1,1,1,0,0,false,false,false,false,true
-5927,0,3,false,0,0,1,"human_sp/c0101/human_sp056",0,1,1,1,0,0,false,false,false,false,true
+5926,0,3,false,0,0,1,"human_sp/PreAngst",0,1,1,1,0,0,false,false,false,false,true
+5927,0,3,false,0,0,1,"human_sp/Angst",0,1,1,1,0,0,false,false,false,false,true
 5928,0,3,false,0,0,1,"human_sp/c0901/human_sp040",0,1,1,1,0,0,false,false,false,false,true
 5929,0,3,false,0,0,0,"mon_sp/gimmick/g3fd_boss_gimmick12",0,0,0,0,0,0,false,false,false,false,true
 5930,0,3,false,0,0,1,"human_sp/c0101/human_sp057",0,1,1,2,0,0,false,false,false,false,true
 5931,0,1,false,0,0,0,"human_sp/c0101/human_sp057_hit",0,0,0,0,0,0,false,false,false,false,true
-5932,0,3,false,0,0,1,"human_sp/c0101/human_sp058",0,1,1,1,0,0,false,false,false,false,true
-5933,0,3,false,0,0,1,"human_sp/c0101/human_sp059",0,1,1,1,0,0,false,false,false,false,true
-5934,0,3,false,0,0,1,"human_sp/c1401/human_sp002",0,1,1,1,0,0,false,false,false,false,true
+5932,0,3,false,0,0,1,"human_sp/Mudra summon",0,1,1,1,0,0,false,false,false,false,true
+5933,0,3,false,0,0,1,"human_sp/Dash+blink",0,1,1,1,0,0,false,false,false,false,true
+5934,0,3,false,0,0,1,"human_sp/Apply arrow on ass",0,1,1,1,0,0,false,false,false,false,true
 5935,0,1,false,0,0,0,"human_sp/c1401/human_sp002_hit",0,0,0,0,0,0,false,false,false,false,true
 5936,0,3,false,0,0,0,"mon_sp/gimmick/z3o5_boss_gimmick01",0,0,0,0,0,0,false,false,false,false,true
 5937,0,1,false,0,0,0,"mon_sp/gimmick/z3o5_boss_gimmick01_hit",0,0,0,0,0,0,false,false,false,false,true
@@ -5944,26 +5944,26 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5942,0,3,false,0,0,0,"mon_sp/gimmick/z3o5_boss_gimmick04",0,0,0,0,0,0,false,false,false,false,true
 5943,0,3,false,0,0,1,"mon_sp/common/mon_sph033",0,1,0,1,0,0,false,true,false,false,true
 5944,0,1,false,0,0,0,"mon_sp/common/mon_sph033_hit",0,0,0,0,0,0,false,false,false,false,true
-5945,0,3,false,0,0,1,"human_sp/c0401/human_sp001",0,1,1,1,0,0,false,false,false,false,true
-5946,0,3,false,0,0,1,"human_sp/c0401/human_sp002",0,1,1,1,0,0,false,false,false,false,true
-5947,0,3,false,0,0,1,"human_sp/c0401/human_sp003",0,1,1,1,0,0,false,false,false,false,true
-5948,0,3,false,0,0,1,"human_sp/c0401/human_sp004",0,1,1,1,0,0,false,false,false,false,true
+5945,0,3,false,0,0,1,"human_sp/Sparkle+air",0,1,1,1,0,0,false,false,false,false,true
+5946,0,3,false,0,0,1,"human_sp/Green slash",0,1,1,1,0,0,false,false,false,false,true
+5947,0,3,false,0,0,1,"human_sp/air1",0,1,1,1,0,0,false,false,false,false,true
+5948,0,3,false,0,0,1,"human_sp/air2",0,1,1,1,0,0,false,false,false,false,true
 5949,0,1,false,0,0,0,"human_sp/c0401/human_sp002_hit",0,0,0,0,0,0,false,false,false,false,true
 5950,0,3,true,0,0,1,"human_sp/c0401/human_sp005",0,0,1,0,0,0,false,false,false,false,true
-5951,0,3,false,0,0,1,"human_sp/c0101/human_sp060",0,1,1,1,0,0,false,false,false,false,true
+5951,0,3,false,0,0,1,"human_sp/Drk Ultimate",0,1,1,1,0,0,false,false,false,false,true
 5952,0,3,false,0,0,0,"mon_sp/gimmick/g3fa_boss_gimmick08",0,0,0,0,0,0,false,false,false,false,true
 5953,0,3,false,0,0,0,"mon_sp/gimmick/fate_ixion_rakurai",0,0,0,0,0,0,false,false,false,false,true
 5954,0,1,false,0,0,0,"mon_sp/gimmick/fate_ixion_rakurai_hit",0,0,0,0,0,0,false,false,false,false,true
-5955,0,3,false,0,0,1,"human_sp/c0101/human_sp061",0,1,1,1,0,0,false,false,false,false,true
-5956,0,3,false,0,0,1,"human_sp/c0401/human_sp006",0,1,1,1,0,0,false,false,false,false,true
+5955,0,3,false,0,0,1,"human_sp/Slashing",0,1,1,1,0,0,false,false,false,false,true
+5956,0,3,false,0,0,1,"human_sp/Pinkstuff",0,1,1,1,0,0,false,false,false,false,true
 5957,0,3,false,0,0,0,"mon_sp/gimmick/z3o4_boss_gimmick04",0,0,0,0,0,0,false,false,false,false,true
 5958,0,1,false,0,0,0,"mon_sp/gimmick/z3o4_boss_gimmick04_hit",0,0,0,0,0,0,false,false,false,false,true
-5959,0,3,false,0,0,1,"human_sp/c0101/human_sp062",0,1,1,1,0,0,false,false,false,false,true
+5959,0,3,false,0,0,1,"human_sp/Warrior LB Lv3",0,1,1,1,0,0,false,false,false,false,true
 5960,0,1,false,0,0,0,"human_sp/c0101/human_sp062_hit",0,0,0,0,0,0,false,false,false,false,true
 5961,0,3,false,0,0,1,"human_sp/c0101/human_sp063",0,1,1,1,0,0,false,false,false,false,true
 5962,0,3,false,0,0,0,"mon_sp/gimmick/e3d3_trash_gimmick01",0,0,0,0,0,0,false,false,false,false,true
 5963,0,1,false,0,0,0,"mon_sp/gimmick/e3d3_trash_gimmick01_hit",0,0,0,0,0,0,false,false,false,false,true
-5964,0,3,false,0,0,1,"human_sp/c0101/human_sp064",0,1,1,1,0,0,false,false,false,false,true
+5964,0,3,false,0,0,1,"human_sp/Sword slashs",0,1,1,1,0,0,false,false,false,false,true
 5965,0,3,false,0,0,0,"human_sp/c0901/human_sp041",0,1,1,1,0,0,false,false,false,false,true
 5966,0,3,false,0,0,0,"mon_sp/gimmick/e3d2_cyuboss2_gimmick04",0,0,0,0,0,0,false,false,false,false,true
 5967,0,3,false,0,0,0,"mon_sp/gimmick/e3d2_cyuboss2_gimmick05",0,0,0,0,0,0,false,false,false,false,true
@@ -5976,7 +5976,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5974,0,1,false,0,0,0,"mon_sp/gimmick/e3f2_boss_gimmick01_hit",0,0,0,0,0,0,false,false,false,false,true
 5975,0,3,false,0,0,0,"mon_sp/gimmick/hirudi_gilgamesh_ka_sound",0,0,0,0,0,0,false,false,false,false,true
 5976,0,1,false,0,0,0,"mon_sp/gimmick/hirudi_gilgamesh_ka_sound_hit",0,0,0,0,0,0,false,false,false,false,true
-5977,0,3,false,0,0,1,"human_sp/c0101/human_sp065",0,1,1,1,0,0,false,false,false,false,true
+5977,0,3,false,0,0,1,"human_sp/Samurai combo",0,1,1,1,0,0,false,false,false,false,true
 5978,0,3,false,0,0,0,"mon_sp/gimmick/d2p1_boss1_gimmick01",0,0,0,0,0,0,false,false,false,false,true
 5979,0,1,false,0,0,0,"mon_sp/gimmick/d2p1_boss1_gimmick01_hit",0,0,0,0,0,0,false,false,false,false,true
 5980,0,3,false,0,0,0,"mon_sp/gimmick/d2p1_boss2_gimmick01",0,0,0,0,0,0,false,false,false,false,true
@@ -6114,45 +6114,45 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 6112,0,1,false,0,0,0,"mon_sp/gimmick/z3oa_boss_gimmick14_hit",0,0,0,0,0,0,false,false,false,false,true
 6113,0,3,false,0,0,0,"mon_sp/gimmick/z3oa_boss_gimmick15",0,0,0,0,0,0,false,false,false,false,true
 6114,0,1,false,0,0,0,"mon_sp/gimmick/z3oa_boss_gimmick15_hit",0,0,0,0,0,0,false,false,false,false,true
-6115,0,3,true,0,0,1,"pc_contentsaction/defend_loop",0,1,1,1,0,0,false,false,false,false,true
-6116,0,3,false,0,0,1,"pc_contentsaction/ded",0,1,1,1,0,0,false,false,false,false,true
-6117,0,3,true,0,0,1,"pc_contentsaction/dedpose",0,1,1,1,0,0,false,false,false,false,true
-6118,0,3,false,0,0,1,"pc_contentsaction/revive",0,1,1,1,0,0,false,false,false,false,true
-6119,0,3,true,0,0,1,"pc_contentsaction/crouch_loop",0,2,1,2,0,0,false,false,false,false,true
-6120,0,3,false,0,0,1,"pc_contentsaction/ether2",0,2,1,2,0,0,false,false,false,false,true
-6121,0,3,false,0,0,1,"pc_contentsaction/etherex",0,2,1,2,0,0,false,false,false,false,true
-6122,0,3,false,0,0,1,"pc_contentsaction/levit",0,2,1,2,0,0,false,false,false,false,true
-6123,0,3,false,0,1,1,"pc_contentsaction/ether3",0,0,0,2,0,0,false,false,false,false,true
-6124,0,3,true,0,0,1,"pc_contentsaction/ether4_loop",0,2,1,2,0,0,false,false,false,false,true
-6125,0,1,false,0,1,1,"mount/u_swim_mt_start",0,2,1,2,0,0,true,false,false,false,true
-6126,0,3,true,0,0,1,"pc_contentsaction/wslider_loop",0,2,1,2,0,0,true,false,false,false,true
-6127,0,3,false,0,0,1,"pc_contentsaction/blowoff_start_pc",0,1,1,1,0,0,false,false,false,false,true
-6128,0,3,false,0,0,1,"pc_contentsaction/blowoff_end_pc",0,1,1,1,0,0,false,false,false,false,true
+6115,0,3,true,0,0,1,"pc_contentsaction/Susano Greatsword Block",0,1,1,1,0,0,false,false,false,false,true
+6116,0,3,false,0,0,1,"pc_contentsaction/Real Death start",0,1,1,1,0,0,false,false,false,false,true
+6117,0,3,true,0,0,1,"pc_contentsaction/Real Death end",0,1,1,1,0,0,false,false,false,false,true
+6118,0,3,false,0,0,1,"pc_contentsaction/Raise",0,1,1,1,0,0,false,false,false,false,true
+6119,0,3,true,0,0,1,"pc_contentsaction/Ground pickup loop",0,2,1,2,0,0,false,false,false,false,true
+6120,0,3,false,0,0,1,"pc_contentsaction/Regen potion?",0,2,1,2,0,0,false,false,false,false,true
+6121,0,3,false,0,0,1,"pc_contentsaction/use on Fordola",0,2,1,2,0,0,false,false,false,false,true
+6122,0,3,false,0,0,1,"pc_contentsaction/slap a bitch(pomander POTD/HVH)",0,2,1,2,0,0,false,false,false,false,true
+6123,0,3,false,0,1,1,"pc_contentsaction/Glowy stuff",0,0,0,2,0,0,false,false,false,false,true
+6124,0,3,true,0,0,1,"pc_contentsaction/Lakshmi(without effects)",0,2,1,2,0,0,false,false,false,false,true
+6125,0,1,false,0,1,1,"mount/Upperbody Whistle",0,2,1,2,0,0,true,false,false,false,true
+6126,0,3,true,0,0,1,"pc_contentsaction/Rabanastre water slide",0,2,1,2,0,0,true,false,false,false,true
+6127,0,3,false,0,0,1,"pc_contentsaction/Blowoff Start",0,1,1,1,0,0,false,false,false,false,true
+6128,0,3,false,0,0,1,"pc_contentsaction/Blowoff End",0,1,1,1,0,0,false,false,false,false,true
 6129,1,3,false,0,0,1,"limitbreak/lbk_platoon_start",0,2,1,2,0,0,true,true,true,false,true
 6130,2,0,true,0,0,1,"limitbreak/lbk_platoon_loop",0,2,1,2,0,0,true,true,true,false,true
 6131,0,3,false,0,0,1,"limitbreak/lbk_platoon_lv2",0,2,1,2,0,0,false,false,false,false,true
 6132,0,3,false,0,0,1,"limitbreak/lbk_platoon_melee",0,1,1,1,0,0,false,false,false,false,true
 6133,0,3,false,0,0,1,"pc_contentsaction/blowoff_pc",0,1,1,1,0,0,false,true,false,false,true
-6134,0,3,false,0,0,1,"pc_contentsaction/barrier_pc",0,1,1,1,0,0,false,false,false,false,true
+6134,0,3,false,0,0,1,"pc_contentsaction/Barrier",0,1,1,1,0,0,false,false,false,false,true
 6135,0,1,false,0,0,0,"pc_contentsaction/barrier_pc_hit",0,0,0,0,0,0,false,false,false,false,true
-6136,1,3,false,0,0,1,"limitbreak/lbk_platoon_melee_start",0,1,1,1,0,0,true,true,true,false,true
-6137,2,0,true,0,0,1,"limitbreak/lbk_platoon_melee_loop",0,1,1,1,0,0,true,true,true,false,true
+6136,1,3,false,0,0,1,"limitbreak/Platoon Melee Start",0,1,1,1,0,0,true,true,true,false,true
+6137,2,0,true,0,0,1,"limitbreak/Platoon Melee Loop",0,1,1,1,0,0,true,true,true,false,true
 6138,0,3,false,0,0,1,"mount_sp/m0176/mon_sp001",0,0,1,0,2,0,false,false,false,false,true
-6139,0,3,true,0,0,1,"pc_contentsaction/skydiving_loop",0,2,1,2,0,0,false,false,false,false,true
-6140,0,3,false,0,0,1,"pc_contentsaction/painter",0,2,1,2,0,0,false,false,false,false,true
-6141,0,3,true,0,0,1,"pc_contentsaction/bitten_loop",0,2,1,2,0,0,false,false,false,false,true
+6139,0,3,true,0,0,1,"pc_contentsaction/Skydiving",0,2,1,2,0,0,false,false,false,false,true
+6140,0,3,false,0,0,1,"pc_contentsaction/Black Paint Brush",0,2,1,2,0,0,false,false,false,false,true
+6141,0,3,true,0,0,1,"pc_contentsaction/Byakoo Holding you",0,2,1,2,0,0,false,false,false,false,true
 6142,0,3,false,0,0,1,"pc_contentsaction/painter1",0,2,1,2,0,0,false,false,false,false,true
 6143,0,3,false,0,0,1,"pc_contentsaction/painter2",0,2,1,2,0,0,false,false,false,false,true
 6144,0,3,false,0,0,1,"pc_contentsaction/painter3",0,2,1,2,0,0,false,false,false,false,true
 6145,0,3,false,0,0,1,"pc_contentsaction/painter4",0,2,1,2,0,0,false,false,false,false,true
-6146,0,4,true,0,0,1,"pc_contentsaction/skydiving_blow_loop",0,2,1,2,0,0,false,false,false,false,true
-6147,0,5,true,0,0,1,"pc_contentsaction/skydiving_ded_loop",0,2,1,2,0,0,false,false,false,false,true
+6146,0,4,true,0,0,1,"pc_contentsaction/Skydiving_Blow Loop",0,2,1,2,0,0,false,false,false,false,true
+6147,0,5,true,0,0,1,"pc_contentsaction/Skydiving_Daad Loop",0,2,1,2,0,0,false,false,false,false,true
 6148,0,3,false,0,0,1,"pc_contentsaction/psyllium1",0,2,1,2,0,0,false,false,false,false,true
 6149,0,3,false,0,0,1,"pc_contentsaction/psyllium2",0,2,1,2,0,0,false,false,false,false,true
 6150,0,3,false,0,0,1,"pc_contentsaction/psyllium3",0,2,1,2,0,0,false,false,false,false,true
-6151,0,3,false,0,0,1,"pc_contentsaction/skydiving_blow",0,2,1,2,0,0,false,false,false,false,true
+6151,0,3,false,0,0,1,"pc_contentsaction/Skydiving Blow",0,2,1,2,0,0,false,false,false,false,true
 6152,0,3,false,0,0,1,"pc_contentsaction/painter5",0,2,1,2,0,0,false,false,false,false,true
-6153,0,3,true,0,0,1,"pc_contentsaction/blow2_loop",0,0,1,0,0,0,false,false,false,false,true
+6153,0,3,true,0,0,1,"pc_contentsaction/Blow 2 Loop",0,0,1,0,0,0,false,false,false,false,true
 6154,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6155,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6156,0,3,false,0,0,1,"pc_contentsaction/item15",0,2,1,2,0,0,false,false,false,false,true
@@ -6218,19 +6218,19 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 6216,0,1,false,0,2,0,"facial/pose/satisfied",0,0,0,0,0,0,false,false,false,false,true
 6217,0,1,false,0,3,1,"normal/swim_under_treasure_search",0,0,1,0,0,0,true,true,false,false,true
 6218,0,1,false,7,0,0,"emote_sp/sp07_start",0,2,0,2,0,0,true,true,false,false,true
-6219,0,0,true,4,0,0,"emote_sp/sp07_loop",0,2,1,2,0,0,true,true,false,false,true
+6219,0,0,true,4,0,0,"emote_sp/Praying2",0,2,1,2,0,0,true,true,false,false,true
 6220,0,1,false,0,0,0,"emote/act_emot13",0,2,1,2,0,0,true,true,false,false,true
 6221,0,1,false,0,1,0,"emote/u_act_emot13",0,2,1,2,0,0,true,false,false,false,true
-6222,0,1,false,0,0,0,"emote/act_emot14",0,2,1,2,0,0,true,true,false,false,true
+6222,0,1,false,0,0,0,"emote/Greeting",0,2,1,2,0,0,true,true,false,false,true
 6223,0,1,false,0,1,0,"emote/u_act_emot14",0,2,1,2,0,0,true,false,false,false,true
-6224,0,1,false,0,0,0,"emote/act_emot15",0,2,1,2,0,0,true,true,false,false,true
+6224,0,1,false,0,0,0,"emote/Elucidate",0,2,1,2,0,0,true,true,false,false,true
 6225,0,1,false,0,1,0,"emote/u_act_emot15",0,2,1,2,0,0,true,false,false,false,true
 6226,0,1,false,0,2,0,"facial/pose/grin",0,0,0,0,0,0,false,false,false,false,true
 6227,0,1,false,0,2,0,"facial/pose/meditate",0,0,0,0,0,0,false,false,false,false,true
 6228,0,1,false,0,2,0,"facial/pose/doubtful",0,0,0,0,0,0,false,false,false,false,true
 6229,0,1,false,0,2,0,"facial/pose/wrysmile_cl",0,0,0,0,0,0,false,false,false,false,true
 6230,0,1,false,0,0,0,"emote/dance08_start",0,2,0,2,0,0,true,true,false,false,true
-6231,0,0,true,0,0,0,"emote/dance08_loop",0,2,1,2,0,0,true,true,false,false,true
+6231,0,0,true,0,0,0,"emote/Chicken Dance",0,2,1,2,0,0,true,true,false,false,true
 6232,0,1,false,0,0,1,"emote/loop_emot15_start",0,2,1,2,0,0,true,true,false,false,true
 6233,0,0,true,0,0,1,"emote/loop_emot15_loop",0,2,1,2,0,0,true,true,false,false,true
 6234,0,1,false,0,0,0,"emote/loop_emot16_start",0,2,0,2,0,0,true,true,false,false,true
@@ -6241,34 +6241,34 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 6239,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6240,0,1,false,0,0,1,"emote_sp/sp08",0,2,1,2,0,0,true,true,false,false,true
 6241,0,1,false,0,0,0,"emote_sp/sp09_start",0,2,0,2,0,0,true,true,false,false,true
-6242,0,0,true,0,0,1,"emote_sp/sp09_loop",0,2,1,2,0,0,true,true,false,false,true
+6242,0,0,true,0,0,1,"emote_sp/Lakshimi Dance",0,2,1,2,0,0,true,true,false,false,true
 6243,0,1,false,0,0,0,"emote_sp/sp10_start",0,2,0,2,0,0,true,true,false,false,true
 6244,0,0,true,0,0,0,"emote_sp/sp10_loop",0,2,1,2,0,0,true,true,false,false,true
 6245,0,1,false,0,0,0,"emote_sp/sp11_start",0,2,0,2,0,0,true,true,false,false,true
 6246,0,0,true,0,0,0,"emote_sp/sp11_loop",0,2,1,2,0,0,true,true,false,false,true
 6247,0,1,false,0,0,0,"emote_sp/sp12_start",0,2,0,2,0,0,true,true,false,false,true
 6248,0,0,true,0,0,0,"emote_sp/sp12_loop",0,2,1,2,0,0,true,true,false,false,true
-6249,0,1,false,0,0,1,"emote/act_emot16",0,2,1,2,0,0,true,true,false,false,true
+6249,0,1,false,0,0,1,"emote/Eastern Fighting",0,2,1,2,0,0,true,true,false,false,true
 6250,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6251,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
-6252,0,1,false,0,0,0,"emote_sp/sp14",0,2,1,2,0,0,true,true,false,false,true
+6252,0,1,false,0,0,0,"emote_sp/Water Splash!",0,2,1,2,0,0,true,true,false,false,true
 6253,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
-6254,0,1,false,0,0,0,"emote_sp/sp14_no_target",0,2,1,2,0,0,true,true,false,false,true
-6255,0,1,false,0,0,0,"emote_sp/sp14_swo",0,2,1,2,0,0,true,true,false,false,true
-6256,0,1,false,0,0,0,"emote_sp/sp14_swo_no_target",0,2,1,2,0,0,true,true,false,false,true
+6254,0,1,false,0,0,0,"emote_sp/Water Splash no target!",0,2,1,2,0,0,true,true,false,false,true
+6255,0,1,false,0,0,0,"emote_sp/Water Splash in water!",0,2,1,2,0,0,true,true,false,false,true
+6256,0,1,false,0,0,0,"emote_sp/Water Splash in water no target!",0,2,1,2,0,0,true,true,false,false,true
 6257,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6258,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6259,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6260,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6261,0,1,false,0,2,0,"facial/pose/f_umm",0,0,0,0,0,0,false,false,false,false,true
-6262,0,1,false,0,2,0,"facial/pose/wink_l",0,0,0,0,0,0,false,false,false,false,true
-6263,0,1,false,0,0,3,"music/instrument02_start",0,2,1,2,0,0,false,true,false,false,true
-6264,0,0,true,0,0,3,"music/instrument02_idle",0,2,1,2,0,0,false,true,false,false,true
-6265,0,1,false,0,0,3,"music/instrument02_end",0,2,1,2,0,0,false,true,false,false,true
-6266,1,1,false,0,0,3,"music/instrument02_play01_start",0,2,1,2,0,0,false,true,false,false,true
-6267,2,0,true,0,0,3,"music/instrument02_play01_loop",0,2,1,2,0,0,false,true,false,false,true
-6268,1,1,false,0,0,3,"music/instrument02_play02_start",0,2,1,2,0,0,false,true,false,false,true
-6269,2,0,true,0,0,3,"music/instrument02_play02_loop",0,2,1,2,0,0,false,true,false,false,true
+6262,0,1,false,0,2,0,"facial/pose/Left Wink",0,0,0,0,0,0,false,false,false,false,true
+6263,0,1,false,0,0,3,"music/Bard Performance (Flute) Start",0,2,1,2,0,0,false,true,false,false,true
+6264,0,0,true,0,0,3,"music/Bard performance (Flute) Loop",0,2,1,2,0,0,false,true,false,false,true
+6265,0,1,false,0,0,3,"music/Bard Performance (flute) End",0,2,1,2,0,0,false,true,false,false,true
+6266,1,1,false,0,0,3,"music/Flute Note 1",0,2,1,2,0,0,false,true,false,false,true
+6267,2,0,true,0,0,3,"music/Flute Note 1 Loop",0,2,1,2,0,0,false,true,false,false,true
+6268,1,1,false,0,0,3,"music/Flute Note 2",0,2,1,2,0,0,false,true,false,false,true
+6269,2,0,true,0,0,3,"music/Flute note 2 Loop",0,2,1,2,0,0,false,true,false,false,true
 6270,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6271,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6272,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
@@ -6551,13 +6551,13 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 6549,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6550,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6551,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
-6552,0,1,false,0,0,2,"music/instrument01_start",0,2,1,2,0,0,false,true,false,false,true
-6553,0,0,true,0,0,2,"music/instrument01_idle",0,2,1,2,0,0,false,true,false,false,true
-6554,0,1,false,0,0,2,"music/instrument01_end",0,2,1,2,0,0,false,true,false,false,true
-6555,1,1,false,0,0,2,"music/instrument01_play01_start",0,2,1,2,0,0,false,true,false,false,true
-6556,2,0,true,0,0,2,"music/instrument01_play01_loop",0,2,1,2,0,0,false,true,false,false,true
-6557,1,1,false,0,0,2,"music/instrument01_play02_start",0,2,1,2,0,0,false,true,false,false,true
-6558,2,0,true,0,0,2,"music/instrument01_play02_loop",0,2,1,2,0,0,false,true,false,false,true
+6552,0,1,false,0,0,2,"music/Harp idle Start",0,2,1,2,0,0,false,true,false,false,true
+6553,0,0,true,0,0,2,"music/Harp idle Loop",0,2,1,2,0,0,false,true,false,false,true
+6554,0,1,false,0,0,2,"music/Harp note 1 start",0,2,1,2,0,0,false,true,false,false,true
+6555,1,1,false,0,0,2,"music/Harp note 1 strum",0,2,1,2,0,0,false,true,false,false,true
+6556,2,0,true,0,0,2,"music/Harp note 1&2 idle",0,2,1,2,0,0,false,true,false,false,true
+6557,1,1,false,0,0,2,"music/Harp Note 2 strum",0,2,1,2,0,0,false,true,false,false,true
+6558,2,0,true,0,0,2,"music/Harp End Loop",0,2,1,2,0,0,false,true,false,false,true
 6559,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6560,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 6561,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false

@@ -14,6 +14,11 @@
         Title="{DynamicResource Title}" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" SaveWindowPosition="True" WindowStartupLocation="CenterScreen">
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
+            <Button Click="Alwaystop">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="{DynamicResource AlwaysTop}" />
+                </StackPanel>
+            </Button>
             <Button Click="ChangeLang">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="{DynamicResource ChangeLang}" />
@@ -61,7 +66,7 @@
                             <TextBox x:Name="searchTextBox" Height="20" TextWrapping="Wrap" Margin="0,5" TextChanged="TextBox_TextChanged"  mah:TextBoxHelper.Watermark="Search..."/>
                         </StackPanel>
                     </mah:Flyout>
-                    <Button Content="Emote List" HorizontalAlignment="Left" Margin="765,77,0,0" VerticalAlignment="Top" Width="77" Height="26" Click="Button_Click_2"/>
+                    <Button Content="Emote List" HorizontalAlignment="Left" Margin="765,72,0,0" VerticalAlignment="Top" Width="77" Height="26" Click="Button_Click_2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{DynamicResource Character2}">
@@ -101,7 +106,7 @@
                     <TextBlock HorizontalAlignment="Left" Height="39" Margin="572,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Text="{DynamicResource A5}"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="xd" Margin="341,415,-341,-415">
+            <TabItem Header="xd" Margin="8,0,-8,0">
                 <Grid>
                     <Controls:ProgressRing HorizontalAlignment="Left" Margin="206,111,0,0" VerticalAlignment="Top" IsActive="True" Height="114" Width="110" />
                     <TextBlock HorizontalAlignment="Left" Height="136" Margin="321,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" FontSize="14"><Run FontWeight="Bold" Text="Welcome to the virtual queue! "/><Run Text="Because trainer is in such high demand, we've created this queue to make sure your experience is as painless as possible. Once it's your turn, you will be automatically be brought to the new instance system to use trainer for your needs. Remember, there's a limited time frame available once you've made it to the front, so be sure to have your save profiles ready. And whatever you do, don't close the trainer!"/></TextBlock>

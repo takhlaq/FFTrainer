@@ -43,6 +43,7 @@ namespace FFTrainer
             language = string.IsNullOrEmpty(language) ? "English" : language;
             dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            if ((bool)Properties.Settings.Default["TopApp"] == true)Application.Current.MainWindow.Topmost = true;
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
             timer.Tick += delegate
             {
@@ -465,7 +466,21 @@ namespace FFTrainer
             LanguageWindow.Top = this.Top + this.ActualHeight / 2.0;
             LanguageWindow.Show();
         }
-
+        private void Alwaystop(object sender, RoutedEventArgs e)
+        {
+            if ((bool)Properties.Settings.Default["TopApp"] == false)
+            {
+                Properties.Settings.Default["TopApp"] = true;
+                Properties.Settings.Default.Save();
+                Application.Current.MainWindow.Topmost = true;
+            }
+            else
+            {
+                Properties.Settings.Default["TopApp"] = false;
+                Properties.Settings.Default.Save();
+                Application.Current.MainWindow.Topmost = false;
+            }
+        }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);

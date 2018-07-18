@@ -126,4 +126,6 @@
     <system:String x:Key="AboutText">This trainer's base code was made by LeonBlade and then the project continued with Johto working on it. This application uses the following libraries in this project: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. This project uses portions of the code from the Wardrobe, thanks to Goat helping out.</system:String>
     <system:String x:Key="Unfreeze">Uncheck All!</system:String>
     <system:String x:Key="Update">Check for updates!</system:String>
+    <system:String x:Key="AlwaysTop">Always Top</system:String>
+    <system:String x:Key="EmoteChecker">Emote Checker:</system:String>
 </ResourceDictionary>

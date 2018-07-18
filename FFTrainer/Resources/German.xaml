@@ -125,5 +125,7 @@
     <system:String x:Key="Aboutx">Über:</system:String>
     <system:String x:Key="Unfreeze">Auswahl aufheben!</system:String>
     <system:String x:Key="Update">Update Überprüfung!</system:String>
+    <system:String x:Key="AlwaysTop">Immer oben</system:String>
+    <system:String x:Key="EmoteChecker">Emote prüfen:</system:String>
     <system:String x:Key="AboutText">Dieser Trainer wurde von LeonBlade aufgebaut und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
 </ResourceDictionary>

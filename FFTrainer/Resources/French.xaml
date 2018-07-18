@@ -125,5 +125,7 @@
     <system:String x:Key="Aboutx">À-propos:</system:String>
     <system:String x:Key="Unfreeze">Désélectionner tout</system:String>
     <system:String x:Key="Update">Mise à jour!</system:String>
+    <system:String x:Key="AlwaysTop">Toujours en haut</system:String>
+    <system:String x:Key="EmoteChecker">Emote vérifier:</system:String>
     <system:String x:Key="AboutText">La base du code de ce Trainer a été écrit par LeonBlade et le projet a été poursuivit par Johto qui depuis travaille dessus. Cette application utilise les librairies suivantes : MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Ce projet utilise des portions de codes provenant de Wardrobe, merci a Goat pour son aide.</system:String>
 </ResourceDictionary>
