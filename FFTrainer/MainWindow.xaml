@@ -83,6 +83,12 @@
                     <TextBlock HorizontalAlignment="Left" Height="49" Margin="48,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="495"><Run Text="{DynamicResource A3}"/><LineBreak/><Run/></TextBlock>
                     <Label Content="{DynamicResource Question5}" HorizontalAlignment="Left" Margin="549,183,0,0" VerticalAlignment="Top" FontSize="16" Width="512"/>
                     <TextBlock HorizontalAlignment="Left" Height="39" Margin="572,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Text="{DynamicResource A5}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="xd" Margin="341,415,-341,-415">
+                <Grid>
+                    <Controls:ProgressRing HorizontalAlignment="Left" Margin="206,111,0,0" VerticalAlignment="Top" IsActive="True" Height="114" Width="110" />
+                    <TextBlock HorizontalAlignment="Left" Height="136" Margin="321,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" FontSize="14"><Run FontWeight="Bold" Text="Welcome to the virtual queue! "/><Run Text="Because trainer is in such high demand, we've created this queue to make sure your experience is as painless as possible. Once it's your turn, you will be automatically be brought to the new instance system to use trainer for your needs. Remember, there's a limited time frame available once you've made it to the front, so be sure to have your save profiles ready. And whatever you do, don't close the trainer!"/></TextBlock>
 
                 </Grid>
             </TabItem>
@@ -94,5 +100,6 @@
         <Button x:Name="Loadbutton" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.2.3" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="{DynamicResource Madeby}" HorizontalAlignment="Left" Margin="748,14,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
+
     </Grid>
 </Controls:MetroWindow>

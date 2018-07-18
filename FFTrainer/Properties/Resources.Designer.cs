@@ -61,6 +61,45 @@ namespace FFTrainer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0]
+        ///3,&quot;Idle&quot;
+        ///4,&quot;Idle 2&quot;
+        ///5,&quot;Idle 3&quot;
+        ///6,&quot;Idle 4&quot;
+        ///7,&quot;Turning Left&quot;
+        ///8,&quot;Turning Right&quot;
+        ///13,&quot;Walking&quot;
+        ///14,&quot;Walking Left&quot;
+        ///15,&quot;Walking Right&quot;
+        ///16,&quot;Walking Back&quot;
+        ///22,&quot;Run&quot;
+        ///23,&quot;Run Left&quot;
+        ///24,&quot;Run Right&quot;
+        ///30,&quot;Sprint&quot;
+        ///31,&quot;Jump Start&quot;
+        ///32,&quot;Jump Fall&quot;
+        ///33,&quot;Jump Landing&quot;
+        ///34,&quot;Battle Idle&quot;
+        ///37&quot;Knee Suffering&quot;
+        ///41,&quot;Battle Walk&quot;
+        ///50,&quot;Battle Run&quot;
+        ///58,&quot;Battle Sprint&quot;
+        ///59,&quot;Battle Jump&quot;
+        ///60,&quot;Battle Fall&quot;
+        ///61,&quot;Battle Land&quot;
+        ///62,&quot;Damaged&quot;
+        ///66,&quot;Dying&quot;
+        ///68,&quot;Flinch with wince&quot;
+        ///69,&quot;Flinch (faster)&quot;
+        ///71,&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string actiontimeline {
+            get {
+                return ResourceManager.GetString("actiontimeline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Index,0 [0x0][0x0],1 [0x2][0x10],2 [0x0][0x4],3 [0x2][0x11],4 [0x2][0x12],5 [0x2][0x13],6 [0x2][0x14],7 [0x2][0x15],8 [0x0][0x8],9 [0x0][0xc],10 [0x5][0x80],11 [0x5][0x82],12 [0x3][0x8e],13 [0x3][0x8f],14 [0x7][0x68],15 [0x3][0x90],16 [0x3][0x91],17 [0x3][0x92],18 [0x5][0x84],19 [0x7][0x6c],20 [0x19][0x95],21 [0x1a][0x95],22 [0x1b][0x95],23 [0x1c][0x95],24 [0x7][0x70],25 [0x7][0x74],26 [0x1d][0x95],27 [0x1e][0x95],28 [0x1f][0x95],29 [0x5][0x86],30 [0x3][0x93],31 [0x5][0x88],32 [0x3][0x94],33 [0x6][0x78],34  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Item {
@@ -98,12 +137,12 @@ namespace FFTrainer.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [INT(0x6)][0x8],3 [INT(0x6)][0x10],4 [INT(0x6)][0x18],5 [INT(0x6)][0x20],6 [INT(0x6)][0xc],7 [INT(0x6)][0x14],8 [INT(0x6)][0x1c],9 [INT(0x6)][0x24]
-        ///0,&quot;&quot;,&quot;&quot;,0,0,0,0,0,0,0,0
+        ///0,&quot;Aucun&quot;,&quot;Aucun&quot;,0,0,0,0,0,0,0,0
         ///1,&quot;Hyur&quot;,&quot;Hyure&quot;,2983,3520,3296,3750,2984,3521,3297,3751
         ///2,&quot;Élézen&quot;,&quot;Élézenne&quot;,2985,3522,3298,3752,2986,3523,3299,3753
         ///3,&quot;Lalafell&quot;,&quot;Lalafelle&quot;,2987,3524,3300,3754,2988,3525,3301,3755
         ///4,&quot;Miqo&apos;te&quot;,&quot;Miqo&apos;te&quot;,2989,3526,3302,3756,2990,3527,3303,3757
-        ///5,&quot;Roegadyn&quot;,&quot;Roegadyne&quot;,2991,3528,330 [rest of string was truncated]&quot;;.
+        ///5,&quot;Roegadyn&quot;,&quot;Roegadyne&quot;,299 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string race_exh_fr {
             get {
@@ -199,7 +238,7 @@ namespace FFTrainer.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Index,0 [UINT(0x7)][0x4],1 [UBYTE(0x3)][0x8],2 [STRING(0x0)][0x0],3 [BBOOL(0x19)][0x9],4 [BBOOL(0x1a)][0x9]
-        ///0,0,2,&quot;&quot;,false,true
+        ///0,0,2,&quot;Aucun&quot;,false,true
         ///1,14999504,2,&quot;blanc neige&quot;,false,true
         ///2,11315362,2,&quot;gris cendre&quot;,false,true
         ///3,9013124,2,&quot;gris goobbue&quot;,false,true
@@ -209,7 +248,7 @@ namespace FFTrainer.Properties {
         ///7,15114134,4,&quot;rose floral&quot;,false,true
         ///8,8612201,4,&quot;lilas&quot;,false,true
         ///9,5969705,4,&quot;rouge rolanbaie&quot;,false,true
-        ///10,7871002,4,&quot;rouge Dalamud&quot;,false,tru [rest of string was truncated]&quot;;.
+        ///10,7871002,4,&quot;rouge Dalamud&quot;,fals [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stain_exh_fr {
             get {
@@ -284,13 +323,13 @@ namespace FFTrainer.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [BYTE(0x2)][0x8],3 [BYTE(0x2)][0x9],4 [BYTE(0x2)][0xa],5 [BYTE(0x2)][0xb],6 [BYTE(0x2)][0xc],7 [BYTE(0x2)][0xd],8 [BYTE(0x2)][0xe],9 [BYTE(0x2)][0xf]
-        ///0,&quot;&quot;,&quot;&quot;,0,0,0,0,0,0,0,0
+        ///0,&quot;Aucun&quot;,&quot;Aucun&quot;,0,0,0,0,0,0,0,0
         ///1,&quot;Hyurois&quot;,&quot;Hyuroise&quot;,0,0,2,0,-1,3,-1,0
         ///2,&quot;Hyurgoth&quot;,&quot;Hyurgothe&quot;,0,0,3,2,0,-2,0,0
         ///3,&quot;Sylvestre&quot;,&quot;Sylvestre&quot;,0,0,0,-1,3,2,-1,0
         ///4,&quot;Crépusculaire&quot;,&quot;Crépusculaire&quot;,0,0,0,-1,0,3,1,0
         ///5,&quot;Peuple des Plaines&quot;,&quot;Peuple des Plaines&quot;,0,0,-1,-1,3,2,0,0
-        ///6,&quot;Peuple des Dunes&quot;,&quot;Peuple des Dunes&quot;,0 [rest of string was truncated]&quot;;.
+        ///6,&quot;Peuple des Dunes&quot;,&quot;Peuple de [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tribe_exh_fr {
             get {

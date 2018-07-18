@@ -524,22 +524,30 @@ namespace FFTrainer.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             EmoteFlyout.IsOpen = true;
-            EmoteBox.DisplayMemberPath = "Text";
-            EmoteBox.SelectedValuePath = "Value";
             for (int i = 0; i < _exdProvider.Emotes.Count; i++)
             {
                 if (_exdProvider.Emotes[i].Name.Contains("normal/") || _exdProvider.Emotes[i].Name.Contains("emote/") || _exdProvider.Emotes[i].Name.Contains("event_base/"))
-                    EmoteBox.Items.Add(new { Text = _exdProvider.Emotes[i].Name, Value = _exdProvider.Emotes[i].Index });
+                    EmoteBox.Items.Add(new Emotexd
+                    {
+                        Index = Convert.ToInt32(_exdProvider.Emotes[i].Index),
+                        Name = _exdProvider.Emotes[i].Name.ToString()
+                    });
+
 
             }
         }
-        private ExdCsvReader.Emote Choice = null;
+        public class Emotexd
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+        }
         private void EmoteBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (EmoteBox.SelectedItem == null)
                 return;
-            Choice = EmoteBox.SelectedItem as ExdCsvReader.Emote;
-            CharacterDetails.EmoteX.value = (int)Choice.Index;
+            var item = (ListBox)sender;
+            var Value = (Emotexd)item.SelectedItem;
+            CharacterDetails.Emote.value = (int)Value.Index;
         }
     }
 }

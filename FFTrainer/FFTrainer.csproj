@@ -276,6 +276,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\actiontimeline.csv" />
     <None Include="Resources\Item.csv" />
     <None Include="Resources\ItemG.csv" />
     <None Include="Resources\itemJP.csv" />
