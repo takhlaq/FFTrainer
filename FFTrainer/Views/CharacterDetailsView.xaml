@@ -159,6 +159,6 @@
         <mah:NumericUpDown StringFormat="F7" x:Name="CamZ" Value="{Binding CharacterDetails.CamZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="868,218,0,0" VerticalAlignment="Top" Width="172" Interval="0.01" ValueChanged="CamZ_ValueChanged" TextAlignment="Justify"/>
         <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="758,329,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="746,384,0,0" TextWrapping="Wrap" Text="{DynamicResource EmoteChecker}" VerticalAlignment="Top" FontWeight="Bold" Width="102"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="849,380,0,0" TextWrapping="Wrap" Text="{Binding CharacterDetails.EmoteX.value}" VerticalAlignment="Top" Width="120" IsEnabled="False" IsTabStop="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="849,380,0,0" TextWrapping="Wrap" Text="{Binding CharacterDetails.EmoteX.value}" VerticalAlignment="Top" Width="85" IsEnabled="False" IsTabStop="False"/>
     </Grid>
 </UserControl>

@@ -122,7 +122,6 @@ namespace FFTrainer
         public Dictionary<int, Tribe> Tribes = null;
         public Dictionary<int, Dye> Dyes = null;
         public Dictionary<int, Emote> Emotes = null;
-        private object contine;
 
         public void MakeItemList()
         {
@@ -1479,6 +1478,7 @@ namespace FFTrainer
                                     emote.Name = field;
                                 }
                             }
+                            if (emote.Name.Contains("blownaway/")) { emote.Name = emote.Name.Remove(0, 10).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("normal/")){emote.Name = emote.Name.Remove(0, 7).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("gs/")) { emote.Name = emote.Name.Remove(0, 3).ToString(); emote.Realist = true; }
                             if (emote.Name.Contains("cardgame/")|| emote.Name.Contains("emote_sp/")) { emote.Name = emote.Name.Remove(0, 9).ToString(); emote.Realist = true; }

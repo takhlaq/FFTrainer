@@ -178,7 +178,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 176,2,0,true,0,0,1,"normal/Look Around",0,2,1,2,3,6,true,false,false,true,true
 177,0,1,false,0,0,1,"normal/lookaction_end",0,2,1,2,3,7,true,false,false,true,true
 178,1,1,false,0,0,1,"normal/fueaction_start",0,2,1,2,3,8,true,false,false,true,true
-179,2,0,true,0,0,1,"normal/fueaction_loop",0,2,1,2,3,9,true,false,false,true,true
+179,2,0,true,0,0,1,"normal/Chocobo Whistle",0,2,1,2,3,9,true,false,false,true,true
 180,0,1,false,0,0,1,"normal/fueaction_end",0,2,1,2,3,10,true,false,false,true,true
 181,1,1,false,0,0,1,"normal/searchaction_start",0,2,1,2,3,11,true,false,false,true,true
 182,2,0,true,0,0,1,"normal/searchaction_loop",0,2,1,2,3,12,true,false,false,true,true
@@ -196,10 +196,10 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 194,0,3,false,0,1,1,"ws/bt_2bw_emp/wsh002_bow",0,1,2,1,3,0,false,true,false,false,true
 195,0,3,false,0,1,1,"ws/bt_2bw_emp/wsh003_bow",0,1,2,1,3,0,false,true,false,false,true
 196,0,5,false,0,0,1,"specialdead/deadfall",0,0,1,0,3,0,false,false,true,false,true
-197,0,1,false,0,0,2,"normal/throw_firecrackers",0,2,1,2,3,0,true,false,false,false,true
+197,0,1,false,0,0,2,"normal/Moonfaire Flares",0,2,1,2,3,0,true,false,false,false,true
 198,0,0,true,0,0,0,"minion/battle_loop",0,2,1,2,3,0,true,false,false,false,true
 199,0,1,false,0,2,0,"status/facial/sleep",0,0,0,0,3,0,false,false,false,false,true
-200,0,3,false,0,0,1,"battle/knockback_start_pc",0,0,0,0,3,0,false,false,true,false,true
+200,0,3,false,0,0,1,"battle/Carry Upper/Ice Slip",0,0,0,0,3,0,false,false,true,false,true
 201,0,3,false,0,0,0,"battle/knockback_end_pc",0,0,0,0,3,0,false,false,true,false,true
 202,0,3,false,0,1,1,"ws/bt_2ax_emp/wsh001_bow",0,1,2,1,3,0,false,true,false,false,true
 203,0,3,false,0,1,1,"ws/bt_2ax_emp/wsh002_bow",0,1,2,1,3,0,false,true,false,false,true
@@ -208,7 +208,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 206,0,3,false,0,1,1,"ws/bt_swd_sld/wsh002_bow",0,1,2,1,3,0,false,true,false,false,true
 207,0,3,false,0,1,1,"ws/bt_clw_clw/wsh001_bow",0,1,2,1,3,0,false,true,false,false,true
 208,0,0,true,0,1,2,"normal/carry_upper_loop",0,2,1,2,3,0,false,false,false,false,true
-209,0,1,false,0,0,1,"normal/treasure_search",0,2,1,2,0,62,true,false,false,false,true
+209,0,1,false,0,0,1,"normal/Lookout",0,2,1,2,0,62,true,false,false,false,true
 210,0,0,true,0,0,1,"idle_sp/idle_sp_1",0,1,1,1,3,0,false,false,false,false,true
 211,0,0,true,0,0,1,"idle_sp/idle_sp_2",0,1,1,1,3,0,false,false,false,false,true
 212,0,0,true,0,0,1,"idle_sp/normal_idle_sp_1",0,2,1,2,3,0,false,false,false,false,true
@@ -216,9 +216,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 214,0,1,false,0,0,1,"normal/katagami_action",0,2,1,2,3,0,true,false,false,false,true
 215,0,1,false,0,0,0,"normal_hit/slow_hit",0,0,0,0,3,0,false,false,true,false,true
 216,0,1,false,0,0,1,"normal/materia_transcription",0,2,1,2,3,0,true,false,false,false,true
-217,0,3,false,0,0,1,"blownaway/attach_m0206",0,0,1,0,3,0,false,false,false,false,true
-218,0,3,true,0,0,1,"blownaway/falling",0,0,1,0,3,0,false,false,false,false,true
-219,0,3,false,0,0,1,"blownaway/landing",0,0,1,0,3,0,false,false,false,false,true
+217,0,3,false,0,0,1,"blownaway/Damaged?",0,0,1,0,3,0,false,false,false,false,true
+218,0,3,true,0,0,1,"blownaway/Falling",0,0,1,0,3,0,false,false,false,false,true
+219,0,3,false,0,0,1,"blownaway/Landing",0,0,1,0,3,0,false,false,false,false,true
 220,0,3,false,0,0,1,"ws/bt_dgr_dgr/ws_s01",0,1,2,1,3,0,false,true,false,false,true
 221,0,3,false,0,0,1,"ws/bt_dgr_dgr/ws_s02",0,1,2,1,3,0,false,true,false,false,true
 222,0,3,false,0,0,1,"ws/bt_dgr_dgr/ws_s03",0,1,2,1,3,0,false,true,false,false,true
@@ -252,8 +252,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 250,0,3,false,0,0,1,"craft/repair",0,0,2,0,3,41,true,false,false,false,true
 251,0,1,false,0,0,1,"craft/hq_complete",1,1,2,3,3,0,false,false,false,false,true
 252,0,1,false,0,0,1,"craft/hq_complete_sub",1,1,2,3,3,0,false,false,false,false,true
-253,0,1,false,0,0,1,"craft/materia_joy",1,1,1,3,3,0,false,false,false,false,true
-254,0,1,false,0,0,1,"craft/materia_upset",1,1,1,3,3,0,false,false,false,false,true
+253,0,1,false,0,0,1,"normal/Kneeling Cheer",1,1,1,3,3,0,false,false,false,false,true
+254,0,1,false,0,0,1,"normal/Kneeling Disappointed",1,1,1,3,3,0,false,false,false,false,true
 255,0,1,false,0,0,1,"gather/start",0,92,2,2,3,21,false,false,false,false,true
 256,0,0,true,0,0,1,"gather/idle",0,93,0,3,3,22,false,false,false,false,true
 257,0,1,false,0,0,1,"gather/end",0,1,2,3,3,23,false,false,false,false,true
@@ -271,7 +271,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 269,0,1,false,0,0,1,"gather/ability_sub",0,0,2,4,3,0,false,false,false,false,true
 270,0,1,false,0,0,1,"gather/item_sub",0,0,2,4,3,0,false,false,false,false,true
 271,0,0,true,0,0,1,"fishing/idle",0,0,0,3,3,0,false,false,false,false,true
-272,0,1,false,0,0,1,"fishing/item",0,0,2,3,3,0,false,false,false,false,true
+272,0,1,false,0,0,1,"normal/Sparkling",0,0,2,3,3,0,false,false,false,false,true
 273,0,1,false,0,0,1,"fishing/end",0,0,2,3,3,0,false,false,false,false,true
 274,0,3,false,0,0,1,"fishing/cast_normal",0,0,2,3,3,0,false,false,false,false,true
 275,0,3,false,0,0,1,"fishing/cast_side",0,0,2,3,3,0,false,false,false,false,true
@@ -295,11 +295,11 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 293,0,3,false,0,7,1,"fishing/hit_strike",0,0,0,3,3,0,false,false,false,false,true
 294,0,3,false,0,7,1,"fishing/hit_bite",0,0,0,3,3,0,false,false,false,false,true
 295,0,1,false,0,0,1,"gather/attack",0,1,2,3,3,0,false,false,false,false,true
-296,0,1,false,0,0,1,"normal/farm_seed",0,2,1,2,3,0,true,false,false,false,true
-297,0,1,false,0,0,1,"normal/farm_watering",0,2,1,2,3,0,true,false,false,false,true
-298,0,1,false,0,0,1,"normal/farm_care",0,2,1,2,3,0,true,false,false,false,true
-299,0,1,false,0,0,1,"normal/farm_manure",0,2,1,2,3,0,true,false,false,false,true
-300,0,1,false,0,0,1,"normal/farm_harvest",0,2,1,2,3,0,true,false,false,false,true
+296,0,1,false,0,0,1,"normal/Planting",0,2,1,2,3,0,true,false,false,false,true
+297,0,1,false,0,0,1,"normal/Watering Plants",0,2,1,2,3,0,true,false,false,false,true
+298,0,1,false,0,0,1,"normal/Pulling up Plants",0,2,1,2,3,0,true,false,false,false,true
+299,0,1,false,0,0,1,"normal/Pulling Sparkly Fertilizer",0,2,1,2,3,0,true,false,false,false,true
+300,0,1,false,0,0,1,"normal/Harvest",0,2,1,2,3,0,true,false,false,false,true
 301,0,3,false,0,0,1,"ability/dgr_ninja/abl014",0,1,1,1,3,0,false,true,false,false,true
 302,0,3,false,0,0,1,"ability/dgr_ninja/abl001",0,1,1,1,3,0,false,true,false,false,true
 303,0,3,false,0,0,1,"ability/dgr_ninja/abl002",0,1,1,1,3,0,false,true,false,false,true
@@ -576,7 +576,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 574,0,0,true,4,0,1,"emote/dance_elezen_loop",0,2,1,2,3,0,true,true,false,false,true
 575,0,1,false,7,0,1,"emote/dance_lalafell_start",0,2,0,2,3,0,true,true,false,false,true
 576,0,0,true,4,0,1,"emote/dance_lalafell_loop",0,2,1,2,3,0,true,true,false,false,true
-577,0,1,false,7,0,0,"emote/yes",0,2,1,2,3,0,true,true,false,false,true
+577,0,1,false,7,0,0,"emote/Yes",0,2,1,2,3,0,true,true,false,false,true
 578,1,1,false,0,0,1,"normal/item_sp01_start",0,2,1,2,3,0,true,true,false,false,true
 579,2,0,true,0,0,1,"normal/item_sp01_loop",0,2,1,2,3,0,true,true,false,false,true
 580,0,3,false,0,0,1,"normal/item_sp01_end",0,2,1,2,3,0,false,true,false,false,true
@@ -586,7 +586,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 584,0,1,false,0,0,1,"emote/bed_liedown_start",2,2,1,2,3,0,true,true,false,false,true
 585,0,0,true,0,0,1,"emote/bed_liedown_loop",2,2,1,2,3,0,true,false,false,false,true
 586,0,1,false,0,0,1,"emote/bed_liedown_end",0,2,1,2,3,0,true,true,false,false,true
-587,0,1,false,7,0,1,"emote/salute_emp",0,2,1,2,3,0,true,true,false,false,true
+587,0,1,false,7,0,1,"emote/Imperial Salute",0,2,1,2,3,0,true,true,false,false,true
 588,0,1,false,0,1,2,"emote/u_stretch",0,2,1,2,3,0,true,false,false,false,true
 589,0,1,false,0,1,1,"emote/u_think",0,2,1,2,3,0,true,false,false,false,true
 590,0,1,false,0,1,1,"emote/u_upset",0,2,1,2,3,0,true,false,false,false,true
@@ -601,7 +601,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 599,0,3,false,0,0,1,"ability/swl_summon/abl016",0,1,1,1,3,0,true,true,false,false,true
 600,0,3,false,0,0,1,"ability/pvp_common/abl012",0,1,1,1,3,0,false,true,false,false,true
 601,0,3,false,0,0,1,"ability/pvp_common/abl011",0,1,1,1,3,0,false,true,false,false,true
-602,0,3,false,0,0,1,"pc_contentsaction/icefloor",0,0,1,0,3,0,false,false,false,false,true
+602,0,3,false,0,0,1,"pc_contentsaction/Ice Sliding",0,0,1,0,3,0,false,false,false,false,true
 603,0,0,true,0,8,0,"eyelid/sisen_down",0,0,0,0,3,0,false,false,true,false,true
 604,0,1,false,0,2,0,"facial/pose/base",0,0,0,0,3,0,false,false,false,false,true
 605,0,1,false,0,2,0,"facial/pose/smile",0,0,0,0,3,0,false,false,false,false,true
@@ -641,9 +641,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 639,0,1,false,0,3,0,"emote/add_angry",0,0,1,0,3,0,true,true,false,false,true
 640,0,1,false,7,0,1,"emote_sp/throw_snow_no_target",0,2,1,2,3,0,true,true,false,false,true
 641,0,1,false,7,0,1,"emote_sp/throw_snow_no_vfx",0,2,1,2,3,0,true,true,false,false,true
-642,0,1,false,9,0,2,"event_base/event_base_chair_start",3,2,1,2,3,0,true,true,false,false,true
-643,0,0,true,9,0,2,"emote/sit",3,2,1,2,3,0,true,false,false,false,true
-644,0,1,false,9,0,2,"event_base/event_base_chair_end",0,2,1,2,3,0,true,true,false,false,true
+642,0,1,false,9,0,2,"event_base/Sitting Down Chair",3,2,1,2,3,0,true,true,false,false,true
+643,0,0,true,9,0,2,"emote/Sitting",3,2,1,2,3,0,true,false,false,false,true
+644,0,1,false,9,0,2,"event_base/Getting Up from Chair",0,2,1,2,3,0,true,true,false,false,true
 645,0,1,false,9,0,2,"emote/s_clap",3,2,1,2,3,0,true,true,false,false,true
 646,0,1,false,9,0,2,"emote/s_doze",3,2,1,2,3,0,true,true,false,false,true
 647,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
@@ -652,9 +652,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 650,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 651,0,1,false,9,0,2,"emote/s_laugh",3,2,1,2,3,0,true,true,false,false,true
 652,0,1,false,9,0,2,"emote/s_goodbye_st",3,2,1,2,3,0,true,true,false,false,true
-653,0,1,false,8,0,2,"event_base/event_base_ground_start",2,2,1,2,3,0,true,true,false,false,true
+653,0,1,false,8,0,2,"event_base/Sitting Down Ground",2,2,1,2,3,0,true,true,false,false,true
 654,0,0,true,8,0,2,"emote/jmn",2,2,1,2,3,0,true,false,false,false,true
-655,0,1,false,8,0,2,"event_base/event_base_ground_end",0,2,1,2,3,0,true,true,false,false,true
+655,0,1,false,8,0,2,"event_base/Getting Up from Ground",0,2,1,2,3,0,true,true,false,false,true
 656,0,1,false,8,0,2,"emote/j_clap",2,2,1,2,3,0,true,true,false,false,true
 657,0,1,false,8,0,2,"emote/j_doze",2,2,1,2,3,0,true,true,false,false,true
 658,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
@@ -687,16 +687,16 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 685,0,1,false,0,1,1,"emote/u_laugh",0,2,1,2,3,0,true,false,false,false,true
 686,0,1,false,0,1,1,"emote/u_laugh_st",0,2,1,2,3,0,true,false,false,false,true
 687,0,1,false,0,1,2,"emote/u_point",0,2,1,2,3,0,true,false,false,false,true
-688,0,1,false,7,0,0,"emote/airquotes",0,2,1,2,3,0,true,true,false,false,true
+688,0,1,false,7,0,0,"emote/Air Quotes",0,2,1,2,3,0,true,true,false,false,true
 689,0,1,false,7,0,0,"emote/amazed",0,2,1,2,3,0,true,true,false,false,true
-690,0,1,false,7,0,1,"emote/angry",0,2,1,2,3,0,true,true,false,false,true
-691,0,1,false,7,0,1,"emote/angry_st",0,2,1,2,3,0,true,true,false,false,true
+690,0,1,false,7,0,1,"emote/Angry",0,2,1,2,3,0,true,true,false,false,true
+691,0,1,false,7,0,1,"emote/Angry_st",0,2,1,2,3,0,true,true,false,false,true
 692,0,1,false,7,0,1,"emote/blowkiss",0,2,1,2,3,0,true,true,false,false,true
 693,0,1,false,7,0,1,"emote/blush",0,2,1,2,3,0,true,true,false,false,true
 694,0,1,false,7,0,1,"emote/bow",0,2,1,2,3,0,true,true,false,false,true
 695,0,1,false,7,0,0,"emote/cheer",0,2,1,2,3,0,true,true,false,false,true
 696,0,1,false,7,0,0,"emote/clap",0,2,1,2,3,0,true,true,false,false,true
-697,0,1,false,7,0,0,"emote/comeon",0,2,1,2,3,0,true,true,false,false,true
+697,0,1,false,7,0,0,"emote/Beckon",0,2,1,2,3,0,true,true,false,false,true
 698,0,1,false,7,0,0,"emote/comfort",0,2,1,2,3,0,true,true,false,false,true
 699,0,1,false,7,0,1,"emote/cry",0,2,1,2,3,0,true,true,false,false,true
 700,0,1,false,7,0,0,"emote/dance",0,2,1,2,3,0,true,true,false,false,true
@@ -705,29 +705,29 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 703,0,1,false,7,0,1,"emote/doze",0,2,1,2,3,0,true,true,false,false,true
 704,0,1,false,7,0,0,"emote/fume",0,2,1,2,3,0,true,true,false,false,true
 705,0,1,false,7,0,0,"emote/goodbye",0,2,1,2,3,0,true,true,false,false,true
-706,0,1,false,7,0,0,"emote/goodbye_st",0,2,1,2,3,0,true,true,false,false,true
+706,0,1,false,7,0,0,"emote/Wave",0,2,1,2,3,0,true,true,false,false,true
 707,0,1,false,7,0,0,"emote/huh",0,2,1,2,3,0,true,true,false,false,true
 708,0,1,false,7,0,0,"emote/joy",0,2,1,2,3,56,true,true,false,false,true
-709,0,1,false,7,0,0,"emote/joy_st",0,2,1,2,3,0,true,true,false,false,true
+709,0,1,false,7,0,0,"emote/Happy",0,2,1,2,3,0,true,true,false,false,true
 710,0,1,false,7,0,2,"emote/kneel",0,2,1,2,3,0,true,true,false,false,true
-711,0,1,false,7,0,1,"emote/laugh",0,2,1,2,3,0,true,true,false,false,true
-712,0,1,false,7,0,1,"emote/laugh_st",0,2,1,2,3,0,true,true,false,false,true
+711,0,1,false,7,0,1,"emote/Chuckle",0,2,1,2,3,0,true,true,false,false,true
+712,0,1,false,7,0,1,"emote/Laugh",0,2,1,2,3,0,true,true,false,false,true
 713,0,1,false,7,0,1,"emote/lookout",0,2,1,2,3,0,true,true,false,false,true
-714,0,1,false,7,0,1,"emote/make_act",0,2,1,2,3,0,true,true,false,false,true
+714,0,1,false,7,0,1,"emote/Examine Self",0,2,1,2,3,0,true,true,false,false,true
 715,0,1,false,7,0,0,"emote/me",0,2,1,2,3,0,true,true,false,false,true
 716,0,1,false,7,0,1,"emote/no",0,2,1,2,3,0,true,true,false,false,true
-717,0,1,false,7,0,1,"emote/no_st",0,2,1,2,3,0,true,true,false,false,true
-718,0,1,false,7,0,1,"emote/orz",0,2,1,2,3,0,true,true,false,false,true
+717,0,1,false,7,0,1,"emote/Deny",0,2,1,2,3,0,true,true,false,false,true
+718,0,1,false,7,0,1,"emote/Disappointed",0,2,1,2,3,0,true,true,false,false,true
 719,0,1,false,7,0,1,"emote/panic",0,2,1,2,3,0,true,true,false,false,true
 720,0,1,false,7,0,0,"emote/point",0,2,1,2,3,0,true,true,false,false,true
 721,0,1,false,7,0,0,"emote/poke",0,2,1,2,3,0,true,true,false,false,true
-722,0,1,false,7,0,0,"emote/posing",0,2,1,2,3,0,true,true,false,false,true
-723,0,1,false,7,0,0,"emote/praise",0,2,1,2,3,0,true,true,false,false,true
+722,0,1,false,7,0,0,"emote/Pose",0,2,1,2,3,0,true,true,false,false,true
+723,0,1,false,7,0,0,"emote/Congratulate",0,2,1,2,3,0,true,true,false,false,true
 724,0,1,false,7,0,0,"emote/psych",0,2,1,2,3,0,true,true,false,false,true
 725,0,1,false,7,0,0,"emote/salute",0,2,1,2,3,0,true,true,false,false,true
 726,0,1,false,7,0,1,"emote/salute_gca",0,2,1,2,3,0,true,true,false,false,true
 727,0,1,false,7,0,1,"emote/salute_gcb",0,2,1,2,3,0,true,true,false,false,true
-728,0,1,false,7,0,1,"emote/salute_gcc",0,2,1,2,3,0,true,true,false,false,true
+728,0,1,false,7,0,1,"emote/Flame Salute",0,2,1,2,3,0,true,true,false,false,true
 729,0,1,false,7,0,0,"emote/shocked",0,2,1,2,3,0,true,true,false,false,true
 730,0,1,false,7,0,0,"emote/shrug",0,2,1,2,3,0,true,true,false,false,true
 731,0,1,false,7,0,0,"emote/slap",0,2,1,2,3,0,true,true,false,false,true
@@ -739,8 +739,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 737,0,1,false,7,0,1,"emote/upset",0,2,1,2,3,57,true,true,false,false,true
 738,0,1,false,7,0,0,"emote/welcome",0,2,1,2,3,0,true,true,false,false,true
 739,0,1,false,7,0,1,"emote/yes",0,2,1,2,3,0,true,true,false,false,true
-740,0,1,false,7,0,1,"emote/yes_st",0,2,1,2,3,0,true,true,false,false,true
-741,0,1,false,7,0,1,"emote/battle01",0,1,2,1,3,0,true,true,false,false,true
+740,0,1,false,7,0,1,"emote/Thumbs Up",0,2,1,2,3,0,true,true,false,false,true
+741,0,1,false,7,0,1,"emote/Huzzah",0,1,2,1,3,0,true,true,false,false,true
 742,0,1,false,7,0,1,"emote/pray",0,2,1,2,3,0,true,true,false,false,true
 743,0,1,false,7,0,1,"emote_sp/throw_snow",0,2,1,2,3,0,true,true,false,false,true
 744,0,1,false,0,1,1,"emote/u_make_act",0,2,1,2,3,0,true,false,false,false,true
@@ -750,154 +750,154 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 748,0,1,false,0,1,2,"emote/u_poke",0,2,1,2,3,0,true,false,false,false,true
 749,0,1,false,0,1,2,"emote/u_praise",0,2,1,2,3,0,true,false,false,false,true
 750,0,1,false,0,1,2,"emote/u_salute",0,2,1,2,3,0,true,false,false,false,true
-751,0,1,false,0,1,2,"emote/u_shocked",0,2,1,2,3,0,true,false,false,false,true
+751,0,1,false,0,1,2,"emote/Surprised",0,2,1,2,3,0,true,false,false,false,true
 752,0,1,false,0,1,2,"emote/u_shrug",0,2,1,2,3,0,true,false,false,false,true
 753,0,1,false,0,1,2,"emote/u_soothe",0,2,1,2,3,0,true,false,false,false,true
 754,0,0,true,0,3,0,"event/event_add_all",0,0,0,0,3,0,false,false,false,false,true
 755,0,1,false,0,3,0,"event/event_add_talk",0,0,0,0,3,0,false,false,false,false,true
 756,0,1,false,0,3,0,"event/event_add_yes",0,0,0,0,3,0,false,false,false,false,true
 757,0,1,false,0,3,0,"event/event_add_no",0,0,0,0,3,0,false,false,false,false,true
-758,0,1,false,0,3,0,"event/event_add_question",0,0,0,0,3,0,false,false,false,false,true
+758,0,1,false,0,3,0,"event/Doubtful head tilt",0,0,0,0,3,0,false,false,false,false,true
 759,0,1,false,7,0,0,"event/event_item",0,2,1,2,3,51,true,false,false,false,true
 760,0,1,false,9,0,0,"event/event_chair_item",3,2,1,2,3,0,true,false,false,false,true
 761,0,1,false,8,0,0,"event/event_ground_item",2,2,1,2,3,0,true,false,false,false,true
 762,0,1,false,7,0,0,"event/event_shocked",0,2,1,2,3,50,true,false,false,false,true
-763,0,1,false,7,0,0,"event/event_talk1",0,2,1,2,3,1,true,false,false,false,true
-764,0,1,false,7,0,0,"event/event_talk2",0,2,1,2,3,42,true,false,false,false,true
-765,0,1,false,9,0,2,"event/event_chair_talk",3,2,1,2,3,0,true,false,false,false,true
-766,0,1,false,7,0,1,"event/event_think",0,2,1,2,3,46,true,false,false,false,true
-767,0,1,false,7,0,0,"event/event_greeting",0,2,1,2,3,49,true,false,false,false,true
-768,0,1,false,7,0,0,"event/event_talk_angry",0,2,1,2,3,43,true,false,false,false,true
-769,0,1,false,7,0,1,"event/event_salute_higher_gca",0,2,1,2,3,0,true,false,false,false,true
-770,0,1,false,7,0,1,"event/event_salute_higher_gcb",0,2,1,2,3,0,true,false,false,false,true
-771,0,1,false,7,0,1,"event/event_salute_higher_gcc",0,2,1,2,3,0,true,false,false,false,true
+763,0,1,false,7,0,0,"event/Standing, normal speech",0,2,1,2,3,1,true,false,false,false,true
+764,0,1,false,7,0,0,"event/Standing, short speech",0,2,1,2,3,42,true,false,false,false,true
+765,0,1,false,9,0,2,"event/Sitting, short speech",3,2,1,2,3,0,true,false,false,false,true
+766,0,1,false,7,0,1,"event/Thinking (worry or doubt)",0,2,1,2,3,46,true,false,false,false,true
+767,0,1,false,7,0,0,"event/Raising Hand",0,2,1,2,3,49,true,false,false,false,true
+768,0,1,false,7,0,0,"event/Excited talking (miqote)",0,2,1,2,3,43,true,false,false,false,true
+769,0,1,false,7,0,1,"event/Salute",0,2,1,2,3,0,true,false,false,false,true
+770,0,1,false,7,0,1,"event/Fists in front headnod",0,2,1,2,3,0,true,false,false,false,true
+771,0,1,false,7,0,1,"event/Fist to chest salute",0,2,1,2,3,0,true,false,false,false,true
 772,0,1,false,7,0,0,"event/event_reaction_mid_m",0,2,1,2,3,0,true,false,false,false,true
 773,0,1,false,7,0,0,"event/event_reaction_mid_w",0,2,1,2,3,0,true,false,false,false,true
 774,0,1,false,7,0,0,"event/event_reaction_ele_m",0,2,1,2,3,0,true,false,false,false,true
 775,0,1,false,7,0,0,"event/event_reaction_ele_w",0,2,1,2,3,0,true,false,false,false,true
-776,0,1,false,7,0,0,"event/event_reaction_lala_m",0,2,1,2,3,0,true,false,false,false,true
+776,0,1,false,7,0,0,"event/Tataru shock into slump (Lala only)",0,2,1,2,3,0,true,false,false,false,true
 777,0,1,false,7,0,0,"event/event_reaction_roega_m",0,2,1,2,3,0,true,false,false,false,true
 778,0,1,false,7,0,0,"event/event_reaction_roega_w",0,2,1,2,3,0,true,false,false,false,true
 779,0,1,false,7,0,0,"event/event_reaction_miqo_m",0,2,1,2,3,0,true,false,false,false,true
-780,0,1,false,7,0,0,"event/event_reaction_miqo_w",0,2,1,2,3,0,true,false,false,false,true
+780,0,1,false,7,0,0,"Leaning Forward Sniffing",0,2,1,2,3,0,true,false,false,false,true
 781,0,1,false,7,0,0,"event/event_reaction_high_m",0,2,1,2,3,0,true,false,false,false,true
 782,0,1,false,7,0,0,"event/event_reaction_high_w",0,2,1,2,3,0,true,false,false,false,true
 783,0,0,true,1,0,0,"normal/idle",0,2,0,2,3,0,true,false,false,false,true
-784,0,0,true,4,0,2,"event_base/event_base_idle1",0,2,1,2,3,0,true,false,false,false,true
-785,0,0,true,4,0,2,"event_base/event_base_idle2",0,2,1,2,3,0,true,false,false,false,true
-786,0,0,true,4,0,2,"event_base/event_base_idle3",0,2,1,2,3,0,true,false,false,false,true
-787,0,0,true,4,0,0,"event_base/event_base_idle4",0,2,1,2,3,0,true,false,false,false,true
-788,0,0,true,3,0,2,"emote/sit",3,2,1,2,3,0,true,false,false,false,true
-789,0,0,true,6,0,2,"event_base/event_base_chair_sit_relax",3,2,1,2,3,0,true,false,false,false,true
-790,0,0,true,10,0,2,"event_base/event_base_chair_sit_table",3,2,1,2,3,0,true,false,false,false,true
-791,0,0,true,2,0,2,"emote/jmn",2,2,1,2,3,0,true,false,false,false,true
-792,0,1,false,14,0,2,"event_base/event_base_chair_start",3,2,1,2,3,0,true,false,false,false,true
-793,0,1,false,12,0,2,"event_base/event_base_chair_end",0,2,1,2,3,0,true,false,false,false,true
-794,0,1,false,13,0,2,"event_base/event_base_ground_start",2,2,1,2,3,0,true,false,false,false,true
-795,0,1,false,11,0,2,"event_base/event_base_ground_end",0,2,1,2,3,0,true,false,false,false,true
-796,0,0,true,4,0,0,"event_base/event_base_speech",0,2,1,2,3,0,true,false,false,false,true
-797,0,0,true,4,0,0,"event_base/event_base_please_r",0,2,1,2,3,0,true,false,false,false,true
-798,0,0,true,4,0,0,"event_base/event_base_please_l",0,2,1,2,3,0,true,false,false,false,true
-799,0,0,true,4,0,0,"event_base/event_base_stand_talk",0,2,1,2,3,0,true,false,false,false,true
-800,0,0,true,6,0,2,"event_base/event_base_chair_talk",3,2,1,2,3,0,true,false,false,false,true
-801,0,0,true,4,0,0,"event_base/event_base_stand_listen",0,2,1,2,3,0,true,false,false,false,true
-802,0,0,true,6,0,2,"event_base/event_base_chair_listen",3,2,1,2,3,0,true,false,false,false,true
-803,0,0,true,5,0,2,"event_base/event_base_ground_rest",2,2,1,2,3,0,true,false,false,false,true
-804,0,0,true,6,0,2,"event_base/event_base_chair_rest",3,2,1,2,3,0,true,false,false,false,true
-805,0,0,true,10,0,1,"event_base/event_base_sleep",2,2,1,2,3,0,true,false,false,false,true
-806,0,0,true,10,0,2,"event_base/event_base_box_sit",3,2,1,2,3,0,true,false,false,false,true
-807,0,0,true,4,0,0,"event_base/event_base_wall",0,2,1,2,3,0,true,false,false,false,true
-808,0,0,true,4,0,0,"event_base/event_base_guard_stand",0,2,1,2,3,0,true,false,false,false,true
-809,0,0,true,4,0,0,"event_base/event_base_shop_call",0,2,1,2,3,0,true,false,false,false,true
-810,0,0,true,4,0,0,"event_base/event_base_shop_review",0,2,1,2,3,0,true,false,false,false,true
-811,0,0,true,4,0,0,"event_base/event_base_rack_check",0,2,1,2,3,0,true,false,false,false,true
-812,0,0,true,4,0,0,"event_base/event_base_box_count",0,2,1,2,3,0,true,false,false,false,true
-813,0,0,true,4,0,0,"event_base/event_base_waiter_listen",0,1,1,1,3,0,true,false,false,false,true
-814,0,0,true,4,0,0,"event_base/event_base_waiter_wait",0,1,1,1,3,0,true,false,false,false,true
-815,0,0,true,10,0,1,"event_base/event_base_to_pray",1,2,1,2,3,0,true,false,false,false,true
-816,0,0,true,4,0,0,"event_base/event_base_all_direction",0,2,1,2,3,0,true,false,false,false,true
-817,0,0,true,4,0,0,"event_base/event_base_coach",0,2,1,2,3,0,true,false,false,false,true
-818,0,0,true,4,0,0,"event_base/event_base_attention",0,2,1,2,3,0,true,false,false,false,true
-819,0,0,true,4,0,0,"event_base/event_base_sorry",0,2,1,2,3,0,true,false,false,false,true
-820,0,0,true,4,0,1,"event_base/event_base_eat",0,1,1,1,3,0,true,false,false,false,true
-821,0,0,true,4,0,1,"event_base/event_base_drink",0,1,1,1,3,0,true,false,false,false,true
-822,0,0,true,10,0,2,"event_base/event_base_table_elbow",3,2,1,2,3,0,true,false,false,false,true
-823,0,0,true,4,0,2,"event_base/event_base_chocobo_side",0,2,1,2,3,0,true,false,false,false,true
+784,0,0,true,4,0,2,"event_base/Arms Crossed Standing",0,2,1,2,3,0,true,false,false,false,true
+785,0,0,true,4,0,2,"event_base/Standing one arm on hip",0,2,1,2,3,0,true,false,false,false,true
+786,0,0,true,4,0,2,"event_base/Standing arms at hips",0,2,1,2,3,0,true,false,false,false,true
+787,0,0,true,4,0,0,"event_base/Standing arms in front of crotch",0,2,1,2,3,0,true,false,false,false,true
+788,0,0,true,3,0,2,"emote/Sitting",3,2,1,2,3,0,true,false,false,false,true
+789,0,0,true,6,0,2,"event_base/Chair sit hands locked on lap",3,2,1,2,3,0,true,false,false,false,true
+790,0,0,true,10,0,2,"event_base/Hunched forward at table",3,2,1,2,3,0,true,false,false,false,true
+791,0,0,true,2,0,2,"emote/Sitting looking up",2,2,1,2,3,0,true,false,false,false,true
+792,0,1,false,14,0,2,"event_base/Sitting down animation",3,2,1,2,3,0,true,false,false,false,true
+793,0,1,false,12,0,2,"event_base/Standing up animation",0,2,1,2,3,0,true,false,false,false,true
+794,0,1,false,13,0,2,"event_base/Sitting down on ground animation",2,2,1,2,3,0,true,false,false,false,true
+795,0,1,false,11,0,2,"event_base/Standing up from ground animation",0,2,1,2,3,0,true,false,false,false,true
+796,0,0,true,4,0,0,"event_base/Conversing gesturing with 2 hands",0,2,1,2,3,0,true,false,false,false,true
+797,0,0,true,4,0,0,"event_base/Conversing with 1 hand gesturing",0,2,1,2,3,0,true,false,false,false,true
+798,0,0,true,4,0,0,"event_base/Conversing with 1 hand gesturing alternate",0,2,1,2,3,0,true,false,false,false,true
+799,0,0,true,4,0,0,"event_base/Conversing with 2 hands gesturing",0,2,1,2,3,0,true,false,false,false,true
+800,0,0,true,6,0,2,"event_base/Conversing while sitting",3,2,1,2,3,0,true,false,false,false,true
+801,0,0,true,4,0,0,"event_base/Fake conversing (No lip movement)",0,2,1,2,3,0,true,false,false,false,true
+802,0,0,true,6,0,2,"event_base/Slow lean forward while sitting",3,2,1,2,3,0,true,false,false,false,true
+803,0,0,true,5,0,2,"event_base/Sitting,Leg Spread",2,2,1,2,3,0,true,false,false,false,true
+804,0,0,true,6,0,2,"event_base/Stting, leaning forward",3,2,1,2,3,0,true,false,false,false,true
+805,0,0,true,10,0,1,"event_base/Sleeping",2,2,1,2,3,0,true,false,false,false,true
+806,0,0,true,10,0,2,"event_base/Feminine Bench sit",3,2,1,2,3,0,true,false,false,false,true
+807,0,0,true,4,0,0,"event_base/Leaning on Wall",0,2,1,2,3,0,true,false,false,false,true
+808,0,0,true,4,0,0,"event_base/Guard Standing Looking Around",0,2,1,2,3,0,true,false,false,false,true
+809,0,0,true,4,0,0,"event_base/Beckoning Crowd",0,2,1,2,3,0,true,false,false,false,true
+810,0,0,true,4,0,0,"event_base/Simple public conversation",0,2,1,2,3,0,true,false,false,false,true
+811,0,0,true,4,0,0,"event_base/Rack checking/Examining Wall",0,2,1,2,3,0,true,false,false,false,true
+812,0,0,true,4,0,0,"event_base/Checking Things",0,2,1,2,3,0,true,false,false,false,true
+813,0,0,true,4,0,0,"event_base/Maidy bow",0,1,1,1,3,0,true,false,false,false,true
+814,0,0,true,4,0,0,"event_base/Hands in front (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+815,0,0,true,10,0,1,"event_base/Knelt praying",1,2,1,2,3,0,true,false,false,false,true
+816,0,0,true,4,0,0,"event_base/Hand on hip talking",0,2,1,2,3,0,true,false,false,false,true
+817,0,0,true,4,0,0,"event_base/Coaching",0,2,1,2,3,0,true,false,false,false,true
+818,0,0,true,4,0,0,"event_base/Sassy stand/talk",0,2,1,2,3,0,true,false,false,false,true
+819,0,0,true,4,0,0,"event_base/Deflated standing/onlook",0,2,1,2,3,0,true,false,false,false,true
+820,0,0,true,4,0,1,"event_base/Eat (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+821,0,0,true,4,0,1,"event_base/Drinking (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+822,0,0,true,10,0,2,"event_base/Sitting thinking",3,2,1,2,3,0,true,false,false,false,true
+823,0,0,true,4,0,2,"event_base/Hand on Right Wall",0,2,1,2,3,0,true,false,false,false,true
 824,0,0,true,5,0,1,"event_base/event_base_ground_tired",2,2,1,2,3,0,true,false,false,false,true
-825,0,0,true,6,0,2,"event_base/event_base_bad_chair",3,2,1,2,3,0,true,false,false,false,true
-826,0,0,true,10,0,1,"event_base/event_base_bad_drink",3,1,1,1,3,0,true,false,false,false,true
-827,0,0,true,4,0,0,"event_base/event_base_bad_stand",0,2,1,2,3,0,true,false,false,false,true
-828,0,0,true,4,0,0,"event_base/event_base_bad_talk",0,2,1,2,3,0,true,false,false,false,true
+825,0,0,true,6,0,2,"event_base/Smug Spread legs,sitting",3,2,1,2,3,0,true,false,false,false,true
+826,0,0,true,10,0,1,"event_base/Smug spread legs drinking",3,1,1,1,3,0,true,false,false,false,true
+827,0,0,true,4,0,0,"event_base/Smug Lean",0,2,1,2,3,0,true,false,false,false,true
+828,0,0,true,4,0,0,"event_base/Smug talking with hand on hip",0,2,1,2,3,0,true,false,false,false,true
 829,0,0,true,10,0,2,"event_base/event_base_leather",1,1,1,1,3,0,true,false,false,false,true
 830,0,0,true,10,0,2,"event_base/event_base_carpenter",0,1,1,1,3,0,true,false,false,false,true
-831,0,0,true,10,0,2,"event_base/event_base_spear_action1",0,1,1,1,3,0,true,false,false,false,true
-832,0,0,true,10,0,2,"event_base/event_base_spear_action2",0,1,1,1,3,0,true,false,false,false,true
-833,0,0,true,10,0,2,"event_base/event_base_bow_action1",0,1,1,1,3,0,true,false,false,false,true
-834,0,0,true,10,0,2,"event_base/event_base_bow_action2",0,1,1,1,3,0,true,false,false,false,true
-835,0,0,true,10,0,2,"event_base/event_base_bow_repair",0,1,1,1,3,0,true,false,false,false,true
-836,0,0,true,5,0,1,"event_base/event_base_muse",2,2,1,2,3,0,true,false,false,false,true
-837,0,0,true,4,0,1,"event_base/event_base_healing",0,2,1,2,3,0,true,false,false,false,true
-838,0,0,true,4,0,1,"event_base/event_base_spirit_listen",0,2,1,2,3,0,true,false,false,false,true
-839,0,0,true,4,0,1,"event_base/event_base_grass_pick",1,2,1,2,3,0,true,false,false,false,true
-840,0,0,true,4,0,0,"event_base/event_base_water_sprinkle",0,1,1,1,3,0,true,false,false,false,true
+831,0,0,true,10,0,2,"event_base/Spear Action",0,1,1,1,3,0,true,false,false,false,true
+832,0,0,true,10,0,2,"event_base/Spear Action2",0,1,1,1,3,0,true,false,false,false,true
+833,0,0,true,10,0,2,"event_base/Bow Action",0,1,1,1,3,0,true,false,false,false,true
+834,0,0,true,10,0,2,"event_base/Bow Action2",0,1,1,1,3,0,true,false,false,false,true
+835,0,0,true,10,0,2,"event_base/Bow Repair/Hand Holding?",0,1,1,1,3,0,true,false,false,false,true
+836,0,0,true,5,0,1,"event_base/Sitting meditating",2,2,1,2,3,0,true,false,false,false,true
+837,0,0,true,4,0,1,"event_base/Meditating with one arm outstretched",0,2,1,2,3,0,true,false,false,false,true
+838,0,0,true,4,0,1,"event_base/Meditating with hand on face",0,2,1,2,3,0,true,false,false,false,true
+839,0,0,true,4,0,1,"event_base/Bending Down Grass Picking",1,2,1,2,3,0,true,false,false,false,true
+840,0,0,true,4,0,0,"event_base/Watering with no pot (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 841,0,0,true,10,0,2,"event_base/event_base_manure_sprinkle",0,1,1,1,3,0,true,false,false,false,true
 842,0,0,true,10,0,0,"event_base/event_base_park_play1",0,2,1,2,3,0,true,false,false,false,true
 843,0,0,true,10,0,0,"event_base/event_base_park_play2",1,2,1,2,3,0,true,false,false,false,true
 844,0,0,true,10,0,0,"event_base/event_base_park_play3",0,2,1,2,3,0,true,false,false,false,true
-845,0,0,true,4,0,2,"event_base/event_base_guard_look_away",0,2,1,2,3,0,true,false,false,false,true
-846,0,0,true,10,0,2,"event_base/event_base_grass_plow",0,1,1,1,3,0,true,false,false,false,true
-847,0,0,true,4,0,2,"event_base/event_base_chocobo_shine",0,1,1,1,3,0,true,false,false,false,true
-848,0,0,true,4,0,2,"event_base/event_base_chocobo_brush",0,2,1,2,3,0,true,false,false,false,true
+845,0,0,true,4,0,2,"event_base/Leaning forward looking out",0,2,1,2,3,0,true,false,false,false,true
+846,0,0,true,10,0,2,"event_base/Tilling (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+847,0,0,true,4,0,2,"event_base/Repairing wall (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+848,0,0,true,4,0,2,"event_base/Adjusting tall object",0,2,1,2,3,0,true,false,false,false,true
 849,0,0,true,10,0,1,"event_base/event_base_headdown",0,2,1,2,3,0,true,false,false,false,true
-850,0,0,true,10,0,2,"event_base/event_base_ship_stand",0,1,1,1,3,0,true,false,false,false,true
-851,0,0,true,10,0,2,"event_base/event_base_yumi_touch",0,1,1,1,3,0,true,false,false,false,true
-852,0,0,true,10,0,2,"event_base/event_base_dagger_touch",0,1,1,1,3,0,true,false,false,false,true
-853,0,0,true,10,0,2,"event_base/event_base_woodchop",1,1,1,1,3,0,true,false,false,false,true
-854,0,0,true,4,0,0,"event_base/event_base_teach",0,2,1,2,3,0,true,false,false,false,true
-855,0,0,true,4,0,0,"event_base/event_base_rookie",0,2,1,2,3,0,true,false,false,false,true
+850,0,0,true,10,0,2,"event_base/Standing holding something (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+851,0,0,true,10,0,2,"event_base/Sitting reading? (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+852,0,0,true,10,0,2,"event_base/Picking petals? (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+853,0,0,true,10,0,2,"event_base/Knelt down smashing things on ground (weapon drawn)",1,1,1,1,3,0,true,false,false,false,true
+854,0,0,true,4,0,0,"event_base/Upset, pointing and talking",0,2,1,2,3,0,true,false,false,false,true
+855,0,0,true,4,0,0,"event_base/Arms behind back",0,2,1,2,3,0,true,false,false,false,true
 856,0,0,true,10,0,2,"event_base/event_base_cooking_spoon",1,1,1,1,3,0,true,false,false,false,true
 857,0,0,true,10,0,1,"event_base/event_base_chocobo_sleep",2,2,1,2,3,0,true,false,false,false,true
-858,0,0,true,10,0,2,"event_base/event_base_smith",0,1,1,1,3,0,true,false,false,false,true
+858,0,0,true,10,0,2,"event_base/Dick grab (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 859,0,0,true,10,0,2,"event_base/event_base_smith2",0,1,1,1,3,0,true,false,false,false,true
-860,0,0,true,10,0,2,"event_base/event_base_chef",0,1,1,1,3,0,true,false,false,false,true
-861,0,0,true,10,0,2,"event_base/event_base_axe_attack",0,1,1,1,3,0,true,false,false,false,true
-862,0,0,true,10,0,2,"event_base/event_base_axe_stretch",0,1,1,1,3,0,true,false,false,false,true
-863,0,0,true,10,0,2,"event_base/event_base_gun_shoot",0,1,1,1,3,0,true,false,false,false,true
-864,0,0,true,10,0,2,"event_base/event_base_angler",1,1,1,1,3,0,true,false,false,false,true
-865,0,0,true,10,0,1,"event_base/event_base_bad_ground_eat",2,1,1,1,3,0,true,false,false,false,true
-866,0,0,true,10,0,1,"event_base/event_base_bad_ground_drink",2,1,1,1,3,0,true,false,false,false,true
-867,0,0,true,10,0,1,"event_base/event_base_chair_eat_delicious",3,2,1,2,3,0,true,false,false,false,true
-868,0,0,true,10,0,2,"event_base/event_base_scrub_deck",1,1,1,1,3,0,true,false,false,false,true
+860,0,0,true,10,0,2,"event_base/Lala mixing bowl (Lala only)",0,1,1,1,3,0,true,false,false,false,true
+861,0,0,true,10,0,2,"event_base/Axe Stretch",0,1,1,1,3,0,true,false,false,false,true
+862,0,0,true,10,0,2,"event_base/Stretching with a axe (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+863,0,0,true,10,0,2,"event_base/Firing gun (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+864,0,0,true,10,0,2,"event_base/Angler (weapon drawn)",1,1,1,1,3,0,true,false,false,false,true
+865,0,0,true,10,0,1,"event_base/bad_ground_eat",2,1,1,1,3,0,true,false,false,false,true
+866,0,0,true,10,0,1,"event_base/bad_ground_drink",2,1,1,1,3,0,true,false,false,false,true
+867,0,0,true,10,0,1,"event_base/chair_eat_delicious",3,2,1,2,3,0,true,false,false,false,true
+868,0,0,true,10,0,2,"event_base/scrub_deck",1,1,1,1,3,0,true,false,false,false,true
 869,0,0,true,4,0,2,"event_base/Butt Swaying(Midlander/Miqote)",0,2,1,2,3,0,true,false,false,false,true
 870,0,0,true,4,0,2,"event_base/Come Hither(Midlander/Miqote)",0,2,1,2,3,0,true,false,false,false,true
 871,0,0,true,10,0,2,"event_base/event_base_bad_chair_harp",3,1,1,1,3,0,true,false,false,false,true
 872,0,0,true,10,0,2,"event_base/event_base_harp",0,1,1,1,3,0,true,false,false,false,true
-873,0,0,true,4,0,0,"event_base/event_base_bad_stir_up",0,2,1,2,3,0,true,false,false,false,true
+873,0,0,true,4,0,0,"event_base/Cheering/rally",0,2,1,2,3,0,true,false,false,false,true
 874,0,0,true,10,0,2,"event_base/event_base_bad_ground_stir_up",2,2,1,2,3,0,true,false,false,false,true
 875,0,0,true,10,0,1,"event_base/event_base_bad_chair_drink",3,1,1,1,3,0,true,false,false,false,true
 876,0,0,true,10,0,2,"event_base/event_base_brawl_ready",0,2,1,2,3,0,true,false,false,false,true
 877,0,0,true,10,0,2,"event_base/event_base_brawl_come_on",0,2,1,2,3,0,true,false,false,false,true
 878,0,0,true,10,0,2,"event_base/event_base_brawl_provoke",0,2,1,2,3,0,true,false,false,false,true
-879,0,0,true,10,0,2,"event_base/event_base_push_up",2,2,1,2,3,0,true,false,false,false,true
-880,0,0,true,10,0,1,"event_base/event_base_sit_up",2,2,1,2,3,0,true,false,false,false,true
+879,0,0,true,10,0,2,"event_base/Pushups",2,2,1,2,3,0,true,false,false,false,true
+880,0,0,true,10,0,1,"event_base/Sit ups",2,2,1,2,3,0,true,false,false,false,true
 881,0,0,true,4,0,2,"event_base/event_base_warming_up",0,2,1,2,3,0,true,false,false,false,true
-882,0,0,true,4,0,2,"event_base/event_base_squat",0,2,1,2,3,0,true,false,false,false,true
+882,0,0,true,4,0,2,"event_base/Squats",0,2,1,2,3,0,true,false,false,false,true
 883,0,0,true,10,0,1,"event_base/event_base_hangdman",0,1,1,1,3,0,true,false,false,false,true
-884,0,0,true,10,0,2,"event_base/event_base_sit_yankee",0,2,1,2,3,0,true,false,false,false,true
-885,0,0,true,10,0,2,"event_base/event_base_sit_ground_ladies",1,2,1,2,3,0,true,false,false,false,true
-886,0,0,true,10,0,2,"event_base/event_base_carry_up",0,1,1,1,3,0,true,false,false,false,true
-887,0,0,true,10,0,2,"event_base/event_base_carry_up_one_hand",0,1,1,1,3,0,true,false,false,false,true
+884,0,0,true,10,0,2,"event_base/Yankke Sit",0,2,1,2,3,0,true,false,false,false,true
+885,0,0,true,10,0,2,"event_base/Ladies Yankee Sit",1,2,1,2,3,0,true,false,false,false,true
+886,0,0,true,10,0,2,"event_base/Holding big object (Weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+887,0,0,true,10,0,2,"event_base/Carrying object on shoulder (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 888,0,0,true,10,0,2,"event_base/event_base_carry_up_ready",1,1,1,1,3,0,true,false,false,false,true
-889,0,0,true,10,0,2,"event_base/event_base_vender_call",0,1,1,1,3,0,true,false,false,false,true
+889,0,0,true,10,0,2,"event_base/Holding an Invisible Dick",0,1,1,1,3,0,true,false,false,false,true
 890,0,0,true,4,0,0,"event_base/event_base_farmer_check",0,2,1,2,3,0,true,false,false,false,true
 891,0,0,true,10,0,2,"event_base/event_base_shipbuilder_work",0,1,1,1,3,0,true,false,false,false,true
-892,0,0,true,10,0,2,"event_base/event_base_chair_reclining",3,2,1,2,3,0,true,false,false,false,true
-893,0,0,true,10,0,2,"event_base/event_base_leaf_fan",0,1,1,1,3,0,true,false,false,false,true
-894,0,0,true,10,0,2,"event_base/event_base_sit_bath_stretch",2,2,1,2,3,0,true,false,false,false,true
+892,0,0,true,10,0,2,"event_base/Lala hammock (Lala only)",3,2,1,2,3,0,true,false,false,false,true
+893,0,0,true,10,0,2,"event_base/Leaf Fanning",0,1,1,1,3,0,true,false,false,false,true
+894,0,0,true,10,0,2,"event_base/Bath Stretching",2,2,1,2,3,0,true,false,false,false,true
 895,0,0,true,10,0,2,"event_base/event_base_chaser",0,1,1,1,3,0,true,false,false,false,true
-896,0,0,true,10,0,2,"event_base/event_base_tailor",0,1,1,1,3,0,true,false,false,false,true
+896,0,0,true,10,0,2,"event_base/Tailor",0,1,1,1,3,0,true,false,false,false,true
 897,0,0,true,4,0,2,"event_base/event_base_fitting_check",0,2,1,2,3,0,true,false,false,false,true
-898,0,0,true,10,0,2,"event_base/event_base_alchemist",0,1,1,1,3,0,true,false,false,false,true
+898,0,0,true,10,0,2,"event_base/Shaking alchemy things (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 899,0,0,true,10,0,2,"event_base/event_base_gladiator_attack",0,1,1,1,3,0,true,false,false,false,true
 900,0,0,true,10,0,2,"event_base/event_base_sword",0,1,1,1,3,0,true,false,false,false,true
 901,0,0,true,10,0,0,"event_base/event_base_fighter",0,1,1,1,3,0,true,false,false,false,true
@@ -909,34 +909,34 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 907,0,0,true,4,0,0,"event_base/event_base_colosseum_call",0,1,1,1,3,0,true,false,false,false,true
 908,0,0,true,10,0,0,"event_base/event_base_fishing",2,1,1,1,3,0,true,false,false,false,true
 909,0,0,true,10,0,2,"event_base/event_base_beggar_please",2,2,1,2,3,0,true,false,false,false,true
-910,0,0,true,4,0,0,"event_base/event_base_tobacco",0,1,1,1,3,0,true,false,false,false,true
-911,0,0,true,6,0,2,"event_base/event_base_sit_tobacco",3,1,1,1,3,0,true,false,false,false,true
-912,0,0,true,4,0,0,"event_base/event_base_hand_fan",0,2,1,2,3,0,true,false,false,false,true
-913,0,0,true,4,0,0,"event_base/event_base_handbills_look",0,1,1,1,3,0,true,false,false,false,true
-914,0,0,true,4,0,1,"event_base/event_base_play_light",0,2,1,2,3,0,true,false,false,false,true
-915,0,0,true,10,0,2,"event_base/event_base_talk_drunker",0,1,1,1,3,0,true,false,false,false,true
+910,0,0,true,4,0,0,"event_base/Smoking/Tobacco?",0,1,1,1,3,0,true,false,false,false,true
+911,0,0,true,6,0,2,"event_base/Sitting Smoking/Tobacco?",3,1,1,1,3,0,true,false,false,false,true
+912,0,0,true,4,0,0,"event_base/Sweat",0,2,1,2,3,0,true,false,false,false,true
+913,0,0,true,4,0,0,"event_base/Handbills look",0,1,1,1,3,0,true,false,false,false,true
+914,0,0,true,4,0,1,"event_base/Prayer to Light",0,2,1,2,3,0,true,false,false,false,true
+915,0,0,true,10,0,2,"event_base/Smug Talking (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 916,0,0,true,10,0,1,"event_base/event_base_sleep_drunker",0,1,1,1,3,0,true,false,false,false,true
 917,0,0,true,10,0,1,"event_base/event_base_groggy_drunker",0,1,1,1,3,0,true,false,false,false,true
 918,0,0,true,10,0,1,"event_base/event_base_alcohol_drunk",0,1,1,1,3,0,true,false,false,false,true
 919,0,0,true,4,0,0,"event_base/event_base_idle_celeb",0,2,1,2,3,0,true,false,false,false,true
 920,0,0,true,10,0,2,"event_base/event_base_carry_butler",0,1,1,1,3,0,true,false,false,false,true
 921,0,0,true,4,0,0,"event_base/event_base_talk_celeb",0,2,1,2,3,0,true,false,false,false,true
-922,0,0,true,4,0,0,"event_base/event_base_talk_secret",0,2,1,2,3,0,true,false,false,false,true
-923,0,0,true,4,0,2,"event_base/event_base_talk_memo",0,1,1,1,3,0,true,false,false,false,true
-924,0,0,true,10,0,2,"event_base/event_base_sad_over",0,2,1,2,3,0,true,false,false,false,true
+922,0,0,true,4,0,0,"event_base/Telling a secret",0,2,1,2,3,0,true,false,false,false,true
+923,0,0,true,4,0,2,"event_base/Taking notes (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+924,0,0,true,10,0,2,"event_base/Crying with face in hands",0,2,1,2,3,0,true,false,false,false,true
 925,0,0,true,4,0,0,"event_base/event_base_colosseum_laught",0,2,1,2,3,0,true,false,false,false,true
 926,0,0,true,10,0,0,"event_base/event_base_colosseum_provoke",0,2,1,2,3,0,true,false,false,false,true
 927,0,0,true,10,0,0,"event_base/event_base_colosseum_come_on",0,2,1,2,3,0,true,false,false,false,true
 928,0,0,true,10,0,2,"event_base/event_base_performer",0,1,1,1,3,0,true,false,false,false,true
-929,0,0,true,10,0,1,"event_base/event_base_dancer",0,2,1,2,3,0,true,false,false,false,true
-930,0,0,true,10,0,2,"event_base/event_base_sexy_bath",2,2,1,2,3,0,true,false,false,false,true
+929,0,0,true,10,0,1,"event_base/Ul'dah Dance",0,2,1,2,3,0,true,false,false,false,true
+930,0,0,true,10,0,2,"event_base/Sexy Bath",2,2,1,2,3,0,true,false,false,false,true
 931,0,0,true,10,0,2,"event_base/event_base_maining",0,1,1,1,3,0,true,false,false,false,true
 932,0,1,false,7,0,0,"event/event_reaction_lala_w",0,2,1,2,3,0,true,false,false,false,true
-933,0,1,false,7,0,0,"event/event_talk_forefinger",0,2,1,2,3,45,true,false,false,false,true
-934,0,1,false,0,0,0,"event/event_knee",0,2,1,2,3,0,true,false,false,false,true
-935,0,0,true,10,0,1,"event_base/event_base_orz",2,2,1,2,3,0,true,false,false,false,true
-936,0,0,true,5,0,1,"event_base/event_base_knee_suffering",1,2,1,2,3,0,true,false,false,false,true
-937,0,0,true,4,0,2,"event_base/event_base_stand_read",0,1,1,1,3,0,true,false,false,false,true
+933,0,1,false,7,0,0,"event/Exclaiming with a finger pointed up",0,2,1,2,3,45,true,false,false,false,true
+934,0,1,false,0,0,0,"event/Sitting out of breath, standing up",0,2,1,2,3,0,true,false,false,false,true
+935,0,0,true,10,0,1,"event_base/Disappointed Base",2,2,1,2,3,0,true,false,false,false,true
+936,0,0,true,5,0,1,"event_base/Out of breath",1,2,1,2,3,0,true,false,false,false,true
+937,0,0,true,4,0,2,"event_base/Holding ledger counting (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
 938,0,0,true,10,0,0,"event_base/event_base_move_dance",0,2,1,2,3,0,true,false,false,false,true
 939,0,0,true,10,0,0,"event_base/event_base_escape",0,2,1,2,3,0,true,false,false,false,true
 940,0,0,true,10,0,0,"event_base/event_base_captured",2,2,1,2,3,0,true,false,false,false,true
@@ -949,18 +949,18 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 947,0,1,false,7,0,0,"event/event_sing",0,2,1,2,3,0,true,false,false,false,true
 948,0,1,false,7,0,0,"event/event_flap_sing",0,2,1,2,3,0,true,false,false,false,true
 949,0,1,false,7,0,0,"event/event_talk_demihuman",0,2,1,2,3,0,true,false,false,false,true
-950,0,1,false,7,0,0,"event/event_talk_big",0,2,1,2,3,0,true,false,false,false,true
+950,0,1,false,7,0,0,"event/Outstretch both arms and lean forward",0,2,1,2,3,0,true,false,false,false,true
 951,0,1,false,7,0,0,"event/event_talk_entreat",0,2,1,2,3,0,true,false,false,false,true
 952,0,1,false,7,0,1,"event/event_laugh",0,2,1,2,3,0,true,false,false,false,true
 953,0,1,false,7,0,1,"event/event_joy",0,2,1,2,3,0,true,false,false,false,true
 954,0,1,false,7,0,0,"event/event_sad",0,2,1,2,3,0,true,false,false,false,true
 955,0,1,false,7,0,0,"event/event_sad_laugh",0,2,1,2,3,0,true,false,false,false,true
 956,0,1,false,7,0,1,"event/event_cry",0,2,1,2,3,0,true,false,false,false,true
-957,0,1,false,7,0,1,"event/event_bow",0,2,1,2,3,0,true,false,false,false,true
+957,0,1,false,7,0,1,"event/Quick courteous halfbow",0,2,1,2,3,0,true,false,false,false,true
 958,0,1,false,7,0,1,"event/event_question",0,2,1,2,3,0,true,false,false,false,true
 959,0,1,false,7,0,1,"event/event_trouble_big",0,2,1,2,3,0,true,false,false,false,true
-960,0,1,false,7,0,0,"event/event_give",0,2,1,2,3,0,true,false,false,false,true
-961,0,1,false,7,0,1,"event/event_suffering",0,2,1,2,3,0,true,false,false,false,true
+960,0,1,false,7,0,0,"event/Handover something from fannypack",0,2,1,2,3,0,true,false,false,false,true
+961,0,1,false,7,0,1,"event/Bend over and huff",0,2,1,2,3,0,true,false,false,false,true
 962,0,1,false,7,0,0,"event/event_byebye",0,2,1,2,3,0,true,false,false,false,true
 963,0,1,false,7,0,1,"event/event_eat",0,2,1,2,3,0,true,false,false,false,true
 964,0,1,false,7,0,1,"event/event_bite",0,2,1,2,3,0,true,false,false,false,true
@@ -976,52 +976,52 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 974,0,1,false,7,0,1,"event/event_mat_remove",0,2,1,2,3,0,true,false,false,false,true
 975,0,1,false,7,0,1,"event/event_wandering_action",0,2,1,2,3,0,true,false,false,false,true
 976,0,1,false,7,0,1,"event/event_wandering_caution",0,2,1,2,3,0,true,false,false,false,true
-977,0,0,true,10,0,2,"event_base/event_base_guard_spear",0,1,1,1,3,0,true,false,false,false,true
-978,0,0,true,10,0,1,"event_base/event_base_desk_memo",0,1,1,1,3,0,true,false,false,false,true
-979,0,0,true,10,0,0,"event_base/event_base_bind_ground_sit",2,2,1,2,3,0,true,false,false,false,true
-980,0,1,false,7,0,1,"event/event_chocobo_whistle",0,2,1,2,3,0,true,false,false,false,true
-981,0,0,true,10,0,1,"event_base/event_base_lie1",2,2,1,2,3,0,true,false,false,false,true
-982,0,0,true,10,0,1,"event_base/event_base_lie2",2,2,1,2,3,0,true,false,false,false,true
-983,0,0,true,4,0,1,"event_base/event_base_frightened",0,2,1,2,3,0,true,false,false,false,true
+977,0,0,true,10,0,2,"event_base/Holding Something and looking about (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+978,0,0,true,10,0,1,"event_base/Counting things on table (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+979,0,0,true,10,0,0,"event_base/Seated, restrained",2,2,1,2,3,0,true,false,false,false,true
+980,0,1,false,7,0,1,"event/Mount whistle",0,2,1,2,3,0,true,false,false,false,true
+981,0,0,true,10,0,1,"event_base/Laying Down 1",2,2,1,2,3,0,true,false,false,false,true
+982,0,0,true,10,0,1,"event_base/Laying Down 2",2,2,1,2,3,0,true,false,false,false,true
+983,0,0,true,4,0,1,"event_base/Frightened",0,2,1,2,3,0,true,false,false,false,true
 984,0,1,false,7,0,1,"event/event_excited",0,2,1,2,3,0,true,false,false,false,true
-985,0,0,true,4,0,1,"event_base/event_base_frightened2",0,2,1,2,3,0,true,false,false,false,true
-986,0,1,false,0,0,1,"inn_event/bed_in",0,2,1,2,3,0,false,false,false,false,true
+985,0,0,true,4,0,1,"event_base/Frightened 2",0,2,1,2,3,0,true,false,false,false,true
+986,0,1,false,0,0,1,"normal/Bed in",0,2,1,2,3,0,false,false,false,false,true
 987,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-988,0,1,false,0,0,1,"inn_event/bed_out_dream",0,2,1,2,3,0,false,false,false,false,true
-989,0,1,false,0,0,1,"inn_event/bed_out",0,2,1,2,3,0,false,false,false,false,true
-990,0,1,false,0,0,0,"event/event_guildmaster_action1",0,2,1,2,3,0,true,false,false,false,true
-991,0,0,true,10,0,2,"event_base/event_base_ship_stand_mini",0,1,1,1,3,0,true,false,false,false,true
-992,0,0,true,4,0,1,"event_base/event_base_mysterious_talk",0,2,1,2,3,0,true,false,false,false,true
+988,0,1,false,0,0,1,"normal/Bed out(Dreaming)",0,2,1,2,3,0,false,false,false,false,true
+989,0,1,false,0,0,1,"normal/Bed Out",0,2,1,2,3,0,false,false,false,false,true
+990,0,1,false,0,0,0,"event/Search with hands",0,2,1,2,3,0,true,false,false,false,true
+991,0,0,true,10,0,2,"event_base/Grabing a pole",0,1,1,1,3,0,true,false,false,false,true
+992,0,0,true,4,0,1,"event_base/Hunched talking ",0,2,1,2,3,0,true,false,false,false,true
 993,0,0,true,6,0,1,"event_base/event_base_arcanist_master",3,1,1,1,3,0,true,false,false,false,true
-994,0,1,false,0,0,0,"event/event_guildmaster_action2",0,2,1,2,3,0,true,false,false,false,true
-995,0,1,false,0,0,0,"event/event_skillget",0,1,1,1,3,0,true,false,false,false,true
-996,0,0,true,4,0,1,"event_base/event_base_read_letter",0,1,1,1,3,0,true,false,false,false,true
+994,0,1,false,0,0,0,"event/Taken aback examining an object",0,2,1,2,3,0,true,false,false,false,true
+995,0,1,false,0,0,0,"event/Raise job crystal in air (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+996,0,0,true,4,0,1,"event_base/UnReleased DRK BattleMode Idle",0,1,1,1,3,0,true,false,false,false,true
 997,0,0,true,0,0,0,"event_base/event_base_fly_idle",0,2,1,2,3,0,true,false,false,false,true
 998,0,0,true,10,0,1,"event_base/event_base_arcanist_action1",0,2,1,2,3,0,true,false,false,false,true
 999,0,0,true,10,0,0,"event_base/event_base_arcanist_action2",0,2,1,2,3,0,true,false,false,false,true
 1000,0,0,true,4,0,0,"event_base/event_base_bodyguard",0,1,1,1,3,0,true,false,false,false,true
 1001,0,0,true,0,0,0,"event/event_mannequin",0,1,2,1,3,0,true,false,false,false,true
-1002,0,1,false,0,0,0,"event/event_link",0,2,1,2,3,0,true,false,false,false,true
-1003,0,0,true,4,0,0,"event_base/event_base_fishing_stand",0,1,1,1,3,0,true,false,false,false,true
-1004,0,0,true,10,0,0,"event_base/event_base_dancer_group",0,2,1,2,3,0,true,false,false,false,true
-1005,0,1,false,7,0,0,"event/event_surprised",0,2,1,2,3,0,true,false,false,false,true
-1006,0,0,true,4,0,0,"event_base/event_base_arcanist_reading",0,1,1,1,3,0,true,false,false,false,true
-1007,0,0,true,10,0,2,"event_base/event_base_push_up_sit_stop",2,2,1,2,3,0,true,false,false,false,true
-1008,0,0,true,10,0,0,"event_base/event_base_bind_stand",0,2,1,2,3,0,true,false,false,false,true
-1009,0,0,true,10,0,0,"event_base/event_base_link",0,2,1,2,3,0,true,false,false,false,true
+1002,0,1,false,0,0,0,"event/Linkpearl answer",0,2,1,2,3,0,true,false,false,false,true
+1003,0,0,true,4,0,0,"event_base/Holding something (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+1004,0,0,true,10,0,0,"event_base/Ul'dahn dance",0,2,1,2,3,0,true,false,false,false,true
+1005,0,1,false,7,0,0,"event/Step back",0,2,1,2,3,0,true,false,false,false,true
+1006,0,0,true,4,0,0,"event_base/Reading Book",0,1,1,1,3,0,true,false,false,false,true
+1007,0,0,true,10,0,2,"event_base/Sitting, arms in front",2,2,1,2,3,0,true,false,false,false,true
+1008,0,0,true,10,0,0,"event_base/Restrained, standing",0,2,1,2,3,0,true,false,false,false,true
+1009,0,0,true,10,0,0,"event_base/Linkpearl, speaking",0,2,1,2,3,0,true,false,false,false,true
 1010,0,0,true,10,0,2,"event_base/event_base_bard_bowharp1",0,1,1,1,3,0,true,false,false,false,true
 1011,0,0,true,10,0,2,"event_base/event_base_bard_bowharp2",0,1,1,1,3,0,true,false,false,false,true
-1012,0,1,false,0,0,0,"event/event_salon_vfx",0,0,0,0,3,0,false,false,false,false,true
-1013,0,0,true,4,0,2,"event_base/event_base_attention_stand",0,2,1,2,3,0,true,false,false,false,true
-1014,0,0,true,5,0,1,"event_base/event_base_knee_seach",1,2,1,2,3,0,true,false,false,false,true
+1012,0,1,false,0,0,0,"event/Haircut animation",0,0,0,0,3,0,false,false,false,false,true
+1013,0,0,true,4,0,2,"event_base/Attention arms straight down",0,2,1,2,3,0,true,false,false,false,true
+1014,0,0,true,5,0,1,"event_base/Knelt down looking about",1,2,1,2,3,0,true,false,false,false,true
 1015,0,0,true,4,0,1,"event_base/event_base_idle_stop",0,2,1,2,3,0,true,false,false,false,true
-1016,0,1,false,9,0,1,"event/event_sit_eat_sequence",3,2,1,2,3,0,true,false,false,false,true
+1016,0,1,false,9,0,1,"event/Eating contest",3,2,1,2,3,0,true,false,false,false,true
 1017,0,0,true,4,0,0,"event_base/event_base_old_person",0,2,1,2,3,0,true,false,false,false,true
 1018,0,1,false,7,0,0,"event/event_old_person_talk1",0,2,1,2,3,0,true,false,false,false,true
 1019,0,1,false,7,0,0,"event/event_old_person_talk2",0,2,1,2,3,0,true,false,false,false,true
 1020,0,1,false,7,0,1,"event/event_greeting_respect",0,2,1,2,3,0,true,false,false,false,true
 1021,0,0,true,5,0,0,"event_base/event_base_bonfire_guard",2,1,1,1,3,0,true,false,false,false,true
-1022,0,1,false,7,0,0,"event/event_gird_up",0,2,1,2,3,0,true,false,false,false,true
+1022,0,1,false,7,0,0,"event/Gird Up",0,2,1,2,3,0,true,false,false,false,true
 1023,0,1,false,7,0,0,"event/event_comfortable",0,2,1,2,3,0,true,false,false,false,true
 1024,0,1,false,7,0,1,"event/event_disappoint",0,2,1,2,3,0,true,false,false,false,true
 1025,0,1,false,7,0,1,"event/event_hildi_pose",0,2,1,2,3,0,true,false,false,false,true
@@ -1031,47 +1031,47 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 1029,0,1,false,7,0,1,"event/event_hildi_come_up_with",0,2,1,2,3,0,true,false,false,false,true
 1030,0,1,false,7,0,1,"event/event_hildi_complete",0,2,1,2,3,0,true,false,false,false,true
 1031,0,0,true,4,0,2,"event_base/event_base_leather2",0,1,1,1,3,0,true,false,false,false,true
-1032,0,0,true,5,0,1,"event_base/event_base_ground_tired_sleep",2,2,1,2,3,0,true,false,false,false,true
-1033,0,1,false,7,0,0,"event/event_explosion",0,2,1,2,3,0,true,false,false,false,true
+1032,0,0,true,5,0,1,"event_base/Sitting, depressed",2,2,1,2,3,0,true,false,false,false,true
+1033,0,1,false,7,0,0,"event/Gibbed (must exit gpose)",0,2,1,2,3,0,true,false,false,false,true
 1034,0,0,true,10,0,0,"event_base/event_base_ground_sit_bar",2,2,1,2,3,0,true,false,false,false,true
 1035,0,0,true,10,0,1,"event_base/event_base_lie_bar",2,2,1,2,3,0,true,false,false,false,true
 1036,0,0,true,4,0,0,"event_base/event_base_to_brush",0,2,1,2,3,0,true,false,false,false,true
 1037,0,0,true,10,0,1,"event_base/event_base_hildi_downpose",0,2,1,2,3,0,true,false,false,false,true
 1038,0,1,false,7,0,1,"event/event_glass_set",0,2,1,2,3,0,true,false,false,false,true
-1039,0,1,false,7,0,2,"event/event_kneel_up",0,2,1,2,3,0,true,false,false,false,true
+1039,0,1,false,7,0,2,"event/Kneel",0,2,1,2,3,0,true,false,false,false,true
 1040,0,0,true,10,0,1,"event_base/event_base_stab_harpoon",0,1,1,1,3,0,true,false,false,false,true
-1041,0,1,false,7,0,2,"event/event_arms",0,2,1,2,3,0,true,false,false,false,true
-1042,0,1,false,0,0,0,"event/event_relicget",0,1,1,1,3,0,true,false,false,false,true
-1043,0,0,true,4,0,2,"event_base/event_base_stand_memo",0,1,1,1,3,0,true,false,false,false,true
+1041,0,1,false,7,0,2,"event/Fold arms in disproval",0,2,1,2,3,0,true,false,false,false,true
+1042,0,1,false,0,0,0,"event/Raise arm in air (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+1043,0,0,true,4,0,2,"event_base/Jotting down notes (weaopn drawn)",0,1,1,1,3,0,true,false,false,false,true
 1044,0,1,false,7,0,1,"event/event_glass_set_up",0,2,1,2,3,0,true,false,false,false,true
-1045,0,1,false,7,0,2,"event/event_salute_cry",0,2,1,2,3,0,true,false,false,false,true
+1045,0,1,false,7,0,2,"event/Attention poses (odd)",0,2,1,2,3,0,true,false,false,false,true
 1046,0,0,true,10,0,0,"event_base/event_base_baby_hold",0,1,1,1,3,0,true,false,false,false,true
 1047,0,1,false,7,0,1,"event/event_right_eye",0,2,1,2,3,0,true,false,false,false,true
 1048,0,1,false,7,0,1,"event/event_appearance",0,2,1,2,3,0,true,false,false,false,true
 1049,0,1,false,7,0,1,"event/event_ded",0,2,1,2,3,0,true,false,false,false,true
 1050,0,1,false,7,0,1,"event/event_attack",0,1,1,1,3,0,true,false,false,false,true
 1051,0,0,true,4,0,1,"event_base/event_base_stand_memo_lookup",0,1,1,1,3,0,true,false,false,false,true
-1052,0,0,true,4,0,0,"emote/pose01_loop",0,2,1,2,3,0,true,false,false,false,true
-1053,0,0,true,4,0,0,"emote/pose02_loop",0,2,1,2,3,0,true,false,false,false,true
-1054,0,0,true,4,0,0,"emote/pose03_loop",0,2,1,2,3,0,true,false,false,false,true
-1055,0,0,true,4,0,0,"emote/pose04_loop",0,2,1,2,3,0,true,false,false,false,true
+1052,0,0,true,4,0,0,"emote/Standing pose 1",0,2,1,2,3,0,true,false,false,false,true
+1053,0,0,true,4,0,0,"emote/Standing pose 2",0,2,1,2,3,0,true,false,false,false,true
+1054,0,0,true,4,0,0,"emote/Standing pose 3",0,2,1,2,3,0,true,false,false,false,true
+1055,0,0,true,4,0,0,"emote/Standing pose 4",0,2,1,2,3,0,true,false,false,false,true
 1056,0,0,true,4,0,2,"event_base/event_base_ninja_pose1",0,2,1,2,3,0,true,false,false,false,true
 1057,0,0,true,4,0,2,"event_base/event_base_ninja_pose2",0,2,1,2,3,0,true,false,false,false,true
-1058,0,1,false,7,0,0,"event/event_disappear",0,2,1,2,3,0,true,false,false,false,true
-1059,0,1,false,7,0,0,"event/event_special_joy",0,2,1,2,3,0,true,false,false,false,true
+1058,0,1,false,7,0,0,"event/Smoke bomb",0,2,1,2,3,0,true,false,false,false,true
+1059,0,1,false,7,0,0,"event/Special Joy",0,2,1,2,3,0,true,false,false,false,true
 1060,0,0,true,10,0,1,"event_base/event_base_rogue",3,1,1,1,3,0,true,false,false,false,true
-1061,0,1,false,7,0,1,"event/event_take_look",0,2,1,2,3,52,true,false,false,false,true
-1062,0,1,false,7,0,1,"event/event_jp_bow",0,2,1,2,3,0,true,false,false,false,true
+1061,0,1,false,7,0,1,"event/Look at something in hand",0,2,1,2,3,52,true,false,false,false,true
+1062,0,1,false,7,0,1,"event/Slow bow",0,2,1,2,3,0,true,false,false,false,true
 1063,0,0,true,4,0,0,"event_base/event_base_ninja_pose3",0,2,1,2,3,0,true,false,false,false,true
-1064,0,1,false,0,0,0,"event/event_zodiacget",0,1,1,1,3,0,true,false,false,false,true
-1065,0,0,true,6,0,2,"emote/s_pose01_loop",3,2,1,2,3,0,true,false,false,false,true
-1066,0,0,true,6,0,2,"emote/s_pose02_loop",3,2,1,2,3,0,true,false,false,false,true
-1067,0,0,true,5,0,2,"emote/j_pose01_loop",2,2,1,2,3,0,true,false,false,false,true
+1064,0,1,false,0,0,0,"event/Ecstatically examine object and cheer",0,1,1,1,3,0,true,false,false,false,true
+1065,0,0,true,6,0,2,"emote/Sitting pose 1",3,2,1,2,3,0,true,false,false,false,true
+1066,0,0,true,6,0,2,"emote/Sitting pose 2",3,2,1,2,3,0,true,false,false,false,true
+1067,0,0,true,5,0,2,"emote/Sitting on ground",2,2,1,2,3,0,true,false,false,false,true
 1068,0,0,true,6,0,1,"event_base/event_base_chair_sit_tired",3,2,1,2,3,0,true,false,false,false,true
-1069,0,1,false,7,0,1,"event/event_chocobo_whistle_no_se",0,2,1,2,3,0,true,false,false,false,true
-1070,0,0,true,4,0,1,"event_base/event_base_cardgame",0,1,1,1,3,0,true,false,false,false,true
-1071,0,1,false,7,0,2,"event/event_spirit",0,2,1,2,3,54,true,false,false,false,true
-1072,0,0,true,4,0,2,"event_base/event_base_waiter",0,2,1,2,3,0,true,false,false,false,true
+1069,0,1,false,7,0,1,"event/Fast whistle",0,2,1,2,3,0,true,false,false,false,true
+1070,0,0,true,4,0,1,"event_base/Examine ledger (weapon drawn)",0,1,1,1,3,0,true,false,false,false,true
+1071,0,1,false,7,0,2,"event/Fist into palm",0,2,1,2,3,54,true,false,false,false,true
+1072,0,0,true,4,0,2,"event_base/Maidy idle",0,2,1,2,3,0,true,false,false,false,true
 1073,0,1,false,0,0,0,"event/event_chocobo_coupling_r",0,2,1,2,3,0,true,false,false,false,true
 1074,0,1,false,0,0,0,"event/event_chocobo_coupling_l",0,2,1,2,3,0,true,false,false,false,true
 1075,0,1,false,0,0,0,"event/event_chocobo_foal",0,2,1,2,3,0,true,false,false,false,true
@@ -2231,28 +2231,28 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 2229,0,3,false,0,0,1,"",0,1,0,1,0,0,false,false,false,false,true
 2230,0,3,false,0,0,1,"",0,1,0,1,0,0,false,false,false,false,true
 2231,0,2,false,0,0,1,"limitbreak/lbk_party_act",0,1,1,1,3,0,true,false,false,false,true
-2232,1,3,false,0,0,1,"limitbreak/lbk_tank_start",0,1,1,1,3,0,false,false,false,false,true
-2233,2,0,true,0,0,1,"limitbreak/lbk_tank_loop",0,1,1,1,3,0,false,false,false,false,true
-2234,1,3,false,0,0,1,"limitbreak/lbk_melee_start",0,1,1,1,3,0,true,true,true,false,true
-2235,2,0,true,0,0,1,"limitbreak/lbk_melee_loop",0,1,1,1,3,0,true,true,true,false,true
-2236,1,3,false,0,0,1,"limitbreak/lbk_healer_start",0,1,1,1,3,0,true,true,true,false,true
-2237,2,0,true,0,0,1,"limitbreak/lbk_healer_loop",0,1,1,1,3,0,true,true,true,false,true
-2238,1,3,false,0,0,1,"limitbreak/lbk_caster_start",0,1,1,1,3,0,true,true,true,false,true
-2239,2,0,true,0,0,1,"limitbreak/lbk_caster_loop",0,1,1,1,3,0,true,true,true,false,true
-2240,0,3,false,0,0,1,"limitbreak/lbk_tank_lv1",0,1,1,1,3,0,false,false,false,false,true
-2241,0,3,false,0,0,1,"limitbreak/lbk_tank_lv2",0,1,1,1,3,0,false,false,false,false,true
-2242,0,3,false,0,0,1,"limitbreak/lbk_tank_lv3",0,1,1,1,3,0,false,false,false,false,true
-2243,0,3,false,0,0,1,"limitbreak/lbk_melee_lv1",0,1,1,1,3,0,false,false,false,false,true
-2244,0,3,false,0,0,1,"limitbreak/lbk_melee_lv2",0,1,1,1,3,0,false,false,false,false,true
-2245,0,3,false,0,0,1,"limitbreak/lbk_melee_lv3",0,1,1,1,3,0,false,false,false,false,true
-2246,1,3,false,0,0,1,"limitbreak/lbk_finalheaven_start",0,1,1,1,3,0,false,false,false,false,true
-2247,2,0,true,0,0,1,"limitbreak/lbk_finalheaven_loop",0,1,1,1,3,0,false,false,false,false,true
-2248,0,3,false,0,0,1,"limitbreak/lbk_healer_lv1",0,1,1,1,3,0,false,false,false,false,true
-2249,0,3,false,0,0,1,"limitbreak/lbk_healer_lv2",0,1,1,1,3,0,false,false,false,false,true
-2250,0,3,false,0,0,1,"limitbreak/lbk_healer_lv3",0,1,1,1,3,0,false,false,false,false,true
-2251,0,3,false,0,0,1,"limitbreak/lbk_caster_lv1",0,1,1,1,3,0,false,false,false,false,true
-2252,0,3,false,0,0,1,"limitbreak/lbk_caster_lv2",0,1,1,1,3,0,false,false,false,false,true
-2253,0,3,false,0,0,1,"limitbreak/lbk_caster_lv3",0,1,1,1,3,0,false,false,false,false,true
+2232,1,3,false,0,0,1,"limitbreak/Tank LB Start",0,1,1,1,3,0,false,false,false,false,true
+2233,2,0,true,0,0,1,"limitbreak/Tank LB Loop",0,1,1,1,3,0,false,false,false,false,true
+2234,1,3,false,0,0,1,"limitbreak/Melee LB Start",0,1,1,1,3,0,true,true,true,false,true
+2235,2,0,true,0,0,1,"limitbreak/Melee LB Loop",0,1,1,1,3,0,true,true,true,false,true
+2236,1,3,false,0,0,1,"limitbreak/Healer LB Start",0,1,1,1,3,0,true,true,true,false,true
+2237,2,0,true,0,0,1,"limitbreak/Healer LB Loop",0,1,1,1,3,0,true,true,true,false,true
+2238,1,3,false,0,0,1,"limitbreak/Caster LB Start",0,1,1,1,3,0,true,true,true,false,true
+2239,2,0,true,0,0,1,"limitbreak/Caster LB Loop",0,1,1,1,3,0,true,true,true,false,true
+2240,0,3,false,0,0,1,"limitbreak/Tank LB Lv1",0,1,1,1,3,0,false,false,false,false,true
+2241,0,3,false,0,0,1,"limitbreak/Tank LB Lv2",0,1,1,1,3,0,false,false,false,false,true
+2242,0,3,false,0,0,1,"limitbreak/Tank LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+2243,0,3,false,0,0,1,"limitbreak/Melee LB Lv1",0,1,1,1,3,0,false,false,false,false,true
+2244,0,3,false,0,0,1,"limitbreak/Melee LB Lv2",0,1,1,1,3,0,false,false,false,false,true
+2245,0,3,false,0,0,1,"limitbreak/Melee LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+2246,1,3,false,0,0,1,"limitbreak/Final Heaven LB Start",0,1,1,1,3,0,false,false,false,false,true
+2247,2,0,true,0,0,1,"limitbreak/Final Heaven LB Loop",0,1,1,1,3,0,false,false,false,false,true
+2248,0,3,false,0,0,1,"limitbreak/Healer LB Lv1",0,1,1,1,3,0,false,false,false,false,true
+2249,0,3,false,0,0,1,"limitbreak/Healer LB Lv2",0,1,1,1,3,0,false,false,false,false,true
+2250,0,3,false,0,0,1,"limitbreak/Healer LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+2251,0,3,false,0,0,1,"limitbreak/Caster LB Lv1",0,1,1,1,3,0,false,false,false,false,true
+2252,0,3,false,0,0,1,"limitbreak/Caster LB Lv2",0,1,1,1,3,0,false,false,false,false,true
+2253,0,3,false,0,0,1,"limitbreak/Caster LB Lv3",0,1,1,1,3,0,false,false,false,false,true
 2254,0,3,false,0,0,1,"mon_sp/m0105/mon_sp001",0,1,1,1,3,0,false,false,false,false,true
 2255,0,3,false,0,0,1,"mon_sp/m0105/mon_sp002",0,1,1,1,3,0,false,false,false,false,true
 2256,0,3,false,0,0,1,"mon_sp/m0105/mon_sp003",0,1,1,1,3,0,false,false,false,false,true
@@ -3176,18 +3176,18 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3174,0,1,false,0,1,2,"emote_ajust/u_stroke_side",0,2,1,2,3,0,true,true,false,false,true
 3175,0,1,false,0,1,2,"emote_ajust/u_stroke_top",0,2,1,2,3,0,true,true,false,false,true
 3176,0,1,false,0,1,2,"emote_ajust/u_hand_over",0,2,1,2,3,0,true,true,false,false,true
-3177,0,1,false,7,0,0,"emote/stroke_top",0,2,1,2,3,0,true,true,false,false,true
-3178,0,1,false,7,0,0,"emote/hand_over",0,2,1,2,3,0,true,true,false,false,true
+3177,0,1,false,7,0,0,"emote/Pet",0,2,1,2,3,0,true,true,false,false,true
+3178,0,1,false,7,0,0,"emote/Hand Over",0,2,1,2,3,0,true,true,false,false,true
 3179,0,1,false,0,1,2,"emote/u_stroke_top",0,2,1,2,3,0,true,false,false,false,true
 3180,0,1,false,0,1,2,"emote/u_hand_over",0,2,1,2,3,0,true,false,false,false,true
 3181,0,1,false,7,0,0,"emote/pose03_start",0,2,1,2,3,0,true,false,false,false,true
-3182,0,1,true,7,0,0,"emote/pose03_loop",0,2,1,2,3,0,true,false,false,false,true
+3182,0,1,true,7,0,0,"emote/Idle_3?",0,2,1,2,3,0,true,false,false,false,true
 3183,0,1,false,7,0,0,"emote/pose04_start",0,2,1,2,3,0,true,false,false,false,true
-3184,0,1,true,7,0,0,"emote/pose04_loop",0,2,1,2,3,0,true,false,false,false,true
+3184,0,1,true,7,0,0,"emote/Idle_4?",0,2,1,2,3,0,true,false,false,false,true
 3185,0,1,false,0,1,2,"emote_ajust/u_poke",0,2,1,2,3,0,true,true,false,false,true
 3186,0,1,false,0,0,0,"emote_ajust/same_height",0,2,1,2,3,0,true,true,false,false,true
 3187,0,1,false,7,0,1,"emote/dance01_start",0,2,0,2,3,0,true,true,false,false,true
-3188,0,0,true,4,0,1,"emote/dance01_loop",0,2,1,2,3,0,true,true,false,false,true
+3188,0,0,true,4,0,1,"emote/Bomb Dance",0,2,1,2,3,0,true,true,false,false,true
 3189,0,1,false,0,0,1,"fishing/catch_and_release",0,0,2,3,3,0,false,false,false,false,true
 3190,0,1,false,0,0,1,"fishing_chair/catch_and_release",4,0,2,3,3,0,false,false,false,false,true
 3191,0,3,false,0,0,1,"normal/item_action",0,2,1,2,3,17,true,false,false,false,true
@@ -3751,9 +3751,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3749,0,3,false,0,0,0,"mon_sp/gimmick/asien_zigen_hikiyosedai",0,0,0,0,3,0,false,false,false,false,true
 3750,0,1,false,0,0,0,"mon_sp/gimmick/asien_zigen_hikiyosedai_hit",0,0,0,0,3,0,false,false,false,false,true
 3751,0,3,false,0,0,1,"season/action02",0,2,1,2,3,0,true,true,false,false,true
-3752,0,1,false,7,0,0,"emote/hirate",0,2,1,2,3,0,true,true,false,false,true
-3753,0,1,false,7,0,0,"emote/hug",0,2,1,2,3,0,true,true,false,false,true
-3754,0,1,false,7,0,2,"emote/wedding_hug",0,2,1,2,3,0,true,true,false,false,true
+3752,0,1,false,7,0,0,"emote/Slap",0,2,1,2,3,0,true,true,false,false,true
+3753,0,1,false,7,0,0,"emote/Hug",0,2,1,2,3,0,true,true,false,false,true
+3754,0,1,false,7,0,2,"emote/Embrace",0,2,1,2,3,0,true,true,false,false,true
 3755,0,1,false,0,1,2,"emote/u_hirate",0,2,1,2,3,0,true,false,false,false,true
 3756,0,1,false,0,1,2,"emote/u_hug",0,2,1,2,3,0,true,false,false,false,true
 3757,0,1,false,0,1,2,"emote/u_wedding_hug",0,2,1,2,3,0,true,false,false,false,true
@@ -3765,27 +3765,27 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3763,0,1,false,7,0,2,"emote_sp/sp01_start",0,2,1,2,3,0,true,true,false,false,true
 3764,0,0,true,4,0,2,"emote_sp/sp01_loop",0,2,1,2,3,0,true,true,false,false,true
 3765,0,3,false,0,0,1,"normal/item_sp02",0,2,1,2,3,0,true,true,false,false,true
-3766,0,1,false,7,0,0,"emote/fistbump",0,2,1,2,3,0,true,true,false,false,true
+3766,0,1,false,7,0,0,"emote/Fist Bump",0,2,1,2,3,0,true,true,false,false,true
 3767,0,1,false,0,1,2,"emote/u_fistbump",0,2,1,2,3,0,true,false,false,false,true
 3768,0,1,false,0,1,2,"emote_ajust/u_fistbump",0,2,1,2,3,0,true,true,false,false,true
 3769,0,0,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,false
 3770,0,1,false,8,0,2,"emote/j_pose03_start",2,2,1,2,3,0,true,false,false,false,true
 3771,0,0,true,8,0,2,"emote/j_pose03_loop",2,2,1,2,3,0,true,false,false,false,true
 3772,0,1,false,7,0,1,"emote/dance02_start",0,2,0,2,3,0,true,true,false,false,true
-3773,0,0,true,4,0,1,"emote/dance02_loop",0,2,1,2,3,0,true,true,false,false,true
+3773,0,0,true,4,0,1,"emote/Moonlift Dance",0,2,1,2,3,0,true,true,false,false,true
 3774,0,1,false,7,0,1,"emote/dance03_start",0,2,0,2,3,0,true,true,false,false,true
-3775,0,0,true,4,0,1,"emote/dance03_loop",0,2,1,2,3,0,true,true,false,false,true
+3775,0,0,true,4,0,1,"emote/Thavnairian Dance",0,2,1,2,3,0,true,true,false,false,true
 3776,0,1,false,7,0,1,"emote/dance04_start",0,2,0,2,3,0,true,true,false,false,true
 3777,0,0,true,4,0,1,"emote/dance04_loop",0,2,1,2,3,0,true,true,false,false,true
-3778,0,1,false,7,0,1,"emote/battle02",0,1,2,1,3,0,true,true,false,false,true
-3779,0,1,false,7,0,1,"emote/battle03",0,1,2,1,3,0,true,true,false,false,true
-3780,0,4,true,0,0,1,"pc_contentsaction/restraint",0,0,1,0,3,0,false,false,false,false,true
-3781,0,3,true,0,0,1,"pc_contentsaction/float_loop",0,0,1,0,3,0,false,false,false,false,true
+3778,0,1,false,7,0,1,"emote/Battle Pose",0,1,2,1,3,0,true,true,false,false,true
+3779,0,1,false,7,0,1,"emote/Victory Pose",0,1,2,1,3,0,true,true,false,false,true
+3780,0,4,true,0,0,1,"pc_contentsaction/Restraint",0,0,1,0,3,0,false,false,false,false,true
+3781,0,3,true,0,0,1,"pc_contentsaction/Restraint 2",0,0,1,0,3,0,false,false,false,false,true
 3782,0,3,false,0,0,1,"pc_contentsaction/float_end",0,0,1,0,3,0,false,false,false,false,true
 3783,0,3,true,0,0,1,"pc_contentsaction/knockout_loop",0,0,1,0,3,0,false,false,false,false,true
 3784,0,1,false,0,3,0,"pc_contentsaction/add_float_damage",0,0,1,0,3,0,false,false,false,false,true
-3785,0,3,true,0,0,1,"pc_contentsaction/slide_loop",0,0,1,0,3,0,false,false,false,false,true
-3786,0,3,false,0,0,1,"pc_contentsaction/quake",0,0,1,0,3,0,false,false,false,false,true
+3785,0,3,true,0,0,1,"pc_contentsaction/Sliding",0,0,1,0,3,0,false,false,false,false,true
+3786,0,3,false,0,0,1,"pc_contentsaction/Quake",0,0,1,0,3,0,false,false,false,false,true
 3787,0,3,true,0,0,1,"pc_contentsaction/restraint2",0,0,1,0,3,0,false,false,false,false,true
 3788,0,3,false,0,0,1,"pc_contentsaction/icefloor_short",0,0,1,0,3,0,false,false,false,false,true
 3789,0,3,false,0,0,1,"pc_contentsaction/npc_seiten",0,1,1,1,3,0,false,false,false,false,true
@@ -3888,7 +3888,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3886,0,3,false,0,0,1,"magic/2gl_astro/mgc013",0,1,0,1,3,0,false,true,false,false,true
 3887,0,3,false,0,0,1,"ability/2gl_astro/abl017",0,1,1,1,3,0,false,true,false,false,true
 3888,1,2,false,0,0,1,"battle/magic_lgi_start",0,1,0,1,3,0,true,true,true,false,true
-3889,2,0,true,0,0,1,"battle/magic_lgi_loop",0,1,0,1,3,0,true,true,true,false,true
+3889,2,0,true,0,0,1,"battle/Casting Gravity Loop(no Effect)",0,1,0,1,3,0,true,true,true,false,true
 3890,1,2,false,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3891,2,0,true,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3892,1,2,false,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
@@ -3896,59 +3896,59 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3894,0,3,false,0,0,1,"magic/thm_black/mgc001",0,1,0,1,3,0,false,true,false,false,true
 3895,0,3,false,0,0,1,"magic/thm_black/mgc002",0,1,0,1,3,0,false,true,false,false,true
 3896,1,2,false,0,1,1,"battle/magic_ran_start",0,1,0,1,3,0,true,false,true,false,true
-3897,2,0,true,0,1,1,"battle/magic_ran_loop",0,1,0,1,3,0,true,false,true,false,true
+3897,2,0,true,0,1,1,"battle/Stand idle (Weapon in hand)",0,1,0,1,3,0,true,false,true,false,true
 3898,0,3,true,0,0,1,"battle/ast_barrier_loop",0,1,0,1,3,0,false,false,true,false,true
 3899,1,2,false,0,1,1,"battle/attach_start",0,0,0,1,3,0,true,false,true,false,true
 3900,2,0,true,0,1,1,"battle/attach_loop",0,0,0,1,3,0,true,false,true,false,true
-3901,0,3,false,0,0,1,"ws/bt_2sp_emp/ws_s12",0,1,2,1,3,0,false,true,false,false,true
+3901,0,3,false,0,0,1,"normal/Buff Dance",0,1,2,1,3,0,false,true,false,false,true
 3902,0,1,false,0,0,0,"ws/bt_2sp_emp/ws_s12_hit",0,0,0,0,3,0,false,false,false,false,true
-3903,0,3,true,0,0,1,"pc_contentsaction/struggle_loop",0,0,1,0,3,0,false,false,false,false,true
-3904,0,3,true,0,0,1,"pc_contentsaction/blow_loop",0,0,1,0,0,0,false,false,false,false,true
-3905,0,3,true,0,0,1,"pc_contentsaction/fly_loop",0,0,1,0,3,0,false,false,false,false,true
+3903,0,3,true,0,0,1,"pc_contentsaction/Water slide",0,0,1,0,3,0,false,false,false,false,true
+3904,0,3,true,0,0,1,"pc_contentsaction/Air Rolling",0,0,1,0,0,0,false,false,false,false,true
+3905,0,3,true,0,0,1,"pc_contentsaction/Fly",0,0,1,0,3,0,false,false,false,false,true
 3906,0,1,false,0,0,0,"pc_contentsaction/fatk_end_hit",0,0,0,0,3,0,false,false,false,false,true
-3907,0,3,true,0,0,1,"pc_contentsaction/dizzy_loop",0,0,1,0,3,0,false,false,false,false,true
-3908,0,3,true,0,0,1,"pc_contentsaction/fatk_loop",0,0,1,0,3,0,false,false,false,false,true
-3909,0,3,false,0,0,1,"pc_contentsaction/fatk_end",0,0,1,0,3,0,false,false,false,false,true
-3910,0,3,false,0,0,1,"pc_contentsaction/roll",0,0,1,0,3,0,false,false,false,false,true
+3907,0,3,true,0,0,1,"pc_contentsaction/Dizzy",0,0,1,0,3,0,false,false,false,false,true
+3908,0,3,true,0,0,1,"pc_contentsaction/Butterfly Frontal Loop (no effect)",0,0,1,0,3,0,false,false,false,false,true
+3909,0,3,false,0,0,1,"pc_contentsaction/Butterfly Frontal",0,0,1,0,3,0,false,false,false,false,true
+3910,0,3,false,0,0,1,"pc_contentsaction/Roll",0,0,1,0,3,0,false,false,false,false,true
 3911,0,1,false,0,0,0,"ability/2gl_astro/abl017_hit",0,0,0,0,3,0,false,false,false,false,true
 3912,0,1,false,0,0,0,"ability/2gl_astro/abl014_hit",0,0,0,0,3,0,false,false,false,false,true
 3913,0,1,false,0,0,0,"ability/2gl_astro/abl012_hit",0,0,0,0,3,0,false,false,false,false,true
 3914,0,1,false,0,0,0,"magic/2gl_astro/mgc013_hit",0,0,0,0,3,0,false,false,false,false,true
 3915,0,1,false,0,0,0,"ability/2sw_dark/abl021_hit",0,0,0,0,3,0,false,false,false,false,true
 3916,0,1,false,0,0,0,"ability/2sw_dark/abl022_hit",0,0,0,0,3,0,false,false,false,false,true
-3917,1,3,false,0,0,1,"pc_contentsaction/npc_spc_start",0,0,1,1,3,0,false,false,false,false,true
-3918,2,0,true,0,0,1,"pc_contentsaction/npc_spc_loop",0,0,1,1,3,0,false,false,false,false,true
-3919,0,1,false,0,0,1,"pc_contentsaction/npc_spc_end",0,0,1,1,3,0,false,false,false,false,true
+3917,1,3,false,0,0,1,"pc_contentsaction/FFX Yuna Dance",0,0,1,1,3,0,false,false,false,false,true
+3918,2,0,true,0,0,1,"pc_contentsaction/FFX Yuna Dance Loop",0,0,1,1,3,0,false,false,false,false,true
+3919,0,1,false,0,0,1,"pc_contentsaction/FFX Yuna Dance Stop",0,0,1,1,3,0,false,false,false,false,true
 3920,0,3,false,0,1,1,"pc_contentsaction/npc_activ",0,0,1,0,3,0,false,false,false,false,true
 3921,0,3,false,0,0,1,"pc_contentsaction/npc_change",0,0,1,1,3,0,false,false,false,false,true
 3922,0,3,false,0,1,1,"pc_contentsaction/npc_deact",0,0,1,1,3,0,false,false,false,false,true
-3923,1,3,false,0,0,1,"limitbreak/lbk_range_start",0,1,1,1,3,0,true,true,true,false,true
-3924,2,0,true,0,0,1,"limitbreak/lbk_range_loop",0,1,1,1,3,0,true,true,true,false,true
-3925,0,3,false,0,0,1,"limitbreak/lbk_range_lv1",0,1,1,1,3,0,false,false,false,false,true
-3926,0,3,false,0,0,1,"limitbreak/lbk_range_lv2",0,1,1,1,3,0,false,false,false,false,true
-3927,0,3,false,0,0,1,"limitbreak/lbk_warrior_lv3",0,1,1,1,3,0,false,false,false,false,true
-3928,1,3,false,0,0,1,"limitbreak/lbk_dragoon_start",0,1,1,1,3,0,true,true,true,false,true
-3929,2,0,true,0,0,1,"limitbreak/lbk_dragoon_loop",0,1,1,1,3,0,true,true,true,false,true
-3930,0,3,false,0,0,1,"limitbreak/lbk_dragoon_lv3",0,1,1,1,3,0,false,false,false,false,true
-3931,1,3,false,0,0,1,"limitbreak/lbk_ninja_start",0,1,1,1,3,0,true,true,true,false,true
-3932,2,0,true,0,0,1,"limitbreak/lbk_ninja_loop",0,1,1,1,3,0,true,true,true,false,true
-3933,0,3,false,0,0,1,"limitbreak/lbk_ninja_lv3",0,1,1,1,3,0,false,false,false,false,true
-3934,1,3,false,0,0,1,"limitbreak/lbk_bard_start",0,0,1,1,3,0,true,true,true,false,true
-3935,2,0,true,0,0,1,"limitbreak/lbk_bard_loop",0,0,1,1,3,0,true,true,true,false,true
-3936,0,3,false,0,0,1,"limitbreak/lbk_bard_lv3",0,0,1,1,3,0,false,false,false,false,true
-3937,1,3,false,0,0,1,"limitbreak/lbk_summon_start",0,1,1,1,3,0,true,true,true,false,true
-3938,2,0,true,0,0,1,"limitbreak/lbk_summon_loop",0,1,1,1,3,0,true,true,true,false,true
-3939,0,3,false,0,0,1,"limitbreak/lbk_summon_lv3",0,1,1,1,3,0,false,false,false,false,true
-3940,1,3,false,0,0,1,"limitbreak/lbk_scholar_start",0,2,1,2,3,0,true,true,true,false,true
-3941,2,0,true,0,0,1,"limitbreak/lbk_scholar_loop",0,2,1,2,3,0,true,true,true,false,true
-3942,0,3,false,0,0,1,"limitbreak/lbk_scholar_lv3",0,2,1,2,3,0,false,false,false,false,true
-3943,0,3,false,0,0,1,"limitbreak/lbk_dark_lv3",0,1,1,1,3,0,false,false,false,false,true
-3944,1,3,false,0,0,1,"limitbreak/lbk_machine_start",0,1,1,1,3,0,true,true,true,false,true
-3945,2,0,true,0,0,1,"limitbreak/lbk_machine_loop",0,1,1,1,3,0,true,true,true,false,true
-3946,0,3,false,0,0,1,"limitbreak/lbk_machine_lv3",0,1,1,1,3,0,false,false,false,false,true
-3947,1,3,false,0,0,1,"limitbreak/lbk_astro_start",0,1,1,1,3,0,true,true,true,false,true
-3948,2,0,true,0,0,1,"limitbreak/lbk_astro_loop",0,1,1,1,3,0,true,true,true,false,true
-3949,0,3,false,0,0,1,"limitbreak/lbk_astro_lv3",0,1,1,1,3,0,false,false,false,false,true
+3923,1,3,false,0,0,1,"limitbreak/Range LB Start",0,1,1,1,3,0,true,true,true,false,true
+3924,2,0,true,0,0,1,"limitbreak/Range LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3925,0,3,false,0,0,1,"limitbreak/Range LB Lv1",0,1,1,1,3,0,false,false,false,false,true
+3926,0,3,false,0,0,1,"limitbreak/Range LB Lv2",0,1,1,1,3,0,false,false,false,false,true
+3927,0,3,false,0,0,1,"limitbreak/Warrior LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+3928,1,3,false,0,0,1,"limitbreak/Dragoon LB Start",0,1,1,1,3,0,true,true,true,false,true
+3929,2,0,true,0,0,1,"limitbreak/Dragoon LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3930,0,3,false,0,0,1,"limitbreak/Dragoon LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+3931,1,3,false,0,0,1,"limitbreak/Ninja LB Start",0,1,1,1,3,0,true,true,true,false,true
+3932,2,0,true,0,0,1,"limitbreak/Ninja LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3933,0,3,false,0,0,1,"limitbreak/Ninja LB lv3",0,1,1,1,3,0,false,false,false,false,true
+3934,1,3,false,0,0,1,"limitbreak/Bard LB Start",0,0,1,1,3,0,true,true,true,false,true
+3935,2,0,true,0,0,1,"limitbreak/Bard LB Loop",0,0,1,1,3,0,true,true,true,false,true
+3936,0,3,false,0,0,1,"limitbreak/Bard LB Lv3",0,0,1,1,3,0,false,false,false,false,true
+3937,1,3,false,0,0,1,"limitbreak/Summoner LB Start",0,1,1,1,3,0,true,true,true,false,true
+3938,2,0,true,0,0,1,"limitbreak/Summoner LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3939,0,3,false,0,0,1,"limitbreak/Summoner LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+3940,1,3,false,0,0,1,"limitbreak/Scholar LB Start",0,2,1,2,3,0,true,true,true,false,true
+3941,2,0,true,0,0,1,"limitbreak/Scholar LB Loop",0,2,1,2,3,0,true,true,true,false,true
+3942,0,3,false,0,0,1,"limitbreak/Scholar LB Lv3",0,2,1,2,3,0,false,false,false,false,true
+3943,0,3,false,0,0,1,"limitbreak/DRK LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+3944,1,3,false,0,0,1,"limitbreak/MCH LB Start",0,1,1,1,3,0,true,true,true,false,true
+3945,2,0,true,0,0,1,"limitbreak/MCH LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3946,0,3,false,0,0,1,"limitbreak/MCH LB Lv3",0,1,1,1,3,0,false,false,false,false,true
+3947,1,3,false,0,0,1,"limitbreak/Astro LB Start",0,1,1,1,3,0,true,true,true,false,true
+3948,2,0,true,0,0,1,"limitbreak/Astro LB Loop",0,1,1,1,3,0,true,true,true,false,true
+3949,0,3,false,0,0,1,"limitbreak/Astro LB Lv3",0,1,1,1,3,0,false,false,false,false,true
 3950,0,3,false,0,0,1,"ws/bt_swd_sld/ws_s09",0,1,2,1,3,0,false,true,false,false,true
 3951,0,3,false,0,0,1,"ws/bt_swd_sld/ws_s10",0,1,2,1,3,0,false,true,false,false,true
 3952,0,3,false,0,0,1,"ability/swd_knight/abl016",0,1,1,1,3,0,false,true,false,false,true
@@ -4069,21 +4069,21 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4067,0,3,true,0,0,0,"cr/glad_first",0,2,1,2,1,0,false,false,false,false,true
 4068,0,3,false,0,0,0,"cr/dmg",0,2,1,2,1,0,false,false,false,false,true
 4069,0,2,true,0,0,0,"cr/brake",0,2,1,2,1,0,false,false,false,false,true
-4070,0,0,true,0,0,1,"gs/ufo/idle",0,2,1,2,3,0,false,false,false,false,true
+4070,0,0,true,0,0,1,"normal/GS Idle",0,2,1,2,3,0,false,false,false,false,true
 4071,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-4072,0,0,true,0,0,1,"gs/punching/idle",0,2,1,2,3,0,false,false,false,false,true
-4073,0,2,false,0,0,1,"gs/punching/action1",0,2,1,2,3,0,false,false,false,false,true
-4074,0,0,true,0,0,1,"gs/hammer/idle",0,2,1,2,3,0,false,false,false,false,true
-4075,0,2,false,0,0,1,"gs/hammer/action1",0,2,1,2,3,0,false,false,false,false,true
-4076,0,0,true,0,0,1,"gs/basket/idle",0,2,1,2,3,0,false,false,false,false,true
-4077,0,2,false,0,0,1,"gs/basket/action1",0,2,1,2,3,0,false,false,false,false,true
+4072,0,0,true,0,0,1,"normal/GSPunching Idle",0,2,1,2,3,0,false,false,false,false,true
+4073,0,2,false,0,0,1,"normal/GSPunching Action",0,2,1,2,3,0,false,false,false,false,true
+4074,0,0,true,0,0,1,"normal/GSHammer Idle",0,2,1,2,3,0,false,false,false,false,true
+4075,0,2,false,0,0,1,"normal/GSHammer Action",0,2,1,2,3,0,false,false,false,false,true
+4076,0,0,true,0,0,1,"normal/GSBasket Idle",0,2,1,2,3,0,false,false,false,false,true
+4077,0,2,false,0,0,1,"normal/GSBasket Action",0,2,1,2,3,0,false,false,false,false,true
 4078,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-4079,0,0,true,0,0,1,"cardgame/idle",0,2,1,2,3,0,false,false,false,false,true
+4079,0,0,true,0,0,1,"normal/Triple Triad Idle",0,2,1,2,3,0,false,false,false,false,true
 4080,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-4081,0,1,false,0,0,0,"etherialwheel/set",0,2,1,2,3,0,true,false,false,false,true
-4082,0,1,false,0,0,0,"etherialwheel/remove",0,2,1,2,3,0,true,false,false,false,true
-4083,0,1,false,0,0,0,"etherialwheel/convert",0,2,1,2,3,0,true,false,false,false,true
-4084,0,1,false,0,0,0,"etherialwheel/get",0,2,1,2,3,0,true,false,false,false,true
+4081,0,1,false,0,0,0,"normal/Reaching Puting item down",0,2,1,2,3,0,true,false,false,false,true
+4082,0,1,false,0,0,0,"normal/Reaching Pick up",0,2,1,2,3,0,true,false,false,false,true
+4083,0,1,false,0,0,0,"normal/Gathering Aether (Pillar of light)",0,2,1,2,3,0,true,false,false,false,true
+4084,0,1,false,0,0,0,"normal/Reaching Pick up2",0,2,1,2,3,0,true,false,false,false,true
 4085,0,3,false,0,0,1,"gs_roulette/m0078/mon_sp001",0,1,1,1,3,0,false,false,false,false,true
 4086,0,1,false,0,0,0,"gs_roulette/m0078/mon_sp001_hit",0,0,0,0,3,0,false,false,false,false,true
 4087,0,3,false,0,0,1,"gs_roulette/m0078/mon_sp002",0,1,1,1,3,0,false,false,false,false,true
@@ -4188,122 +4188,122 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4186,0,0,true,4,0,2,"event_base/event_base_test",0,2,1,2,3,0,false,false,false,false,true
 4187,0,0,true,10,0,1,"event_base/event_base_ground_tired_stop",2,2,1,2,3,0,true,false,false,false,true
 4188,0,1,false,0,0,1,"weeklylot/shot",0,2,1,2,3,0,false,false,false,false,true
-4189,0,3,true,0,1,2,"normal/carry_upper_big_loop",0,2,1,2,3,0,false,false,false,false,true
-4190,0,0,true,10,0,1,"event_base/event_base_hug_pose1",0,2,1,2,3,0,true,false,false,false,true
+4189,0,3,true,0,1,2,"normal/Holding Totem",0,2,1,2,3,0,false,false,false,false,true
+4190,0,0,true,10,0,1,"event_base/hugging the air",0,2,1,2,3,0,true,false,false,false,true
 4191,0,0,true,10,0,1,"event_base/event_base_hug_pose2",0,2,1,2,3,0,true,false,false,false,true
 4192,0,0,true,10,0,2,"event_base/event_base_lie_dying",2,2,1,2,3,0,false,false,false,false,true
-4193,0,0,true,4,0,1,"event_base/event_base_think",0,2,1,2,3,0,true,false,false,false,true
-4194,0,1,false,7,0,0,"event/event_talk_finger",0,2,1,2,3,44,true,false,false,false,true
+4193,0,0,true,4,0,1,"event_base/special Thinking",0,2,1,2,3,0,true,false,false,false,true
+4194,0,1,false,7,0,0,"event/Point at someone",0,2,1,2,3,44,true,false,false,false,true
 4195,0,0,true,5,0,0,"event_base/event_base_ground_sit_girl",2,2,1,2,3,0,true,false,false,false,true
-4196,0,0,true,4,0,0,"event_base/event_base_aristocrat",0,2,1,2,3,0,true,false,false,false,true
-4197,0,0,true,4,0,2,"event_base/event_base_stand_freeze",0,2,1,2,3,0,true,false,false,false,true
-4198,0,0,true,5,0,2,"event_base/event_base_ground_freeze",2,2,1,2,3,0,true,false,false,false,true
-4199,0,0,true,5,0,2,"event_base/event_base_knee_listen",1,2,1,2,3,0,true,false,false,false,true
-4200,0,0,true,5,0,2,"event_base/event_base_rescue1",1,2,1,2,3,0,true,false,false,false,true
-4201,0,0,true,5,0,2,"event_base/event_base_rescue2",1,2,1,2,3,0,true,false,false,false,true
-4202,0,0,true,5,0,1,"event_base/event_base_ground_cry",2,2,1,2,3,0,true,false,false,false,true
-4203,0,0,true,6,0,1,"event_base/event_base_chair_sit_memo",3,1,1,1,3,0,true,false,false,false,true
-4204,0,0,true,4,0,2,"event_base/event_base_stand_damage",0,2,1,2,3,0,true,false,false,false,true
+4196,0,0,true,4,0,0,"event_base/Standing Hands on hip",0,2,1,2,3,0,true,false,false,false,true
+4197,0,0,true,4,0,2,"event_base/Standing Shivering",0,2,1,2,3,0,true,false,false,false,true
+4198,0,0,true,5,0,2,"event_base/Siting Shivering",2,2,1,2,3,0,true,false,false,false,true
+4199,0,0,true,5,0,2,"event_base/Kneeling",1,2,1,2,3,0,true,false,false,false,true
+4200,0,0,true,5,0,2,"event_base/On Knees Examine",1,2,1,2,3,0,true,false,false,false,true
+4201,0,0,true,5,0,2,"event_base/Crouching Stirring the pot",1,2,1,2,3,0,true,false,false,false,true
+4202,0,0,true,5,0,1,"event_base/sitting Headache",2,2,1,2,3,0,true,false,false,false,true
+4203,0,0,true,6,0,1,"event_base/Sitting Writing",3,1,1,1,3,0,true,false,false,false,true
+4204,0,0,true,4,0,2,"event_base/Standing Wounded",0,2,1,2,3,0,true,false,false,false,true
 4205,0,0,true,10,0,2,"event_base/event_base_box_sit_girl",3,2,1,2,3,0,true,false,false,false,true
-4206,0,0,true,5,0,2,"event_base/event_base_ground_damage",2,2,1,2,3,0,true,false,false,false,true
-4207,0,0,true,4,0,2,"event_base/event_base_guard_shield",0,1,1,1,3,0,true,false,false,false,true
-4208,0,0,true,10,0,1,"event_base/event_base_lie_suffering",2,2,1,2,3,0,true,false,false,false,true
-4209,0,0,true,10,0,1,"event_base/event_base_hang_down",2,2,1,2,3,0,true,false,false,false,true
-4210,0,0,true,10,0,2,"event_base/event_base_old_person_stick",0,2,1,2,3,0,true,false,false,false,true
-4211,0,0,true,4,0,1,"event_base/event_base_look_up_scope",0,1,1,1,3,0,true,false,false,false,true
-4212,0,0,true,4,0,1,"event_base/event_base_look_up_glasses",0,1,1,1,3,0,true,false,false,false,true
-4213,0,0,true,4,0,1,"event_base/event_base_look_front_scope",0,1,1,1,3,0,true,false,false,false,true
-4214,0,0,true,4,0,1,"event_base/event_base_look_front_glasses",0,1,1,1,3,0,true,false,false,false,true
-4215,0,0,true,4,0,2,"event_base/event_base_frightened3",0,2,1,2,3,0,true,false,false,false,true
-4216,0,0,true,10,0,1,"event_base/event_base_machinist",3,1,1,1,3,0,true,false,false,false,true
-4217,0,0,true,4,0,2,"event_base/event_base_look_front",0,2,1,2,3,0,true,false,false,false,true
-4218,0,1,false,7,0,0,"event/event_talk_onehand",0,2,1,2,3,48,true,false,false,false,true
-4219,0,1,false,7,0,0,"event/event_talk_bothhand",0,2,1,2,3,47,true,false,false,false,true
-4220,0,1,false,7,0,0,"event/event_talk_joke",0,2,1,2,3,0,true,false,false,false,true
+4206,0,0,true,5,0,2,"event_base/Sitting Wounded",2,2,1,2,3,0,true,false,false,false,true
+4207,0,0,true,4,0,2,"event_base/Stand guard",0,1,1,1,3,0,true,false,false,false,true
+4208,0,0,true,10,0,1,"event_base/Sleeping Wounded",2,2,1,2,3,0,true,false,false,false,true
+4209,0,0,true,10,0,1,"event_base/Grabing onto ledge",2,2,1,2,3,0,true,false,false,false,true
+4210,0,0,true,10,0,2,"event_base/Elderly Staff Pose",0,2,1,2,3,0,true,false,false,false,true
+4211,0,0,true,4,0,1,"event_base/Spyglass Looking1 (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
+4212,0,0,true,4,0,1,"event_base/Spyglass Looking2 (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
+4213,0,0,true,4,0,1,"event_base/Spyglass Looking3 (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
+4214,0,0,true,4,0,1,"event_base/Spyglass Looking4 (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
+4215,0,0,true,4,0,2,"event_base/Frightened 3",0,2,1,2,3,0,true,false,false,false,true
+4216,0,0,true,10,0,1,"event_base/Siting Woodcuting",3,1,1,1,3,0,true,false,false,false,true
+4217,0,0,true,4,0,2,"event_base/Thinking Small Chuckle",0,2,1,2,3,0,true,false,false,false,true
+4218,0,1,false,7,0,0,"event/Explaining (1Hand No Expression)",0,2,1,2,3,48,true,false,false,false,true
+4219,0,1,false,7,0,0,"event/Explaining (No Expression)",0,2,1,2,3,47,true,false,false,false,true
+4220,0,1,false,7,0,0,"event/Special Explaining (No Expression)",0,2,1,2,3,0,true,false,false,false,true
 4221,0,1,false,7,0,0,"event/event_aristocrat_greeting",0,2,1,2,3,0,true,false,false,false,true
-4222,0,1,false,7,0,2,"event/event_chest_pain",0,2,1,2,3,0,true,false,false,false,true
-4223,0,0,true,4,0,1,"event_base/event_base_astrologian",0,2,1,2,3,0,true,false,false,false,true
+4222,0,1,false,7,0,2,"event/ChestPain Standing (Facial Expression)",0,2,1,2,3,0,true,false,false,false,true
+4223,0,0,true,4,0,1,"event_base/Looking Down (1Hand)",0,2,1,2,3,0,true,false,false,false,true
 4224,0,1,false,7,0,1,"event/event_scar_touch",0,2,1,2,3,0,true,false,false,false,true
-4225,0,1,false,7,0,1,"event/event_skillget2",0,2,1,2,3,0,true,false,false,false,true
+4225,0,1,false,7,0,1,"event/Skill get2",0,2,1,2,3,0,true,false,false,false,true
 4226,0,1,false,7,0,0,"event/event_moogle_song",0,2,1,2,3,0,true,false,false,false,true
 4227,0,0,true,4,0,1,"event_base/event_base_caution",0,2,1,2,3,0,true,false,false,false,true
 4228,0,0,true,10,0,0,"event_base/event_base_landing",1,2,1,2,3,0,true,false,false,false,true
-4229,0,1,false,7,0,1,"event/event_sigh",0,2,1,2,3,53,true,false,false,false,true
+4229,0,1,false,7,0,1,"event/Small Shrug",0,2,1,2,3,53,true,false,false,false,true
 4230,0,1,false,7,0,0,"lcut/pop",0,0,1,0,3,0,false,false,false,false,true
 4231,0,1,false,7,0,0,"lcut/depop",0,0,1,0,3,0,false,false,false,false,true
 4232,0,0,true,4,0,0,"event_base/event_base_knock_wall",0,2,1,2,3,0,true,false,false,false,true
-4233,0,0,true,4,0,0,"event_base/event_base_lcut_harp",0,2,1,2,3,0,false,false,false,false,true
-4234,0,0,true,6,0,1,"event_base/event_base_verminion",3,2,1,2,3,0,false,false,false,false,true
+4233,0,0,true,4,0,0,"event_base/Bard Harp Struming (Cutscene)",0,2,1,2,3,0,false,false,false,false,true
+4234,0,0,true,6,0,1,"event_base/Lords of Verminion",3,2,1,2,3,0,false,false,false,false,true
 4235,0,1,false,7,0,1,"event/event_look_around",0,2,1,2,3,0,true,false,false,false,true
-4236,0,1,false,7,0,1,"event/event_talk_no",0,2,1,2,3,0,true,false,false,false,true
+4236,0,1,false,7,0,1,"event/Finger Waving No",0,2,1,2,3,0,true,false,false,false,true
 4237,0,1,true,0,0,2,"event_base/mount_hiroshi",0,2,1,2,1,0,false,false,false,false,true
 4238,0,2,false,0,0,1,"event/mount_talk_hiroshi",0,2,1,2,1,0,false,false,false,false,true
 4239,0,2,false,0,2,2,"event/mount_talk0_hiroshi",0,2,0,2,1,0,false,false,false,false,true
 4240,0,2,false,0,2,2,"event/mount_talk0_hiroshi",0,2,0,2,1,0,false,false,false,false,true
-4241,0,1,false,7,0,0,"event/event_raising_hand",0,2,1,2,3,0,true,false,false,false,true
-4242,0,1,false,7,0,1,"event/event_d1001_dance",0,2,1,2,3,0,true,false,false,false,true
+4241,0,1,false,7,0,0,"event/Really High Wave",0,2,1,2,3,0,true,false,false,false,true
+4242,0,1,false,7,0,1,"event/Vundu Dance",0,2,1,2,3,0,true,false,false,false,true
 4243,0,0,true,10,0,1,"event_base/event_base_dancer2",0,2,1,2,3,0,true,false,false,false,true
-4244,0,1,false,0,0,1,"event/event_soulget",0,1,2,1,3,0,true,false,false,false,true
+4244,0,1,false,0,0,1,"event/HW Relic Get",0,1,2,1,3,0,true,false,false,false,true
 4245,0,0,true,4,0,1,"event_base/event_base_look_up",0,2,1,2,3,0,true,false,false,false,true
-4246,0,0,true,4,0,0,"event_base/event_base_menace",0,2,1,2,3,0,true,false,false,false,true
-4247,0,1,false,7,0,2,"event/event_banu_dance_single",0,2,1,2,3,0,true,false,false,false,true
+4246,0,0,true,4,0,0,"event_base/Showing your Fist at target",0,2,1,2,3,0,true,false,false,false,true
+4247,0,1,false,7,0,2,"event/Powering up (ends upon use)",0,2,1,2,3,0,true,false,false,false,true
 4248,0,1,false,7,0,2,"event/event_banu_dance_single_vfx",0,2,1,2,3,0,true,false,false,false,true
 4249,0,1,false,0,0,2,"event_base/event_base_fishing_stand_start",0,0,1,1,3,0,false,false,false,false,true
 4250,0,1,false,0,0,2,"event_base/event_base_fishing_stand_end",0,0,1,1,3,0,false,false,false,false,true
 4251,0,0,true,4,0,0,"event_base/event_base_manure_sprinkle_bar",0,2,1,2,3,0,true,false,false,false,true
 4252,0,0,true,4,0,0,"event_base/event_base_hair_shop",0,1,1,1,3,0,true,false,false,false,true
-4253,0,0,true,4,0,2,"event_base/event_base_fishing_stand",0,0,1,1,3,0,false,false,false,false,true
-4254,0,1,false,7,0,1,"event/event_pray_stand",0,2,1,2,3,0,true,false,false,false,true
-4255,0,1,false,7,0,0,"event/event_come",0,2,1,2,3,0,true,false,false,false,true
-4256,0,1,false,7,0,0,"event/event_look_back_r_pc",0,2,1,2,3,0,true,false,false,false,true
-4257,0,1,false,7,0,0,"event/event_look_back_l_pc",0,2,1,2,3,0,true,false,false,false,true
+4253,0,0,true,4,0,2,"event_base/Standing fishing idle",0,0,1,1,3,0,false,false,false,false,true
+4254,0,1,false,7,0,1,"event/Standing Silent prayer",0,2,1,2,3,0,true,false,false,false,true
+4255,0,1,false,7,0,0,"event/Worried at Npc Animation",0,2,1,2,3,0,true,false,false,false,true
+4256,0,1,false,7,0,0,"event/Turn Left",0,2,1,2,3,0,true,false,false,false,true
+4257,0,1,false,7,0,0,"event/Turn Right",0,2,1,2,3,0,true,false,false,false,true
 4258,0,0,true,10,0,1,"event_base/event_base_lie_dying_lean",2,2,1,2,3,0,true,false,false,false,true
-4259,0,1,false,7,0,0,"event/event_front_point",0,2,1,2,3,0,true,false,false,false,true
-4260,0,1,false,7,0,1,"event/event_diggy",0,2,1,2,3,0,true,false,false,false,true
-4261,0,1,false,0,0,1,"event/event_kettleget",0,1,1,1,3,0,true,false,false,false,true
-4262,0,1,false,7,0,0,"event/event_inspiration",0,2,1,2,3,0,true,false,false,false,true
+4259,0,1,false,7,0,0,"event/Charge forward",0,2,1,2,3,0,true,false,false,false,true
+4260,0,1,false,7,0,1,"event/Echo Headache Animation",0,2,1,2,3,0,true,false,false,false,true
+4261,0,1,false,0,0,1,"event/Fistpump (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
+4262,0,1,false,7,0,0,"event/Thats it! ive come up with a new recipe",0,2,1,2,3,0,true,false,false,false,true
 4263,0,0,true,4,0,1,"event_base/event_base_hammer_delicate",0,1,1,1,3,0,true,false,false,false,true
 4264,0,1,false,7,0,0,"event/event_raise_weapon",0,1,1,1,3,0,true,false,false,false,true
 4265,0,1,false,7,0,0,"event/event_fly_away",0,2,1,2,3,0,true,false,false,false,true
-4266,0,0,true,4,0,1,"event_base/event_base_sleep",2,2,1,2,3,0,true,false,false,false,true
-4267,0,0,true,4,0,1,"event_base/event_base_deep_breath",0,2,1,2,3,0,true,false,false,false,true
-4268,0,0,true,4,0,1,"event_base/event_base_strategy_meeting",0,2,1,2,3,0,true,false,false,false,true
+4266,0,0,true,4,0,1,"event_base/Sleeping Racial",2,2,1,2,3,0,true,false,false,false,true
+4267,0,0,true,4,0,1,"event_base/Breathing Control",0,2,1,2,3,0,true,false,false,false,true
+4268,0,0,true,4,0,1,"event_base/Talking+pointing Right",0,2,1,2,3,0,true,false,false,false,true
 4269,0,0,true,10,0,0,"event_base/event_base_chair_sit_table_foot",3,2,1,2,3,0,false,false,false,false,true
-4270,0,0,true,10,0,2,"event_base/event_base_knee_dying",1,1,1,1,3,0,false,false,false,false,true
+4270,0,0,true,10,0,2,"event_base/Winded (Weapon Drawn)",1,1,1,1,3,0,false,false,false,false,true
 4271,0,0,true,4,0,1,"event_base/event_base_working",0,1,1,1,3,0,true,false,false,false,true
 4272,0,0,true,4,0,1,"event_base/event_base_working2",0,1,1,1,3,0,true,false,false,false,true
 4273,0,0,true,10,0,1,"event_base/event_base_ground_working",2,1,1,1,3,0,true,false,false,false,true
 4274,0,0,true,10,0,1,"event_base/event_base_moogle_dance_man",0,2,1,2,3,0,true,false,false,false,true
 4275,0,0,true,10,0,1,"event_base/event_base_moogle_dance_woman",0,2,1,2,3,0,true,false,false,false,true
-4276,0,0,true,4,0,2,"event_base/event_base_fighter_spot",0,1,1,1,3,0,true,false,false,false,true
+4276,0,0,true,4,0,2,"event_base/Boxing (Weapon Drawn)",0,1,1,1,3,0,true,false,false,false,true
 4277,0,0,true,4,0,0,"event_base/event_base_moogle_song",0,2,1,2,3,0,true,false,false,false,true
 4278,0,1,false,7,0,1,"event/event_moogle_dance_man",0,2,1,2,3,0,true,false,false,false,true
 4279,0,1,false,7,0,1,"event/event_moogle_dance_woman",0,2,1,2,3,0,true,false,false,false,true
-4280,0,0,true,4,0,1,"event_base/event_base_look_around",0,2,1,2,3,0,true,false,false,false,true
-4281,0,1,false,7,0,1,"event/event_soldier_pose1",0,2,1,2,3,0,true,false,false,false,true
-4282,0,1,false,7,0,1,"event/event_soldier_pose2",0,2,1,2,3,0,true,false,false,false,true
-4283,0,1,false,7,0,1,"event/event_soldier_pose3",0,2,1,2,3,0,true,false,false,false,true
-4284,0,1,false,7,0,1,"event/event_sleep_sneeze",0,2,1,2,3,0,true,false,false,false,true
-4285,0,1,false,7,0,1,"event/event_fall_down",0,2,1,2,3,0,true,false,false,false,true
-4286,0,0,true,4,0,2,"event_base/event_base_fast_squat",0,2,1,2,3,0,true,false,false,false,true
+4280,0,0,true,4,0,1,"event_base/Standing Looking Around",0,2,1,2,3,0,true,false,false,false,true
+4281,0,1,false,7,0,1,"event/RedRanger",0,2,1,2,3,0,true,false,false,false,true
+4282,0,1,false,7,0,1,"event/BlackRanger",0,2,1,2,3,0,true,false,false,false,true
+4283,0,1,false,7,0,1,"event/YellowRanger",0,2,1,2,3,0,true,false,false,false,true
+4284,0,1,false,7,0,1,"event/Spurts of snowflakes",0,2,1,2,3,0,true,false,false,false,true
+4285,0,1,false,7,0,1,"event/Anime Betrayal",0,2,1,2,3,0,true,false,false,false,true
+4286,0,0,true,4,0,2,"event_base/Godbert Squats",0,2,1,2,3,0,true,false,false,false,true
 4287,0,0,true,4,0,2,"event_base/event_base_fast_squat_carry_big",0,1,1,1,3,0,true,false,false,false,true
-4288,0,1,false,0,0,0,"event/event_m8066_attack",0,2,1,2,3,0,true,false,false,false,true
-4289,0,1,false,7,0,0,"event/event_m8097_attack",0,2,1,2,3,0,true,false,false,false,true
+4288,0,1,false,0,0,0,"event/Fire infront of player",0,2,1,2,3,0,true,false,false,false,true
+4289,0,1,false,7,0,0,"event/Floating orb infront of player",0,2,1,2,3,0,true,false,false,false,true
 4290,0,0,true,4,0,0,"event_base/event_base_attack",0,2,1,2,3,0,true,false,false,false,true
 4291,0,1,false,7,0,0,"event/event_m8047_appearance",0,2,1,2,3,0,true,false,false,false,true
 4292,0,1,false,7,0,0,"event/event_lie_to_idle",0,2,1,2,3,0,true,false,false,false,true
 4293,0,1,false,0,0,0,"event/event_m8066_damage",0,2,1,2,3,0,true,false,false,false,true
 4294,0,0,true,4,0,0,"event_base/event_base_precocious_pose1",0,2,1,2,0,0,true,false,false,false,true
 4295,0,0,true,4,0,0,"event_base/event_base_precocious_pose2",0,2,1,2,0,0,true,false,false,false,true
-4296,0,0,true,10,0,0,"event/event_sleep_bed",2,2,1,2,0,0,false,false,false,false,true
-4297,0,1,false,7,0,1,"emote/dance05_loop",0,2,1,2,0,0,false,false,false,false,true
+4296,0,0,true,10,0,0,"event/Lying on the ground Staring forward",2,2,1,2,0,0,false,false,false,false,true
+4297,0,1,false,7,0,1,"emote/Moogle Dance",0,2,1,2,0,0,false,false,false,false,true
 4298,0,0,true,10,0,1,"event_base/event_base_sundance2",0,2,1,2,0,0,false,false,false,false,true
-4299,0,0,true,4,0,1,"event_base/event_base_link_lesson",0,2,1,2,0,0,true,false,false,false,true
-4300,0,0,true,10,0,1,"event_base/event_base_to_pray_book",1,1,1,1,0,0,true,false,false,false,true
+4299,0,0,true,4,0,1,"event_base/Linkpearl Listening/Responding",0,2,1,2,0,0,true,false,false,false,true
+4300,0,0,true,10,0,1,"event_base/Kneeling prayer (weapondrawn)",1,1,1,1,0,0,true,false,false,false,true
 4301,0,1,false,7,0,0,"event/event_joy_girl",0,2,1,2,0,0,true,false,false,false,true
 4302,0,1,false,7,0,0,"event/event_joy_st_girl",0,2,1,2,0,0,true,false,false,false,true
-4303,0,1,false,7,0,1,"event/event_head_equip",0,2,1,2,0,0,true,false,false,false,true
-4304,0,0,true,10,0,1,"event_base/event_base_casket_pose",0,2,1,2,0,0,false,false,false,false,true
+4303,0,1,false,7,0,1,"event/Putting on Goggles",0,2,1,2,0,0,true,false,false,false,true
+4304,0,0,true,10,0,1,"event_base/Casket Pose",0,2,1,2,0,0,false,false,false,false,true
 4305,0,1,false,0,0,0,"lcut/show02",0,0,1,0,3,0,false,false,false,false,true
 4306,0,0,true,4,0,1,"event_base/event_base_talk_memo_brush",0,1,1,1,0,0,true,false,false,false,true
 4307,0,0,true,4,0,1,"event_base/event_base_stand_memo_up_brush",0,1,1,1,0,0,true,false,false,false,true
@@ -4321,9 +4321,9 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4319,0,0,true,10,0,1,"event_base/event_base_speech_walk",0,2,1,2,0,0,false,false,false,false,true
 4320,0,0,true,4,0,1,"event_base/event_base_therapy1",0,2,1,2,0,0,false,false,false,false,true
 4321,0,0,true,4,0,1,"event_base/event_base_therapy2",0,2,1,2,0,0,false,false,false,false,true
-4322,0,0,true,4,0,1,"event_base/event_base_peep_stand",0,2,1,2,0,0,false,false,false,false,true
-4323,0,0,true,5,0,1,"event_base/event_base_peep_sit",0,2,1,2,0,0,false,false,false,false,true
-4324,0,0,true,10,0,1,"event_base/event_base_lie_painful",0,2,1,2,0,0,false,false,false,false,true
+4322,0,0,true,4,0,1,"event_base/Peeping behindcover",0,2,1,2,0,0,false,false,false,false,true
+4323,0,0,true,5,0,1,"event_base/Peeping Crouched",0,2,1,2,0,0,false,false,false,false,true
+4324,0,0,true,10,0,1,"event_base/On the Ground wounded",0,2,1,2,0,0,false,false,false,false,true
 4325,0,0,true,10,0,2,"event_base/event_base_katana_chair_sit",0,1,1,1,0,0,false,false,false,false,true
 4326,0,0,true,10,0,2,"event_base/event_base_bandit",0,1,1,1,0,0,false,false,false,false,true
 4327,0,0,true,4,0,1,"event_base/event_base_look_for_basket",0,2,1,2,0,0,false,false,false,false,true
@@ -4354,8 +4354,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4352,0,1,false,0,0,0,"season/action03_hit",0,0,0,0,3,0,false,false,false,false,true
 4353,0,1,false,0,0,1,"normal/cannon_4",0,2,0,2,3,0,true,false,false,false,true
 4354,0,1,false,0,0,1,"normal/cannon_5",0,2,0,2,3,0,true,false,false,false,true
-4355,0,3,false,0,0,1,"bnpc_gesture/gesture01",0,0,1,0,3,0,false,false,false,false,true
-4356,0,3,false,0,0,1,"bnpc_gesture/gesture02",0,0,1,0,3,0,false,false,false,false,true
+4355,0,3,false,0,0,1,"normal/Knight of round table Teleport1",0,0,1,0,3,0,false,false,false,false,true
+4356,0,3,false,0,0,1,"normal/Come into existance1",0,0,1,0,3,0,false,false,false,false,true
 4357,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 4358,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 4359,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
@@ -4667,23 +4667,23 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4665,0,3,false,0,0,1,"fishing_chair/precision_hooking",4,0,2,3,3,0,false,false,false,false,true
 4666,0,3,false,0,0,1,"fishing_chair/precision_hooking_big",4,0,2,3,3,0,false,false,false,false,true
 4667,0,1,false,0,0,1,"fishing_chair/makie",4,0,2,3,3,0,false,false,false,false,true
-4668,0,0,true,0,0,1,"gs/felling/idle",0,2,1,2,3,0,false,false,false,false,true
-4669,0,2,false,0,0,1,"gs/felling/action1",0,2,1,2,3,0,false,false,false,false,true
-4670,0,0,true,0,0,1,"gs/mining/idle",0,2,1,2,3,0,false,false,false,false,true
-4671,0,2,false,0,0,1,"gs/mining/action1",0,2,1,2,3,0,false,false,false,false,true
+4668,0,0,true,0,0,1,"normal/Florist idle",0,2,1,2,3,0,false,false,false,false,true
+4669,0,2,false,0,0,1,"normal/Lumberjacking",0,2,1,2,3,0,false,false,false,false,true
+4670,0,0,true,0,0,1,"normal/Miner idle",0,2,1,2,3,0,false,false,false,false,true
+4671,0,2,false,0,0,1,"normal/Mining Node",0,2,1,2,3,0,false,false,false,false,true
 4672,0,1,false,7,0,1,"emote/dance05_start",0,2,0,2,3,0,true,true,false,false,true
-4673,0,0,true,0,0,1,"emote/dance05_loop",0,2,1,2,3,0,true,true,false,false,true
-4674,0,1,false,7,0,1,"emote/act_emot02",0,2,1,2,0,0,true,true,false,false,true
-4675,0,1,false,0,1,1,"emote/u_act_emot02",0,2,1,2,0,0,true,false,false,false,true
-4676,0,1,false,7,0,1,"emote/act_emot03",0,2,1,2,0,0,true,true,false,false,true
-4677,0,1,false,0,1,1,"emote/u_act_emot03",0,2,1,2,0,0,true,false,false,false,true
-4678,0,1,false,7,0,0,"emote/act_emot04",0,2,1,2,3,0,true,true,false,false,true
-4679,0,1,false,0,1,0,"emote/u_act_emot04",0,2,1,2,3,0,true,false,false,false,true
-4680,0,1,false,7,0,1,"emote/act_emot05",0,2,1,2,3,0,true,true,false,false,true
-4681,0,1,false,7,0,0,"emote_sp/sp02",0,2,1,2,3,0,true,true,false,false,true
-4682,0,1,false,0,1,0,"emote_sp/u_sp02",0,2,1,2,3,0,true,false,false,false,true
-4683,0,1,false,0,3,0,"emote_sp/add_sp02",0,0,1,0,3,0,true,true,false,false,true
-4684,0,1,false,0,0,1,"craft/non_crafter_materia_melding",0,2,1,2,3,58,false,false,false,false,true
+4673,0,0,true,0,0,1,"emote/Moogle Dance",0,2,1,2,3,0,true,true,false,false,true
+4674,0,1,false,7,0,1,"emote/Facepalm",0,2,1,2,0,0,true,true,false,false,true
+4675,0,1,false,0,1,1,"emote/Facepalm(Upper)",0,2,1,2,0,0,true,false,false,false,true
+4676,0,1,false,7,0,1,"emote/Spectacles",0,2,1,2,0,0,true,true,false,false,true
+4677,0,1,false,0,1,1,"emote/Specticles (upperbodyonly)",0,2,1,2,0,0,true,false,false,false,true
+4678,0,1,false,7,0,0,"emote/Hand into fist (movement)",0,2,1,2,3,0,true,true,false,false,true
+4679,0,1,false,0,1,0,"emote/Hand into fist (upperbodyonly)",0,2,1,2,3,0,true,false,false,false,true
+4680,0,1,false,7,0,1,"emote/Blackflip",0,2,1,2,3,0,true,true,false,false,true
+4681,0,1,false,7,0,0,"emote_sp/Eureka!(happy face+movement) with effect",0,2,1,2,3,0,true,true,false,false,true
+4682,0,1,false,0,1,0,"emote_sp/Eureka!(Upperbodyonly Happy face) with effect",0,2,1,2,3,0,true,false,false,false,true
+4683,0,1,false,0,3,0,"emote_sp/Eureka!(Happy Face only) With effect",0,0,1,0,3,0,true,true,false,false,true
+4684,0,1,false,0,0,1,"normal/Materia Melding/DeMelding",0,2,1,2,3,58,false,false,false,false,true
 4685,0,3,false,0,0,0,"minion/pop",0,2,1,2,0,0,false,false,false,false,true
 4686,0,3,false,0,0,0,"mon_sp/gimmick/a2fd_boss_gimmick08",0,0,0,0,3,0,false,false,false,false,true
 4687,0,3,false,0,0,0,"mon_sp/gimmick/a2fd_boss_gimmick09",0,0,0,0,3,0,false,false,false,false,true
@@ -4780,37 +4780,37 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4778,0,1,false,0,0,0,"mon_sp/gimmick/vfx_gimmick_sp01_hit",0,0,0,0,3,0,false,false,false,false,true
 4779,0,3,false,0,0,1,"human_sp/c0101/human_sp045",0,1,1,1,3,0,false,false,false,false,true
 4780,0,3,false,0,0,1,"human_sp/c0101/human_sp046",0,1,1,1,3,0,false,false,false,false,true
-4781,0,1,false,7,0,1,"emote/act_emot06",0,2,1,2,3,0,true,true,false,false,true
+4781,0,1,false,7,0,1,"emote/Eastern Stretch",0,2,1,2,3,0,true,true,false,false,true
 4782,0,1,false,7,0,1,"emote/dance06_start",0,2,0,2,3,0,true,true,false,false,true
-4783,0,0,true,0,0,1,"emote/dance06_loop",0,2,1,2,3,0,true,true,false,false,true
-4784,0,1,false,7,0,2,"emote/loop_emot01_start",0,2,1,2,3,0,true,true,false,false,true
-4785,0,0,true,4,0,2,"emote/loop_emot01_loop",0,2,1,2,3,0,true,true,false,false,true
-4786,0,1,false,7,0,2,"emote/loop_emot02_start",0,2,1,2,3,0,true,true,false,false,true
-4787,0,0,true,4,0,2,"emote/loop_emot02_loop",0,2,1,2,3,0,true,true,false,false,true
-4788,0,1,false,7,0,2,"emote/loop_emot03_start",0,2,1,2,3,0,true,true,false,false,true
-4789,0,0,true,4,0,2,"emote/loop_emot03_loop",0,2,1,2,3,0,true,true,false,false,true
-4790,0,1,false,7,0,0,"emote/act_emot07",0,2,1,2,3,0,true,true,false,false,true
-4791,0,1,false,0,1,0,"emote/u_act_emot07",0,2,1,2,3,0,true,false,false,false,true
-4792,0,1,false,7,0,2,"emote/loop_emot04_start",0,2,1,2,3,0,true,true,false,false,true
-4793,0,0,true,4,0,2,"emote/loop_emot04_loop",0,2,1,2,3,0,true,true,false,false,true
-4794,0,1,false,7,0,2,"emote/loop_emot05_start",0,2,1,2,3,0,true,true,false,false,true
-4795,0,0,true,4,0,2,"emote/loop_emot05_loop",0,2,1,2,3,0,true,true,false,false,true
-4796,0,1,false,7,0,2,"emote/loop_emot06_start",0,2,1,2,3,0,true,true,false,false,true
-4797,0,0,true,4,0,2,"emote/loop_emot06_loop",0,2,1,2,3,0,true,true,false,false,true
+4783,0,0,true,0,0,1,"emote/Eastern Dance",0,2,1,2,3,0,true,true,false,false,true
+4784,0,1,false,7,0,2,"emote/Red Ranger Start",0,2,1,2,3,0,true,true,false,false,true
+4785,0,0,true,4,0,2,"emote/Red Ranger End/Loop",0,2,1,2,3,0,true,true,false,false,true
+4786,0,1,false,7,0,2,"emote/Black Ranger Start",0,2,1,2,3,0,true,true,false,false,true
+4787,0,0,true,4,0,2,"emote/Black Ranger End/Loop",0,2,1,2,3,0,true,true,false,false,true
+4788,0,1,false,7,0,2,"emote/Black Ranger start2",0,2,1,2,3,0,true,true,false,false,true
+4789,0,0,true,4,0,2,"emote/Black Ranger End/Loop2",0,2,1,2,3,0,true,true,false,false,true
+4790,0,1,false,7,0,0,"emote/Haurchefant Joy",0,2,1,2,3,0,true,true,false,false,true
+4791,0,1,false,0,1,0,"emote/Haurchefant Joy upper bodyonly",0,2,1,2,3,0,true,false,false,false,true
+4792,0,1,false,7,0,2,"emote/Red Ranger Start2",0,2,1,2,3,0,true,true,false,false,true
+4793,0,0,true,4,0,2,"emote/Red Ranger End/Loop2",0,2,1,2,3,0,true,true,false,false,true
+4794,0,1,false,7,0,2,"emote/Yellow Ranger Start",0,2,1,2,3,0,true,true,false,false,true
+4795,0,0,true,4,0,2,"emote/Yellow Ranger End/Loop",0,2,1,2,3,0,true,true,false,false,true
+4796,0,1,false,7,0,2,"emote/Yellow Ranger Start2",0,2,1,2,3,0,true,true,false,false,true
+4797,0,0,true,4,0,2,"emote/Yellow Ranger End/Loop",0,2,1,2,3,0,true,true,false,false,true
 4798,0,1,false,7,0,1,"emote/Play-Dead start",0,2,1,2,0,59,true,true,false,false,true
 4799,0,0,true,0,0,1,"emote/Play-Dead End/Loop",0,2,1,2,0,60,true,true,false,false,true
 4800,0,1,false,7,0,1,"emote/Pretty Please",0,2,1,2,0,0,true,true,false,false,true
 4801,0,1,false,0,1,2,"emote/u_act_emot08",0,2,1,2,0,0,true,false,false,false,true
-4802,0,1,false,7,0,1,"emote_sp/Diamond (iceheart statue)",0,2,1,2,0,0,true,true,false,false,true
+4802,0,1,false,7,0,1,"emote/Diamond (iceheart statue)",0,2,1,2,0,0,true,true,false,false,true
 4803,0,1,false,7,0,1,"emote/zantasuken (odin statue)",0,1,2,1,0,0,true,true,false,false,true
-4804,0,1,false,7,0,1,"emote/act_emot09",0,2,1,2,0,0,true,true,false,false,true
+4804,0,1,false,7,0,1,"emote/Pay Respects",0,2,1,2,0,0,true,true,false,false,true
 4805,0,1,false,0,1,1,"emote/u_act_emot09",0,2,1,2,0,0,true,false,false,false,true
 4806,0,1,false,0,0,1,"emote/Water Float",0,2,1,2,0,0,true,true,false,false,true
 4807,0,0,true,0,0,1,"emote/swim_on_emot01_loop",0,2,1,2,0,0,true,true,false,false,true
 4808,0,1,false,0,0,1,"emote/Water flip",0,2,1,2,0,0,true,true,false,false,true
 4809,0,1,false,7,0,1,"emote/dance07_start",0,2,0,2,0,0,true,true,false,false,true
 4810,0,0,true,4,0,1,"emote/Moonlift Dance",0,2,1,2,0,0,true,true,false,false,true
-4811,0,1,false,7,0,0,"emote/act_emot10",0,2,1,2,0,0,true,true,false,false,true
+4811,0,1,false,7,0,0,"emote/Flex",0,2,1,2,0,0,true,true,false,false,true
 4812,0,1,false,0,3,0,"emote/add_act_emot09",0,0,1,0,0,0,true,true,false,false,true
 4813,0,1,false,0,1,1,"emote/u_pray",0,2,1,2,0,0,true,false,false,false,true
 4814,0,1,false,0,3,0,"emote/add_pray",0,0,1,0,0,0,true,true,false,false,true
