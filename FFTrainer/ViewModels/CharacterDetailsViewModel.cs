@@ -3,7 +3,6 @@ using FFTrainer.Models;
 using FFTrainer.Commands;
 using System.ComponentModel;
 using FFTrainer.Views;
-using System.Windows;
 
 namespace FFTrainer.ViewModels
 {
@@ -382,8 +381,6 @@ namespace FFTrainer.ViewModels
             }
             catch (System.Exception ex)
             {
-                if (MemoryManager.Instance.MemLib.getProcIDFromName("ffxiv_dx11") == 0)
-                    Application.Current.Shutdown();
                 System.Windows.MessageBox.Show(ex.Message, "Oh no!");
                 System.Windows.MessageBox.Show("Disabling " + this.GetType().Name, "Oh no!");
                 mediator.Work -= Work;

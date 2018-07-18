@@ -43,6 +43,7 @@ namespace FFTrainer
         public string Gender { get; set; }
         public string EyeBrowType { get; set; }
         public string Clan { get; set; }
+        public string FreezeFacial { get; set; }
         public string Territory { get; set; }
         public BodyOffsets Body { get; set; }
         public string TailorMuscle { get; set; }

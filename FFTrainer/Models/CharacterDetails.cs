@@ -204,9 +204,11 @@ namespace FFTrainer.Models
         [JsonIgnore] public Address<byte> TimeControl { get; set; }
         [JsonIgnore] public Address<byte> Weather { get; set; }
         [JsonIgnore] public Address<int> Territoryxd { get; set; }
+        [JsonIgnore] public Address<float> FreezeFacial { get; set; }
 
         public CharacterDetails()
         {
+            FreezeFacial = new Address<float>();
             Territoryxd = new Address<int>();
             TailorMuscle = new Address<byte>();
             LimbalB = new Address<float>();
