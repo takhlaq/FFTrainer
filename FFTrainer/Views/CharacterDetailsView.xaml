@@ -158,20 +158,5 @@
         <CheckBox IsChecked="{Binding CharacterDetails.CamZ.freeze}" Content="{DynamicResource CamZ}" HorizontalAlignment="Left" Margin="766,219,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="92"/>
         <mah:NumericUpDown StringFormat="F7" x:Name="CamZ" Value="{Binding CharacterDetails.CamZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="868,218,0,0" VerticalAlignment="Top" Width="172" Interval="0.01" ValueChanged="CamZ_ValueChanged" TextAlignment="Justify"/>
         <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="823,352,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click"/>
-        <mah:Flyout Name="EmoteFlyout" Header="Emote" Position="Right" Margin="833,24,1,117" IsOpen="False">
-            <StackPanel Margin="10,0" Height="244">
-                <ListBox Name="EmoteBox"  Height="189" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Width="211" SelectionChanged="EmoteBox_SelectionChanged">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <TextBlock Text="{Binding Name}" Margin="2" FontWeight="Bold"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Margin="0,5,10,5"/>
-            </StackPanel>
-        </mah:Flyout>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="765,77,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="Button_Click"/>
     </Grid>
 </UserControl>

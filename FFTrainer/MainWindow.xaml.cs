@@ -15,6 +15,8 @@ using AutoUpdaterDotNET;
 using System.Net;
 using MahApps.Metro;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Controls;
 
 namespace FFTrainer
 {
@@ -27,18 +29,38 @@ namespace FFTrainer
         private BackgroundWorker worker2, worker3;
         public static bool NotAllowed = false;
         public static bool CheckAble = true;
+        private ExdCsvReader _exdProvider = new ExdCsvReader();
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         HashSet<int> ZoneBlacklist = new HashSet<int> {691, 692, 693, 694, 695, 696, 697, 698, 733, 734, 725, 748, 749, 750, 751, 752, 753, 754, 755, 758, 765, 766, 767, 777, 791};
         public MainWindow()
         {
             InitializeComponent();
             Properties.Settings.Default.Upgrade();
+            _exdProvider.EmoteList();
             //load our settings
             var language = Properties.Settings.Default.Language;
             var dictionary = new ResourceDictionary();
             language = string.IsNullOrEmpty(language) ? "English" : language;
             dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
+            timer.Tick += delegate
+            {
+                Emotesx = _exdProvider.Emotes.Values.ToArray();
+                foreach (ExdCsvReader.Emote xD in Emotesx)
+                {
+                    if (xD.Realist == true)
+                    {
+                        EmoteBox.Items.Add(new Emotexd
+                        {
+                            Index = Convert.ToInt32(xD.Index),
+                            Name = xD.Name.ToString()
+                        });
+                    }
+                }
+                timer.IsEnabled = false;
+            };
+            timer.Start();
         }
         private void CharacterDetailsView_Loaded()
         {
@@ -336,12 +358,12 @@ namespace FFTrainer
                 if (CharacterDetails.Emote.freeze)
                 {
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Emote), CharacterDetails.EmoteX.GetBytes());
+                //    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Emote), CharacterDetails.EmoteX.GetBytes());
                 }
                 else
                 {
                     CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
-                    CharacterDetails.EmoteX.value= (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
+                 //   CharacterDetails.EmoteX.value= (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 }
                 Thread.Sleep(10);
 
@@ -450,6 +472,46 @@ namespace FFTrainer
             AutoUpdater.RunUpdateAsAdmin = true;
             AutoUpdater.DownloadPath = Environment.CurrentDirectory;
             AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
+        }
+        public ExdCsvReader.Emote[] Emotesx;
+        public class Emotexd
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+            public override string ToString()
+            {
+                return Name;
+            }
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (EmoteFlyout.IsOpen == false)
+                EmoteFlyout.IsOpen = true;
+            else EmoteFlyout.IsOpen = false;
+        }
+
+        private void EmoteBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (EmoteBox.SelectedItem == null)
+                return;
+            var item = (ListBox)sender;
+            var Value = (Emotexd)item.SelectedItem;
+            CharacterDetails.Emote.value = (int)Value.Index;
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string filter = searchTextBox.Text.ToLower();
+            EmoteBox.Items.Clear();
+            foreach (ExdCsvReader.Emote xD in Emotesx.Where(g => g.Name.ToLower().Contains(filter)))
+                if (xD.Realist == true)
+                {
+                    EmoteBox.Items.Add(new Emotexd
+                    {
+                        Index = Convert.ToInt32(xD.Index),
+                        Name = xD.Name.ToString()
+                    });
+                }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

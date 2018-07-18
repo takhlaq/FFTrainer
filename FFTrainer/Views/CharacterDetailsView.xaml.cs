@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using FFTrainer.Models;
 using FFTrainer.ViewModels;
+
 namespace FFTrainer.Views
 {
     /// <summary>
@@ -23,7 +25,6 @@ namespace FFTrainer.Views
             InitializeComponent();
             _exdProvider.RaceList();
             _exdProvider.TribeList();
-            _exdProvider.EmoteList();
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20)};
             timer.Tick += delegate
             {
@@ -261,13 +262,6 @@ namespace FFTrainer.Views
                 e.Handled = true;
         }
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            if (EmoteBox.IsMouseOver)
-                if(EmoteBox.SelectedValue!=null&&(int)EmoteBox.SelectedValue>=1)
-                    CharacterDetails.Emote.value = (int)EmoteBox.SelectedValue;
-        }
-
         private void Emote_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Emote.Value.HasValue)
@@ -411,10 +405,6 @@ namespace FFTrainer.Views
                 if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
                     ClanBox.SelectedIndex = i;
             }
-            for (int i = 0; i < _exdProvider.Emotes.Count; i++)
-            {
-                EmoteBox.Items.Add(_exdProvider.Emotes[i].Name);
-            }
         }
 
         private void Unfreeze_Click(object sender, RoutedEventArgs e)
@@ -520,57 +510,5 @@ namespace FFTrainer.Views
             CharacterDetails.RFinger.freeze = false;
             CharacterDetails.LFinger.freeze = false;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            EmoteFlyout.IsOpen = true;
-            for (int i = 0; i < _exdProvider.Emotes.Count; i++)
-            {
-                if (_exdProvider.Emotes[i].Name.Contains("normal/") || _exdProvider.Emotes[i].Name.Contains("emote/") || _exdProvider.Emotes[i].Name.Contains("event_base/"))
-                    EmoteBox.Items.Add(new Emotexd
-                    {
-                        Index = Convert.ToInt32(_exdProvider.Emotes[i].Index),
-                        Name = _exdProvider.Emotes[i].Name.ToString()
-                    });
-
-
-            }
-        }
-        public class Emotexd
-        {
-            public int Index { get; set; }
-            public string Name { get; set; }
-        }
-        private void EmoteBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (EmoteBox.SelectedItem == null)
-                return;
-            var item = (ListBox)sender;
-            var Value = (Emotexd)item.SelectedItem;
-            CharacterDetails.Emote.value = (int)Value.Index;
-        }
     }
 }
-
-/*
-        private void BustZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || TestxDdada.IsMouseOver)
-                if (BustZ.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
-        }
-
-        private void BustY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || TestxDdada.IsMouseOver)
-                if (BustY.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
-        }
-
-        private void BustX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || TestxDdada.IsMouseOver)
-                if (BustX.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
-        }
-*/

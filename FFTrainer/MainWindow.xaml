@@ -8,7 +8,8 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         TitleCharacterCasing="Normal"
          xmlns:FFTrainer="clr-namespace:FFTrainer.Models"
-        GlowBrush="{DynamicResource AccentColorBrush}"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    GlowBrush="{DynamicResource AccentColorBrush}"
         RenderOptions.ClearTypeHint="Enabled"
         Title="{DynamicResource Title}" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" SaveWindowPosition="True" WindowStartupLocation="CenterScreen">
     <Controls:MetroWindow.RightWindowCommands>
@@ -46,6 +47,21 @@
             <TabItem Header="{DynamicResource Character}">
                 <Grid>
                     <Views:CharacterDetailsView DataContext="{Binding CharacterDetails}" Height="Auto" Margin="0,0,10,-10" Width="Auto"/>
+                    <mah:Flyout Name="EmoteFlyout" Header="Emote" Position="Right" Margin="847,0,-13,92" IsOpen="False" Theme="Accent">
+                        <StackPanel Margin="10,0" Height="256">
+                            <ListBox Name="EmoteBox"  Height="200" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Width="229" SelectionChanged="EmoteBox_SelectionChanged">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <TextBlock Text="{Binding Name}" Margin="2" FontWeight="Bold"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <TextBox x:Name="searchTextBox" Height="20" TextWrapping="Wrap" Margin="0,5" TextChanged="TextBox_TextChanged"  mah:TextBoxHelper.Watermark="Search..."/>
+                        </StackPanel>
+                    </mah:Flyout>
+                    <Button Content="Emote List" HorizontalAlignment="Left" Margin="765,77,0,0" VerticalAlignment="Top" Width="77" Height="26" Click="Button_Click_2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{DynamicResource Character2}">

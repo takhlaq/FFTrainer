@@ -82,7 +82,12 @@ namespace FFTrainer
         public class Emote
         {
             public int Index { get; set; }
+            public bool Realist { get; set; }
             public string Name { get; set; }
+            public override string ToString()
+            {
+                return Name;
+            }
         }
         public class Race
         {
@@ -1474,11 +1479,16 @@ namespace FFTrainer
                                     emote.Name = field;
                                 }
                             }
-
+                            if (emote.Name.Contains("normal/")){emote.Name = emote.Name.Remove(0, 7).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("gs/")) { emote.Name = emote.Name.Remove(0, 3).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("cardgame/")) { emote.Name = emote.Name.Remove(0, 9).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("pc_contentsaction/")) { emote.Name = emote.Name.Remove(0, 18).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("ability/")) { emote.Name = emote.Name.Remove(0, 8).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("emote/")|| emote.Name.Contains("magic/") || emote.Name.Contains("event/") || emote.Name.Contains("music/")) { emote.Name=emote.Name.Remove(0, 6).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("event_base/")|| emote.Name.Contains("limitbreak/")){ emote.Name = emote.Name.Remove(0, 11).ToString(); emote.Realist = true; }
                             Console.WriteLine($"{rowCount} - {emote.Name}");
                             Emotes.Add(emote.Index, emote);
                         }
-
                         Console.WriteLine($"{rowCount} Emotes read");
                     }
                 }
