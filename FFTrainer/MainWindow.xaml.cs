@@ -107,7 +107,6 @@ namespace FFTrainer
                         CharacterDetails.CZoom.Checker = true;
                     }
                 }
-                if (CharacterDetails.FacialFeatures.Activated) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.FacialFeatures, "float", "0");
                 if (!CharacterDetails.Job.freeze)
                 {
                     CharacterDetails.Job.value = (int)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
@@ -348,6 +347,7 @@ namespace FFTrainer
         {
             while (true)
             {
+                if (CharacterDetails.FreezeFacial.Activated) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.FreezeFacial), "float", "0");
                 if (CharacterDetails.EmoteSpeed1.freeze)
                 {
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.EmoteSpeed1), CharacterDetails.EmoteSpeed1.GetBytes());

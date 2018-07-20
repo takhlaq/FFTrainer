@@ -146,6 +146,7 @@
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="226" Margin="758,25,0,0" VerticalAlignment="Top" Width="290"/>
         <CheckBox IsChecked="{Binding CharacterDetails.Emote.freeze}" Content="{DynamicResource Emote}" HorizontalAlignment="Left" Margin="766,34,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" ToolTip="Make sure you do Non-Presistent emote first like /yes before using this." Width="102" Height="29" RenderTransformOrigin="0.644,0.563"/>
         <mah:NumericUpDown x:Name="Emote" Value="{Binding CharacterDetails.Emote.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="928,37,0,0" VerticalAlignment="Top" Width="112" Minimum="1" Maximum="6558" ValueChanged="Emote_ValueChanged" TextAlignment="Justify"/>
+        <CheckBox IsChecked="{Binding CharacterDetails.FreezeFacial.Activated}" Content="{DynamicResource FacialFreezexd}" HorizontalAlignment="Left" Height="25" Margin="766,68,0,0" VerticalAlignment="Top" Width="133" mah:ControlsHelper.HeaderMargin="0,0,0,0" RenderTransformOrigin="0.465,0.493" FontWeight="Bold"/>
         <Label Content="{DynamicResource GposeOnly}" HorizontalAlignment="Left" Margin="839,-5,0,0" VerticalAlignment="Top" Width="192" FontSize="20" FontWeight="Bold"/>
         <CheckBox IsChecked="{Binding CharacterDetails.EmoteSpeed1.freeze}" Content="{DynamicResource EmoteSpeed}" HorizontalAlignment="Left" Margin="766,109,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <mah:NumericUpDown StringFormat="F3" x:Name="EmoteSpped" Value="{Binding CharacterDetails.EmoteSpeed1.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="928,105,0,0" VerticalAlignment="Top" Width="112" Interval="0.25" TextAlignment="Justify"/>
@@ -160,6 +161,5 @@
         <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="758,329,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="746,384,0,0" TextWrapping="Wrap" Text="{DynamicResource EmoteChecker}" VerticalAlignment="Top" FontWeight="Bold" Width="102"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="849,380,0,0" TextWrapping="Wrap" Text="{Binding CharacterDetails.EmoteX.value}" VerticalAlignment="Top" Width="85" IsEnabled="False" IsTabStop="False"/>
-        <CheckBox IsChecked="{Binding CharacterDetails.FacialFeatures.Activated}" Content="{DynamicResource FacialFreezexd}" HorizontalAlignment="Left" Height="25" Margin="766,68,0,0" VerticalAlignment="Top" Width="133" mah:ControlsHelper.HeaderMargin="0,0,0,0" RenderTransformOrigin="0.465,0.493" FontWeight="Bold"/>
     </Grid>
 </UserControl>
