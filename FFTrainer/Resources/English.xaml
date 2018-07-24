@@ -130,4 +130,5 @@
     <system:String x:Key="EmoteChecker">Emote Checker:</system:String>
     <system:String x:Key="FacialFreezexd">Freeze Expression</system:String>
     <system:String x:Key="EmoteButton">Emote List</system:String>
+    <system:String x:Key="NPCGear">NPC Gear Finder</system:String>
 </ResourceDictionary>

@@ -187,4 +187,19 @@
   <data name="actiontimeline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actiontimeline.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="enpcbase_exh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enpcbase.exh.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="enpcresident_exh_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enpcresident.exh_en.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="enpcresident_exh_de" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enpcresident.exh_de.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="enpcresident_exh_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enpcresident.exh_fr.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="enpcresident_exh_ja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enpcresident.exh_ja.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

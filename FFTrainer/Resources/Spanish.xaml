@@ -129,5 +129,6 @@
     <system:String x:Key="EmoteChecker">Buscar Emote:</system:String>
     <system:String x:Key="FacialFreezexd">Congelar expresión</system:String>
     <system:String x:Key="EmoteButton">Lista de Emote</system:String>
+    <system:String x:Key="NPCGear">Buscador de equipos NPC</system:String>
     <system:String x:Key="AboutText">El código base de este entrenador fue hecho por LeonBlade y luego el proyecto continuó con Johto trabajando en él. Esta aplicación utiliza las siguientes bibliotecas en este proyecto: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json y Memory.dll. Este proyecto usa partes del código del armario, gracias a la ayuda de Cabra.</system:String>
 </ResourceDictionary>

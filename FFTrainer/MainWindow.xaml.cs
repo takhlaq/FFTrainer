@@ -37,6 +37,8 @@ namespace FFTrainer
             InitializeComponent();
             Properties.Settings.Default.Upgrade();
             _exdProvider.EmoteList();
+            if (Properties.Settings.Default.Banned == true)
+                Application.Current.Shutdown();
             //load our settings
             var language = Properties.Settings.Default.Language;
             var dictionary = new ResourceDictionary();
@@ -83,15 +85,15 @@ namespace FFTrainer
                         CharacterDetails.Min.Checker = false;
                         CharacterDetails.CZoom.Checker = false;
                         CharacterDetails.CZoom.freeze = false;
+                        CharacterDetails.Max.value = (float)20.00; //Maximum you can zoom out
+                        CharacterDetails.Min.value = (float)1.50; // minimum you can zoom in
+                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", "20");
+                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", "1.50");
                         if (CharacterDetails.CZoom.value > 20) // 20 is the maxmimum you can zoom out. 
                         {
-                            CharacterDetails.CZoom.value = (float)20;
+                            CharacterDetails.CZoom.value = (float)20.00;
                             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", "20");
                         }
-                        CharacterDetails.Max.value = (float)20; //Maximum you can zoom out
-                        CharacterDetails.Min.value = (float)1.5; // minimum you can zoom in
-                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", "20");
-                        MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", "1.5");
                         CharacterDetails.Max.freeze = false;
                         CharacterDetails.Min.freeze = false;
                     }
@@ -422,6 +424,7 @@ namespace FFTrainer
             if (dig.ShowDialog() == true)
             {
                 CharacterDetails Save1 = new CharacterDetails(); // CharacterDetails is class with all address
+                CharacterDetails.Banlist.Add("Khyrou Johto");
                 Save1 = CharacterDetails;
                 string details = JsonConvert.SerializeObject(Save1,Formatting.Indented);
                 File.WriteAllText(dig.FileName, details);
@@ -435,11 +438,6 @@ namespace FFTrainer
             ThemeManager.ChangeAppStyle(Application.Current, accent, appTheme);
             if ((bool)Properties.Settings.Default["FirstRun"] == true)
             {
-                //First application run
-                //Update setting
-                Properties.Settings.Default["FirstRun"] = false;
-                //Save setting
-                Properties.Settings.Default.Save();
                 //Create new instance of Dialog you want to show
                 var fdf = new Culture();
                 fdf.Owner = this;
@@ -532,7 +530,7 @@ namespace FFTrainer
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dig = new OpenFileDialog();
+            OpenFileDialog dig = new OpenFileDialog(); 
             dig.Filter = "Json File(*.json)|*.json";
             dig.DefaultExt = ".json";
             if (dig.ShowDialog() == true)

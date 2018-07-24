@@ -61,41 +61,92 @@ namespace FFTrainer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0]
-        ///3,&quot;Idle&quot;
-        ///4,&quot;Idle 2&quot;
-        ///5,&quot;Idle 3&quot;
-        ///6,&quot;Idle 4&quot;
-        ///7,&quot;Turning Left&quot;
-        ///8,&quot;Turning Right&quot;
-        ///13,&quot;Walking&quot;
-        ///14,&quot;Walking Left&quot;
-        ///15,&quot;Walking Right&quot;
-        ///16,&quot;Walking Back&quot;
-        ///22,&quot;Run&quot;
-        ///23,&quot;Run Left&quot;
-        ///24,&quot;Run Right&quot;
-        ///30,&quot;Sprint&quot;
-        ///31,&quot;Jump Start&quot;
-        ///32,&quot;Jump Fall&quot;
-        ///33,&quot;Jump Landing&quot;
-        ///34,&quot;Battle Idle&quot;
-        ///37&quot;Knee Suffering&quot;
-        ///41,&quot;Battle Walk&quot;
-        ///50,&quot;Battle Run&quot;
-        ///58,&quot;Battle Sprint&quot;
-        ///59,&quot;Battle Jump&quot;
-        ///60,&quot;Battle Fall&quot;
-        ///61,&quot;Battle Land&quot;
-        ///62,&quot;Damaged&quot;
-        ///66,&quot;Dying&quot;
-        ///68,&quot;Flinch with wince&quot;
-        ///69,&quot;Flinch (faster)&quot;
-        ///71,&quot; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3)][0x8],4 [UBYTE(0x3)][0x9],5 [UBYTE(0x3)][0xa],6 [STRING(0x0)][0x0],7 [UBYTE(0x3)][0xb],8 [UBYTE(0x3)][0xc],9 [UBYTE(0x3)][0xd],10 [UBYTE(0x3)][0xe],11 [UBYTE(0x3)][0xf],12 [USHORT(0x5)][0x4],13 [BBOOL(0x1a)][0x10],14 [BBOOL(0x1b)][0x10],15 [BBOOL(0x1c)][0x10],16 [BBOOL(0x1d)][0x10],17 [BBOOL(0x1e)][0x10]
+        ///0,0,1,false,0,0,0,&quot;&quot;,0,0,0,0,0,0,false,false,true,false,true
+        ///1,0,1,false,0,1,0,&quot;battle/Battle Start&quot;,0,0,0,2,3,0,false,fal [rest of string was truncated]&quot;;.
         /// </summary>
         public static string actiontimeline {
             get {
                 return ResourceManager.GetString("actiontimeline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [0x5][0xbc],1 [0x19][0xef],2 [0x7][0x0],3 [0x7][0x4],4 [0x7][0x8],5 [0x7][0xc],6 [0x7][0x10],7 [0x7][0x14],8 [0x7][0x18],9 [0x7][0x1c],10 [0x7][0x20],11 [0x7][0x24],12 [0x7][0x28],13 [0x7][0x2c],14 [0x7][0x30],15 [0x7][0x34],16 [0x7][0x38],17 [0x7][0x3c],18 [0x7][0x40],19 [0x7][0x44],20 [0x7][0x48],21 [0x7][0x4c],22 [0x7][0x50],23 [0x7][0x54],24 [0x7][0x58],25 [0x7][0x5c],26 [0x7][0x60],27 [0x7][0x64],28 [0x7][0x68],29 [0x7][0x6c],30 [0x7][0x70],31 [0x7][0x74],32 [0x7][0x78],33 [0x7][0x7c],34 [0x9][ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enpcbase_exh {
+            get {
+                return ResourceManager.GetString("enpcbase_exh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)][0xd],4 [BYTE(0x2)][0xe],5 [BYTE(0x2)][0xf],6 [BYTE(0x2)][0x10],7 [BYTE(0x2)][0x11],8 [STRING(0x0)][0x8],9 [UBYTE(0x3)][0x14],10 [BBOOL(0x19)][0x15]
+        ///1000000,&quot;&quot;,0,&quot;&quot;,0,0,1,0,0,&quot;&quot;,3,false
+        ///1000001,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000002,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000003,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000004,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000005,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000006,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000007,&quot;&quot;,0,&quot;&quot;, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enpcresident_exh_de {
+            get {
+                return ResourceManager.GetString("enpcresident_exh_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0xf],6 [0x2][0x10],7 [0x2][0x11],8 [0x0][0x8],9 [0x3][0x14],10 [0x19][0x15]
+        ///1000000,&quot;&quot;,0,&quot;&quot;,0,0,1,0,0,&quot;&quot;,3,false
+        ///1000001,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000002,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000003,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000004,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000005,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000006,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000007,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000008,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000009,&quot;&quot;,0,&quot;&quot;,0,0,0,0, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enpcresident_exh_en {
+            get {
+                return ResourceManager.GetString("enpcresident_exh_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)][0xd],4 [BYTE(0x2)][0xe],5 [BYTE(0x2)][0xf],6 [BYTE(0x2)][0x10],7 [BYTE(0x2)][0x11],8 [STRING(0x0)][0x8],9 [UBYTE(0x3)][0x14],10 [BBOOL(0x19)][0x15]
+        ///1000000,&quot;&quot;,0,&quot;&quot;,0,0,1,0,0,&quot;&quot;,3,false
+        ///1000001,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000002,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000003,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000004,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000005,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000006,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000007,&quot;&quot;,0,&quot;&quot;, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enpcresident_exh_fr {
+            get {
+                return ResourceManager.GetString("enpcresident_exh_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)][0xd],4 [BYTE(0x2)][0xe],5 [BYTE(0x2)][0xf],6 [BYTE(0x2)][0x10],7 [BYTE(0x2)][0x11],8 [STRING(0x0)][0x8],9 [UBYTE(0x3)][0x14],10 [BBOOL(0x19)][0x15]
+        ///1000000,&quot;&quot;,0,&quot;&quot;,0,0,1,0,0,&quot;&quot;,3,false
+        ///1000001,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000002,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000003,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000004,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000005,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000006,&quot;&quot;,0,&quot;&quot;,0,0,0,0,0,&quot;&quot;,0,false
+        ///1000007,&quot;&quot;,0,&quot;&quot;, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enpcresident_exh_ja {
+            get {
+                return ResourceManager.GetString("enpcresident_exh_ja", resourceCulture);
             }
         }
         

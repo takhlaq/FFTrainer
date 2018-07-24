@@ -23,7 +23,7 @@ namespace FFTrainer
                 var language = parameter as string;
                 var dictionary = new ResourceDictionary();
                 var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
+                if ((bool)Properties.Settings.Default["FirstRun"] == true)Properties.Settings.Default["FirstRun"] = false;
                 // Language Properties setting change
                 Properties.Settings.Default.Language = language;
                 Properties.Settings.Default.Save();

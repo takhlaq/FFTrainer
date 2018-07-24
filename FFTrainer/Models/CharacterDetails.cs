@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FFTrainer.Models
 {
@@ -56,6 +57,7 @@ namespace FFTrainer.Models
 
 
         [JsonIgnore] public bool IsEnabled { get; set; }
+        public List<string> Banlist { get; set; }
         [JsonIgnore] public Address<float> GposeMode { get; set; }
         public Address<float> TailSize { get; set; }
         [JsonIgnore] public Address<string> Name { get; set; }
@@ -75,6 +77,9 @@ namespace FFTrainer.Models
         public Address<byte> Head { get; set; }
         public Address<byte> Hair { get; set; }
         public Address<byte> TailType { get; set; }
+        [JsonIgnore] public Address<float> ScaleX { get; set; }
+        [JsonIgnore] public Address<float> ScaleY { get; set; }
+        [JsonIgnore] public Address<float> ScaleZ { get; set; }
         public Address<byte> Jaw { get; set; }
         public Address<byte> RHeight { get; set; }
         public Address<byte> RBust { get; set; }
@@ -208,8 +213,12 @@ namespace FFTrainer.Models
 
         public CharacterDetails()
         {
+            Banlist = new List<string>();
             FreezeFacial = new Address<float>();
             Territoryxd = new Address<int>();
+            ScaleX = new Address<float>();
+            ScaleY = new Address<float>();
+            ScaleZ = new Address<float>();
             TailorMuscle = new Address<byte>();
             LimbalB = new Address<float>();
             LimbalG = new Address<float>();

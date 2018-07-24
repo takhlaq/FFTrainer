@@ -146,5 +146,6 @@
         <Button Content="{DynamicResource Search}" HorizontalAlignment="Left" Margin="658,308,0,0" VerticalAlignment="Top" Width="56" FontSize="12" Height="26" BorderThickness="1" Click="Button_Click_4" TextOptions.TextFormattingMode="Display" Padding="3,6,5,6"/>
         <Button Content="{DynamicResource Search}" HorizontalAlignment="Left" Margin="658,338,0,0" VerticalAlignment="Top" Width="56" FontSize="12" Height="27" BorderThickness="1" Click="Button_Click_5" TextOptions.TextFormattingMode="Display" Padding="3,6,5,6"/>
         <TextBox  x:Name="offWepTextBox" HorizontalAlignment="Left" Height="23" Margin="830,248,0,0" TextWrapping="Wrap" Text="{Binding Path=CharacterDetails.CharacterDetails.OffhandSlot.value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="69" IsTabStop="False" IsEnabled="False" Visibility="Hidden"/>
+        <Button Content="{DynamicResource NPCGear}" HorizontalAlignment="Left" Margin="871,43,0,0" VerticalAlignment="Top" Width="160" Height="43" Click="Button_Click_6" FontSize="11"/>
     </Grid>
 </UserControl>

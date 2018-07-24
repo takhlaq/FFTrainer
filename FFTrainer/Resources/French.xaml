@@ -101,7 +101,7 @@
     <system:String x:Key="GposeOnly">Gpose Seulement</system:String>
     <system:String x:Key="GposeMode">Mode Gpose</system:String>
     <system:String x:Key="GposeNote">NOTE: Le mode Gpose change les valeurs ci-dessous uniquement sur le personnage ciblé en Gpose</system:String>
-    <system:String x:Key="Madeby"> Conçu par Johto#0001 / @JohtoFFXIV et LeonBlade</system:String>
+    <system:String x:Key="Madeby">Conçu par Johto#0001 / @JohtoFFXIV et LeonBlade</system:String>
     <system:String x:Key="JoinourDiscord">Rejoingez notre serveur Discord!(Anglophone)</system:String>
     <system:String x:Key="Version">Version:</system:String>
     <system:String x:Key="Save">Sauver</system:String>
@@ -129,5 +129,6 @@
     <system:String x:Key="EmoteChecker">Vérifier Emote:</system:String>
     <system:String x:Key="FacialFreezexd">Freeze l'expression</system:String>
     <system:String x:Key="EmoteButton">Liste d'Emotes</system:String>
+    <system:String x:Key="NPCGear">NPC Équipement Finder</system:String>
     <system:String x:Key="AboutText">La base du code de ce Trainer a été écrit par LeonBlade et le projet a été poursuivit par Johto qui depuis travaille dessus. Cette application utilise les librairies suivantes : MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Ce projet utilise des portions de codes provenant de Wardrobe, merci a Goat pour son aide.</system:String>
 </ResourceDictionary>

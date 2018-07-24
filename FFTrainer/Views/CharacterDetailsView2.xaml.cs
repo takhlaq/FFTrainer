@@ -655,5 +655,63 @@ namespace FFTrainer.Views
         {
 
         }
+        private bool CheckResidentList()
+        {
+            if (_exdProvider.Residents == null)
+            {
+                _exdProvider.MakeResidentList();
+                if (_exdProvider.Residents == null)
+                    return false;
+            }
+            return true;
+        }
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            if (!CheckResidentList())
+                return;
+
+            ResidentSelector f = new ResidentSelector(_exdProvider.Residents.Values.Where(c => c.IsGoodNpc()).ToArray());
+            f.Owner = Application.Current.MainWindow;
+            f.ShowDialog();
+
+            if (f.Choice == null)
+                return;
+
+            var gs = f.Choice.Gear;
+
+         //   gs.Customize = _cGearSet.Customize ?? _gearSet.Customize;
+
+            _cGearSet = gs;
+
+            FillCustoms();
+            WriteCurrentGearTuples();
+        }
+        private void FillCustoms()
+        {
+            if (HeadCheck.IsChecked == true) { HeadCheck.IsChecked = false; HeadCheck.IsEnabled = false; }
+            if (ChestCheck.IsChecked == true) { ChestCheck.IsChecked = false; ChestCheck.IsEnabled = false; }
+            if (ArmCheck.IsChecked == true) { ArmCheck.IsChecked = false; ArmCheck.IsEnabled = false; }
+            if (LegCheck.IsChecked == true) { LegCheck.IsChecked = false; LegCheck.IsEnabled = false; }
+            if (FeetCheck.IsChecked == true) { FeetCheck.IsChecked = false; FeetCheck.IsEnabled = false; }
+            if (NeckCheck.IsChecked == true) { NeckCheck.IsChecked = false; NeckCheck.IsEnabled = false; }
+            if (EarCheck.IsChecked == true) { EarCheck.IsChecked = false; EarCheck.IsEnabled = false; }
+            if (WristCheck.IsChecked == true) { WristCheck.IsChecked = false; WristCheck.IsEnabled = false; }
+            if (RRingCheck.IsChecked == true) { RRingCheck.IsChecked = false; RRingCheck.IsEnabled = false; }
+            if (LRingCheck.IsChecked == true) { LRingCheck.IsChecked = false; LRingCheck.IsEnabled = false; }
+            if (JobBox.IsChecked == true) { JobBox.IsChecked = false; JobBox.IsEnabled = false; }
+            if (OffBox.IsChecked == true) { OffBox.IsChecked = false; OffBox.IsEnabled = false; }
+            headGearTextBox.Text = GearTupleToComma(_cGearSet.HeadGear);
+            bodyGearTextBox.Text = GearTupleToComma(_cGearSet.BodyGear);
+            handsGearTextBox.Text = GearTupleToComma(_cGearSet.HandsGear);
+            legsGearTextBox.Text = GearTupleToComma(_cGearSet.LegsGear);
+            feetGearTextBox.Text = GearTupleToComma(_cGearSet.FeetGear);
+            earGearTextBox.Text = GearTupleToComma(_cGearSet.EarGear);
+            neckGearTextBox.Text = GearTupleToComma(_cGearSet.NeckGear);
+            wristGearTextBox.Text = GearTupleToComma(_cGearSet.WristGear);
+            rRingGearTextBox.Text = GearTupleToComma(_cGearSet.RRingGear);
+            lRingGearTextBox.Text = GearTupleToComma(_cGearSet.LRingGear);
+            mainWepTextBox.Text = WepTupleToComma(_cGearSet.MainWep);
+            offWepTextBox.Text = WepTupleToComma(_cGearSet.OffWep);
+        }
     }
 }

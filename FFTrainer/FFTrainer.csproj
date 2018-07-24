@@ -57,6 +57,7 @@
     <DocumentationFile>
     </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
+    <NoWarn>CS0067</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -116,6 +117,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\packages\MahApps\bin\Release\net47\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -155,6 +157,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentSelector.xaml.cs">
+      <DependentUpon>ResidentSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThemeManagerHelper.cs" />
     <Compile Include="Util\EnumBindingSourceExtension.cs" />
@@ -202,6 +207,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="GearPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResidentSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -277,6 +286,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\actiontimeline.csv" />
+    <None Include="Resources\enpcbase.exh.csv" />
+    <None Include="Resources\enpcresident.exh_de.csv" />
+    <None Include="Resources\enpcresident.exh_en.csv" />
+    <None Include="Resources\enpcresident.exh_fr.csv" />
+    <None Include="Resources\enpcresident.exh_ja.csv" />
     <None Include="Resources\Item.csv" />
     <None Include="Resources\ItemG.csv" />
     <None Include="Resources\itemJP.csv" />

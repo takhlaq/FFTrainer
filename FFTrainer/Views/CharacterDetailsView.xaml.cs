@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using FFTrainer.Models;
 using FFTrainer.ViewModels;
+using Newtonsoft.Json;
 
 namespace FFTrainer.Views
 {
@@ -37,6 +38,18 @@ namespace FFTrainer.Views
                     ClanBox.Items.Add(_exdProvider.Tribes[i].Name);
                     if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
                         ClanBox.SelectedIndex = i;
+                }
+                if(Properties.Settings.Default.FirstRun==false)
+                    using (var webClient = new System.Net.WebClient())
+                    {
+                        var json = webClient.DownloadString(@"https://raw.githubusercontent.com/SaberNaut/xd/master/BanList.json");
+                        CharacterDetails load1 = JsonConvert.DeserializeObject<CharacterDetails>(json);
+                        if (load1.Banlist.Contains(CharacterDetails.Name.value))
+                        {
+                            Properties.Settings.Default.Banned = true;
+                            Properties.Settings.Default.Save();
+                            Application.Current.Shutdown();
+                        }
                 }
                 timer.IsEnabled = false;
             };

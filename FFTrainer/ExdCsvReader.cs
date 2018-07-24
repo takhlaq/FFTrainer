@@ -7,6 +7,7 @@ using FFTrainer.Properties;
 using GearTuple = System.Tuple<int, int, int>;
 using WepTuple = System.Tuple<int, int, int, int>;
 using Newtonsoft.Json;
+using FFTrainer.Views;
 
 namespace FFTrainer
 {
@@ -73,6 +74,30 @@ namespace FFTrainer
                 return Name;
             }
         }
+        public class Resident
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
+            public GearSet Gear { get; set; }
+
+            public override string ToString()
+            {
+                return Name;
+            }
+
+            public bool IsGoodNpc()
+            {
+                if (Gear.Customize[0] != 0 && Name.Length != 0)
+                    return true;
+
+                return false;
+            }
+
+            public string MakeGearString()
+            {
+                return $"{CharacterDetailsView2.GearTupleToComma(Gear.HeadGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.BodyGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.HandsGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.LegsGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.FeetGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.EarGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.NeckGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.WristGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.LRingGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.RRingGear)}";
+            }
+        }
 
         public class Weather
         {
@@ -118,11 +143,340 @@ namespace FFTrainer
         public Dictionary<int, Weather> Weathers = null;
         public Dictionary<int, WeatherRate> WeatherRates = null;
         public Dictionary<int, TerritoryType> TerritoryTypes = null;
+        public Dictionary<int, Resident> Residents = null;
         public Dictionary<int, Race> Races = null;
         public Dictionary<int, Tribe> Tribes = null;
         public Dictionary<int, Dye> Dyes = null;
         public Dictionary<int, Emote> Emotes = null;
 
+
+        public void MakeResidentList()
+        {
+            Residents = new Dictionary<int, Resident>();
+
+            try
+            {
+                if (Properties.Settings.Default.Language == "English"|| Properties.Settings.Default.Language == "Spanish")
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.enpcresident_exh_en)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int id = 0;
+                            string name = "";
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    id = int.Parse(field);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{id} - {name}");
+                            Residents.Add(id, new Resident { Index = id, Name = name });
+                        }
+                        Console.WriteLine($"{rowCount} residentNames read");
+                    }
+                if (Properties.Settings.Default.Language == "German")
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.enpcresident_exh_de)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int id = 0;
+                            string name = "";
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    id = int.Parse(field);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{id} - {name}");
+                            Residents.Add(id, new Resident { Index = id, Name = name });
+                        }
+                        Console.WriteLine($"{rowCount} residentNames read");
+                    }
+                if (Properties.Settings.Default.Language == "Japanese")
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.enpcresident_exh_ja)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int id = 0;
+                            string name = "";
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    id = int.Parse(field);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{id} - {name}");
+                            Residents.Add(id, new Resident { Index = id, Name = name });
+                        }
+                        Console.WriteLine($"{rowCount} residentNames read");
+                    }
+                if (Properties.Settings.Default.Language == "French")
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.enpcresident_exh_fr)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            //Processing row
+                            rowCount++;
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+
+                            int id = 0;
+                            string name = "";
+
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 1)
+                                {
+                                    id = int.Parse(field);
+                                }
+
+                                if (fCount == 2)
+                                {
+                                    name = field;
+                                }
+                            }
+
+                            Console.WriteLine($"{id} - {name}");
+                            Residents.Add(id, new Resident { Index = id, Name = name });
+                        }
+                        Console.WriteLine($"{rowCount} residentNames read");
+                    }
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.enpcbase_exh)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+                        int fCount = 0;
+
+                        int id = 0;
+                        List<byte> customize = new List<byte>();
+                        GearSet gear = new GearSet();
+                        string wepCSV = "";
+                        int dDataCount = 0;
+                        int modelId = 0;
+
+                        foreach (string field in fields)
+                        {
+                            fCount++;
+
+                            if (fCount == 1)
+                            {
+                                id = int.Parse(field);
+                            }
+
+                            if (fCount == 37)
+                            {
+                                modelId = int.Parse(field);
+                            }
+
+                            if (fCount >= 38 && fCount <= 63)
+                            {
+                                try
+                                {
+                                    customize.Add(byte.Parse(field));
+                                    dDataCount++;
+                                }
+                                catch (Exception)
+                                {
+                                    Console.WriteLine("Invalid: " + field);
+                                }
+                            }
+
+                            if (fCount == 67)
+                            {
+                                gear.MainWep = CharacterDetailsView2.CommaToWepTuple(field);
+                            }
+
+                            if (fCount == 69)
+                            {
+                                gear.OffWep = CharacterDetailsView2.CommaToWepTuple(field);
+                            }
+
+                            if (fCount >= 71 && fCount <= 90)
+                            {
+                                Int32 fieldint = 0;
+
+                                if (fCount != 73)
+                                    fieldint = Int32.Parse(field);
+
+                                var bytes = BitConverter.GetBytes(fieldint);
+
+                                var model = BitConverter.ToUInt16(bytes, 0);
+
+                                switch (fCount - 1)
+                                {
+                                    case 70:
+                                        gear.HeadGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 71:
+                                        gear.HeadGear = new GearTuple(gear.HeadGear.Item1, gear.HeadGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 72:
+                                        break;
+                                    case 73:
+                                        gear.BodyGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 74:
+                                        gear.BodyGear = new GearTuple(gear.BodyGear.Item1, gear.BodyGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 75:
+                                        gear.HandsGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 76:
+                                        gear.HandsGear = new GearTuple(gear.HandsGear.Item1, gear.HandsGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 77:
+                                        gear.LegsGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 78:
+                                        gear.LegsGear = new GearTuple(gear.LegsGear.Item1, gear.LegsGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 79:
+                                        gear.FeetGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 80:
+                                        gear.FeetGear = new GearTuple(gear.FeetGear.Item1, gear.FeetGear.Item2,
+                                            int.Parse(field));
+                                        break;
+
+                                    case 81:
+                                        gear.EarGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 82:
+                                        gear.EarGear = new GearTuple(gear.EarGear.Item1, gear.EarGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 83:
+                                        gear.NeckGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 84:
+                                        gear.NeckGear = new GearTuple(gear.NeckGear.Item1, gear.NeckGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 85:
+                                        gear.WristGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 86:
+                                        gear.WristGear = new GearTuple(gear.WristGear.Item1, gear.WristGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 87:
+                                        gear.LRingGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 88:
+                                        gear.LRingGear = new GearTuple(gear.LRingGear.Item1, gear.LRingGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                    case 89:
+                                        gear.RRingGear = new GearTuple(model, bytes[2], 0);
+                                        break;
+                                    case 90:
+                                        gear.RRingGear = new GearTuple(gear.RRingGear.Item1, gear.RRingGear.Item2,
+                                            int.Parse(field));
+                                        break;
+                                }
+                            }
+                        }
+
+                        Console.WriteLine($"{id} - {wepCSV} - {dDataCount}");
+
+                        gear.Customize = customize.ToArray();
+
+                        try
+                        {
+                            Residents[id].Gear = gear;
+                        }
+                        catch (KeyNotFoundException)
+                        {
+                            Console.WriteLine("Did not find corresponding entry for: " + id);
+                        }
+
+                    }
+                    Console.WriteLine($"{rowCount} idLookMappings read");
+                }
+
+            }
+            catch (Exception exc)
+            {
+                Residents = null;
+#if DEBUG
+                throw exc;
+#endif
+            }
+        }
         public void MakeItemList()
         {
             Items = new Dictionary<int, Item>();

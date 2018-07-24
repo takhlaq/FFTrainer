@@ -129,5 +129,6 @@
     <system:String x:Key="Update">アプデ</system:String>
     <system:String x:Key="EmoteChecker">エモートチェッカー:</system:String>
     <system:String x:Key="FacialFreezexd">フリーズ表現</system:String>
+    <system:String x:Key="NPCGear">NPCアーマーファインダー</system:String>
     <system:String x:Key="EmoteButton">エモートリスト</system:String>
 </ResourceDictionary>

@@ -82,5 +82,17 @@ namespace FFTrainer.Properties {
                 this["TopApp"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Banned {
+            get {
+                return ((bool)(this["Banned"]));
+            }
+            set {
+                this["Banned"] = value;
+            }
+        }
     }
 }

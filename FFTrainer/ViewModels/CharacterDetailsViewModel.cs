@@ -3,6 +3,8 @@ using FFTrainer.Models;
 using FFTrainer.Commands;
 using System.ComponentModel;
 using FFTrainer.Views;
+using Newtonsoft.Json;
+using System.Windows;
 
 namespace FFTrainer.ViewModels
 {
@@ -24,7 +26,6 @@ namespace FFTrainer.ViewModels
             refreshEntitiesCommand = new RefreshEntitiesCommand(this);
             // refresh the list initially
             this.Refresh();
-
             mediator.Work += Work;
 
             mediator.EntitySelection += (offset) => eOffset = offset;
@@ -143,6 +144,14 @@ namespace FFTrainer.ViewModels
                 if (CharacterDetails.LimbalR.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalR), CharacterDetails.LimbalR.GetBytes());
                 else CharacterDetails.LimbalR.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LimbalR));
 
+                if (CharacterDetails.ScaleX.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.X), CharacterDetails.ScaleX.GetBytes());
+                else CharacterDetails.ScaleX.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.X));
+
+                if (CharacterDetails.ScaleY.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.Y), CharacterDetails.ScaleY.GetBytes());
+                else CharacterDetails.ScaleY.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.Y));
+
+                if (CharacterDetails.ScaleZ.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.Z), CharacterDetails.ScaleZ.GetBytes());
+                else CharacterDetails.ScaleZ.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, bodyBase, Settings.Instance.Character.Body.Scale.Z));
 
                 if (CharacterDetails.LipsB.freeze) mem.writeBytes(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB), CharacterDetails.LipsB.GetBytes());
                 else CharacterDetails.LipsB.value = mem.readFloat(MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.LipsB));
@@ -382,7 +391,6 @@ namespace FFTrainer.ViewModels
             catch (System.Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.Message, "Oh no!");
-                System.Windows.MessageBox.Show("Disabling " + this.GetType().Name, "Oh no!");
                 mediator.Work -= Work;
             }
         }

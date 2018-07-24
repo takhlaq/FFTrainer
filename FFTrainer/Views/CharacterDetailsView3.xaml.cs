@@ -214,5 +214,26 @@ namespace FFTrainer.Views
                 if (BR.IsMouseOver || BR.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalB), "float", BR.Value.ToString());
         }
+
+        private void ScaleX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (ScaleX.Value.HasValue)
+                if (ScaleX.IsMouseOver || ScaleX.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Scale.X), "float", ScaleX.Value.ToString());
+        }
+
+        private void ScaleY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (ScaleY.Value.HasValue)
+                if (ScaleY.IsMouseOver || ScaleY.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Scale.Y), "float", ScaleY.Value.ToString());
+        }
+
+        private void ScaleZ_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (ScaleZ.Value.HasValue)
+                if (ScaleZ.IsMouseOver || ScaleZ.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Scale.Z), "float", ScaleZ.Value.ToString());
+        }
     }
 }

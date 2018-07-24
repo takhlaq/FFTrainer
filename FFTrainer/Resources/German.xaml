@@ -129,5 +129,6 @@
     <system:String x:Key="EmoteChecker">Emote prüfen:</system:String>
     <system:String x:Key="FacialFreezexd">Ausdruck einfrieren</system:String>
     <system:String x:Key="EmoteButton">Emote Liste</system:String>
+    <system:String x:Key="NPCGear">NPC-Ausrüstungsfinder</system:String>
     <system:String x:Key="AboutText">Dieser Trainer wurde von LeonBlade aufgebaut und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
 </ResourceDictionary>
