@@ -57,7 +57,6 @@ namespace FFTrainer.Models
 
 
         [JsonIgnore] public bool IsEnabled { get; set; }
-        public List<string> Banlist { get; set; }
         [JsonIgnore] public Address<float> GposeMode { get; set; }
         public Address<float> TailSize { get; set; }
         [JsonIgnore] public Address<string> Name { get; set; }
@@ -213,7 +212,6 @@ namespace FFTrainer.Models
 
         public CharacterDetails()
         {
-            Banlist = new List<string>();
             FreezeFacial = new Address<float>();
             Territoryxd = new Address<int>();
             ScaleX = new Address<float>();

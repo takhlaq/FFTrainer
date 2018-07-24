@@ -37,8 +37,6 @@ namespace FFTrainer
             InitializeComponent();
             Properties.Settings.Default.Upgrade();
             _exdProvider.EmoteList();
-            if (Properties.Settings.Default.Banned == true)
-                Application.Current.Shutdown();
             //load our settings
             var language = Properties.Settings.Default.Language;
             var dictionary = new ResourceDictionary();
@@ -362,12 +360,10 @@ namespace FFTrainer
                 if (CharacterDetails.Emote.freeze)
                 {
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
-                //    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Emote), CharacterDetails.EmoteX.GetBytes());
                 }
                 else
                 {
                     CharacterDetails.Emote.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
-                 //   CharacterDetails.EmoteX.value= (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote)));
                 }
                 Thread.Sleep(10);
 
@@ -424,7 +420,6 @@ namespace FFTrainer
             if (dig.ShowDialog() == true)
             {
                 CharacterDetails Save1 = new CharacterDetails(); // CharacterDetails is class with all address
-                CharacterDetails.Banlist.Add("Khyrou Johto");
                 Save1 = CharacterDetails;
                 string details = JsonConvert.SerializeObject(Save1,Formatting.Indented);
                 File.WriteAllText(dig.FileName, details);
@@ -444,11 +439,6 @@ namespace FFTrainer
                 //Show the dialog
                 fdf.ShowDialog();
             }
-            else
-            {
-                //Not first time of running application.
-            }
-
         }
 
         private void ChangeLang(object sender, RoutedEventArgs e)
