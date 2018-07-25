@@ -507,6 +507,9 @@ namespace FFTrainer.Views
             CharacterDetails.Wrist.freeze = false;
             CharacterDetails.RFinger.freeze = false;
             CharacterDetails.LFinger.freeze = false;
+            CharacterDetails.ScaleX.freeze = false;
+            CharacterDetails.ScaleY.freeze = false;
+            CharacterDetails.ScaleZ.freeze = false;
         }
     }
 }

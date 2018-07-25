@@ -340,7 +340,7 @@ namespace FFTrainer
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailorMuscle), CharacterDetails.TailorMuscle.GetBytes());
                 else CharacterDetails.TailorMuscle.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.TailorMuscle));
 
-                Thread.Sleep(100);
+                Thread.Sleep(10);
             }
         }
         private void Worker_DoWork2(object sender, DoWorkEventArgs e)
