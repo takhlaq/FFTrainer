@@ -202,42 +202,42 @@ namespace FFTrainer.Views
 
             return bytes;
         }
-        private void XPos2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void XPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (XPos2.Value.HasValue)
                 if (XPos2.IsMouseOver || XPos2.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponX), "float", XPos2.Value.ToString());
         }
 
-        private void XPos2_Copy_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void XPos2_Copy_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (XPos2_Copy.Value.HasValue)
                 if (XPos2_Copy.IsMouseOver || XPos2_Copy.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponY), "float", XPos2_Copy.Value.ToString());
         }
 
-        private void XPos2_Copy1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void XPos2_Copy1_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (XPos2_Copy1.Value.HasValue)
                 if (XPos2_Copy1.IsMouseOver || XPos2_Copy1.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponZ), "float", XPos2_Copy1.Value.ToString());
         }
 
-        private void WeaponRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void WeaponRed_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (WeaponRed.Value.HasValue)
                 if (WeaponRed.IsMouseOver || WeaponRed.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponRed), "float", WeaponRed.Value.ToString());
         }
 
-        private void WeaponGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void WeaponGreen_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (WeaponGreen.Value.HasValue)
                 if (WeaponGreen.IsMouseOver || WeaponGreen.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponGreen), "float", WeaponGreen.Value.ToString());
         }
 
-        private void WeaponBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void WeaponBlue_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (WeaponBlue.Value.HasValue)
                 if (WeaponBlue.IsMouseOver || WeaponBlue.IsKeyboardFocusWithin)
@@ -565,42 +565,42 @@ namespace FFTrainer.Views
             }
         }
 
-        private void OXPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OXPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OXPos.Value.HasValue)
                 if (OXPos.IsMouseOver || OXPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandX), "float", OXPos.Value.ToString());
         }
 
-        private void OYPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OYPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OYPos.Value.HasValue)
                 if (OYPos.IsMouseOver || OYPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandY), "float", OYPos.Value.ToString());
         }
 
-        private void OZPos_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OZPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OZPos.Value.HasValue)
                 if (OZPos.IsMouseOver || OZPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandZ), "float", OZPos.Value.ToString());
         }
 
-        private void OffRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OffRed_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OffRed.Value.HasValue)
                 if (OffRed.IsMouseOver || OffRed.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed), "float", OffRed.Value.ToString());
         }
 
-        private void OffGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OffGreen_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OffGreen.Value.HasValue)
                 if (OffGreen.IsMouseOver || OffGreen.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandGreen), "float", OffGreen.Value.ToString());
         }
 
-        private void OffBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void OffBlue_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (OffBlue.Value.HasValue)
                 if (OffBlue.IsMouseOver || OffBlue.IsKeyboardFocusWithin)
