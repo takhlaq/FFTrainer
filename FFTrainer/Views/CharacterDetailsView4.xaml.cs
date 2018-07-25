@@ -19,21 +19,21 @@ namespace FFTrainer.Views
         }
         private void MaxZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (MaxZoom.Value.HasValue && MainWindow.NotAllowed == false)
+            if (MaxZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
                 if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
         }
 
         private void Min_Zoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (Min_Zoom.Value.HasValue && MainWindow.NotAllowed == false)
+            if (Min_Zoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
                 if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
         }
 
         private void CurrentZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (CurrentZoom.Value.HasValue && MainWindow.NotAllowed == false)
+            if (CurrentZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
                 if (CurrentZoom.IsMouseOver || CurrentZoom.IsKeyboardFocusWithin || CZoom2.IsKeyboardFocusWithin||CZoom2.IsMouseOver)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CurrentZoom.Value.ToString());
         }

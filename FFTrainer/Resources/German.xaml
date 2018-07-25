@@ -131,4 +131,9 @@
     <system:String x:Key="EmoteButton">Emote Liste</system:String>
     <system:String x:Key="NPCGear">NPC-Ausrüstungsfinder</system:String>
     <system:String x:Key="AboutText">Dieser Trainer wurde von LeonBlade aufgebaut und dann von Johto weitergeführt. Die folgenden Bibliotheken werden verwendet: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Dieses Projekt nutzt Teile des Codes von Wardrobe, danke an eine Ziege für die Hilfe.</system:String>
+    <system:String x:Key="ThreadSetting">Faden Option</system:String>
+    <system:String x:Key="Apply">Anwenden</system:String>
+    <system:String x:Key="Default">Default</system:String>
+    <system:String x:Key="Read">Lesen</system:String>
+    <system:String x:Key="Write">Schreiben</system:String>
 </ResourceDictionary>

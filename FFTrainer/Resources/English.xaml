@@ -131,4 +131,9 @@
     <system:String x:Key="FacialFreezexd">Freeze Expression</system:String>
     <system:String x:Key="EmoteButton">Emote List</system:String>
     <system:String x:Key="NPCGear">NPC Gear Finder</system:String>
+    <system:String x:Key="ThreadSetting">Thread Settings</system:String>
+    <system:String x:Key="Apply">Apply</system:String>
+    <system:String x:Key="Default">Default</system:String>
+    <system:String x:Key="Read">Read</system:String>
+    <system:String x:Key="Write">Write</system:String>
 </ResourceDictionary>

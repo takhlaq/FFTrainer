@@ -37,6 +37,6 @@
         <CheckBox  IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Weather.freeze}" Content="{DynamicResource WeatherB}" HorizontalAlignment="Left" Margin="421,148,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock Text="{DynamicResource WeatherNote}" HorizontalAlignment="Left" Margin="613,144,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="160" Height="55" TextWrapping="Wrap"/>
         <mah:NumericUpDown Value="{Binding Path=CharacterDetails.CharacterDetails.Weather.value}" x:Name="Weather" HorizontalAlignment="Left" Margin="498,145,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.507,0.487" TextAlignment="Justify" Maximum="140" Minimum="0" ValueChanged="NumericUpDown_ValueChanged"/>
-        <Button Content="{DynamicResource WeatherB}" HorizontalAlignment="Left" Margin="498,175,0,0" VerticalAlignment="Top" Width="110" Height="30" FontSize="14" RenderTransformOrigin="0.5,0.5" Click="Button_Click"/>
+        <Button Content="{DynamicResource WeatherB}" HorizontalAlignment="Left" Margin="498,175,0,0" VerticalAlignment="Top" Width="110" Height="30" FontSize="14" RenderTransformOrigin="0.5,0.5" Click="Button_Click" BorderThickness="1" FontWeight="Bold"/>
     </Grid>
 </UserControl>

@@ -158,7 +158,7 @@
         <mah:NumericUpDown StringFormat="F7" x:Name="CamY" Value="{Binding CharacterDetails.CamY.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="868,189,0,0" VerticalAlignment="Top" Width="172" Interval="0.01" ValueChanged="CamY_ValueChanged" TextAlignment="Justify"/>
         <CheckBox IsChecked="{Binding CharacterDetails.CamZ.freeze}" Content="{DynamicResource CamZ}" HorizontalAlignment="Left" Margin="766,219,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="92"/>
         <mah:NumericUpDown StringFormat="F7" x:Name="CamZ" Value="{Binding CharacterDetails.CamZ.value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="868,218,0,0" VerticalAlignment="Top" Width="172" Interval="0.01" ValueChanged="CamZ_ValueChanged" TextAlignment="Justify"/>
-        <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="758,329,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click"/>
+        <Button x:Name="Unfreeze" Content="{DynamicResource Unfreeze}" HorizontalAlignment="Left" Margin="758,329,0,0" VerticalAlignment="Top" Width="176" Height="42" FontSize="14" Click="Unfreeze_Click" FontWeight="Bold" BorderThickness="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="746,384,0,0" TextWrapping="Wrap" Text="{DynamicResource EmoteChecker}" VerticalAlignment="Top" FontWeight="Bold" Width="102"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="849,380,0,0" TextWrapping="Wrap" Text="{Binding CharacterDetails.EmoteX.value}" VerticalAlignment="Top" Width="85" IsEnabled="False" IsTabStop="False"/>
     </Grid>

@@ -82,5 +82,29 @@ namespace FFTrainer.Properties {
                 this["TopApp"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int Write {
+            get {
+                return ((int)(this["Write"]));
+            }
+            set {
+                this["Write"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int Read {
+            get {
+                return ((int)(this["Read"]));
+            }
+            set {
+                this["Read"] = value;
+            }
+        }
     }
 }

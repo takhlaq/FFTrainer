@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FFTrainer"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="FFTrainer.ThreadSettings"
+        mc:Ignorable="d"
+        Title="ThreadSettings" Height="173.809" Width="254.666" WindowStartupLocation="CenterOwner">
+    <Grid>
+
+        <mah:NumericUpDown x:Name="ReadText" HorizontalAlignment="Left" Margin="95,10,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0" HasDecimals="False"/>
+        <mah:NumericUpDown x:Name="WriteText" HorizontalAlignment="Left" Margin="95,51,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0" HasDecimals="False"/>
+        <Label Content="{DynamicResource Read}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="{DynamicResource Write}" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="{DynamicResource Apply}" HorizontalAlignment="Left" Margin="157,82,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" BorderThickness="1" Click="Button_Click"/>
+        <Button Content="{DynamicResource Default}" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" BorderThickness="1" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

@@ -18,7 +18,6 @@ namespace FFTrainer.ViewModels
     {
         public event WorkEventHandler Work;
         public event EntitySelectionEventHandler EntitySelection;
-        public CharacterDetails Characterdetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
 
         public void SendEntitySelection(string offset)
         {
@@ -193,7 +192,7 @@ namespace FFTrainer.ViewModels
             while (true)
             {
                 // sleep for 500 ms
-                Thread.Sleep(500);
+                Thread.Sleep(Properties.Settings.Default.Read);
                 // check if our memory manager is set
                 mediator.SendWork();
 

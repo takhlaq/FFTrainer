@@ -9,7 +9,7 @@
         Title="ResidentSelector" Height="361.121" Width="270" WindowStartupLocation="CenterOwner">
     <Grid Margin="0,0,2,0">
         <TextBox x:Name="textbox" HorizontalAlignment="Left" Height="23" Margin="10,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" mah:TextBoxHelper.Watermark="Search..." TextChanged="textbox_TextChanged"/>
-        <Button Content="Ok" HorizontalAlignment="Left" Margin="172,287,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="172,287,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" BorderThickness="1" FontWeight="Bold"/>
         <ListBox x:Name="residentlist" HorizontalAlignment="Left" Height="272" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" BorderThickness="1"/>
     </Grid>
 </Window>

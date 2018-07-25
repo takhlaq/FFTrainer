@@ -131,4 +131,9 @@
     <system:String x:Key="EmoteButton">Lista de Emote</system:String>
     <system:String x:Key="NPCGear">Buscador de equipos NPC</system:String>
     <system:String x:Key="AboutText">El código base de este entrenador fue hecho por LeonBlade y luego el proyecto continuó con Johto trabajando en él. Esta aplicación utiliza las siguientes bibliotecas en este proyecto: MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json y Memory.dll. Este proyecto usa partes del código del armario, gracias a la ayuda de Cabra.</system:String>
+    <system:String x:Key="ThreadSetting">Configuración de subprocesos</system:String>
+    <system:String x:Key="Apply">Aplicar</system:String>
+    <system:String x:Key="Default">Defecto</system:String>
+    <system:String x:Key="Read">Leer</system:String>
+    <system:String x:Key="Write">Escribir</system:String>
 </ResourceDictionary>

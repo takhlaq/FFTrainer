@@ -131,4 +131,9 @@
     <system:String x:Key="FacialFreezexd">フリーズ表現</system:String>
     <system:String x:Key="NPCGear">NPCアーマーファインダー</system:String>
     <system:String x:Key="EmoteButton">エモートリスト</system:String>
+    <system:String x:Key="ThreadSetting">スレッド設定</system:String>
+    <system:String x:Key="Apply">適用</system:String>
+    <system:String x:Key="Default">デフォルト</system:String>
+    <system:String x:Key="Read">読む</system:String>
+    <system:String x:Key="Write">書きます</system:String>
 </ResourceDictionary>

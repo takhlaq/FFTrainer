@@ -162,6 +162,9 @@
       <DependentUpon>ResidentSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThemeManagerHelper.cs" />
+    <Compile Include="ThreadSettings.xaml.cs">
+      <DependentUpon>ThreadSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\EnumBindingSourceExtension.cs" />
     <Compile Include="Views\CharacterDetailsView.xaml.cs">
       <DependentUpon>CharacterDetailsView.xaml</DependentUpon>
@@ -231,6 +234,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Spanish.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThreadSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

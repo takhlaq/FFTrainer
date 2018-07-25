@@ -131,4 +131,9 @@
     <system:String x:Key="EmoteButton">Liste d'Emotes</system:String>
     <system:String x:Key="NPCGear">NPC Équipement Finder</system:String>
     <system:String x:Key="AboutText">La base du code de ce Trainer a été écrit par LeonBlade et le projet a été poursuivit par Johto qui depuis travaille dessus. Cette application utilise les librairies suivantes : MahApps, Fody, AutoUpdater.Net, Newtonsoft.Json and Memory.dll. Ce projet utilise des portions de codes provenant de Wardrobe, merci a Goat pour son aide.</system:String>
+    <system:String x:Key="ThreadSetting">Paramètres de thread</system:String>
+    <system:String x:Key="Apply">Appliquer</system:String>
+    <system:String x:Key="Default">Défaut</system:String>
+    <system:String x:Key="Read">Lis</system:String>
+    <system:String x:Key="Write">Écrire</system:String>
 </ResourceDictionary>
