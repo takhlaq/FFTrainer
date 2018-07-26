@@ -6,7 +6,6 @@ using WepTuple = System.Tuple<int, int, int, int>;
 using System;
 using System.Linq;
 using FFTrainer.Models;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace FFTrainer.Views
@@ -87,7 +86,39 @@ namespace FFTrainer.Views
         {
             if (_cGearSet.HeadGear == null)
                 return;
-
+            CharacterDetails.Job.value = _cGearSet.MainWep.Item1;
+            CharacterDetails.WeaponBase.value = (byte)_cGearSet.MainWep.Item2;
+            CharacterDetails.WeaponV.value = (byte)_cGearSet.MainWep.Item3;
+            CharacterDetails.WeaponDye.value = (byte)_cGearSet.MainWep.Item4;
+            CharacterDetails.Offhand.value = _cGearSet.OffWep.Item1;
+            CharacterDetails.OffhandBase.value = (byte)_cGearSet.OffWep.Item2;
+            CharacterDetails.OffhandV.value = (byte)_cGearSet.OffWep.Item3;
+            CharacterDetails.OffhandDye.value = (byte)_cGearSet.OffWep.Item4;
+            CharacterDetails.HeadPiece.value = _cGearSet.HeadGear.Item1;
+            CharacterDetails.HeadV.value = (byte)_cGearSet.HeadGear.Item2;
+            CharacterDetails.HeadDye.value = (byte)_cGearSet.HeadGear.Item3;
+            CharacterDetails.Chest.value = _cGearSet.BodyGear.Item1;
+            CharacterDetails.ChestV.value = (byte)_cGearSet.BodyGear.Item2;
+            CharacterDetails.ChestDye.value = (byte)_cGearSet.BodyGear.Item3;
+            CharacterDetails.Arms.value = _cGearSet.HandsGear.Item1;
+            CharacterDetails.ArmsV.value = (byte)_cGearSet.HandsGear.Item2;
+            CharacterDetails.ArmsDye.value = (byte)_cGearSet.HandsGear.Item3;
+            CharacterDetails.Legs.value = _cGearSet.LegsGear.Item1;
+            CharacterDetails.LegsV.value = (byte)_cGearSet.LegsGear.Item2;
+            CharacterDetails.LegsDye.value = (byte)_cGearSet.LegsGear.Item3;
+            CharacterDetails.Feet.value = _cGearSet.FeetGear.Item1;
+            CharacterDetails.FeetVa.value = (byte)_cGearSet.FeetGear.Item2;
+            CharacterDetails.FeetDye.value = (byte)_cGearSet.FeetGear.Item3;
+            CharacterDetails.Neck.value = _cGearSet.NeckGear.Item1;
+            CharacterDetails.NeckVa.value = (byte)_cGearSet.NeckGear.Item2;
+            CharacterDetails.Ear.value = _cGearSet.EarGear.Item1;
+            CharacterDetails.EarVa.value = (byte)_cGearSet.EarGear.Item2;
+            CharacterDetails.Wrist.value = _cGearSet.WristGear.Item1;
+            CharacterDetails.WristVa.value = (byte)_cGearSet.WristGear.Item2;
+            CharacterDetails.RFinger.value = _cGearSet.RRingGear.Item1;
+            CharacterDetails.RFingerVa.value = (byte)_cGearSet.RRingGear.Item2;
+            CharacterDetails.LFinger.value = _cGearSet.LRingGear.Item1;
+            CharacterDetails.LFingerVa.value = (byte)_cGearSet.LRingGear.Item2;
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece), GearTupleToByteAry(_cGearSet.HeadGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest), GearTupleToByteAry(_cGearSet.BodyGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms), GearTupleToByteAry(_cGearSet.HandsGear));
@@ -100,7 +131,6 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist), GearTupleToByteAry(_cGearSet.WristGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger), GearTupleToByteAry(_cGearSet.RRingGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger), GearTupleToByteAry(_cGearSet.LRingGear));
-            Task.Delay(100).Wait();
             if (CharacterDetails.HeadPiece.Activated == true) { CharacterDetails.HeadPiece.freeze = true; CharacterDetails.HeadPiece.Activated = false; }
             if (CharacterDetails.Chest.Activated == true) { CharacterDetails.Chest.freeze = true; CharacterDetails.Chest.Activated = false; }
             if (CharacterDetails.Arms.Activated == true) { CharacterDetails.Arms.freeze = true; CharacterDetails.Arms.Activated = false; }
@@ -161,7 +191,7 @@ namespace FFTrainer.Views
         }
         public static GearTuple ReadGearTuple(string offset)
         {
-            var bytes = MemoryManager.Instance.MemLib.readBytes(offset, 4);
+            var bytes = MemoryManager.Instance.MemLib.readBytes(offset.ToString(), 4);
 
             return new GearTuple(BitConverter.ToInt16(bytes, 0), bytes[2], bytes[3]);
         }
