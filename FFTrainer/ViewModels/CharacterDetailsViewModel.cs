@@ -119,33 +119,6 @@ namespace FFTrainer.ViewModels
                 baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
                 if (CharacterDetails.GposeMode.Activated) baseAddr = MemoryManager.Instance.GposeAddress;
                 var nameAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Name);
-                if (!CharacterDetails.GposeMode.Activated)
-                {
-                    CharacterDetailsView2._gearSet.HeadGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
-                    CharacterDetails.HeadSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.HeadGear);
-                    CharacterDetailsView2._gearSet.BodyGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
-                    CharacterDetails.BodySlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.BodyGear);
-                    CharacterDetailsView2._gearSet.HandsGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
-                    CharacterDetails.ArmSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.HandsGear);
-                    CharacterDetailsView2._gearSet.LegsGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
-                    CharacterDetails.LegSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.LegsGear);
-                    CharacterDetailsView2._gearSet.FeetGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
-                    CharacterDetails.FeetSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.FeetGear);
-                    CharacterDetailsView2._gearSet.MainWep = CharacterDetailsView2.ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
-                    CharacterDetails.WeaponSlot.value = CharacterDetailsView2.WepTupleToComma(CharacterDetailsView2._gearSet.MainWep);
-                    CharacterDetailsView2._gearSet.EarGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear));
-                    CharacterDetails.EarSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.EarGear);
-                    CharacterDetailsView2._gearSet.WristGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist));
-                    CharacterDetails.WristSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.WristGear);
-                    CharacterDetailsView2._gearSet.NeckGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck));
-                    CharacterDetails.NeckSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.NeckGear);
-                    CharacterDetailsView2._gearSet.LRingGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger));
-                    CharacterDetails.LFingerSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.LRingGear);
-                    CharacterDetailsView2._gearSet.RRingGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger));
-                    CharacterDetails.RFingerSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.RRingGear);
-                    CharacterDetailsView2._gearSet.OffWep = CharacterDetailsView2.ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
-                    CharacterDetails.OffhandSlot.value = CharacterDetailsView2.WepTupleToComma(CharacterDetailsView2._gearSet.OffWep);
-                }
                 if (!CharacterDetails.LimbalG.freeze)CharacterDetails.LimbalG.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalG));
 
                 if (!CharacterDetails.LimbalB.freeze) MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalB));

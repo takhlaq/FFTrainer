@@ -8,14 +8,14 @@
         mc:Ignorable="d"
         Title="Language Selector" Height="222.666" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid>
-        <Button Content="English" Command="{Binding LanguageChangeCommand}" CommandParameter="English" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="16" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
-        <Button Content="日本語(Japanese)" Command="{Binding LanguageChangeCommand}" CommandParameter="Japanese" HorizontalAlignment="Left" Margin="151,62,0,0" VerticalAlignment="Top" Width="131" Height="38" RenderTransformOrigin="0.511,0.509" FontSize="14"  Click="Button_Click" mah:ButtonHelper.PreserveTextCase="True"/>
+        <Button Content="English" Command="{Binding LanguageChangeCommand}" CommandParameter="English" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="16" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click" BorderThickness="1" FontWeight="Bold"/>
+        <Button Content="日本語(Japanese)" Command="{Binding LanguageChangeCommand}" CommandParameter="Japanese" HorizontalAlignment="Left" Margin="151,62,0,0" VerticalAlignment="Top" Width="131" Height="38" RenderTransformOrigin="0.511,0.509" FontSize="14"  Click="Button_Click" mah:ButtonHelper.PreserveTextCase="True" BorderThickness="1" FontWeight="Bold" Padding="8,5,10,5"/>
         <Label Content="Change your language!" HorizontalAlignment="Left" Margin="61,-10,0,0" VerticalAlignment="Top" FontSize="16" Width="202"/>
         <Label Content="Cambiar la lengua!" HorizontalAlignment="Left" Margin="83,3,0,0" VerticalAlignment="Top" FontSize="16" Width="165"/>
         <Label Content="言語を選択してください" HorizontalAlignment="Left" Margin="75,20,0,0" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <Label Content="Ändere deine Sprache!" HorizontalAlignment="Left" Margin="68,34,0,0" VerticalAlignment="Top" Width="173" FontSize="16"/>
-        <Button Content="Español(Spanish)" Command="{Binding LanguageChangeCommand}" CommandParameter="Spanish" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
-        <Button Content="Deutsch(German)" Command="{Binding LanguageChangeCommand}" CommandParameter="German" HorizontalAlignment="Left" Margin="151,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="12" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
-        <Button Content="French(Français)" Command="{Binding LanguageChangeCommand}" CommandParameter="French" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click"/>
+        <Button Content="Español(Spanish)" Command="{Binding LanguageChangeCommand}" CommandParameter="Spanish" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click" BorderThickness="1" FontWeight="Bold" Padding="8,5,10,5"/>
+        <Button Content="Deutsch(German)" Command="{Binding LanguageChangeCommand}" CommandParameter="German" HorizontalAlignment="Left" Margin="151,105,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="12" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click" BorderThickness="1" FontWeight="Bold"/>
+        <Button Content="French(Français)" Command="{Binding LanguageChangeCommand}" CommandParameter="French" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="131" Height="38" FontSize="14" mah:ButtonHelper.PreserveTextCase="True" Click="Button_Click" BorderThickness="1" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -8,7 +8,7 @@
         Title="WeatherSelector" Height="144.5" Width="237.334" WindowStartupLocation="CenterOwner">
     <Grid>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="15,38,0,0" VerticalAlignment="Top" Width="197"/>
-        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="137,76,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" BorderThickness="1"/>
+        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="137,72,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" BorderThickness="1"/>
         <Label Content="{DynamicResource SelectWeather}" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" FontSize="10"/>
 
     </Grid>

@@ -26,6 +26,7 @@ namespace FFTrainer
     public partial class MainWindow : MetroWindow
     {
         private BackgroundWorker worker2;
+        public static bool CurrentlySaving = false;
         private ExdCsvReader _exdProvider = new ExdCsvReader();
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public MainWindow()
@@ -67,6 +68,33 @@ namespace FFTrainer
         {
             while (true)
             {
+                if (!CharacterDetails.GposeMode.Activated)
+                {
+                    CharacterDetailsView2._gearSet.HeadGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
+                    CharacterDetails.HeadSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.HeadGear);
+                    CharacterDetailsView2._gearSet.BodyGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
+                    CharacterDetails.BodySlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.BodyGear);
+                    CharacterDetailsView2._gearSet.HandsGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
+                    CharacterDetails.ArmSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.HandsGear);
+                    CharacterDetailsView2._gearSet.LegsGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
+                    CharacterDetails.LegSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.LegsGear);
+                    CharacterDetailsView2._gearSet.FeetGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
+                    CharacterDetails.FeetSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.FeetGear);
+                    CharacterDetailsView2._gearSet.MainWep = CharacterDetailsView2.ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
+                    CharacterDetails.WeaponSlot.value = CharacterDetailsView2.WepTupleToComma(CharacterDetailsView2._gearSet.MainWep);
+                    CharacterDetailsView2._gearSet.EarGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear));
+                    CharacterDetails.EarSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.EarGear);
+                    CharacterDetailsView2._gearSet.WristGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist));
+                    CharacterDetails.WristSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.WristGear);
+                    CharacterDetailsView2._gearSet.NeckGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck));
+                    CharacterDetails.NeckSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.NeckGear);
+                    CharacterDetailsView2._gearSet.LRingGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger));
+                    CharacterDetails.LFingerSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.LRingGear);
+                    CharacterDetailsView2._gearSet.RRingGear = CharacterDetailsView2.ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger));
+                    CharacterDetails.RFingerSlot.value = CharacterDetailsView2.GearTupleToComma(CharacterDetailsView2._gearSet.RRingGear);
+                    CharacterDetailsView2._gearSet.OffWep = CharacterDetailsView2.ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
+                    CharacterDetails.OffhandSlot.value = CharacterDetailsView2.WepTupleToComma(CharacterDetailsView2._gearSet.OffWep);
+                }
                 if (CharacterDetails.Rotation4.freeze)MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), CharacterDetails.Rotation4.GetBytes());
                 if (CharacterDetails.Rotation3.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation3), CharacterDetails.Rotation3.GetBytes());
                 if (CharacterDetails.Rotation2.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation2), CharacterDetails.Rotation2.GetBytes());
@@ -289,6 +317,7 @@ namespace FFTrainer
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            CurrentlySaving = true;
             SaveFileDialog dig = new SaveFileDialog();
             dig.Filter = "Json File(*.json)|*.json";
             dig.InitialDirectory = Environment.CurrentDirectory;
@@ -298,7 +327,9 @@ namespace FFTrainer
                 Save1 = CharacterDetails;
                 string details = JsonConvert.SerializeObject(Save1,Formatting.Indented);
                 File.WriteAllText(dig.FileName, details);
+                CurrentlySaving = false;
             }
+            else CurrentlySaving = false;
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
@@ -711,5 +742,6 @@ namespace FFTrainer
                 Loadbutton.IsEnabled = true;
             }
         }
+
     }
 }
