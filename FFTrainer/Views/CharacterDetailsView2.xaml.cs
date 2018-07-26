@@ -57,18 +57,18 @@ namespace FFTrainer.Views
         public static GearSet _cGearSet = new GearSet();
         public void WriteGear_Click()
         {
-            if (HeadCheck.IsChecked == true) { HeadCheck.IsChecked = false; HeadCheck.IsEnabled = false; }
-            if (ChestCheck.IsChecked == true) { ChestCheck.IsChecked = false; ChestCheck.IsEnabled = false; }
-            if (ArmCheck.IsChecked == true) { ArmCheck.IsChecked = false; ArmCheck.IsEnabled = false; }
-            if (LegCheck.IsChecked == true) { LegCheck.IsChecked = false; LegCheck.IsEnabled = false; }
-            if (FeetCheck.IsChecked == true) { FeetCheck.IsChecked = false; FeetCheck.IsEnabled = false; }
-            if (NeckCheck.IsChecked == true) { NeckCheck.IsChecked = false; NeckCheck.IsEnabled = false; }
-            if (EarCheck.IsChecked == true) { EarCheck.IsChecked = false; EarCheck.IsEnabled = false; }
-            if (WristCheck.IsChecked == true) { WristCheck.IsChecked = false; WristCheck.IsEnabled = false; }
-            if (RRingCheck.IsChecked == true) { RRingCheck.IsChecked = false; RRingCheck.IsEnabled = false; }
-            if (LRingCheck.IsChecked == true) { LRingCheck.IsChecked = false; LRingCheck.IsEnabled = false; }
-            if (JobBox.IsChecked == true) { JobBox.IsChecked = false; JobBox.IsEnabled = false; }
-            if (OffBox.IsChecked == true) { OffBox.IsChecked = false; OffBox.IsEnabled = false; }
+            if (CharacterDetails.HeadPiece.freeze == true) { CharacterDetails.HeadPiece.freeze = false; CharacterDetails.HeadPiece.Activated = true; }
+            if (CharacterDetails.Chest.freeze == true) { CharacterDetails.Chest.freeze = false; CharacterDetails.Chest.Activated = true; }
+            if (CharacterDetails.Arms.freeze == true) { CharacterDetails.Arms.freeze = false; CharacterDetails.Arms.Activated = true; }
+            if (CharacterDetails.Legs.freeze == true) { CharacterDetails.Legs.freeze = false; CharacterDetails.Legs.Activated = true; }
+            if (CharacterDetails.Feet.freeze == true) { CharacterDetails.Feet.freeze = false; CharacterDetails.Feet.Activated = true; }
+            if (CharacterDetails.Neck.freeze == true) { CharacterDetails.Neck.freeze = false; CharacterDetails.Neck.Activated = true; }
+            if (CharacterDetails.Ear.freeze == true) { CharacterDetails.Ear.freeze = false; CharacterDetails.Ear.Activated = true; }
+            if (CharacterDetails.Wrist.freeze == true) { CharacterDetails.Wrist.freeze = false; CharacterDetails.Wrist.Activated = true; }
+            if (CharacterDetails.RFinger.freeze == true) { CharacterDetails.RFinger.freeze = false; CharacterDetails.RFinger.Activated = true; }
+            if (CharacterDetails.LFinger.freeze == true) { CharacterDetails.LFinger.freeze = false; CharacterDetails.LFinger.Activated = true; }
+            if (CharacterDetails.Job.freeze == true) { CharacterDetails.Job.freeze = false; CharacterDetails.Job.Activated = true; }
+            if (CharacterDetails.Offhand.freeze == true) { CharacterDetails.Offhand.freeze = false; CharacterDetails.Offhand.Activated = true; }
             _cGearSet.HeadGear = CommaToGearTuple(headGearTextBox.Text);
             _cGearSet.BodyGear = CommaToGearTuple(bodyGearTextBox.Text);
             _cGearSet.HandsGear = CommaToGearTuple(handsGearTextBox.Text);
@@ -101,18 +101,18 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger), GearTupleToByteAry(_cGearSet.RRingGear));
             MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger), GearTupleToByteAry(_cGearSet.LRingGear));
             Task.Delay(100).Wait();
-            if (HeadCheck.IsEnabled == false) { HeadCheck.IsChecked = true; HeadCheck.IsEnabled = true; }
-            if (ChestCheck.IsEnabled == false) { ChestCheck.IsChecked = true; ChestCheck.IsEnabled = true; }
-            if (ArmCheck.IsEnabled == false) { ArmCheck.IsChecked = true; ArmCheck.IsEnabled = true; }
-            if (LegCheck.IsEnabled == false) { LegCheck.IsChecked = true; LegCheck.IsEnabled = true; }
-            if (FeetCheck.IsEnabled == false) { FeetCheck.IsChecked = true; FeetCheck.IsEnabled = true; }
-            if (NeckCheck.IsEnabled == false) { NeckCheck.IsChecked = true; NeckCheck.IsEnabled = true; }
-            if (EarCheck.IsEnabled == false) { EarCheck.IsChecked = true; EarCheck.IsEnabled = true; }
-            if (WristCheck.IsEnabled == false) { WristCheck.IsChecked = true; WristCheck.IsEnabled = true; }
-            if (RRingCheck.IsEnabled == false) { RRingCheck.IsChecked = true; RRingCheck.IsEnabled = true; }
-            if (LRingCheck.IsEnabled == false) { LRingCheck.IsChecked = true; LRingCheck.IsEnabled = true; }
-            if (JobBox.IsEnabled == false) { JobBox.IsChecked = true; JobBox.IsEnabled = true; }
-            if (OffBox.IsEnabled == false) { OffBox.IsChecked = true; OffBox.IsEnabled = true; }
+            if (CharacterDetails.HeadPiece.Activated == true) { CharacterDetails.HeadPiece.freeze = true; CharacterDetails.HeadPiece.Activated = false; }
+            if (CharacterDetails.Chest.Activated == true) { CharacterDetails.Chest.freeze = true; CharacterDetails.Chest.Activated = false; }
+            if (CharacterDetails.Arms.Activated == true) { CharacterDetails.Arms.freeze = true; CharacterDetails.Arms.Activated = false; }
+            if (CharacterDetails.Legs.Activated == true) { CharacterDetails.Legs.freeze = true; CharacterDetails.Legs.Activated = false; }
+            if (CharacterDetails.Feet.Activated == true) { CharacterDetails.Feet.freeze = true; CharacterDetails.Feet.Activated = false; }
+            if (CharacterDetails.Neck.Activated == true) { CharacterDetails.Neck.freeze = true; CharacterDetails.Neck.Activated = false; }
+            if (CharacterDetails.Ear.Activated == true) { CharacterDetails.Ear.freeze = true; CharacterDetails.Ear.Activated = false; }
+            if (CharacterDetails.Wrist.Activated == true) { CharacterDetails.Wrist.freeze = true; CharacterDetails.Wrist.Activated = false; }
+            if (CharacterDetails.RFinger.Activated == true) { CharacterDetails.RFinger.freeze = true; CharacterDetails.RFinger.Activated = false; }
+            if (CharacterDetails.LFinger.Activated == true) { CharacterDetails.LFinger.freeze = true; CharacterDetails.LFinger.Activated = false; }
+            if (CharacterDetails.Job.Activated == true) { CharacterDetails.Job.freeze = true; CharacterDetails.Job.Activated = false; }
+            if (CharacterDetails.Offhand.Activated == true) { CharacterDetails.Offhand.freeze = true; CharacterDetails.Offhand.Activated = false; }
         }
         public void SetupDefaults()
         {
@@ -688,18 +688,18 @@ namespace FFTrainer.Views
         }
         private void FillCustoms()
         {
-            if (HeadCheck.IsChecked == true) { HeadCheck.IsChecked = false; HeadCheck.IsEnabled = false; }
-            if (ChestCheck.IsChecked == true) { ChestCheck.IsChecked = false; ChestCheck.IsEnabled = false; }
-            if (ArmCheck.IsChecked == true) { ArmCheck.IsChecked = false; ArmCheck.IsEnabled = false; }
-            if (LegCheck.IsChecked == true) { LegCheck.IsChecked = false; LegCheck.IsEnabled = false; }
-            if (FeetCheck.IsChecked == true) { FeetCheck.IsChecked = false; FeetCheck.IsEnabled = false; }
-            if (NeckCheck.IsChecked == true) { NeckCheck.IsChecked = false; NeckCheck.IsEnabled = false; }
-            if (EarCheck.IsChecked == true) { EarCheck.IsChecked = false; EarCheck.IsEnabled = false; }
-            if (WristCheck.IsChecked == true) { WristCheck.IsChecked = false; WristCheck.IsEnabled = false; }
-            if (RRingCheck.IsChecked == true) { RRingCheck.IsChecked = false; RRingCheck.IsEnabled = false; }
-            if (LRingCheck.IsChecked == true) { LRingCheck.IsChecked = false; LRingCheck.IsEnabled = false; }
-            if (JobBox.IsChecked == true) { JobBox.IsChecked = false; JobBox.IsEnabled = false; }
-            if (OffBox.IsChecked == true) { OffBox.IsChecked = false; OffBox.IsEnabled = false; }
+            if (CharacterDetails.HeadPiece.freeze == true) { CharacterDetails.HeadPiece.freeze = false; CharacterDetails.HeadPiece.Activated = true; }
+            if (CharacterDetails.Chest.freeze == true) { CharacterDetails.Chest.freeze = false; CharacterDetails.Chest.Activated = true; }
+            if (CharacterDetails.Arms.freeze == true) { CharacterDetails.Arms.freeze = false; CharacterDetails.Arms.Activated = true; }
+            if (CharacterDetails.Legs.freeze == true) { CharacterDetails.Legs.freeze = false; CharacterDetails.Legs.Activated = true; }
+            if (CharacterDetails.Feet.freeze == true) { CharacterDetails.Feet.freeze = false; CharacterDetails.Feet.Activated = true; }
+            if (CharacterDetails.Neck.freeze == true) { CharacterDetails.Neck.freeze = false; CharacterDetails.Neck.Activated = true; }
+            if (CharacterDetails.Ear.freeze == true) { CharacterDetails.Ear.freeze = false; CharacterDetails.Ear.Activated = true; }
+            if (CharacterDetails.Wrist.freeze == true) { CharacterDetails.Wrist.freeze = false; CharacterDetails.Wrist.Activated = true; }
+            if (CharacterDetails.RFinger.freeze == true) { CharacterDetails.RFinger.freeze = false; CharacterDetails.RFinger.Activated = true; }
+            if (CharacterDetails.LFinger.freeze == true) { CharacterDetails.LFinger.freeze = false; CharacterDetails.LFinger.Activated = true; }
+            if (CharacterDetails.Job.freeze == true) { CharacterDetails.Job.freeze = false; CharacterDetails.Job.Activated = true; }
+            if (CharacterDetails.Offhand.freeze == true) { CharacterDetails.Offhand.freeze = false; CharacterDetails.Offhand.Activated = true; }
             headGearTextBox.Text = GearTupleToComma(_cGearSet.HeadGear);
             bodyGearTextBox.Text = GearTupleToComma(_cGearSet.BodyGear);
             handsGearTextBox.Text = GearTupleToComma(_cGearSet.HandsGear);
@@ -715,3 +715,4 @@ namespace FFTrainer.Views
         }
     }
 }
+ 

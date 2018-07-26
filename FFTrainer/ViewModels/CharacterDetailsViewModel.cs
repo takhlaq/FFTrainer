@@ -207,7 +207,7 @@ namespace FFTrainer.ViewModels
 
                 if (!CharacterDetails.OffhandRed.freeze) CharacterDetails.OffhandRed.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed));
 
-                if (!CharacterDetails.MuscleTone.freeze) CharacterDetails.MuscleTone.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max));
+                if (!CharacterDetails.MuscleTone.freeze) CharacterDetails.MuscleTone.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone));
 
                 if (!CharacterDetails.FOVMAX.freeze)
                 {
