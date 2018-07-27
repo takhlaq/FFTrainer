@@ -7,6 +7,9 @@ using System;
 using System.Linq;
 using FFTrainer.Models;
 using System.Windows.Threading;
+using System.ComponentModel;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FFTrainer.Views
 {
@@ -15,10 +18,12 @@ namespace FFTrainer.Views
     /// </summary>
     public partial class CharacterDetailsView2 : UserControl
     {
+        private BackgroundWorker worker3;
         public CharacterDetailsView2()
         {
             InitializeComponent();
             _exdProvider.DyeList();
+            worker3 = new BackgroundWorker();
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
             timer.Tick += delegate
             {
@@ -46,6 +51,9 @@ namespace FFTrainer.Views
                     if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye)))
                         FeetBox.SelectedIndex = i;
                 }
+                worker3.DoWork += Worker_DoWork3;
+                // run the worker
+                worker3.RunWorkerAsync();
                 timer.IsEnabled = false;
             };
             timer.Start();
@@ -54,6 +62,45 @@ namespace FFTrainer.Views
         private ExdCsvReader _exdProvider = new ExdCsvReader();
         public static GearSet _gearSet = new GearSet();
         public static GearSet _cGearSet = new GearSet();
+        private void Worker_DoWork3(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                if (!CharacterDetails.GposeMode.Activated)
+                {
+                    _gearSet.HeadGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
+                    _gearSet.BodyGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
+                    _gearSet.HandsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
+                    _gearSet.LegsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
+                    _gearSet.FeetGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
+                    _gearSet.MainWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
+                    _gearSet.EarGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear));
+                    _gearSet.WristGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist));
+                    _gearSet.NeckGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck));
+                    _gearSet.LRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger));
+                    _gearSet.RRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger));
+                    _gearSet.OffWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
+                    CharacterDetails.BodySlot.value = GearTupleToComma(_gearSet.BodyGear);
+                    CharacterDetails.HeadSlot.value = GearTupleToComma(_gearSet.HeadGear);
+                    CharacterDetails.ArmSlot.value = GearTupleToComma(_gearSet.HandsGear);
+                    CharacterDetails.LegSlot.value = GearTupleToComma(_gearSet.LegsGear);
+                    CharacterDetails.FeetSlot.value = GearTupleToComma(_gearSet.FeetGear);
+                    CharacterDetails.WeaponSlot.value = WepTupleToComma(_gearSet.MainWep);
+                    CharacterDetails.OffhandSlot.value = WepTupleToComma(_gearSet.OffWep);
+                    CharacterDetails.RFingerSlot.value = GearTupleToComma(_gearSet.RRingGear);
+                    CharacterDetails.LFingerSlot.value = GearTupleToComma(_gearSet.LRingGear);
+                    CharacterDetails.NeckSlot.value = GearTupleToComma(_gearSet.NeckGear);
+                    CharacterDetails.WristSlot.value = GearTupleToComma(_gearSet.WristGear);
+                    CharacterDetails.EarSlot.value = GearTupleToComma(_gearSet.EarGear);
+                }
+                Thread.Sleep(Properties.Settings.Default.Read);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Oh no!");
+                throw;
+            }
+        }
         public void WriteGear_Click()
         {
             if (CharacterDetails.HeadPiece.freeze == true) { CharacterDetails.HeadPiece.freeze = false; CharacterDetails.HeadPiece.Activated = true; }
@@ -144,7 +191,7 @@ namespace FFTrainer.Views
             if (CharacterDetails.Job.Activated == true) { CharacterDetails.Job.freeze = true; CharacterDetails.Job.Activated = false; }
             if (CharacterDetails.Offhand.Activated == true) { CharacterDetails.Offhand.freeze = true; CharacterDetails.Offhand.Activated = false; }
         }
-        public void SetupDefaults()
+        public static void SetupDefaults()
         {
 
             _gearSet.HeadGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
@@ -160,10 +207,10 @@ namespace FFTrainer.Views
 
             _gearSet.MainWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
             _gearSet.OffWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
+
         }
         public void FillDefaults()
         {
-
             headGearTextBox.Text = GearTupleToComma(_gearSet.HeadGear);
             bodyGearTextBox.Text = GearTupleToComma(_gearSet.BodyGear);
             handsGearTextBox.Text = GearTupleToComma(_gearSet.HandsGear);
@@ -742,6 +789,118 @@ namespace FFTrainer.Views
             lRingGearTextBox.Text = GearTupleToComma(_cGearSet.LRingGear);
             mainWepTextBox.Text = WepTupleToComma(_cGearSet.MainWep);
             offWepTextBox.Text = WepTupleToComma(_cGearSet.OffWep);
+        }
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "2");
+            Task.Delay(50).Wait();
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "0");
+        }
+        private void Unfreeze_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterDetails.TimeControl.freeze = false;
+            CharacterDetails.Weather.freeze = false;
+            CharacterDetails.CZoom.freeze = false;
+            CharacterDetails.CameraYAMax.freeze = false;
+            CharacterDetails.FOVC.freeze = false;
+            CharacterDetails.CameraHeight2.freeze = false;
+            CharacterDetails.CameraUpDown.freeze = false;
+            CharacterDetails.CameraYAMin.freeze = false;
+            CharacterDetails.CameraYAMax.freeze = false;
+            CharacterDetails.Min.freeze = false;
+            CharacterDetails.FOVMAX.freeze = false;
+            CharacterDetails.Max.freeze = false;
+            CharacterDetails.CamZ.freeze = false;
+            CharacterDetails.CamY.freeze = false;
+            CharacterDetails.CamX.freeze = false;
+            CharacterDetails.CameraHeight.freeze = false;
+            CharacterDetails.EmoteSpeed1.freeze = false;
+            CharacterDetails.Emote.freeze = false;
+            CharacterDetails.MuscleTone.freeze = false;
+            CharacterDetails.TailSize.freeze = false;
+            CharacterDetails.BustX.freeze = false;
+            CharacterDetails.BustY.freeze = false;
+            CharacterDetails.BustZ.freeze = false;
+            CharacterDetails.LipsBrightness.freeze = false;
+            CharacterDetails.SkinBlueGloss.freeze = false;
+            CharacterDetails.SkinGreenGloss.freeze = false;
+            CharacterDetails.SkinRedGloss.freeze = false;
+            CharacterDetails.SkinBluePigment.freeze = false;
+            CharacterDetails.SkinGreenPigment.freeze = false;
+            CharacterDetails.SkinRedPigment.freeze = false;
+            CharacterDetails.HighlightBluePigment.freeze = false;
+            CharacterDetails.HighlightGreenPigment.freeze = false;
+            CharacterDetails.HighlightRedPigment.freeze = false;
+            CharacterDetails.HairGlowBlue.freeze = false;
+            CharacterDetails.HairGlowGreen.freeze = false;
+            CharacterDetails.HairGlowRed.freeze = false;
+            CharacterDetails.HairGreenPigment.freeze = false;
+            CharacterDetails.HairBluePigment.freeze = false;
+            CharacterDetails.HairRedPigment.freeze = false;
+            CharacterDetails.Height.freeze = false;
+            CharacterDetails.WeaponGreen.freeze = false;
+            CharacterDetails.WeaponBlue.freeze = false;
+            CharacterDetails.WeaponRed.freeze = false;
+            CharacterDetails.WeaponZ.freeze = false;
+            CharacterDetails.WeaponY.freeze = false;
+            CharacterDetails.WeaponX.freeze = false;
+            CharacterDetails.OffhandZ.freeze = false;
+            CharacterDetails.OffhandY.freeze = false;
+            CharacterDetails.OffhandX.freeze = false;
+            CharacterDetails.OffhandRed.freeze = false;
+            CharacterDetails.OffhandBlue.freeze = false;
+            CharacterDetails.OffhandGreen.freeze = false;
+            CharacterDetails.RightEyeBlue.freeze = false;
+            CharacterDetails.RightEyeGreen.freeze = false;
+            CharacterDetails.RightEyeRed.freeze = false;
+            CharacterDetails.LeftEyeBlue.freeze = false;
+            CharacterDetails.LeftEyeGreen.freeze = false;
+            CharacterDetails.LeftEyeRed.freeze = false;
+            CharacterDetails.LipsB.freeze = false;
+            CharacterDetails.LipsG.freeze = false;
+            CharacterDetails.LipsR.freeze = false;
+            CharacterDetails.LimbalB.freeze = false;
+            CharacterDetails.LimbalG.freeze = false;
+            CharacterDetails.LimbalR.freeze = false;
+            CharacterDetails.Race.freeze = false;
+            CharacterDetails.Clan.freeze = false;
+            CharacterDetails.Gender.freeze = false;
+            CharacterDetails.Head.freeze = false;
+            CharacterDetails.TailType.freeze = false;
+            CharacterDetails.Nose.freeze = false;
+            CharacterDetails.Lips.freeze = false;
+            CharacterDetails.Voices.freeze = false;
+            CharacterDetails.Hair.freeze = false;
+            CharacterDetails.HairTone.freeze = false;
+            CharacterDetails.HighlightTone.freeze = false;
+            CharacterDetails.Jaw.freeze = false;
+            CharacterDetails.RBust.freeze = false;
+            CharacterDetails.RHeight.freeze = false;
+            CharacterDetails.LipsTone.freeze = false;
+            CharacterDetails.Skintone.freeze = false;
+            CharacterDetails.FacialFeatures.freeze = false;
+            CharacterDetails.TailorMuscle.freeze = false;
+            CharacterDetails.Eye.freeze = false;
+            CharacterDetails.RightEye.freeze = false;
+            CharacterDetails.EyeBrowType.freeze = false;
+            CharacterDetails.LeftEye.freeze = false;
+            CharacterDetails.Offhand.freeze = false;
+            CharacterDetails.FacePaint.freeze = false;
+            CharacterDetails.FacePaintColor.freeze = false;
+            CharacterDetails.Job.freeze = false;
+            CharacterDetails.HeadPiece.freeze = false;
+            CharacterDetails.Chest.freeze = false;
+            CharacterDetails.Arms.freeze = false;
+            CharacterDetails.Legs.freeze = false;
+            CharacterDetails.Feet.freeze = false;
+            CharacterDetails.Ear.freeze = false;
+            CharacterDetails.Neck.freeze = false;
+            CharacterDetails.Wrist.freeze = false;
+            CharacterDetails.RFinger.freeze = false;
+            CharacterDetails.LFinger.freeze = false;
+            CharacterDetails.ScaleX.freeze = false;
+            CharacterDetails.ScaleY.freeze = false;
+            CharacterDetails.ScaleZ.freeze = false;
         }
     }
 }

@@ -3,11 +3,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Views="clr-namespace:FFTrainer.Views"
-        xmlns:fa5="http://schemas.fontawesome.com/icons/"
-		xmlns:ViewModels="clr-namespace:FFTrainer.ViewModels"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        TitleCharacterCasing="Normal"
-         xmlns:FFTrainer="clr-namespace:FFTrainer.Models"
+    xmlns:ViewModels="clr-namespace:FFTrainer.ViewModels"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    TitleCharacterCasing="Normal"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     GlowBrush="{DynamicResource AccentColorBrush}"
         RenderOptions.ClearTypeHint="Enabled"
@@ -41,9 +39,11 @@
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
+    
     <Window.DataContext>
         <ViewModels:MainViewModel/>
     </Window.DataContext>
+    
     <Grid>
         <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="{DynamicResource GposeMode}" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked" Width="149"/>
         <TextBlock Text="{DynamicResource GposeNote}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="329,3,0,0" VerticalAlignment="Top" Width="233" Height="34" FontWeight="Bold"/>
@@ -117,7 +117,7 @@
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}" FontSize="16"/></Hyperlink></TextBlock>
         <Button Content="{DynamicResource Save}" HorizontalAlignment="Left" Margin="668,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" BorderThickness="1"/>
         <Button x:Name="Loadbutton" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" BorderThickness="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.5.1" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.5.2" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="{DynamicResource Madeby}" HorizontalAlignment="Left" Margin="748,14,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
