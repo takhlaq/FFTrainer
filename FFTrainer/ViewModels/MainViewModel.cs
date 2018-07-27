@@ -63,6 +63,7 @@ namespace FFTrainer.ViewModels
         public string WeatherAddress { get; set; }
         public string TimeAddress { get; set; }
         public string TerritoryAddress { get; set; }
+        public string HousingOffset { get; set; }
 
         /// <summary>
         /// Constructor for the singleton memory manager
@@ -189,6 +190,7 @@ namespace FFTrainer.ViewModels
             MemoryManager.Instance.TimeAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TimeOffset, NumberStyles.HexNumber));
             MemoryManager.Instance.WeatherAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.WeatherOffset, NumberStyles.HexNumber));
             MemoryManager.Instance.TerritoryAddress = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.TerritoryOffset, NumberStyles.HexNumber));
+            MemoryManager.Instance.HousingOffset = MemoryManager.Instance.GetBaseAddress(int.Parse(Settings.Instance.HousingOffset, NumberStyles.HexNumber));
             while (true)
             {
                 // sleep for 500 ms

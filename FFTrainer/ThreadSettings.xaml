@@ -9,8 +9,8 @@
         Title="ThreadSettings" Height="173.809" Width="254.666" WindowStartupLocation="CenterOwner">
     <Grid>
 
-        <mah:NumericUpDown x:Name="ReadText" HorizontalAlignment="Left" Margin="95,10,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0" HasDecimals="False"/>
-        <mah:NumericUpDown x:Name="WriteText" HorizontalAlignment="Left" Margin="95,51,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0" HasDecimals="False"/>
+        <mah:NumericUpDown x:Name="ReadText" HorizontalAlignment="Left" Margin="95,10,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0"/>
+        <mah:NumericUpDown x:Name="WriteText" HorizontalAlignment="Left" Margin="95,51,0,0" VerticalAlignment="Top" Width="137" NumericInputMode="Numbers" Minimum="0"/>
         <Label Content="{DynamicResource Read}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
         <Label Content="{DynamicResource Write}" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" Width="80"/>
         <Button Content="{DynamicResource Apply}" HorizontalAlignment="Left" Margin="157,82,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" BorderThickness="1" Click="Button_Click"/>

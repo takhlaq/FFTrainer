@@ -136,4 +136,6 @@
     <system:String x:Key="Default">デフォルト</system:String>
     <system:String x:Key="Read">読む</system:String>
     <system:String x:Key="Write">書きます</system:String>
+    <system:String x:Key="RefreshCharacter">文字をリフレッシュする</system:String>
+    <system:String x:Key="HousingRestrict">住宅の制限を削除します</system:String>
 </ResourceDictionary>

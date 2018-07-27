@@ -136,4 +136,6 @@
     <system:String x:Key="Default">Default</system:String>
     <system:String x:Key="Read">Lesen</system:String>
     <system:String x:Key="Write">Schreiben</system:String>
+    <system:String x:Key="RefreshCharacter">Charakter aktualisieren</system:String>
+    <system:String x:Key="HousingRestrict">Gehäuse entfernen Einschränkung</system:String>
 </ResourceDictionary>

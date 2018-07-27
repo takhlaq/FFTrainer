@@ -136,4 +136,6 @@
     <system:String x:Key="Default">Default</system:String>
     <system:String x:Key="Read">Read</system:String>
     <system:String x:Key="Write">Write</system:String>
+    <system:String x:Key="RefreshCharacter">Refresh Character</system:String>
+    <system:String x:Key="HousingRestrict">Remove Housing restriction</system:String>
 </ResourceDictionary>

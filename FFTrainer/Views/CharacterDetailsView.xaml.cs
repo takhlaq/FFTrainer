@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -503,6 +504,21 @@ namespace FFTrainer.Views
             if (Emote.Value.HasValue)
                 if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
                     CharacterDetails.EmoteX.value = (int)Emote.Value;
+        }
+
+        private void Namexd_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter) return;
+            e.Handled = true;
+            CharacterDetails.Name.value = Namexd.Text.Replace("\0", string.Empty);
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Name), "string", Namexd.Text+"\0\0\0\0\0\0\0\0\0\0");
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "2");
+            Task.Delay(50).Wait();
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "0");
         }
     }
 }

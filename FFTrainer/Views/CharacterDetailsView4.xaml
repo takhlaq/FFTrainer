@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Label Content="{DynamicResource CameraSettings}" HorizontalAlignment="Left" Margin="91,0,0,0" VerticalAlignment="Top" Width="225" FontSize="20" FontWeight="Bold"/>
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="275" Margin="10,37,0,0" VerticalAlignment="Top" Width="401"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="278" Margin="10,37,0,0" VerticalAlignment="Top" Width="401"/>
         <CheckBox IsEnabled="{Binding Path=CharacterDetails.CharacterDetails.Max.Checker}" x:Name="MaxChecked" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Max.freeze}" Content="{DynamicResource MaxZoom}" HorizontalAlignment="Left" Margin="18,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="121" Padding="2,0,0,0"/>
         <mah:NumericUpDown StringFormat="F5" x:Name="MaxZoom" Value="{Binding Path=CharacterDetails.CharacterDetails.Max.value, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" HorizontalAlignment="Left" Margin="126,47,0,0" VerticalAlignment="Top" Width="125" Interval="0.1" SourceUpdated="MaxZoom_SourceUpdated" RenderTransformOrigin="0.5,0.5"/>
         <CheckBox IsEnabled="{Binding Path=CharacterDetails.CharacterDetails.Min.Checker}" x:Name="MinChecked" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Min.freeze}" Content="{DynamicResource MinZoom}" HorizontalAlignment="Left" Margin="18,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="108" Padding="2,0,0,0"/>
@@ -36,7 +36,8 @@
         <TextBlock Text="{DynamicResource TimeC}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="438,87,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="244" Height="41"/>
         <CheckBox  IsChecked="{Binding Path=CharacterDetails.CharacterDetails.Weather.freeze}" Content="{DynamicResource WeatherB}" HorizontalAlignment="Left" Margin="421,148,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock Text="{DynamicResource WeatherNote}" HorizontalAlignment="Left" Margin="613,144,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="160" Height="55" TextWrapping="Wrap"/>
-        <mah:NumericUpDown Value="{Binding Path=CharacterDetails.CharacterDetails.Weather.value}" x:Name="Weather" HorizontalAlignment="Left" Margin="498,145,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.507,0.487" TextAlignment="Justify" Maximum="140" Minimum="0" SourceUpdated="NumericUpDown_SourceUpdated"/>
+        <mah:NumericUpDown Value="{Binding Path=CharacterDetails.CharacterDetails.Weather.value, UpdateSourceTrigger=PropertyChanged}" x:Name="Weather" HorizontalAlignment="Left" Margin="498,145,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.507,0.487" TextAlignment="Justify" Maximum="140" Minimum="0" ParsingNumberStyle="Integer" Interval="1" ValueChanged="Weather_ValueChanged"/>
         <Button Content="{DynamicResource WeatherB}" HorizontalAlignment="Left" Margin="498,175,0,0" VerticalAlignment="Top" Width="110" Height="30" FontSize="14" RenderTransformOrigin="0.5,0.5" Click="Button_Click" BorderThickness="1" FontWeight="Bold"/>
+        <CheckBox IsEnabled="False" Visibility="Hidden" x:Name="HousingPlace" Content="{DynamicResource HousingRestrict}" HorizontalAlignment="Left" Margin="416,229,0,0" VerticalAlignment="Top" Checked="HousingPlace_Checked" Unchecked="HousingPlace_Unchecked" Width="236" Height="29" FontWeight="Bold"/>
     </Grid>
 </UserControl>

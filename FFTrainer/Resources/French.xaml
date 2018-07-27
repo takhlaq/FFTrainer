@@ -136,4 +136,6 @@
     <system:String x:Key="Default">Défaut</system:String>
     <system:String x:Key="Read">Lis</system:String>
     <system:String x:Key="Write">Écrire</system:String>
+    <system:String x:Key="RefreshCharacter">Actualiser le caractère</system:String>
+    <system:String x:Key="HousingRestrict">Retirer le boîtier Restriction</system:String>
 </ResourceDictionary>

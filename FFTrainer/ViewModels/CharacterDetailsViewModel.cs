@@ -140,7 +140,6 @@ namespace FFTrainer.ViewModels
                 if (!CharacterDetails.LipsBrightness.freeze)CharacterDetails.LipsBrightness.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsBrightness));
 
                 if (!CharacterDetails.RightEyeBlue.freeze)CharacterDetails.RightEyeBlue.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeBlue));
-
                 if (!CharacterDetails.RightEyeGreen.freeze)CharacterDetails.RightEyeGreen.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeGreen));
 
                 if (!CharacterDetails.RightEyeRed.freeze) CharacterDetails.RightEyeRed.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEyeRed));
@@ -266,7 +265,7 @@ namespace FFTrainer.ViewModels
                     var name = MemoryManager.Instance.MemLib.readString(nameAddr);
                     if (name.IndexOf('\0') != -1)
                     {
-                        name = name.Substring(0, name.IndexOf('\0'));
+                        name = name.Replace("\0", string.Empty);
                     }
                     CharacterDetails.Name.value = name;
                 }

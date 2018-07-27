@@ -11,7 +11,7 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     GlowBrush="{DynamicResource AccentColorBrush}"
         RenderOptions.ClearTypeHint="Enabled"
-        Title="{DynamicResource Title}" Height="530" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" SaveWindowPosition="True" WindowStartupLocation="CenterScreen">
+        Title="{DynamicResource Title}" Height="550" Width="1115" Icon="ffxivmeteorlogo.ico" Initialized="Window_Initialized" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" SaveWindowPosition="True" WindowStartupLocation="CenterScreen" KeyUp="MetroWindow_KeyUp">
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Click="Alwaystop">
@@ -89,7 +89,7 @@
                     <Views:CharacterDetailsView4 HorizontalAlignment="Left" Height="389" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="{DynamicResource About}">
+            <TabItem x:Name="haha" Header="{DynamicResource About}">
                 <Grid Margin="0,0,0,-5">
                     <Label Content="{DynamicResource Aboutx}" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="127" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="846" FontSize="14" RenderTransformOrigin="0.5,0.5"><Run Text="{DynamicResource AboutText}"/><LineBreak/><Run/></TextBlock>

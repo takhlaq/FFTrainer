@@ -136,4 +136,6 @@
     <system:String x:Key="Default">Defecto</system:String>
     <system:String x:Key="Read">Leer</system:String>
     <system:String x:Key="Write">Escribir</system:String>
+    <system:String x:Key="RefreshCharacter">Actualizar el personaje</system:String>
+    <system:String x:Key="HousingRestrict">Eliminar la restricción de la casa</system:String>
 </ResourceDictionary>

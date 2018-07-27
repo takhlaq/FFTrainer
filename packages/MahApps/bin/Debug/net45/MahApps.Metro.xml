@@ -444,21 +444,6 @@
             <param name="otherBrush">Brush</param>
             <returns>true if yes, otherwise false</returns>
         </member>
-        <member name="M:MahApps.Metro.Controls.CloseCommand.CanExecute(System.Object)">
-            <summary>
-            Defines the method that determines whether the command can execute in its current state.
-            </summary>
-            <returns>
-            true if this command can be executed; otherwise, false.
-            </returns>
-            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
-        </member>
-        <member name="M:MahApps.Metro.Controls.CloseCommand.Execute(System.Object)">
-            <summary>
-            Defines the method to be called when the command is invoked.
-            </summary>
-            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
-        </member>
         <member name="F:MahApps.Metro.Controls.ContentControlEx.ContentCharacterCasingProperty">
             <summary>
             The DependencyProperty for the CharacterCasing property.
@@ -1112,11 +1097,6 @@
             Gets or sets the text used for the second auxiliary button.
             </summary>
         </member>
-        <member name="P:MahApps.Metro.Controls.Dialogs.MetroDialogSettings.SuppressDefaultResources">
-            <summary>
-            If set, stops standard resource dictionaries being applied to the dialog.
-            </summary>
-        </member>
         <member name="T:MahApps.Metro.Controls.Dialogs.ProgressDialog">
             <summary>
             An internal control that represents a message dialog. Please use MetroWindow.ShowMessage instead!
@@ -1473,11 +1453,6 @@
         <member name="P:MahApps.Metro.Controls.Flyout.CloseCommandParameter">
             <summary>
             Gets/sets the command parameter which will be passed by the CloseCommand.
-            </summary>
-        </member>
-        <member name="P:MahApps.Metro.Controls.Flyout.InternalCloseCommand">
-            <summary>
-            Gets/sets a command which will be executed if the close button was clicked.
             </summary>
         </member>
         <member name="P:MahApps.Metro.Controls.Flyout.IsOpen">
@@ -2173,25 +2148,6 @@
              This comparer is used only if in the corresponding <see cref="T:MahApps.Metro.Controls.TimePickerBase"/> the value for <see cref="P:MahApps.Metro.Controls.TimePickerBase.IsMilitaryTime"/> is false.
              </remarks>
         </member>
-        <member name="M:MahApps.Metro.Controls.ButtonHelper.GetPreserveTextCase(System.Windows.UIElement)">
-            <summary>
-            Overrides the text case behavior for certain buttons.
-            When set to <c>true</c>, the text case will be preserved and won't be changed to upper or lower case.
-            </summary>
-        </member>
-        <member name="F:MahApps.Metro.Controls.ButtonHelper.CornerRadiusProperty">
-            <summary>
-            DependencyProperty for <see cref="T:System.Windows.CornerRadius" /> property.
-            </summary>
-        </member>
-        <member name="M:MahApps.Metro.Controls.ButtonHelper.GetCornerRadius(System.Windows.UIElement)">
-            <summary> 
-            The CornerRadius property allows users to control the roundness of the button corners independently by 
-            setting a radius value for each corner. Radius values that are too large are scaled so that they
-            smoothly blend from corner to corner. (Can be used e.g. at MetroButton style)
-            Description taken from original Microsoft description :-D
-            </summary>
-        </member>
         <member name="T:MahApps.Metro.Controls.ComboBoxHelper">
             <summary>
             A helper class that provides various attached properties for the <see cref="T:System.Windows.Controls.ComboBox"/> control.
@@ -2248,11 +2204,6 @@
             Sets the character casing of the control
             </summary>
         </member>
-        <member name="F:MahApps.Metro.Controls.ControlsHelper.ButtonWidthProperty">
-            <summary>
-            This property can be used to set the button width (PART_ClearText) of TextBox, PasswordBox, ComboBox, NumericUpDown
-            </summary>
-        </member>
         <member name="M:MahApps.Metro.Controls.ControlsHelper.SetFocusBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)">
             <summary>
             Sets the brush used to draw the focus border.
@@ -2299,16 +2250,6 @@
         <member name="M:MahApps.Metro.Controls.ControlsHelper.SetIsReadOnly(System.Windows.UIElement,System.Boolean)">
             <summary>
             Sets a value indicating whether the child contents of the control are not editable.
-            </summary>
-        </member>
-        <member name="M:MahApps.Metro.Controls.DataGridCellHelper.GetSaveDataGrid(System.Windows.UIElement)">
-            <summary>
-            Save the DataGrid.
-            </summary>
-        </member>
-        <member name="M:MahApps.Metro.Controls.DataGridCellHelper.GetDataGrid(System.Windows.UIElement)">
-            <summary>
-            Get the DataGrid.
             </summary>
         </member>
         <member name="M:MahApps.Metro.Controls.DataGridCellHelper.GetSelectionUnit(System.Windows.UIElement)">
@@ -2590,11 +2531,6 @@
         <member name="M:MahApps.Metro.Controls.PasswordBoxHelper.SetRevealButtonContentTemplate(System.Windows.DependencyObject,System.Windows.DataTemplate)">
             <summary> 
             Sets the data template used to display the content of the RevealButton.
-            </summary>
-        </member>
-        <member name="F:MahApps.Metro.Controls.ScrollBarHelper.VerticalScrollBarOnLeftSideProperty">
-            <summary>
-            This property can be used to set vertical scrollbar left side from the tabpanel (look at MetroAnimatedSingleRowTabControl)
             </summary>
         </member>
         <member name="F:MahApps.Metro.Controls.ScrollViewerHelper.VerticalScrollBarOnLeftSideProperty">
@@ -2888,11 +2824,6 @@
         <member name="M:MahApps.Metro.Controls.TabControlHelper.SetCloseTabCommandParameter(System.Windows.UIElement,System.Object)">
             <summary>
             Sets a command parameter for the TabItem that will be passed to the CloseTabCommand.
-            </summary>
-        </member>
-        <member name="F:MahApps.Metro.Controls.TabControlHelper.IsUnderlinedProperty">
-            <summary>
-            Defines whether the underline below the <see cref="T:System.Windows.Controls.TabItem"/> is shown or not.
             </summary>
         </member>
         <member name="F:MahApps.Metro.Controls.TabControlHelper.UnderlinedProperty">
@@ -3555,14 +3486,9 @@
             Gets/sets if the the system menu should popup on right click.
             </summary>
         </member>
-        <member name="P:MahApps.Metro.Controls.MetroWindow.TitlebarHeight">
+        <member name="P:MahApps.Metro.Controls.MetroWindow.TitleBarHeight">
             <summary>
             Gets/sets the TitleBar's height.
-            </summary>
-        </member>
-        <member name="P:MahApps.Metro.Controls.MetroWindow.TitleCaps">
-            <summary>
-            Gets/sets if the TitleBar's text is automatically capitalized.
             </summary>
         </member>
         <member name="P:MahApps.Metro.Controls.MetroWindow.TitleCharacterCasing">
@@ -3811,11 +3737,6 @@
                 Gets or sets the horizontal alignment of the contents of the text box.
             </summary>
         </member>
-        <member name="P:MahApps.Metro.Controls.NumericUpDown.HasDecimals">
-            <summary>
-                Indicates if the NumericUpDown should show the decimal separator or not.
-            </summary>
-        </member>
         <member name="P:MahApps.Metro.Controls.NumericUpDown.NumericInputMode">
             <summary>
             Gets or sets which numeric input for the NumericUpDown is allowed.
@@ -3824,6 +3745,11 @@
         <member name="P:MahApps.Metro.Controls.NumericUpDown.SnapToMultipleOfInterval">
             <summary>
                 Indicates if the NumericUpDown should round the value to the nearest possible interval when the focus moves to another element.
+            </summary>
+        </member>
+        <member name="P:MahApps.Metro.Controls.NumericUpDown.ParsingNumberStyle">
+            <summary>
+            Gets or sets the parsing number style for the value from text to numeric.
             </summary>
         </member>
         <member name="M:MahApps.Metro.Controls.NumericUpDown.OnGotFocus(System.Object,System.Windows.RoutedEventArgs)">
@@ -4409,11 +4335,6 @@
                 Represents a control that allows the user to select a date and a time.
             </summary>
         </member>
-        <member name="E:MahApps.Metro.Controls.DateTimePicker.SelectedDateChanged">
-            <summary>
-                Occurs when the <see cref="P:MahApps.Metro.Controls.DateTimePicker.SelectedDate" /> property is changed.
-            </summary>
-        </member>
         <member name="P:MahApps.Metro.Controls.DateTimePicker.DisplayDate">
             <summary>
                 Gets or sets the date to display
@@ -4463,14 +4384,6 @@
                 <see cref="F:System.Windows.Controls.Orientation.Horizontal" />.
             </returns>
         </member>
-        <member name="P:MahApps.Metro.Controls.DateTimePicker.SelectedDate">
-            <summary>
-                Gets or sets the currently selected date.
-            </summary>
-            <returns>
-                The date currently selected. The default is null.
-            </returns>
-        </member>
         <member name="T:MahApps.Metro.Controls.TimePartVisibility">
             <summary>
             Defines the visibility for time-parts that are visible for the <see cref="T:MahApps.Metro.Controls.DateTimePicker"/>. 
@@ -4489,16 +4402,6 @@
         <member name="F:MahApps.Metro.Controls.TimePickerBase.IsDatePickerVisiblePropertyKey">
             <summary>
             This readonly dependency property is to control whether to show the date-picker (in case of <see cref="T:MahApps.Metro.Controls.DateTimePicker"/>) or hide it (in case of <see cref="T:MahApps.Metro.Controls.TimePicker"/>.
-            </summary>
-        </member>
-        <member name="F:MahApps.Metro.Controls.TimePickerBase.MinTimeOfDay">
-            <summary>
-            Represents the time 00:00:00; 12:00:00 AM respectively
-            </summary>
-        </member>
-        <member name="F:MahApps.Metro.Controls.TimePickerBase.MaxTimeOfDay">
-            <summary>
-            Represents the time 23:59:59.9999999; 11:59:59.9999999 PM respectively
             </summary>
         </member>
         <member name="F:MahApps.Metro.Controls.TimePickerBase.IntervalOf5">
@@ -4537,9 +4440,9 @@
             Returns a list containing {0, 15, 30, 45}.
             </returns>
         </member>
-        <member name="E:MahApps.Metro.Controls.TimePickerBase.SelectedTimeChanged">
+        <member name="E:MahApps.Metro.Controls.TimePickerBase.SelectedDateTimeChanged">
             <summary>
-                Occurs when the <see cref="P:MahApps.Metro.Controls.TimePickerBase.SelectedTime" /> property is changed.
+                Occurs when the <see cref="P:MahApps.Metro.Controls.TimePickerBase.SelectedDateTime" /> property is changed.
             </summary>
         </member>
         <member name="P:MahApps.Metro.Controls.TimePickerBase.Culture">
@@ -4596,12 +4499,12 @@
                 visibility definition of the selectable date-time-parts. The default is <see cref="F:MahApps.Metro.Controls.TimePartVisibility.All" />.
             </returns>
         </member>
-        <member name="P:MahApps.Metro.Controls.TimePickerBase.SelectedTime">
+        <member name="P:MahApps.Metro.Controls.TimePickerBase.SelectedDateTime">
             <summary>
-                Gets or sets the currently selected time.
+                Gets or sets the currently selected date and time.
             </summary>
             <returns>
-                The time currently selected. The default is null.
+                The date and time which is currently selected. The default is null.
             </returns>
         </member>
         <member name="P:MahApps.Metro.Controls.TimePickerBase.SelectedTimeFormat">
@@ -4703,11 +4606,6 @@
             Gets/sets the text to display when the control is in it's Off state.
             </summary>
         </member>
-        <member name="P:MahApps.Metro.Controls.ToggleSwitch.SwitchForeground">
-            <summary>
-            Gets/sets the brush used for the switch's foreground.
-            </summary>
-        </member>
         <member name="P:MahApps.Metro.Controls.ToggleSwitch.OnSwitchBrush">
             <summary>
             Gets/sets the brush used for the on-switch's foreground.
@@ -4791,11 +4689,6 @@
         <member name="T:MahApps.Metro.Controls.ToggleSwitchButton">
             <summary>
             A Button that allows the user to toggle between two states.
-            </summary>
-        </member>
-        <member name="P:MahApps.Metro.Controls.ToggleSwitchButton.SwitchForeground">
-            <summary>
-            Gets/sets the brush used for the control's foreground.
             </summary>
         </member>
         <member name="P:MahApps.Metro.Controls.ToggleSwitchButton.OnSwitchBrush">

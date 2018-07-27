@@ -1,4 +1,5 @@
-﻿using FFTrainer.ViewModels;
+﻿using FFTrainer.Models;
+using FFTrainer.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,13 +11,20 @@ namespace FFTrainer.Views
     public partial class CharacterDetailsView4 : UserControl
     {
         private ExdCsvReader _exdProvider = new ExdCsvReader();
+        public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public CharacterDetailsView4()
         {
             InitializeComponent();
             _exdProvider.MakeWeatherList();
             _exdProvider.MakeWeatherRateList();
             _exdProvider.MakeTerritoryTypeList();
+            if(Properties.Settings.Default.UnlockedK == true)
+            {
+                HousingPlace.IsEnabled = true;
+                HousingPlace.Visibility = Visibility.Visible;
+            }
         }
+
         private void MaxZoom_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             if (MaxZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
@@ -83,13 +91,6 @@ namespace FFTrainer.Views
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraUpDown), "float", CamUpDown.Value.ToString());
         }
 
-        private void NumericUpDown_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
-        {
-            if (Weather.Value.HasValue)
-                if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
-                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int territory = MemoryManager.Instance.MemLib.readInt(MemoryManager.GetAddressString(MemoryManager.Instance.TerritoryAddress, Settings.Instance.Character.Territory));
@@ -120,6 +121,24 @@ namespace FFTrainer.Views
         {
             if (Timexd.IsMouseOver || Timexd.IsKeyboardFocusWithin || Timexd.IsMouseDirectlyOver)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl), "byte", Timexd.Value.ToString());
+        }
+
+        private void HousingPlace_Checked(object sender, RoutedEventArgs e)
+        {
+            if(HousingPlace.IsChecked==true)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.Instance.HousingOffset, "byte", "01");
+        }
+
+        private void Weather_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (Weather.Value.HasValue)
+                if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
+        }
+
+        private void HousingPlace_Unchecked(object sender, RoutedEventArgs e)
+        {
+           MemoryManager.Instance.MemLib.writeMemory(MemoryManager.Instance.HousingOffset, "byte", "00");
         }
     }
 }

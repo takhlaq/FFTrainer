@@ -16,6 +16,7 @@ using System.Net;
 using MahApps.Metro;
 using System.Linq;
 using System.Windows.Controls;
+using System.Diagnostics;
 
 namespace FFTrainer
 {
@@ -742,6 +743,18 @@ namespace FFTrainer
                 Loadbutton.IsEnabled = true;
             }
         }
-
+        private KonamiSequence sequence = new KonamiSequence();
+        private void MetroWindow_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(Properties.Settings.Default.UnlockedK == false)
+                if(haha.IsSelected)
+                    if (sequence.IsCompletedBy(e.Key))
+                    {
+                        Properties.Settings.Default.UnlockedK = true;
+                        Properties.Settings.Default.Save();
+                        Process.Start(System.Windows.Application.ResourceAssembly.Location);
+                        Application.Current.Shutdown();
+                    }
+        }
     }
 }

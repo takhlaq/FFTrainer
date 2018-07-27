@@ -29,6 +29,7 @@ namespace FFTrainer
         public string CameraOffset { get; set; }
         public string TimeOffset { get; set; }
         public string WeatherOffset { get; set; }
+        public string HousingOffset { get; set; }
         public string TerritoryOffset { get; set; }
         public CharacterOffsets Character { get; set; }
     }
@@ -38,6 +39,7 @@ namespace FFTrainer
     {
         public string Name { get; set; }
         public string Race { get; set; }
+        public string RenderDistance { get; set; }
         public string TimeControl { get; set; }
         public string Weather { get; set; }
         public string Gender { get; set; }
@@ -55,6 +57,7 @@ namespace FFTrainer
         public string LimbalR { get; set; }
         public string LimbalG { get; set; }
         public string LimbalB { get; set; }
+        public string RenderToggle { get; set; }
         public string RHeight { get; set; }
         public string RBust { get; set; }
         public string Highlights { get; set; }
