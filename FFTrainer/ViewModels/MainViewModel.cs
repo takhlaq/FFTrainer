@@ -195,7 +195,7 @@ namespace FFTrainer.ViewModels
             {
                 // sleep for 500 ms
                 Thread.Sleep(Properties.Settings.Default.Read);
-                // check if our memory manager is set
+                // check if our memory manager is set /saving
                if(!MainWindow.CurrentlySaving) mediator.SendWork();
 
             }
