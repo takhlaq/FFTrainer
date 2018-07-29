@@ -17,7 +17,6 @@ using MahApps.Metro;
 using System.Linq;
 using System.Windows.Controls;
 using System.Diagnostics;
-
 namespace FFTrainer
 {
     /// <summary>
@@ -65,7 +64,6 @@ namespace FFTrainer
         {
             try
             {
-
                 while (true)
                 {
                     if (CharacterDetails.Rotation4.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), CharacterDetails.Rotation4.GetBytes());

@@ -1,7 +1,7 @@
 Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3)][0x8],4 [UBYTE(0x3)][0x9],5 [UBYTE(0x3)][0xa],6 [STRING(0x0)][0x0],7 [UBYTE(0x3)][0xb],8 [UBYTE(0x3)][0xc],9 [UBYTE(0x3)][0xd],10 [UBYTE(0x3)][0xe],11 [UBYTE(0x3)][0xf],12 [USHORT(0x5)][0x4],13 [BBOOL(0x1a)][0x10],14 [BBOOL(0x1b)][0x10],15 [BBOOL(0x1c)][0x10],16 [BBOOL(0x1d)][0x10],17 [BBOOL(0x1e)][0x10]
 0,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,true,false,true
-1,0,1,false,0,1,0,"battle/Battle Start",0,0,0,2,3,0,false,false,true,false,true
-2,0,1,false,0,1,0,"battle/Battle End",0,0,0,1,3,0,false,false,true,false,true
+1,0,1,false,0,1,0,"normal/Battle Start",0,0,0,2,3,0,false,false,true,false,true
+2,0,1,false,0,1,0,"normal/Battle End",0,0,0,1,3,0,false,false,true,false,true
 3,0,0,true,0,0,0,"normal/Idle",0,2,0,2,3,55,false,false,true,false,true
 4,0,1,false,0,0,0,"normal/Idle inactive 1",0,2,0,2,3,0,false,false,true,false,true
 5,0,1,false,0,0,0,"normal/idle inactive 2",0,2,0,2,3,0,false,false,true,false,true
@@ -33,52 +33,52 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 31,0,1,false,0,0,0,"normal/Jump Start",0,2,0,2,3,0,false,false,true,false,true
 32,0,0,false,0,0,0,"normal/Jump Fall",0,2,0,2,3,0,false,false,true,false,true
 33,0,1,false,0,0,0,"normal/Jump Land",0,2,0,2,3,0,false,false,true,false,true
-34,0,0,true,0,0,2,"battle/Battle Idle",0,1,0,1,3,0,false,false,true,false,true
-35,0,0,true,0,0,0,"battle/Battle Turn Left",0,1,0,1,3,0,false,false,true,false,true
-36,0,0,true,0,0,0,"battle/Battle Turn Right",0,1,0,1,3,0,false,false,true,false,true
+34,0,0,true,0,0,2,"normal/Battle Idle",0,1,0,1,3,0,false,false,true,false,true
+35,0,0,true,0,0,0,"normal/Battle Turn Left",0,1,0,1,3,0,false,false,true,false,true
+36,0,0,true,0,0,0,"normal/Battle Turn Right",0,1,0,1,3,0,false,false,true,false,true
 37,0,3,true,0,0,1,"normal/Knee Suffering",1,2,1,2,3,0,true,false,true,false,true
 38,0,5,false,0,0,1,"mount/mount_dead",0,2,0,2,1,0,false,false,true,false,true
 39,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 40,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-41,0,0,true,0,0,0,"battle/Battle Walk",0,1,0,1,3,0,false,false,true,false,true
-42,0,0,true,0,0,0,"battle/Battle Walk Left",0,1,0,1,3,0,false,false,true,false,true
-43,0,0,true,0,0,0,"battle/Battle Walk Right",0,1,0,1,3,0,false,false,true,false,true
-44,0,0,true,0,0,0,"battle/Battle Walk Back",0,1,0,1,3,0,false,false,true,false,true
-45,0,1,false,0,0,0,"battle/Battle Walk Start",0,1,0,1,3,0,false,false,true,false,true
-46,0,1,false,0,0,0,"battle/Battle Walk BackRight",0,1,0,1,3,0,false,false,true,false,true
-47,0,1,false,0,0,0,"battle/Battle Walk BackLeft",0,1,0,1,3,0,false,false,true,false,true
-48,0,1,false,0,0,0,"battle/Battle Walk End",0,1,0,1,3,0,false,false,true,false,true
+41,0,0,true,0,0,0,"normal/Battle Walk",0,1,0,1,3,0,false,false,true,false,true
+42,0,0,true,0,0,0,"normal/Battle Walk Left",0,1,0,1,3,0,false,false,true,false,true
+43,0,0,true,0,0,0,"normal/Battle Walk Right",0,1,0,1,3,0,false,false,true,false,true
+44,0,0,true,0,0,0,"normal/Battle Walk Back",0,1,0,1,3,0,false,false,true,false,true
+45,0,1,false,0,0,0,"normal/Battle Walk Start",0,1,0,1,3,0,false,false,true,false,true
+46,0,1,false,0,0,0,"normal/Battle Walk BackRight",0,1,0,1,3,0,false,false,true,false,true
+47,0,1,false,0,0,0,"normal/Battle Walk BackLeft",0,1,0,1,3,0,false,false,true,false,true
+48,0,1,false,0,0,0,"normal/Battle Walk End",0,1,0,1,3,0,false,false,true,false,true
 49,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-50,0,0,true,0,0,0,"battle/Battle Run",0,1,0,1,3,0,false,false,true,false,true
-51,0,0,true,0,0,0,"battle/Battle Run Left",0,1,0,1,3,0,false,false,true,false,true
-52,0,0,true,0,0,0,"battle/Battle Run Right",0,1,0,1,3,0,false,false,true,false,true
-53,0,1,false,0,0,0,"battle/Battle Run Start",0,1,0,1,3,0,false,false,true,false,true
-54,0,1,false,0,0,0,"battle/Battle Run Back Right",0,1,0,1,3,0,false,false,true,false,true
-55,0,1,false,0,0,0,"battle/Battle Run Back Left",0,1,0,1,3,0,false,false,true,false,true
-56,0,1,false,0,0,0,"battle/Battle Run Stop",0,1,0,1,3,0,false,false,true,false,true
+50,0,0,true,0,0,0,"normal/Battle Run",0,1,0,1,3,0,false,false,true,false,true
+51,0,0,true,0,0,0,"normal/Battle Run Left",0,1,0,1,3,0,false,false,true,false,true
+52,0,0,true,0,0,0,"normal/Battle Run Right",0,1,0,1,3,0,false,false,true,false,true
+53,0,1,false,0,0,0,"normal/Battle Run Start",0,1,0,1,3,0,false,false,true,false,true
+54,0,1,false,0,0,0,"normal/Battle Run Back Right",0,1,0,1,3,0,false,false,true,false,true
+55,0,1,false,0,0,0,"normal/Battle Run Back Left",0,1,0,1,3,0,false,false,true,false,true
+56,0,1,false,0,0,0,"normal/Battle Run Stop",0,1,0,1,3,0,false,false,true,false,true
 57,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
-58,0,0,true,0,0,0,"battle/Battle Sprint",0,1,0,1,3,0,false,false,true,true,true
-59,0,1,false,0,0,0,"battle/Battle Jump",0,1,0,1,3,0,false,false,true,false,true
-60,0,0,false,0,0,0,"battle/Battle Jump Fall",0,1,0,1,3,0,false,false,true,false,true
-61,0,1,false,0,0,0,"battle/Battle Jump Land",0,1,0,1,3,0,false,false,true,false,true
+58,0,0,true,0,0,0,"normal/Battle Sprint",0,1,0,1,3,0,false,false,true,true,true
+59,0,1,false,0,0,0,"normal/Battle Jump",0,1,0,1,3,0,false,false,true,false,true
+60,0,0,false,0,0,0,"normal/Battle Jump Fall",0,1,0,1,3,0,false,false,true,false,true
+61,0,1,false,0,0,0,"normal/Battle Jump Land",0,1,0,1,3,0,false,false,true,false,true
 62,0,1,false,0,3,0,"normal/Damage",0,0,0,0,3,0,false,false,true,false,true
 63,0,1,false,0,3,0,"normal/Damage Continuous",0,0,0,0,3,0,false,false,true,false,true
 64,0,1,false,0,3,1,"normal/knockback start",0,0,0,0,3,0,false,false,true,false,true
 65,0,1,false,0,3,0,"normal/knockback end",0,0,0,0,3,0,false,false,true,false,true
 66,0,5,false,0,0,1,"normal/dead",0,4,0,2,3,2,false,false,true,false,true
 67,0,5,true,0,0,1,"normal/dead pose",0,4,0,2,3,3,false,false,true,false,true
-68,0,1,false,0,3,0,"battle/Battle damage",0,0,0,0,3,0,false,false,true,false,true
-69,0,1,false,0,3,0,"battle/Battle damage continuous",0,0,0,0,3,0,false,false,true,false,true
-70,0,1,false,0,3,1,"battle/Battle knockback start",0,0,0,0,3,0,false,false,true,false,true
-71,0,1,false,0,3,0,"battle/Battle knockback end",0,0,0,0,3,0,false,false,true,false,true
-72,0,5,false,0,0,1,"battle/Battle dead",0,3,0,1,3,0,false,false,true,false,true
-73,0,5,true,0,0,1,"battle/Battle dead pose",0,3,0,1,3,0,false,false,true,false,true
-74,0,1,false,0,0,1,"battle/Battle mon_float_dead_start",0,2,0,2,3,0,false,false,true,false,true
-75,0,0,true,0,0,1,"battle/Battle mon_float_dead_loop",0,2,0,2,3,0,false,false,true,false,true
-76,0,1,false,0,0,1,"battle/Battle mon_float_dead_landing",0,2,0,2,3,0,false,false,true,false,true
+68,0,1,false,0,3,0,"normal/Battle damage",0,0,0,0,3,0,false,false,true,false,true
+69,0,1,false,0,3,0,"normal/Battle damage continuous",0,0,0,0,3,0,false,false,true,false,true
+70,0,1,false,0,3,1,"normal/Battle knockback start",0,0,0,0,3,0,false,false,true,false,true
+71,0,1,false,0,3,0,"normal/Battle knockback end",0,0,0,0,3,0,false,false,true,false,true
+72,0,5,false,0,0,1,"normal/Battle dead",0,3,0,1,3,0,false,false,true,false,true
+73,0,5,true,0,0,1,"normal/Battle dead pose",0,3,0,1,3,0,false,false,true,false,true
+74,0,1,false,0,0,1,"normal/Battle mon_float_dead_start",0,2,0,2,3,0,false,false,true,false,true
+75,0,0,true,0,0,1,"normal/Battle mon_float_dead_loop",0,2,0,2,3,0,false,false,true,false,true
+76,0,1,false,0,0,1,"normal/Battle mon_float_dead_landing",0,2,0,2,3,0,false,false,true,false,true
 77,0,2,false,0,0,1,"normal/Revive",0,2,1,2,3,4,false,false,true,true,true
-78,0,2,false,0,0,1,"battle/Weapon Guard",0,1,0,1,3,0,false,false,true,false,true
-79,0,2,false,0,0,1,"battle/Shield Guard",0,1,0,1,3,0,false,false,true,false,true
+78,0,2,false,0,0,1,"normal/Weapon Guard",0,1,0,1,3,0,false,false,true,false,true
+79,0,2,false,0,0,1,"normal/Shield Guard",0,1,0,1,3,0,false,false,true,false,true
 80,1,1,false,0,0,1,"normal/event_action_start",0,2,1,2,3,38,true,false,false,true,true
 81,2,0,true,0,0,1,"normal/Pickup something",0,2,1,2,3,39,true,false,false,true,true
 82,0,1,false,0,0,1,"normal/event_action_end",0,2,1,2,3,40,false,false,false,true,true
@@ -88,57 +88,57 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 86,0,3,false,0,0,1,"normal/item_set",0,2,0,2,3,0,false,false,true,false,true
 87,0,3,false,0,0,1,"normal/item_eat",0,2,1,2,0,16,true,false,true,false,true
 88,0,3,false,0,0,1,"normal/item_drink",0,2,1,2,0,16,true,false,true,false,true
-89,1,3,false,0,0,1,"battle/item_start",0,1,0,1,3,0,true,true,true,false,true
-90,2,0,true,0,0,1,"battle/item_loop",0,1,0,0,3,0,true,true,true,false,true
-91,0,3,false,0,0,1,"battle/Item use",0,1,1,1,3,0,true,true,false,true,true
+89,1,3,false,0,0,1,"normal/item_start",0,1,0,1,3,0,true,true,true,false,true
+90,2,0,true,0,0,1,"normal/item_loop",0,1,0,0,3,0,true,true,true,false,true
+91,0,3,false,0,0,1,"normal/Item use",0,1,1,1,3,0,true,true,false,true,true
 92,1,2,false,0,0,1,"normal/magic_cmn_start",0,2,0,2,3,0,true,true,true,false,true
 93,2,0,true,0,0,1,"normal/magic_cmn_loop",0,2,0,2,3,0,true,true,true,false,true
-94,1,2,false,0,0,1,"battle/FireIV part1",0,1,0,1,3,0,true,true,true,false,true
-95,2,0,true,0,0,1,"battle/FireIV part2",0,1,0,1,3,0,true,true,true,false,true
-96,1,2,false,0,0,1,"battle/Begin harp",0,2,0,2,3,0,true,true,true,false,true
-97,2,0,true,0,0,1,"battle/Swift harp strumming",0,2,0,2,3,0,true,true,true,false,true
-98,1,2,false,0,0,1,"battle/magic_cnj_start",0,1,0,1,3,0,true,true,true,false,true
-99,2,0,true,0,0,1,"battle/magic_cnj_loop",0,1,0,1,3,0,true,true,true,false,true
-100,1,2,false,0,0,1,"battle/magic_swl_start",0,1,0,1,3,0,true,true,true,false,true
-101,2,0,true,0,0,1,"battle/magic_swl_loop",0,1,0,1,3,0,true,true,true,false,true
-102,1,2,false,0,0,1,"battle/magic_pld_start",0,1,0,1,3,0,true,true,true,false,true
-103,2,0,true,0,0,1,"battle/magic_pld_loop",0,1,0,1,3,0,true,true,true,false,true
-104,1,2,false,0,0,1,"battle/magic_sum_start",0,1,0,1,3,0,true,true,true,false,true
-105,2,0,true,0,0,1,"battle/magic_sum_loop",0,1,0,1,3,0,true,true,true,false,true
-106,1,2,false,0,0,1,"battle/magic_thm_start",0,1,0,1,3,0,true,true,true,false,true
-107,2,0,true,0,0,1,"battle/magic_thm_loop",0,1,0,1,3,0,true,true,true,false,true
-108,1,2,false,0,0,1,"battle/magic_wht_start",0,1,0,1,3,0,true,true,true,false,true
-109,2,0,true,0,0,1,"battle/magic_wht_loop",0,1,0,1,3,0,true,true,true,false,true
-110,1,2,false,0,0,1,"battle/magic_sch_start",0,1,0,1,3,0,true,true,true,false,true
-111,2,0,true,0,0,1,"battle/magic_sch_loop",0,1,0,1,3,0,true,true,true,false,true
-112,0,2,false,0,0,1,"battle/auto_attack1",0,1,2,1,3,0,false,true,false,true,true
-113,0,2,false,0,0,1,"battle/auto_attack2",0,1,2,1,3,0,false,true,false,true,true
-114,0,2,false,0,0,1,"battle/auto_attack3",0,1,2,1,3,0,false,true,false,true,true
+94,1,2,false,0,0,1,"normal/FireIV part1",0,1,0,1,3,0,true,true,true,false,true
+95,2,0,true,0,0,1,"normal/FireIV part2",0,1,0,1,3,0,true,true,true,false,true
+96,1,2,false,0,0,1,"normal/Begin harp",0,2,0,2,3,0,true,true,true,false,true
+97,2,0,true,0,0,1,"normal/Swift harp strumming",0,2,0,2,3,0,true,true,true,false,true
+98,1,2,false,0,0,1,"normal/magic_cnj_start",0,1,0,1,3,0,true,true,true,false,true
+99,2,0,true,0,0,1,"normal/magic_cnj_loop",0,1,0,1,3,0,true,true,true,false,true
+100,1,2,false,0,0,1,"normal/magic_swl_start",0,1,0,1,3,0,true,true,true,false,true
+101,2,0,true,0,0,1,"normal/magic_swl_loop",0,1,0,1,3,0,true,true,true,false,true
+102,1,2,false,0,0,1,"normal/magic_pld_start",0,1,0,1,3,0,true,true,true,false,true
+103,2,0,true,0,0,1,"normal/magic_pld_loop",0,1,0,1,3,0,true,true,true,false,true
+104,1,2,false,0,0,1,"normal/magic_sum_start",0,1,0,1,3,0,true,true,true,false,true
+105,2,0,true,0,0,1,"normal/magic_sum_loop",0,1,0,1,3,0,true,true,true,false,true
+106,1,2,false,0,0,1,"normal/magic_thm_start",0,1,0,1,3,0,true,true,true,false,true
+107,2,0,true,0,0,1,"normal/magic_thm_loop",0,1,0,1,3,0,true,true,true,false,true
+108,1,2,false,0,0,1,"normal/magic_wht_start",0,1,0,1,3,0,true,true,true,false,true
+109,2,0,true,0,0,1,"normal/magic_wht_loop",0,1,0,1,3,0,true,true,true,false,true
+110,1,2,false,0,0,1,"normal/magic_sch_start",0,1,0,1,3,0,true,true,true,false,true
+111,2,0,true,0,0,1,"normal/magic_sch_loop",0,1,0,1,3,0,true,true,true,false,true
+112,0,2,false,0,0,1,"normal/auto_attack1",0,1,2,1,3,0,false,true,false,true,true
+113,0,2,false,0,0,1,"normal/auto_attack2",0,1,2,1,3,0,false,true,false,true,true
+114,0,2,false,0,0,1,"normal/auto_attack3",0,1,2,1,3,0,false,true,false,true,true
 115,0,0,true,0,13,0,"overlay/slot1_default",0,0,0,0,3,0,false,false,true,false,true
 116,0,0,true,0,13,0,"overlay/slot1_sp1",0,0,0,0,3,0,false,false,true,false,true
 117,0,0,true,0,13,0,"overlay/slot1_sp2",0,0,0,0,3,0,false,false,true,false,true
-118,0,2,false,0,1,1,"battle/auto_attack_shot1",0,1,2,1,3,0,false,true,false,true,true
-119,0,2,false,0,1,1,"battle/auto_attack_shot2",0,1,2,1,3,0,false,true,false,true,true
-120,0,2,false,0,1,1,"battle/auto_attack_shot3",0,1,2,1,3,0,false,true,false,true,true
-121,0,2,false,0,0,1,"battle/auto_attack1_mon_a",0,1,0,1,3,0,false,false,true,false,true
-122,0,2,false,0,0,1,"battle/auto_attack2_mon_a",0,1,0,1,3,0,false,false,true,false,true
-123,0,2,false,0,0,1,"battle/auto_attack3_mon_a",0,1,0,1,3,0,false,false,true,false,true
-124,0,2,false,0,0,1,"battle/auto_attack1_mon_b",0,1,0,1,3,0,false,false,true,false,true
-125,0,2,false,0,0,1,"battle/auto_attack2_mon_b",0,1,0,1,3,0,false,false,true,false,true
-126,0,2,false,0,0,1,"battle/auto_attack3_mon_b",0,1,0,1,3,0,false,false,true,false,true
-127,0,2,false,0,0,1,"battle/auto_attack_shot1_mon",0,1,0,1,3,0,false,false,true,false,true
-128,0,2,false,0,0,1,"battle/auto_attack_shot2_mon",0,1,0,1,3,0,false,false,true,false,true
-129,0,2,false,0,0,1,"battle/auto_attack_shot3_mon",0,1,0,1,3,0,false,false,true,false,true
-130,1,3,false,0,0,1,"battle/mon_sp_a_start",0,1,0,1,3,0,false,false,true,false,true
-131,2,0,true,0,0,1,"battle/mon_sp_a_loop",0,1,0,1,3,0,false,false,true,false,true
-132,1,3,false,0,0,1,"battle/mon_sp_b_start",0,1,0,1,3,0,false,false,true,false,true
-133,2,0,true,0,0,1,"battle/mon_sp_b_loop",0,1,0,1,3,0,false,false,true,false,true
-134,1,3,false,0,0,1,"battle/mon_sp_c_start",0,1,0,1,3,0,false,false,true,false,true
-135,2,0,true,0,0,1,"battle/mon_sp_c_loop",0,1,0,1,3,0,false,false,true,false,true
-136,1,3,false,0,0,1,"battle/mon_sp_d_start",0,1,0,1,3,0,false,false,true,false,true
-137,2,0,true,0,0,1,"battle/mon_sp_d_loop",0,1,0,1,3,0,false,false,true,false,true
-138,1,3,false,0,0,1,"battle/mon_sp_e_start",0,1,0,1,3,0,false,false,true,false,true
-139,2,0,true,0,0,1,"battle/mon_sp_e_loop",0,1,0,1,3,0,false,false,true,false,true
+118,0,2,false,0,1,1,"normal/auto_attack_shot1",0,1,2,1,3,0,false,true,false,true,true
+119,0,2,false,0,1,1,"normal/auto_attack_shot2",0,1,2,1,3,0,false,true,false,true,true
+120,0,2,false,0,1,1,"normal/auto_attack_shot3",0,1,2,1,3,0,false,true,false,true,true
+121,0,2,false,0,0,1,"normal/auto_attack1_mon_a",0,1,0,1,3,0,false,false,true,false,true
+122,0,2,false,0,0,1,"normal/auto_attack2_mon_a",0,1,0,1,3,0,false,false,true,false,true
+123,0,2,false,0,0,1,"normal/auto_attack3_mon_a",0,1,0,1,3,0,false,false,true,false,true
+124,0,2,false,0,0,1,"normal/auto_attack1_mon_b",0,1,0,1,3,0,false,false,true,false,true
+125,0,2,false,0,0,1,"normal/auto_attack2_mon_b",0,1,0,1,3,0,false,false,true,false,true
+126,0,2,false,0,0,1,"normal/auto_attack3_mon_b",0,1,0,1,3,0,false,false,true,false,true
+127,0,2,false,0,0,1,"normal/auto_attack_shot1_mon",0,1,0,1,3,0,false,false,true,false,true
+128,0,2,false,0,0,1,"normal/auto_attack_shot2_mon",0,1,0,1,3,0,false,false,true,false,true
+129,0,2,false,0,0,1,"normal/auto_attack_shot3_mon",0,1,0,1,3,0,false,false,true,false,true
+130,1,3,false,0,0,1,"normal/mon_sp_a_start",0,1,0,1,3,0,false,false,true,false,true
+131,2,0,true,0,0,1,"normal/mon_sp_a_loop",0,1,0,1,3,0,false,false,true,false,true
+132,1,3,false,0,0,1,"normal/mon_sp_b_start",0,1,0,1,3,0,false,false,true,false,true
+133,2,0,true,0,0,1,"normal/mon_sp_b_loop",0,1,0,1,3,0,false,false,true,false,true
+134,1,3,false,0,0,1,"normal/mon_sp_c_start",0,1,0,1,3,0,false,false,true,false,true
+135,2,0,true,0,0,1,"normal/mon_sp_c_loop",0,1,0,1,3,0,false,false,true,false,true
+136,1,3,false,0,0,1,"normal/mon_sp_d_start",0,1,0,1,3,0,false,false,true,false,true
+137,2,0,true,0,0,1,"normal/mon_sp_d_loop",0,1,0,1,3,0,false,false,true,false,true
+138,1,3,false,0,0,1,"normal/mon_sp_e_start",0,1,0,1,3,0,false,false,true,false,true
+139,2,0,true,0,0,1,"normal/mon_sp_e_loop",0,1,0,1,3,0,false,false,true,false,true
 140,0,3,false,0,0,1,"warp/warp_start",0,1,1,1,3,0,false,false,false,false,true
 141,4,3,false,0,0,1,"warp/warp_end",0,1,1,1,3,0,false,false,false,false,true
 142,0,3,false,0,0,1,"specialpop/specialpop",0,1,1,1,3,0,false,false,false,false,true
@@ -147,7 +147,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 145,0,0,true,0,12,0,"overlay/sp1",0,0,0,0,3,0,false,false,true,false,true
 146,0,0,true,0,12,0,"overlay/sp2",0,0,0,0,3,0,false,false,true,false,true
 147,0,0,true,0,12,0,"overlay/sp3",0,0,0,0,3,0,false,false,true,false,true
-148,0,3,false,0,0,1,"battle/partsbreak",0,0,0,0,3,0,false,false,true,false,true
+148,0,3,false,0,0,1,"normal/partsbreak",0,0,0,0,3,0,false,false,true,false,true
 149,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 150,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
 151,0,1,false,0,0,0,"",0,0,0,0,0,0,false,false,false,false,true
@@ -199,8 +199,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 197,0,1,false,0,0,2,"normal/Moonfaire Flares",0,2,1,2,3,0,true,false,false,false,true
 198,0,0,true,0,0,0,"minion/battle_loop",0,2,1,2,3,0,true,false,false,false,true
 199,0,1,false,0,2,0,"status/facial/sleep",0,0,0,0,3,0,false,false,false,false,true
-200,0,3,false,0,0,1,"battle/Carry Upper/Ice Slip",0,0,0,0,3,0,false,false,true,false,true
-201,0,3,false,0,0,0,"battle/knockback_end_pc",0,0,0,0,3,0,false,false,true,false,true
+200,0,3,false,0,0,1,"normal/Carry Upper/Ice Slip",0,0,0,0,3,0,false,false,true,false,true
+201,0,3,false,0,0,0,"normal/knockback_end_pc",0,0,0,0,3,0,false,false,true,false,true
 202,0,3,false,0,1,1,"ws/bt_2ax_emp/wsh001_bow",0,1,2,1,3,0,false,true,false,false,true
 203,0,3,false,0,1,1,"ws/bt_2ax_emp/wsh002_bow",0,1,2,1,3,0,false,true,false,false,true
 204,0,3,false,0,1,1,"ws/bt_2ax_emp/wsh003_bow",0,1,2,1,3,0,false,true,false,false,true
@@ -3703,8 +3703,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3701,0,1,false,0,0,0,"mon_sp/gimmick/qib_nin_zentaibakuhatu",0,0,0,0,3,0,false,false,false,false,true
 3702,0,1,false,0,0,0,"mon_sp/gimmick/qib_nin_zentaibakuhatu_hit",0,0,0,0,3,0,false,false,false,false,true
 3703,0,3,false,0,0,1,"mon_sp/m0076/mon_sp009",0,1,1,1,3,0,false,false,false,false,true
-3704,1,3,false,0,0,1,"battle/mon_sp_f_start",0,1,0,1,3,0,false,false,true,false,true
-3705,2,0,true,0,0,1,"battle/mon_sp_f_loop",0,1,0,1,3,0,false,false,true,false,true
+3704,1,3,false,0,0,1,"normal/mon_sp_f_start",0,1,0,1,3,0,false,false,true,false,true
+3705,2,0,true,0,0,1,"normal/mon_sp_f_loop",0,1,0,1,3,0,false,false,true,false,true
 3706,0,1,false,0,0,0,"mon_sp/gimmick/snow_icegorem_erapu",0,0,0,0,3,0,false,false,false,false,true
 3707,0,1,false,0,0,0,"mon_sp/gimmick/snow_icegorem_erapu_hit",0,0,0,0,3,0,false,false,false,false,true
 3708,0,3,false,0,0,1,"trans_sp/m0216/trans_sp001",0,2,1,2,3,0,false,false,false,false,true
@@ -3854,8 +3854,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3852,0,3,false,0,0,1,"normal/2gl_astro/abl003",0,1,1,1,3,0,false,true,false,false,true
 3853,0,3,false,0,0,1,"normal/2gl_astro/abl004",0,1,1,1,3,0,false,true,false,false,true
 3854,0,3,false,0,0,1,"normal/2gl_astro/abl005",0,1,1,1,3,0,false,true,false,false,true
-3855,1,2,false,0,0,1,"battle/magic_ast_start",0,1,0,1,3,0,true,true,true,false,true
-3856,2,0,true,0,0,1,"battle/magic_ast_loop",0,1,0,1,3,0,true,true,true,false,true
+3855,1,2,false,0,0,1,"normal/magic_ast_start",0,1,0,1,3,0,true,true,true,false,true
+3856,2,0,true,0,0,1,"normal/magic_ast_loop",0,1,0,1,3,0,true,true,true,false,true
 3857,0,3,false,0,0,1,"normal/2gl_astro/mgc001",0,1,0,1,3,0,false,true,false,false,true
 3858,0,3,false,0,0,1,"normal/2gl_astro/mgc002",0,1,0,1,3,0,false,true,false,false,true
 3859,0,3,false,0,0,1,"normal/2gl_astro/mgc003",0,1,0,1,3,0,false,true,false,false,true
@@ -3887,19 +3887,19 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 3885,0,3,false,0,0,1,"normal/2gl_astro/abl016",0,1,1,1,3,0,false,true,false,false,true
 3886,0,3,false,0,0,1,"normal/2gl_astro/mgc013",0,1,0,1,3,0,false,true,false,false,true
 3887,0,3,false,0,0,1,"normal/2gl_astro/abl017",0,1,1,1,3,0,false,true,false,false,true
-3888,1,2,false,0,0,1,"battle/magic_lgi_start",0,1,0,1,3,0,true,true,true,false,true
-3889,2,0,true,0,0,1,"battle/Casting Gravity Loop(no Effect)",0,1,0,1,3,0,true,true,true,false,true
+3888,1,2,false,0,0,1,"normal/magic_lgi_start",0,1,0,1,3,0,true,true,true,false,true
+3889,2,0,true,0,0,1,"normal/Casting Gravity Loop(no Effect)",0,1,0,1,3,0,true,true,true,false,true
 3890,1,2,false,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3891,2,0,true,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3892,1,2,false,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3893,2,0,true,0,1,1,"",0,1,0,1,0,0,true,true,true,false,true
 3894,0,3,false,0,0,1,"normal/thm_black/mgc001",0,1,0,1,3,0,false,true,false,false,true
 3895,0,3,false,0,0,1,"normal/thm_black/mgc002",0,1,0,1,3,0,false,true,false,false,true
-3896,1,2,false,0,1,1,"battle/magic_ran_start",0,1,0,1,3,0,true,false,true,false,true
-3897,2,0,true,0,1,1,"battle/Stand idle (Weapon in hand)",0,1,0,1,3,0,true,false,true,false,true
-3898,0,3,true,0,0,1,"battle/ast_barrier_loop",0,1,0,1,3,0,false,false,true,false,true
-3899,1,2,false,0,1,1,"battle/attach_start",0,0,0,1,3,0,true,false,true,false,true
-3900,2,0,true,0,1,1,"battle/attach_loop",0,0,0,1,3,0,true,false,true,false,true
+3896,1,2,false,0,1,1,"normal/magic_ran_start",0,1,0,1,3,0,true,false,true,false,true
+3897,2,0,true,0,1,1,"normal/Stand idle (Weapon in hand)",0,1,0,1,3,0,true,false,true,false,true
+3898,0,3,true,0,0,1,"normal/ast_barrier_loop",0,1,0,1,3,0,false,false,true,false,true
+3899,1,2,false,0,1,1,"normal/attach_start",0,0,0,1,3,0,true,false,true,false,true
+3900,2,0,true,0,1,1,"normal/attach_loop",0,0,0,1,3,0,true,false,true,false,true
 3901,0,3,false,0,0,1,"normal/Buff Dance",0,1,2,1,3,0,false,true,false,false,true
 3902,0,1,false,0,0,0,"ws/bt_2sp_emp/ws_s12_hit",0,0,0,0,3,0,false,false,false,false,true
 3903,0,3,true,0,0,1,"normal/Water slide",0,0,1,0,3,0,false,false,false,false,true
@@ -4488,7 +4488,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4486,0,1,false,0,0,0,"mon_sp/gimmick/arthur_ken_syougekiha_hit",0,0,0,0,3,0,false,false,false,false,true
 4487,0,3,false,0,0,0,"mon_sp/gimmick/grimoa_ankokudama",0,0,0,0,3,0,false,false,false,false,true
 4488,0,3,false,0,0,0,"mon_sp/gimmick/lavana_henshinvfx",0,0,0,0,3,0,false,false,false,false,true
-4489,0,3,false,0,0,1,"battle/bnpc_weapon_guard",0,1,0,1,3,0,false,false,true,false,true
+4489,0,3,false,0,0,1,"normal/bnpc_weapon_guard",0,1,0,1,3,0,false,false,true,false,true
 4490,0,3,false,0,0,1,"human_sp/c0501/human_sp011",0,1,1,1,3,0,false,false,false,false,true
 4491,0,1,false,0,0,0,"human_sp/c0501/human_sp011_hit",0,0,0,0,3,0,false,false,false,false,true
 4492,0,3,false,0,0,1,"human_sp/c0501/human_sp012",0,1,1,1,3,0,false,false,false,false,true
@@ -5115,8 +5115,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5113,0,3,false,0,0,1,"ws/bt_2kt_emp/ws_s08",0,1,2,1,0,0,false,true,false,false,true
 5114,0,3,false,0,0,1,"ws/bt_2kt_emp/ws_s09",0,1,2,1,0,0,false,true,false,false,true
 5115,0,3,false,0,0,1,"ws/bt_2kt_emp/ws_s10",0,1,2,1,0,0,false,true,false,false,true
-5116,1,3,false,0,0,1,"battle/magic_sam_start",0,1,0,1,0,0,true,true,true,false,true
-5117,2,0,true,0,0,1,"battle/magic_sam_loop",0,2,0,6,0,0,true,true,true,false,true
+5116,1,3,false,0,0,1,"normal/magic_sam_start",0,1,0,1,0,0,true,true,true,false,true
+5117,2,0,true,0,0,1,"normal/magic_sam_loop",0,2,0,6,0,0,true,true,true,false,true
 5118,0,3,false,0,0,1,"normal/2kt_samrai/mgc001",0,2,0,1,0,0,false,true,false,false,true
 5119,0,3,false,0,0,1,"normal/2kt_samrai/mgc002",0,2,0,1,0,0,false,true,false,false,true
 5120,0,3,false,0,0,1,"normal/2kt_samrai/mgc003",0,2,0,6,0,0,false,true,false,false,true
@@ -5154,8 +5154,8 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5152,0,3,false,0,0,1,"normal/2rp_redmage/abl005",0,1,1,1,0,0,false,true,false,false,true
 5153,0,3,false,0,0,1,"normal/2rp_redmage/abl006",0,1,1,1,0,0,false,true,false,false,true
 5154,0,3,false,0,0,1,"normal/2rp_redmage/abl007",0,1,1,1,0,0,false,true,false,false,true
-5155,1,2,false,0,0,1,"battle/magic_rdm_start",0,1,0,1,0,0,true,true,true,false,true
-5156,2,0,true,0,0,1,"battle/magic_rdm_loop",0,1,0,5,0,0,true,true,true,false,true
+5155,1,2,false,0,0,1,"normal/magic_rdm_start",0,1,0,1,0,0,true,true,true,false,true
+5156,2,0,true,0,0,1,"normal/magic_rdm_loop",0,1,0,5,0,0,true,true,true,false,true
 5157,0,3,false,0,0,1,"normal/2rp_redmage/mgc001",0,1,0,5,0,0,false,true,false,false,true
 5158,0,3,false,0,0,1,"normal/2rp_redmage/mgc002",0,1,0,5,0,0,false,true,false,false,true
 5159,0,3,false,0,0,1,"normal/2rp_redmage/mgc003",0,1,0,5,0,0,false,true,false,false,true
@@ -5537,7 +5537,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5535,0,1,false,7,0,2,"normal/Kneeling wounded",0,2,1,2,0,0,true,false,false,false,true
 5536,0,1,true,4,0,2,"normal/Standing wounded",0,2,1,2,0,0,true,false,false,false,true
 5537,0,1,true,4,0,0,"normal/event_base_stand_harp",0,1,1,1,0,0,true,false,false,false,true
-5538,0,0,true,4,0,2,"battle/idle",0,1,0,1,0,0,false,false,false,false,true
+5538,0,0,true,4,0,2,"normal/idle",0,1,0,1,0,0,false,false,false,false,true
 5539,0,0,true,10,0,1,"normal/event_base_lute_tuning",3,1,1,1,0,0,false,false,false,false,true
 5540,0,0,true,4,0,1,"normal/Dj/use keyboard",0,2,1,2,0,0,false,false,false,false,true
 5541,0,0,true,10,0,1,"normal/event_base_hammer_hit_floor",0,1,1,1,0,0,true,false,false,false,true
@@ -5921,10 +5921,10 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 5919,0,1,false,0,0,0,"human_sp/c0101/human_sp054_hit",0,0,0,0,0,0,false,false,false,false,true
 5920,0,3,false,0,0,1,"human_sp/c0101/human_sp055",0,1,1,1,0,0,false,false,false,false,true
 5921,0,1,false,0,0,0,"human_sp/c0101/human_sp055_hit",0,0,0,0,0,0,false,false,false,false,true
-5922,1,3,false,0,0,1,"battle/mon_sp_g_start",0,1,0,1,0,0,false,false,true,false,true
-5923,2,0,true,0,0,1,"battle/mon_sp_g_loop",0,1,0,1,0,0,false,false,true,false,true
-5924,1,3,false,0,0,1,"battle/mon_sp_h_start",0,1,0,1,0,0,false,false,true,false,true
-5925,2,0,true,0,0,1,"battle/mon_sp_h_loop",0,1,0,1,0,0,false,false,true,false,true
+5922,1,3,false,0,0,1,"normal/mon_sp_g_start",0,1,0,1,0,0,false,false,true,false,true
+5923,2,0,true,0,0,1,"normal/mon_sp_g_loop",0,1,0,1,0,0,false,false,true,false,true
+5924,1,3,false,0,0,1,"normal/mon_sp_h_start",0,1,0,1,0,0,false,false,true,false,true
+5925,2,0,true,0,0,1,"normal/mon_sp_h_loop",0,1,0,1,0,0,false,false,true,false,true
 5926,0,3,false,0,0,1,"human_sp/PreAngst",0,1,1,1,0,0,false,false,false,false,true
 5927,0,3,false,0,0,1,"human_sp/Angst",0,1,1,1,0,0,false,false,false,false,true
 5928,0,3,false,0,0,1,"human_sp/c0901/human_sp040",0,1,1,1,0,0,false,false,false,false,true

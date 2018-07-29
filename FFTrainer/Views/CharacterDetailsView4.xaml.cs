@@ -24,71 +24,184 @@ namespace FFTrainer.Views
                 HousingPlace.Visibility = Visibility.Visible;
             }
         }
+        private void MaxZoomXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (MaxZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
+                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
+            MaxZoom.ValueChanged -= MaxZoomXD;
+        }
 
         private void MaxZoom_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (MaxZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
-                if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Max), "float", MaxZoom.Value.ToString());
+            if (MaxZoom.IsMouseOver || MaxZoom.IsKeyboardFocusWithin)
+            {
+                MaxZoom.ValueChanged -= MaxZoomXD;
+                MaxZoom.ValueChanged += MaxZoomXD;
+            }
+        }
+
+        private void MinZoomXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (Min_Zoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
+            Min_Zoom.ValueChanged -= MinZoomXD;
         }
 
         private void Min_Zoom_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (Min_Zoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
-                if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.Min), "float", Min_Zoom.Value.ToString());
+            if (Min_Zoom.IsMouseOver || Min_Zoom.IsKeyboardFocusWithin)
+            {
+                Min_Zoom.ValueChanged -= MinZoomXD;
+                Min_Zoom.ValueChanged += MinZoomXD;
+            }
         }
 
-        private void CurrentZoom_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void CurrentZoomxD(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CurrentZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
-                if (CurrentZoom.IsMouseOver || CurrentZoom.IsKeyboardFocusWithin || CZoom2.IsKeyboardFocusWithin||CZoom2.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CurrentZoom.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CurrentZoom.Value.ToString());
+            CurrentZoom.ValueChanged -= CurrentZoomxD;
+        }
+        private void CurrentZoomxD(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (CurrentZoom.Value.HasValue && CharacterDetailsViewModel.NotAllowed == false)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CZoom), "float", CZoom2.Value.ToString());
+            CZoom2.ValueChanged -= CurrentZoomxD;
+        }
+        private void CurrentZoom_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (CurrentZoom.IsMouseOver || CurrentZoom.IsKeyboardFocusWithin)
+            {
+                CurrentZoom.ValueChanged -= CurrentZoomxD;
+                CurrentZoom.ValueChanged += CurrentZoomxD;
+            }
+            if (CZoom2.IsMouseOver || CZoom2.IsKeyboardFocusWithin)
+            {
+                CZoom2.ValueChanged -= CurrentZoomxD;
+                CZoom2.ValueChanged += CurrentZoomxD;
+            }
         }
 
-        private void CurrentFOV_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void CurrentFOVXD(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (CurrentFOV.Value.HasValue)
-                if (CurrentFOV.IsMouseOver || CurrentFOV.IsKeyboardFocusWithin || FOV1S.IsMouseOver ||FOV1S.IsKeyboardFocusWithin)
                 {
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVC), "float", CurrentFOV.Value.ToString());
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVMAX), "float", CurrentFOV.Value.ToString());
                 }
+            CurrentFOV.ValueChanged -= CurrentFOVXA;
+        }
+        private void CurrentFOVXA(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (CurrentFOV.Value.HasValue)
+                {
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVC), "float", CurrentFOV.Value.ToString());
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOVMAX), "float", CurrentFOV.Value.ToString());
+                }
+            FOV1S.ValueChanged -= CurrentFOVXD;
+        }
+        private void CurrentFOV_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (CurrentFOV.IsMouseOver || CurrentFOV.IsKeyboardFocusWithin)
+            {
+                CurrentFOV.ValueChanged -= CurrentFOVXA;
+                CurrentFOV.ValueChanged += CurrentFOVXA;
+            }
+            if (FOV1S.IsMouseOver || FOV1S.IsKeyboardFocusWithin)
+            {
+                FOV1S.ValueChanged -= CurrentFOVXD;
+                FOV1S.ValueChanged += CurrentFOVXD;
+            }
         }
 
+        private void CamHeightxd(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (CameraHeight2.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight), "float", CameraHeight2.Value.ToString());
+            CameraHeight2.ValueChanged -= CamHeightxd;
+        }
 
         private void CameraHeight2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (CameraHeight2.Value.HasValue)
-                if (CameraHeight2.IsMouseOver || CameraHeight2.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraHeight), "float", CameraHeight2.Value.ToString());
+            if (CameraHeight2.IsMouseOver || CameraHeight2.IsKeyboardFocusWithin)
+            {
+                CameraHeight2.ValueChanged -= CamHeightxd;
+                CameraHeight2.ValueChanged += CamHeightxd;
+            }
+        }
+
+        private void CamYMinxD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (CamYMin.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMin), "float", CamYMin.Value.ToString());
+            CamYMin.ValueChanged -= CamYMinxD;
         }
 
         private void CamYMin_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (CamYMin.Value.HasValue)
-                if (CamYMin.IsMouseOver || CamYMin.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMin), "float", CamYMin.Value.ToString());
+            if (CamYMin.IsMouseOver || CamYMin.IsKeyboardFocusWithin)
+            {
+                CamYMin.ValueChanged -= CamYMinxD;
+                CamYMin.ValueChanged += CamYMinxD;
+            }
         }
+
+        private void CamYMaxxD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (CamYMax.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), "float", CamYMax.Value.ToString());
+            CamYMax.ValueChanged -= CamYMaxxD;
+        }
+
 
         private void CamYMax_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (CamYMax.Value.HasValue)
-                if (CamYMax.IsMouseOver || CamYMax.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraYAMax), "float", CamYMax.Value.ToString());
+            if (CamYMax.IsMouseOver || CamYMax.IsKeyboardFocusWithin)
+            {
+                CamYMax.ValueChanged -= CamYMaxxD;
+                CamYMax.ValueChanged += CamYMaxxD;
+            }
         }
 
-        private void FOV2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void FOV2XD(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (FOV2.Value.HasValue)
-                if (FOV2.IsMouseOver || FOV2.IsKeyboardFocusWithin || FOV2S.IsMouseOver||FOV2.IsKeyboardFocused)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), "float", FOV2.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), "float", FOV2.Value.ToString());
+            FOV2.ValueChanged -= FOV2XD;
         }
-        private void CamUpDown_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void FOV2Ax(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (FOV2.Value.HasValue)
+                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.FOV2), "float", FOV2.Value.ToString());
+            FOV2S.ValueChanged -= FOV2Ax;
+        }
+        private void FOV2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (FOV2.IsMouseOver || FOV2.IsKeyboardFocusWithin)
+            {
+                FOV2.ValueChanged -= FOV2XD;
+                FOV2.ValueChanged += FOV2XD;
+            }
+            if (FOV2S.IsMouseOver || FOV2S.IsKeyboardFocusWithin)
+            {
+                FOV2S.ValueChanged -= FOV2Ax;
+                FOV2S.ValueChanged += FOV2Ax;
+            }
+        }
+        private void CamUpDownXd(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamUpDown.Value.HasValue)
-                if (CamUpDown.IsMouseOver || CamUpDown.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraUpDown), "float", CamUpDown.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.CameraAddress, Settings.Instance.Character.CameraUpDown), "float", CamUpDown.Value.ToString());
+            CamUpDown.ValueChanged -= CamUpDownXd;
+        }
+
+        private void CamUpDown_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (CamUpDown.IsMouseOver || CamUpDown.IsKeyboardFocusWithin)
+            {
+                CamUpDown.ValueChanged -= CamUpDownXd;
+                CamUpDown.ValueChanged += CamUpDownXd;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -117,12 +230,6 @@ namespace FFTrainer.Views
             }
         }
 
-        private void Slider_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
-        {
-            if (Timexd.IsMouseOver || Timexd.IsKeyboardFocusWithin || Timexd.IsMouseDirectlyOver)
-                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl), "byte", Timexd.Value.ToString());
-        }
-
         private void HousingPlace_Checked(object sender, RoutedEventArgs e)
         {
             if(HousingPlace.IsChecked==true)
@@ -132,13 +239,37 @@ namespace FFTrainer.Views
         private void Weather_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Weather.Value.HasValue)
-                if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.WeatherAddress, Settings.Instance.Character.Weather), "byte", Weather.Value.ToString());
+            Weather.ValueChanged -= Weather_ValueChanged;
         }
 
         private void HousingPlace_Unchecked(object sender, RoutedEventArgs e)
         {
            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.Instance.HousingOffset, "byte", "00");
+        }
+
+        private void Timexd_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.TimeAddress, Settings.Instance.Character.TimeControl), "byte", Timexd.Value.ToString());
+            Timexd.ValueChanged -= Timexd_ValueChanged_1;
+        }
+
+        private void Weather_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Weather.IsMouseOver || Weather.IsKeyboardFocusWithin)
+            {
+                Weather.ValueChanged -= Weather_ValueChanged;
+                Weather.ValueChanged += Weather_ValueChanged;
+            }
+        }
+
+        private void Timexd_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Timexd.IsMouseOver || Timexd.IsKeyboardFocusWithin)
+            {
+                Timexd.ValueChanged -= Timexd_ValueChanged_1;
+                Timexd.ValueChanged += Timexd_ValueChanged_1;
+            }
         }
     }
 }

@@ -193,18 +193,18 @@ namespace FFTrainer.Models
         [JsonIgnore] public Address<float> FOV2 { get; set; }
         [JsonIgnore] public Address<float> CameraYAMax { get; set; }
         [JsonIgnore] public Address<float> CameraUpDown { get; set; }
-        [JsonIgnore] public static Address<string> OffhandSlot { get; set; }
-        [JsonIgnore] public static Address<string> LFingerSlot { get; set; }
-        [JsonIgnore] public static Address<string> RFingerSlot { get; set; }
-        [JsonIgnore] public static Address<string> NeckSlot { get; set; }
-        [JsonIgnore] public static Address<string> WristSlot { get; set; }
-        [JsonIgnore] public static Address<string> EarSlot { get; set; }
-        [JsonIgnore] public static Address<string> WeaponSlot { get; set; }
-        [JsonIgnore] public static Address<string> LegSlot { get; set; }
-        [JsonIgnore] public static Address<string> FeetSlot { get; set; }
-        [JsonIgnore] public static Address<string> HeadSlot { get; set; }
-        [JsonIgnore] public static Address<string> BodySlot { get; set; }
-        [JsonIgnore] public static Address<string> ArmSlot { get; set; }
+        [JsonIgnore] public  Address<string> OffhandSlot { get; set; }
+        [JsonIgnore] public  Address<string> LFingerSlot { get; set; }
+        [JsonIgnore] public  Address<string> RFingerSlot { get; set; }
+        [JsonIgnore] public  Address<string> NeckSlot { get; set; }
+        [JsonIgnore] public  Address<string> WristSlot { get; set; }
+        [JsonIgnore] public  Address<string> EarSlot { get; set; }
+        [JsonIgnore] public  Address<string> WeaponSlot { get; set; }
+        [JsonIgnore] public  Address<string> LegSlot { get; set; }
+        [JsonIgnore] public  Address<string> FeetSlot { get; set; }
+        [JsonIgnore] public  Address<string> HeadSlot { get; set; }
+        [JsonIgnore] public  Address<string> BodySlot { get; set; }
+        [JsonIgnore] public  Address<string> ArmSlot { get; set; }
         [JsonIgnore] public Address<byte> TimeControl { get; set; }
         [JsonIgnore] public Address<byte> Weather { get; set; }
         [JsonIgnore] public Address<int> Territoryxd { get; set; }

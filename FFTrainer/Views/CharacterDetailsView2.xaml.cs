@@ -18,12 +18,10 @@ namespace FFTrainer.Views
     /// </summary>
     public partial class CharacterDetailsView2 : UserControl
     {
-        private BackgroundWorker worker3;
         public CharacterDetailsView2()
         {
             InitializeComponent();
             _exdProvider.DyeList();
-            worker3 = new BackgroundWorker();
             DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
             timer.Tick += delegate
             {
@@ -51,56 +49,13 @@ namespace FFTrainer.Views
                     if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye)))
                         FeetBox.SelectedIndex = i;
                 }
-                worker3.DoWork += Worker_DoWork3;
-                // run the worker
-                worker3.RunWorkerAsync();
                 timer.IsEnabled = false;
             };
             timer.Start();
         }
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         private ExdCsvReader _exdProvider = new ExdCsvReader();
-        public static GearSet _gearSet = new GearSet();
         public static GearSet _cGearSet = new GearSet();
-        private void Worker_DoWork3(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-                if (!CharacterDetails.GposeMode.Activated)
-                {
-                    _gearSet.HeadGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
-                    _gearSet.BodyGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
-                    _gearSet.HandsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
-                    _gearSet.LegsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
-                    _gearSet.FeetGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
-                    _gearSet.MainWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
-                    _gearSet.EarGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear));
-                    _gearSet.WristGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist));
-                    _gearSet.NeckGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck));
-                    _gearSet.LRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger));
-                    _gearSet.RRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger));
-                    _gearSet.OffWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
-                    CharacterDetails.BodySlot.value = GearTupleToComma(_gearSet.BodyGear);
-                    CharacterDetails.HeadSlot.value = GearTupleToComma(_gearSet.HeadGear);
-                    CharacterDetails.ArmSlot.value = GearTupleToComma(_gearSet.HandsGear);
-                    CharacterDetails.LegSlot.value = GearTupleToComma(_gearSet.LegsGear);
-                    CharacterDetails.FeetSlot.value = GearTupleToComma(_gearSet.FeetGear);
-                    CharacterDetails.WeaponSlot.value = WepTupleToComma(_gearSet.MainWep);
-                    CharacterDetails.OffhandSlot.value = WepTupleToComma(_gearSet.OffWep);
-                    CharacterDetails.RFingerSlot.value = GearTupleToComma(_gearSet.RRingGear);
-                    CharacterDetails.LFingerSlot.value = GearTupleToComma(_gearSet.LRingGear);
-                    CharacterDetails.NeckSlot.value = GearTupleToComma(_gearSet.NeckGear);
-                    CharacterDetails.WristSlot.value = GearTupleToComma(_gearSet.WristGear);
-                    CharacterDetails.EarSlot.value = GearTupleToComma(_gearSet.EarGear);
-                }
-                Thread.Sleep(Properties.Settings.Default.Read);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Oh no!");
-                throw;
-            }
-        }
         public void WriteGear_Click()
         {
             if (CharacterDetails.HeadPiece.freeze == true) { CharacterDetails.HeadPiece.freeze = false; CharacterDetails.HeadPiece.Activated = true; }
@@ -191,40 +146,6 @@ namespace FFTrainer.Views
             if (CharacterDetails.Job.Activated == true) { CharacterDetails.Job.freeze = true; CharacterDetails.Job.Activated = false; }
             if (CharacterDetails.Offhand.Activated == true) { CharacterDetails.Offhand.freeze = true; CharacterDetails.Offhand.Activated = false; }
         }
-        public static void SetupDefaults()
-        {
-
-            _gearSet.HeadGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece));
-            _gearSet.BodyGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Chest));
-            _gearSet.HandsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Arms));
-            _gearSet.LegsGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Legs));
-            _gearSet.FeetGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Feet));
-            _gearSet.EarGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Ear));
-            _gearSet.NeckGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Neck));
-            _gearSet.WristGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Wrist));
-            _gearSet.RRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RFinger));
-            _gearSet.LRingGear = ReadGearTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LFinger));
-
-            _gearSet.MainWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Job));
-            _gearSet.OffWep = ReadWepTuple(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Offhand));
-
-        }
-        public void FillDefaults()
-        {
-            headGearTextBox.Text = GearTupleToComma(_gearSet.HeadGear);
-            bodyGearTextBox.Text = GearTupleToComma(_gearSet.BodyGear);
-            handsGearTextBox.Text = GearTupleToComma(_gearSet.HandsGear);
-            legsGearTextBox.Text = GearTupleToComma(_gearSet.LegsGear);
-            feetGearTextBox.Text = GearTupleToComma(_gearSet.FeetGear);
-            mainWepTextBox.Text = WepTupleToComma(_gearSet.MainWep);
-            earGearTextBox.Text = GearTupleToComma(_gearSet.EarGear);
-            neckGearTextBox.Text = GearTupleToComma(_gearSet.NeckGear);
-            wristGearTextBox.Text = GearTupleToComma(_gearSet.WristGear);
-            rRingGearTextBox.Text = GearTupleToComma(_gearSet.RRingGear);
-            lRingGearTextBox.Text = GearTupleToComma(_gearSet.LRingGear);
-            offWepTextBox.Text = WepTupleToComma(_gearSet.OffWep);
-        }
-
         public static byte[] WepTupleToByteAry(WepTuple tuple)
         {
             byte[] bytes = new byte[8];
@@ -279,46 +200,101 @@ namespace FFTrainer.Views
 
             return bytes;
         }
-        private void XPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+
+
+        private void XPos2_V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (XPos2.Value.HasValue)
-                if (XPos2.IsMouseOver || XPos2.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponX), "float", XPos2.Value.ToString());
+            XPos2.ValueChanged -= XPos2_V;
+        }
+        private void XPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (XPos2.IsKeyboardFocusWithin || XPos2.IsMouseOver)
+            {
+                XPos2.ValueChanged -= XPos2_V;
+                XPos2.ValueChanged += XPos2_V;
+            }
+        }
+
+        private void XPos2_V2(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (XPos2_Copy.Value.HasValue)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponY), "float", XPos2_Copy.Value.ToString());
+            XPos2_Copy.ValueChanged -= XPos2_V2;
         }
 
         private void XPos2_Copy_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (XPos2_Copy.Value.HasValue)
-                if (XPos2_Copy.IsMouseOver || XPos2_Copy.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponY), "float", XPos2_Copy.Value.ToString());
+            if (XPos2_Copy.IsKeyboardFocusWithin || XPos2_Copy.IsMouseOver)
+            {
+                XPos2_Copy.ValueChanged -= XPos2_V2;
+                XPos2_Copy.ValueChanged += XPos2_V2;
+            }
+        }
+
+        private void XPos2_Copy1v(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (XPos2_Copy1.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponZ), "float", XPos2_Copy1.Value.ToString());
+            XPos2_Copy1.ValueChanged -= XPos2_Copy1v;
         }
 
         private void XPos2_Copy1_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (XPos2_Copy1.Value.HasValue)
-                if (XPos2_Copy1.IsMouseOver || XPos2_Copy1.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponZ), "float", XPos2_Copy1.Value.ToString());
+            if (XPos2_Copy1.IsKeyboardFocusWithin || XPos2_Copy1.IsMouseOver)
+            {
+                XPos2_Copy1.ValueChanged -= XPos2_Copy1v;
+                XPos2_Copy1.ValueChanged += XPos2_Copy1v;
+            }
+        }
+
+        private void WeaponRedxd(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (WeaponRed.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponRed), "float", WeaponRed.Value.ToString());
+            WeaponRed.ValueChanged -= WeaponRedxd;
         }
 
         private void WeaponRed_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (WeaponRed.Value.HasValue)
-                if (WeaponRed.IsMouseOver || WeaponRed.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponRed), "float", WeaponRed.Value.ToString());
+            if (WeaponRed.IsKeyboardFocusWithin || WeaponRed.IsMouseOver)
+            {
+                WeaponRed.ValueChanged -= WeaponRedxd;
+                WeaponRed.ValueChanged += WeaponRedxd;
+            }
+        }
+
+        private void WeaponGreenxD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (WeaponGreen.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponGreen), "float", WeaponGreen.Value.ToString());
+            WeaponGreen.ValueChanged -= WeaponGreenxD;
         }
 
         private void WeaponGreen_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (WeaponGreen.Value.HasValue)
-                if (WeaponGreen.IsMouseOver || WeaponGreen.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponGreen), "float", WeaponGreen.Value.ToString());
+            if (WeaponGreen.IsKeyboardFocusWithin || WeaponGreen.IsMouseOver)
+            {
+                WeaponGreen.ValueChanged -= WeaponGreenxD;
+                WeaponGreen.ValueChanged += WeaponGreenxD;
+            }
+        }
+
+        private void WeaponBluexD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (WeaponBlue.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBlue), "float", WeaponBlue.Value.ToString());
+            WeaponBlue.ValueChanged -= WeaponBluexD;
         }
 
         private void WeaponBlue_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (WeaponBlue.Value.HasValue)
-                if (WeaponBlue.IsMouseOver || WeaponBlue.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponBlue), "float", WeaponBlue.Value.ToString());
+            if (WeaponBlue.IsKeyboardFocusWithin || WeaponBlue.IsMouseOver)
+            {
+                WeaponBlue.ValueChanged -= WeaponBluexD;
+                WeaponBlue.ValueChanged += WeaponBluexD;
+            }
         }
 
         private void Head_Base_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -464,6 +440,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+            //    if (CharacterDetails.HeadPiece.freeze == true) { CharacterDetails.HeadPiece.freeze = false; CharacterDetails.HeadPiece.Activated = true; }
+                CharacterDetails.HeadSlot.value = p.Choice.ModelMain;
                 headGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -493,6 +471,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+               // if (CharacterDetails.Chest.freeze == true) { CharacterDetails.Chest.freeze = false; CharacterDetails.Chest.Activated = true; }
+                CharacterDetails.BodySlot.value = p.Choice.ModelMain;
                 bodyGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -509,6 +489,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+          //      if (CharacterDetails.Arms.freeze == true) { CharacterDetails.Arms.freeze = false; CharacterDetails.Arms.Activated = true; }
+                CharacterDetails.ArmSlot.value = p.Choice.ModelMain;
                 handsGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -525,6 +507,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+             //   if (CharacterDetails.Legs.freeze == true) { CharacterDetails.Legs.freeze = false; CharacterDetails.Legs.Activated = true; }
+                CharacterDetails.LegSlot.value = p.Choice.ModelMain;
                 legsGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -541,6 +525,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+              //  if (CharacterDetails.Job.freeze == true) { CharacterDetails.Job.freeze = false; CharacterDetails.Job.Activated = true; }
+                CharacterDetails.WeaponSlot.value = p.Choice.ModelMain;
                 mainWepTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -557,6 +543,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+              //  if (CharacterDetails.Ear.freeze == true) { CharacterDetails.Ear.freeze = false; CharacterDetails.Ear.Activated = true; }
+                CharacterDetails.EarSlot.value = p.Choice.ModelMain;
                 earGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -573,6 +561,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+              //  if (CharacterDetails.Neck.freeze == true) { CharacterDetails.Neck.freeze = false; CharacterDetails.Neck.Activated = true; }
+                CharacterDetails.NeckSlot.value = p.Choice.ModelMain;
                 neckGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -589,6 +579,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+             //   if (CharacterDetails.Wrist.freeze == true) { CharacterDetails.Wrist.freeze = false; CharacterDetails.Wrist.Activated = true; }
+                CharacterDetails.WristSlot.value = p.Choice.ModelMain;
                 wristGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -605,6 +597,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+              //  if (CharacterDetails.RFinger.freeze == true) { CharacterDetails.RFinger.freeze = false; CharacterDetails.RFinger.Activated = true; }
+                CharacterDetails.RFingerSlot.value = p.Choice.ModelMain;
                 rRingGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -621,6 +615,8 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+             //   if (CharacterDetails.LFinger.freeze == true) { CharacterDetails.LFinger.freeze = false; CharacterDetails.LFinger.Activated = true; }
+                CharacterDetails.LFingerSlot.value = p.Choice.ModelMain;
                 lRingGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -637,51 +633,105 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+              //  if (CharacterDetails.Offhand.freeze == true) { CharacterDetails.Offhand.freeze = false; CharacterDetails.Offhand.Activated = true; }
+                CharacterDetails.OffhandSlot.value = p.Choice.ModelMain;
                 offWepTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
         }
 
-        private void OXPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void OXPOSXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OXPos.Value.HasValue)
-                if (OXPos.IsMouseOver || OXPos.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandX), "float", OXPos.Value.ToString());
+            OXPos.ValueChanged -= OXPOSXD;
+        }
+
+        private void OXPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (OXPos.IsKeyboardFocusWithin || OXPos.IsMouseOver)
+            {
+                OXPos.ValueChanged -= OXPOSXD;
+                OXPos.ValueChanged += OXPOSXD;
+            }
+        }
+
+        private void OYPOSXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (OYPos.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandY), "float", OYPos.Value.ToString());
+            OYPos.ValueChanged -= OYPOSXD;
         }
 
         private void OYPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (OYPos.Value.HasValue)
-                if (OYPos.IsMouseOver || OYPos.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandY), "float", OYPos.Value.ToString());
+            if (OYPos.IsKeyboardFocusWithin || OYPos.IsMouseOver)
+            {
+                OYPos.ValueChanged -= OYPOSXD;
+                OYPos.ValueChanged += OYPOSXD;
+            }
+        }
+
+        private void OZPosXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (OZPos.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandZ), "float", OZPos.Value.ToString());
+            OZPos.ValueChanged -= OZPosXD;
         }
 
         private void OZPos_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (OZPos.Value.HasValue)
-                if (OZPos.IsMouseOver || OZPos.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandZ), "float", OZPos.Value.ToString());
+            if (OZPos.IsKeyboardFocusWithin || OZPos.IsMouseOver)
+            {
+                OZPos.ValueChanged -= OZPosXD;
+                OZPos.ValueChanged += OZPosXD;
+            }
         }
-
-        private void OffRed_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void OFfRedxD(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (OffRed.Value.HasValue)
-                if (OffRed.IsMouseOver || OffRed.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed), "float", OffRed.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandRed), "float", OffRed.Value.ToString());
+            OffRed.ValueChanged -= OFfRedxD;
+        }
+        private void OffRed_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (OffRed.IsKeyboardFocusWithin || OffRed.IsMouseOver)
+            {
+                OffRed.ValueChanged -= OFfRedxD;
+                OffRed.ValueChanged += OFfRedxD;
+            }
+        }
+
+        private void OFFGXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (OffGreen.Value.HasValue)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandGreen), "float", OffGreen.Value.ToString());
+            OffGreen.ValueChanged -= OFFGXD;
         }
 
         private void OffGreen_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (OffGreen.Value.HasValue)
-                if (OffGreen.IsMouseOver || OffGreen.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandGreen), "float", OffGreen.Value.ToString());
+            if (OffGreen.IsKeyboardFocusWithin || OffGreen.IsMouseOver)
+            {
+                OffGreen.ValueChanged -= OFFGXD;
+                OffGreen.ValueChanged += OFFGXD;
+            }
+        }
+
+        private void OFFBXD(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (OffBlue.Value.HasValue)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBlue), "float", OffBlue.Value.ToString());
+            OffBlue.ValueChanged -= OFFBXD;
         }
 
         private void OffBlue_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (OffBlue.Value.HasValue)
-                if (OffBlue.IsMouseOver || OffBlue.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandBlue), "float", OffBlue.Value.ToString());
+            if (OffBlue.IsKeyboardFocusWithin || OffBlue.IsMouseOver)
+            {
+                OffBlue.ValueChanged -= OFFBXD;
+                OffBlue.ValueChanged += OFFBXD;
+            }
         }
 
         private void OffhandID_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -719,6 +769,7 @@ namespace FFTrainer.Views
 
             if (p.Choice != null)
             {
+                if (CharacterDetails.Feet.freeze == true) { CharacterDetails.Feet.freeze = false; CharacterDetails.Feet.Activated = true; }
                 feetGearTextBox.Text = p.Choice.ModelMain;
                 WriteGear_Click();
             }
@@ -777,18 +828,17 @@ namespace FFTrainer.Views
             if (CharacterDetails.LFinger.freeze == true) { CharacterDetails.LFinger.freeze = false; CharacterDetails.LFinger.Activated = true; }
             if (CharacterDetails.Job.freeze == true) { CharacterDetails.Job.freeze = false; CharacterDetails.Job.Activated = true; }
             if (CharacterDetails.Offhand.freeze == true) { CharacterDetails.Offhand.freeze = false; CharacterDetails.Offhand.Activated = true; }
-            headGearTextBox.Text = GearTupleToComma(_cGearSet.HeadGear);
-            bodyGearTextBox.Text = GearTupleToComma(_cGearSet.BodyGear);
-            handsGearTextBox.Text = GearTupleToComma(_cGearSet.HandsGear);
-            legsGearTextBox.Text = GearTupleToComma(_cGearSet.LegsGear);
-            feetGearTextBox.Text = GearTupleToComma(_cGearSet.FeetGear);
-            earGearTextBox.Text = GearTupleToComma(_cGearSet.EarGear);
-            neckGearTextBox.Text = GearTupleToComma(_cGearSet.NeckGear);
-            wristGearTextBox.Text = GearTupleToComma(_cGearSet.WristGear);
-            rRingGearTextBox.Text = GearTupleToComma(_cGearSet.RRingGear);
-            lRingGearTextBox.Text = GearTupleToComma(_cGearSet.LRingGear);
-            mainWepTextBox.Text = WepTupleToComma(_cGearSet.MainWep);
-            offWepTextBox.Text = WepTupleToComma(_cGearSet.OffWep);
+            CharacterDetails.HeadSlot.value= GearTupleToComma(_cGearSet.HeadGear);
+            CharacterDetails.BodySlot.value= GearTupleToComma(_cGearSet.BodyGear);
+            CharacterDetails.ArmSlot.value = GearTupleToComma(_cGearSet.HandsGear);
+            CharacterDetails.LegSlot.value = GearTupleToComma(_cGearSet.LegsGear);
+            CharacterDetails.FeetSlot.value = GearTupleToComma(_cGearSet.FeetGear);
+            CharacterDetails.EarSlot.value = GearTupleToComma(_cGearSet.EarGear);
+            CharacterDetails.NeckSlot.value = GearTupleToComma(_cGearSet.NeckGear);
+            CharacterDetails.RFingerSlot.value = GearTupleToComma(_cGearSet.RRingGear);
+            CharacterDetails.LFingerSlot.value = GearTupleToComma(_cGearSet.LRingGear);
+            CharacterDetails.WeaponSlot.value = WepTupleToComma(_cGearSet.MainWep);
+            CharacterDetails.OffhandSlot.value = WepTupleToComma(_cGearSet.OffWep);
         }
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {

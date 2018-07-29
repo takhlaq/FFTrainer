@@ -379,124 +379,399 @@ namespace FFTrainer.Views
             CharacterDetails.ScaleY.freeze = false;
             CharacterDetails.ScaleZ.freeze = false;
         }
-        private void Height2x_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void Height2x_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Height2x.Value.HasValue)
-                if (Height2x.IsMouseOver || Height2x.IsKeyboardFocusWithin || HeightSlider.IsKeyboardFocusWithin || HeightSlider.IsMouseOver)
                     if (Height2x.Value > 0) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", Height2x.Value.ToString());
+            Height2x.ValueChanged -= Height2x_ValueChanged;
+        }
+        private void Height2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (Height2x.Value.HasValue)
+                    if (Height2x.Value > 0) MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Height), "float", Height2x.Value.ToString());
+            HeightSlider.ValueChanged -= Height2_ValueChanged;
+        }
+        private void Height2x_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Height2x.IsMouseOver || Height2x.IsKeyboardFocusWithin)
+            {
+                Height2x.ValueChanged -= Height2x_ValueChanged;
+                Height2x.ValueChanged += Height2x_ValueChanged;
+            }
+            if (HeightSlider.IsKeyboardFocusWithin || HeightSlider.IsMouseOver)
+            {
+                HeightSlider.ValueChanged -= Height2_ValueChanged;
+                HeightSlider.ValueChanged += Height2_ValueChanged;
+            }
         }
 
-        private void XPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void XPos2_V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (XPos2.Value.HasValue)
-                if (XPos.IsMouseOver || XPos.IsKeyboardFocusWithin || XPos2.IsKeyboardFocusWithin || XPos2.IsMouseOver)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.X), "float", XPos2.Value.ToString());
+            XPos2.ValueChanged -= XPos2_V;
+        }
+        private void XPos2xd(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (XPos2.Value.HasValue)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.X), "float", XPos.Value.ToString());
+            XPos.ValueChanged -= XPos2xd;
+        }
+        private void XPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (XPos2.IsKeyboardFocusWithin || XPos2.IsMouseOver)
+            {
+                XPos2.ValueChanged -= XPos2_V;
+                XPos2.ValueChanged += XPos2_V;
+            }
+            if(XPos.IsMouseOver || XPos.IsKeyboardFocusWithin)
+            {
+                XPos.ValueChanged -= XPos2xd;
+                XPos.ValueChanged += XPos2xd;
+            }
         }
 
+        private void BustX2s(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustX.Value > 0)
+                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX2.Value.ToString());
+            BustX2.ValueChanged -= BustX2s;
+        }
+        private void BustX2a(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustX.Value > 0)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
+            BustX.ValueChanged -= BustX2a;
+        }
         private void BustX2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin || BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustX.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.X), "float", BustX.Value.ToString());
+            if (BustX2.IsKeyboardFocusWithin || BustX2.IsMouseOver)
+            {
+                BustX2.ValueChanged -= BustX2s;
+                BustX2.ValueChanged += BustX2s;
+            }
+            if (BustX.IsMouseOver || BustX.IsKeyboardFocusWithin)
+            {
+                BustX.ValueChanged -= BustX2a;
+                BustX.ValueChanged += BustX2a;
+            }
         }
 
+
+
+        private void BustY2_(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustY.Value > 0)
+               MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY2.Value.ToString());
+            BustY2.ValueChanged -= BustY2_;
+        }
+        private void BustY1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustY.Value > 0)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
+            BustY.ValueChanged -= BustY1;
+        }
         private void BustY2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (BustY.IsMouseOver || BustY.IsKeyboardFocusWithin || BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustY.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Y), "float", BustY.Value.ToString());
+            if (BustY2.IsKeyboardFocusWithin || BustY2.IsMouseOver)
+            {
+                BustY2.ValueChanged -= BustY2_;
+                BustY2.ValueChanged += BustY2_;
+            }
+            if (BustY.IsKeyboardFocusWithin || BustY.IsMouseOver)
+            {
+                BustY.ValueChanged -= BustY1;
+                BustY.ValueChanged += BustY1;
+            }
         }
-
+        private void BustZ2_(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (BustZ.Value > 0)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ2.Value.ToString());
+            BustZ2.ValueChanged -= BustZ2_;
+        }
+        private void BustZ1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BustZ.Value > 0)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
+            BustZ.ValueChanged -= BustZ1;
+        }
         private void BustZ2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (BustZ.IsMouseOver || BustZ.IsKeyboardFocusWithin || BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver || AddBust.IsMouseOver)
-                if (BustZ.Value > 0)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Bust.Base, Settings.Instance.Character.Body.Bust.Z), "float", BustZ.Value.ToString());
+            if (BustZ2.IsKeyboardFocusWithin || BustZ2.IsMouseOver)
+            {
+                BustZ2.ValueChanged -= BustZ2_;
+                BustZ2.ValueChanged += BustZ2_;
+            }
+            if (BustZ.IsKeyboardFocusWithin || BustZ.IsMouseOver)
+            {
+                BustZ.ValueChanged -= BustZ1;
+                BustZ.ValueChanged += BustZ1;
+            }
         }
 
-        private void YPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+
+        private void YPos2_V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (YPos2.Value.HasValue)
-                if (YPos.IsMouseOver || YPos.IsKeyboardFocusWithin || YPos2.IsKeyboardFocusWithin || YPos2.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Y), "float", YPos.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Y), "float", YPos2.Value.ToString());
+            YPos2.ValueChanged -= YPos2_V;
         }
-
-        private void Zpos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void YPos2xd(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Zpos2.Value.HasValue)
-                if (ZPos.IsMouseOver || ZPos.IsKeyboardFocusWithin || Zpos2.IsKeyboardFocusWithin || Zpos2.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Z), "float", ZPos.Value.ToString());
+            if (YPos2.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Y), "float", YPos.Value.ToString());
+            YPos.ValueChanged -= YPos2xd;
+        }
+        private void YPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (YPos2.IsKeyboardFocusWithin || YPos2.IsMouseOver)
+            {
+                YPos2.ValueChanged -= YPos2_V;
+                YPos2.ValueChanged += YPos2_V;
+            }
+            if (YPos.IsMouseOver || YPos.IsKeyboardFocusWithin)
+            {
+                YPos.ValueChanged -= YPos2xd;
+                YPos.ValueChanged += YPos2xd;
+            }
         }
 
 
-        private void Rotation1_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void ZPos2_V(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (ZPos2.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Z), "float", ZPos2.Value.ToString());
+            ZPos2.ValueChanged -= ZPos2_V;
+        }
+        private void ZPos2xd(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (ZPos2.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Z), "float", ZPos.Value.ToString());
+            ZPos.ValueChanged -= ZPos2xd;
+        }
+        private void ZPos2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (ZPos2.IsKeyboardFocusWithin || ZPos2.IsMouseOver)
+            {
+                ZPos2.ValueChanged -= ZPos2_V;
+                ZPos2.ValueChanged += ZPos2_V;
+            }
+            if (ZPos.IsMouseOver || ZPos.IsKeyboardFocusWithin)
+            {
+                ZPos.ValueChanged -= ZPos2xd;
+                ZPos.ValueChanged += ZPos2xd;
+            }
+        }
+
+
+        private void Rot1V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Rot1.Value.HasValue)
-                if (Rotation1.IsMouseOver || Rotation1.IsKeyboardFocusWithin || Rot1.IsKeyboardFocusWithin || Rot1.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation), "float", Rotation1.Value.ToString());
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation), "float", Rot1.Value.ToString());
+            Rot1.ValueChanged -= Rot1V;
+        }
+        private void Rot1S(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (Rot1.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation), "float", Rot1.Value.ToString());
+            Rotation1.ValueChanged -= Rot1S;
         }
 
-        private void Rotation2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void Rot1_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Rot1.IsKeyboardFocusWithin || Rot1.IsMouseOver)
+            {
+                Rot1.ValueChanged -= Rot1V;
+                Rot1.ValueChanged += Rot1V;
+            }
+            if (Rotation1.IsMouseOver || Rotation1.IsKeyboardFocusWithin)
+            {
+                Rotation1.ValueChanged -= Rot1S;
+                Rotation1.ValueChanged += Rot1S;
+            }
+        }
+
+        private void Rot2V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Rot2.Value.HasValue)
-                if (Rotation2.IsMouseOver || Rotation2.IsKeyboardFocusWithin || Rot2.IsKeyboardFocusWithin || Rot2.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation2), "float", Rotation2.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation2), "float", Rot2.Value.ToString());
+            Rot2.ValueChanged -= Rot2V;
         }
-
-        private void Rotation3_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void Rot2S(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-           if (Rot3.Value.HasValue)
-                if (Rotation3.IsMouseOver || Rotation3.IsKeyboardFocusWithin || Rot3.IsKeyboardFocusWithin || Rot3.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation3), "float", Rotation3.Value.ToString());
+            if (Rot2.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation2), "float", Rot2.Value.ToString());
+            Rotation2.ValueChanged -= Rot2S;
         }
 
-        private void Rotation4_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void Rot2_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Rot2.IsKeyboardFocusWithin || Rot2.IsMouseOver)
+            {
+                Rot2.ValueChanged -= Rot2V;
+                Rot2.ValueChanged += Rot2V;
+            }
+            if (Rotation2.IsMouseOver || Rotation2.IsKeyboardFocusWithin)
+            {
+                Rotation2.ValueChanged -= Rot2S;
+                Rotation2.ValueChanged += Rot2S;
+            }
+        }
+
+        private void Rot3V(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (Rot3.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation3), "float", Rot3.Value.ToString());
+            Rot3.ValueChanged -= Rot3V;
+        }
+        private void Rot3S(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (Rot3.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation3), "float", Rot3.Value.ToString());
+            Rotation3.ValueChanged -= Rot3S;
+        }
+
+        private void Rot3_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Rot3.IsKeyboardFocusWithin || Rot3.IsMouseOver)
+            {
+                Rot3.ValueChanged -= Rot3V;
+                Rot3.ValueChanged += Rot3V;
+            }
+            if (Rotation3.IsMouseOver || Rotation3.IsKeyboardFocusWithin)
+            {
+                Rotation3.ValueChanged -= Rot3S;
+                Rotation3.ValueChanged += Rot3S;
+            }
+        }
+
+        private void Rot4V(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Rot4.Value.HasValue)
-                if (Rotation4.IsMouseOver || Rotation4.IsKeyboardFocusWithin || Rot4.IsKeyboardFocusWithin || Rot4.IsMouseOver)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), "float", Rotation4.Value.ToString());
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), "float", Rot4.Value.ToString());
+            Rot4.ValueChanged -= Rot4V;
+        }
+        private void Rot4S(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (Rot4.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), "float", Rot4.Value.ToString());
+            Rotation4.ValueChanged -= Rot4S;
+        }
+
+        private void Rot4_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Rot4.IsKeyboardFocusWithin || Rot4.IsMouseOver)
+            {
+                Rot4.ValueChanged -= Rot4V;
+                Rot4.ValueChanged += Rot4V;
+            }
+            if (Rotation4.IsMouseOver || Rotation4.IsKeyboardFocusWithin)
+            {
+                Rotation4.ValueChanged -= Rot4S;
+                Rotation4.ValueChanged += Rot4S;
+            }
         }
 
         private void CameraHeight_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
+            if (CameraHeight.IsMouseOver || CameraHeight.IsKeyboardFocusWithin)
+            {
+                CameraHeight.ValueChanged -= CameraHeight_;
+                CameraHeight.ValueChanged += CameraHeight_;
+            }
+        }
+
+        private void CameraHeight_(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
             if (CameraHeight.Value.HasValue)
                 if (CameraHeight.IsMouseOver || CameraHeight.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CameraHeight), "float", CameraHeight.Value.ToString());
+            CameraHeight.ValueChanged -= CameraHeight_;
         }
 
         private void CamX_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
+            if (CamX.IsMouseOver || CamX.IsKeyboardFocusWithin)
+            {
+                CamX.ValueChanged -= CamX_;
+                CamX.ValueChanged += CamX_;
+            }
+        }
+
+        private void CamX_(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
             if (CamX.Value.HasValue)
                 if (CamX.IsMouseOver || CamX.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamX), "float", CamX.Value.ToString());
+            CamX.ValueChanged -= CamX_;
         }
 
+
         private void CamY_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (CamY.IsMouseOver || CamY.IsKeyboardFocusWithin)
+            {
+                CamY.ValueChanged -= CamY_;
+                CamY.ValueChanged += CamY_;
+            }
+        }
+
+        private void CamY_(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamY.Value.HasValue)
                 if (CamY.IsMouseOver || CamY.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamY), "float", CamY.Value.ToString());
+            CamY.ValueChanged -= CamY_;
         }
 
+
         private void CamZ_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (CamZ.IsMouseOver || CamZ.IsKeyboardFocusWithin)
+            {
+                CamZ.ValueChanged -= CamZ_;
+                CamZ.ValueChanged += CamZ_;
+            }
+        }
+
+        private void CamZ_(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (CamZ.Value.HasValue)
                 if (CamZ.IsMouseOver || CamZ.IsKeyboardFocusWithin)
                     MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(MemoryManager.Instance.GposeAddress, Settings.Instance.Character.CamZ), "float", CamZ.Value.ToString());
+            CamZ.ValueChanged -= CamZ_;
+        }
+
+        private void MuscleT(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (Muscletone.Value.HasValue)
+                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone), "float", Muscletone.Value.ToString());
+            Muscletone.ValueChanged -= MuscleT;
         }
 
         private void Muscletone_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (Muscletone.Value.HasValue)
                 if (Muscletone.IsMouseOver || Muscletone.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.MuscleTone), "float", Muscletone.Value.ToString());
+                {
+                Muscletone.ValueChanged -= MuscleT;
+                Muscletone.ValueChanged += MuscleT;
+                }
+        }
+        private void TailSz(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (TailSize.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.TailSize), "float", TailSize.Value.ToString());
+            TailSize.ValueChanged -= TailSz;
         }
 
         private void TailSize_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            if (TailSize.Value.HasValue)
-                if (TailSize.IsMouseOver || TailSize.IsKeyboardFocusWithin)
-                    MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.TailSize), "float", TailSize.Value.ToString());
+            if (TailSize.IsMouseOver || TailSize.IsKeyboardFocusWithin)
+            {
+                TailSize.ValueChanged -= TailSz;
+                TailSize.ValueChanged += TailSz;
+            }
         }
 
         private void Emote_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
