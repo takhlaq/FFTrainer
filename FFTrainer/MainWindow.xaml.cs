@@ -41,9 +41,13 @@ namespace FFTrainer
             dictionary.Source = new Uri("/Resources/" + language + ".xaml", UriKind.Relative);
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
             if ((bool)Properties.Settings.Default["TopApp"] == true) Application.Current.MainWindow.Topmost = true;
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(60) };
             timer.Tick += delegate
             {
+                worker2 = new BackgroundWorker();
+                worker2.DoWork += Worker_DoWork2;
+                // run the worker
+                worker2.RunWorkerAsync();
                 Emotesx = _exdProvider.Emotes.Values.ToArray();
                 foreach (ExdCsvReader.Emote xD in Emotesx)
                 {
@@ -62,8 +66,6 @@ namespace FFTrainer
         }
         private void Worker_DoWork2(object sender, DoWorkEventArgs e)
         {
-            try
-            {
                 while (true)
                 {
                     if (CharacterDetails.Rotation4.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), CharacterDetails.Rotation4.GetBytes());
@@ -244,11 +246,6 @@ namespace FFTrainer
                     if (CharacterDetails.Emote.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
                     Thread.Sleep(Properties.Settings.Default.Write);
                 }
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Oh no!");
-            }
         }
         private void GposeMode_Checked(object sender, RoutedEventArgs e)
         {
@@ -262,10 +259,6 @@ namespace FFTrainer
 
         private void Window_Initialized(object sender, EventArgs e)
         {
-            worker2 = new BackgroundWorker();
-            worker2.DoWork += Worker_DoWork2;
-            // run the worker
-            worker2.RunWorkerAsync();
         }
 
         private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
@@ -320,6 +313,7 @@ namespace FFTrainer
                 //Show the dialog
                 fdf.ShowDialog();
             }
+            DataContext = new MainViewModel();
         }
         private void ThreadSetting(object sender, RoutedEventArgs e)
         {
@@ -362,6 +356,8 @@ namespace FFTrainer
         {
             ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
             AutoUpdater.RunUpdateAsAdmin = true;
+            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.LetUserSelectRemindLater = false;
             AutoUpdater.DownloadPath = Environment.CurrentDirectory;
             AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
         }

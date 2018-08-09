@@ -24,21 +24,16 @@ namespace FFTrainer.Views
             InitializeComponent();
             _exdProvider.RaceList();
             _exdProvider.TribeList();
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20)};
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40)};
             timer.Tick += delegate
             {
                 for (int i = 0; i < _exdProvider.Races.Count; i++)
                 {
                     RaceBox.Items.Add(_exdProvider.Races[i].Name);
-
-                    if (_exdProvider.Races[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race)))
-                        RaceBox.SelectedIndex = i;
                 }
                 for (int i = 0; i < _exdProvider.Tribes.Count; i++)
                 {
                     ClanBox.Items.Add(_exdProvider.Tribes[i].Name);
-                    if (_exdProvider.Tribes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan)))
-                        ClanBox.SelectedIndex = i;
                 }
                 timer.IsEnabled = false;
             };
@@ -794,6 +789,21 @@ namespace FFTrainer.Views
             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "2");
             Task.Delay(50).Wait();
             MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "0");
+        }
+
+        private void Transp_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Transp.IsMouseOver || Transp.IsKeyboardFocusWithin)
+            {
+                Transp.ValueChanged -= Transps;
+                Transp.ValueChanged += Transps;
+            }
+        }
+        private void Transps(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            if (Transp.Value.HasValue)
+                MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Transparency), "float", Transp.Value.ToString());
+            Transp.ValueChanged -= Transps;
         }
     }
 }

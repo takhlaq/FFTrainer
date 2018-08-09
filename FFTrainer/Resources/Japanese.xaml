@@ -138,4 +138,5 @@
     <system:String x:Key="Write">書きます</system:String>
     <system:String x:Key="RefreshCharacter">文字をリフレッシュする</system:String>
     <system:String x:Key="HousingRestrict">住宅の制限を削除します</system:String>
+    <system:String x:Key="Transparency">透明性</system:String>
 </ResourceDictionary>

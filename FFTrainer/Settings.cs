@@ -31,6 +31,7 @@ namespace FFTrainer
         public string WeatherOffset { get; set; }
         public string HousingOffset { get; set; }
         public string TerritoryOffset { get; set; }
+        public bool VersionCheck { get; set; }
         public CharacterOffsets Character { get; set; }
     }
 
@@ -51,6 +52,7 @@ namespace FFTrainer
         public string TailorMuscle { get; set; }
         public string NameHeight { get; set; }
         public string TailType { get; set; }
+        public string Transparency { get; set; }
         public string Head { get; set; }
         public string Hair { get; set; }
         public string Jaw { get; set; }

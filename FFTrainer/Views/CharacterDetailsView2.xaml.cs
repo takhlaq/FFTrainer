@@ -22,7 +22,7 @@ namespace FFTrainer.Views
         {
             InitializeComponent();
             _exdProvider.DyeList();
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(20) };
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(60) };
             timer.Tick += delegate
             {
                 for (int i = 0; i < _exdProvider.Dyes.Count; i++)
@@ -34,20 +34,6 @@ namespace FFTrainer.Views
                     OHBox.Items.Add(_exdProvider.Dyes[i].Name);
                     LegBox.Items.Add(_exdProvider.Dyes[i].Name);
                     FeetBox.Items.Add(_exdProvider.Dyes[i].Name);
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadDye)))
-                        HeadDye.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ChestDye)))
-                        ChestBox.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ArmsDye)))
-                        ArmBox.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.WeaponDye)))
-                        MHBox.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandDye)))
-                        OHBox.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LegsDye)))
-                        LegBox.SelectedIndex = i;
-                    if (_exdProvider.Dyes[i].Index == MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FeetDye)))
-                        FeetBox.SelectedIndex = i;
                 }
                 timer.IsEnabled = false;
             };

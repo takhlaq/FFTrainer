@@ -115,6 +115,7 @@ namespace FFTrainer.Models
         [JsonIgnore] public Address<float> CZoom { get; set; }
         [JsonIgnore] public Address<float> FOVC { get; set; }
         [JsonIgnore] public Address<float> FOVMAX { get; set; }
+        [JsonIgnore] public Address<float> Transparency { get; set; }
         public Address<float> MuscleTone { get; set; }
         public Address<int> Job { get; set; }
         public Address<byte> WeaponBase { get; set; }
@@ -222,6 +223,7 @@ namespace FFTrainer.Models
             LimbalG = new Address<float>();
             LimbalR = new Address<float>();
             RHeight = new Address<byte>();
+            Transparency = new Address<float>();
             Jaw = new Address<byte>();
             RBust = new Address<byte>();
             RHeight = new Address<byte>();

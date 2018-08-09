@@ -138,4 +138,5 @@
     <system:String x:Key="Write">Écrire</system:String>
     <system:String x:Key="RefreshCharacter">Actualiser le caractère</system:String>
     <system:String x:Key="HousingRestrict">Retirer le boîtier Restriction</system:String>
+    <system:String x:Key="Transparency">Transparence</system:String>
 </ResourceDictionary>

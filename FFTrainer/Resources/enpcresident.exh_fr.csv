@@ -13390,7 +13390,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1013388,"",0,"",0,0,1,0,0,"",5,false
 1013389,"",0,"",0,0,0,0,0,"",0,false
 1013390,"",0,"",0,0,0,0,0,"",0,false
-1013391,"",0,"",0,0,0,0,0,"",0,false
+1013391,"Mog aventurier",0,"Mogs aventuriers",0,0,1,0,0,"",4,false
 1013392,"Meriel",0,"Meriel",0,0,1,1,1,"",3,false
 1013393,"",0,"",0,0,1,0,0,"",3,false
 1013394,"",0,"",0,0,1,0,0,"",3,false
@@ -24184,7 +24184,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1024182,"",0,"",0,0,0,0,0,"",0,false
 1024183,"",0,"",0,0,0,0,0,"",0,false
 1024184,"",0,"",0,0,0,0,0,"",0,false
-1024185,"",0,"",0,0,0,0,0,"",0,false
+1024185,"responsable commerciale de l'expédition",0,"responsables commerciales de l'expédition",0,0,1,1,0,"Armes et armures",3,true
 1024186,"",0,"",0,0,0,0,0,"",0,false
 1024187,"Pipin",0,"Pipin",0,0,1,0,1,"",3,false
 1024188,"",0,"",0,0,1,0,0,"",5,false
@@ -24950,7 +24950,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1024948,"",0,"",0,0,1,0,0,"",5,false
 1024949,"",0,"",0,0,1,0,0,"",5,false
 1024950,"",0,"",0,0,1,0,0,"",5,false
-1024951,"ravitailleur de l'expédition",0,"ravitailleurs de l'expédition",0,0,1,0,0,"Divers",3,false
+1024951,"ravitailleur de l'expédition",0,"ravitailleurs de l'expédition",0,0,1,0,0,"Divers",3,true
 1024952,"Alpa",0,"Alpa",0,1,1,1,1,"",3,false
 1024953,"",0,"",0,0,1,0,0,"",4,false
 1024954,"",0,"",0,0,1,0,0,"",4,false
@@ -25381,9 +25381,9 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025379,"",0,"",0,0,1,0,0,"",4,false
 1025380,"",0,"",0,0,1,0,0,"",4,false
 1025381,"",0,"",0,0,1,0,0,"",4,false
-1025382,"",0,"",0,0,0,0,0,"",0,false
-1025383,"",0,"",0,0,0,0,0,"",0,false
-1025384,"",0,"",0,0,0,0,0,"",0,false
+1025382,"",0,"",0,0,1,0,0,"",4,false
+1025383,"",0,"",0,0,1,0,0,"",4,false
+1025384,"",0,"",0,0,1,0,0,"",4,false
 1025385,"",0,"",0,0,0,0,0,"",0,false
 1025386,"",0,"",0,0,0,0,0,"",0,false
 1025387,"",0,"",0,0,0,0,0,"",0,false
@@ -25656,9 +25656,9 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025654,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
 1025655,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
 1025656,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
-1025657,"",0,"",0,0,0,0,0,"",0,false
-1025658,"",0,"",0,0,0,0,0,"",0,false
-1025659,"",0,"",0,0,0,0,0,"",0,false
+1025657,"",0,"",0,0,1,0,0,"",4,false
+1025658,"Felyne",0,"Felynes",0,0,1,0,0,"",4,false
+1025659,"forgeron itinérant",0,"forgerons itinérants",0,0,1,0,0,"",4,false
 1025660,"Sanana",0,"Sanana",0,0,1,1,1,"",4,false
 1025661,"Hisui",0,"Hisui",0,0,1,1,1,"",4,false
 1025662,"Kurenai",0,"Kurenai",0,0,1,1,1,"",4,false
@@ -25682,7 +25682,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025680,"",0,"",0,0,1,0,0,"",4,false
 1025681,"",0,"",0,0,1,0,0,"",4,false
 1025682,"",0,"",0,0,1,0,0,"",4,false
-1025683,"",0,"",0,0,0,0,0,"",0,false
+1025683,"",0,"",0,0,1,0,0,"",4,false
 1025684,"",0,"",0,0,1,0,0,"",4,false
 1025685,"",0,"",0,0,1,0,0,"",4,false
 1025686,"",0,"",0,0,1,0,0,"",4,false
@@ -25720,13 +25720,13 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025718,"quincailler namazu",0,"quincaillers namazu",0,0,1,0,0,"Divers",3,true
 1025719,"réparateur namazu",0,"réparateurs namazu",0,0,1,0,0,"Réparations",3,true
 1025720,"employé namazu",0,"employés namazu",0,0,1,0,0,"Ameublement",3,true
-1025721,"",0,"",0,0,0,0,0,"",0,false
-1025722,"",0,"",0,0,0,0,0,"",0,false
-1025723,"",0,"",0,0,0,0,0,"",0,false
-1025724,"",0,"",0,0,0,0,0,"",0,false
-1025725,"",0,"",0,0,0,0,0,"",0,false
-1025726,"",0,"",0,0,0,0,0,"",0,false
-1025727,"",0,"",0,0,0,0,0,"",0,false
+1025721,"chasseur de monstres",0,"chasseurs de monstres",0,0,1,0,0,"",3,false
+1025722,"forgeron itinérant",0,"forgerons itinérants",0,0,1,0,0,"Équipement",3,true
+1025723,"Oronir audacieux",0,"Oronir audacieux",0,1,1,0,0,"",3,false
+1025724,"Ura jacassière",0,"Ura jacassières",0,1,1,1,0,"",3,false
+1025725,"Kha flegmatique",0,"Kha flegmatiques",0,0,1,1,0,"",3,false
+1025726,"Qestir soucieux",0,"Qestir soucieux",0,0,1,0,0,"",3,false
+1025727,"Felyne",0,"Felynes",0,0,1,0,0,"",3,false
 1025728,"Alma bas Lexentale",0,"Alma bas Lexentale",0,1,1,1,1,"",3,false
 1025729,"Jenomis cen Lexentale",0,"Jenomis cen Lexentale",0,0,1,0,1,"",3,false
 1025730,"Lina Mewrilah",0,"Lina Mewrilah",0,0,1,1,1,"",3,false
@@ -25766,7 +25766,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025764,"",0,"",0,0,1,0,0,"",4,false
 1025765,"",0,"",0,0,1,0,0,"",4,false
 1025766,"",0,"",0,0,1,0,0,"",4,false
-1025767,"",0,"",0,0,0,0,0,"",0,false
+1025767,"",0,"",0,0,1,0,0,"",2,false
 1025768,"Gyorin",0,"Gyorin",0,0,1,0,1,"",3,false
 1025769,"Namazu diligent",0,"Namazu diligents",0,0,1,0,0,"",3,false
 1025770,"caisse de matériaux",0,"caisses de matériaux",0,0,1,1,0,"",3,false
@@ -25943,18 +25943,18 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025941,"porteur de cible namazu",0,"porteurs de cible namazu",0,0,1,0,0,"",3,false
 1025942,"porteur de cible namazu",0,"porteurs de cible namazu",0,0,1,0,0,"",3,false
 1025943,"porteur de cible namazu",0,"porteurs de cible namazu",0,0,1,0,0,"",3,false
-1025944,"",0,"",0,0,0,0,0,"",0,false
-1025945,"",0,"",0,0,0,0,0,"",0,false
-1025946,"",0,"",0,0,0,0,0,"",0,false
-1025947,"",0,"",0,0,0,0,0,"",0,false
-1025948,"",0,"",0,0,0,0,0,"",0,false
-1025949,"",0,"",0,0,0,0,0,"",0,false
-1025950,"",0,"",0,0,0,0,0,"",0,false
-1025951,"",0,"",0,0,0,0,0,"",0,false
-1025952,"",0,"",0,0,0,0,0,"",0,false
+1025944,"Krile",0,"Krile",0,0,1,1,1,"",3,false
+1025945,"Gerolt",0,"Gerolt",0,0,1,0,1,"",3,false
+1025946,"Ejika Tsunjika",0,"Ejika Tsunjika",0,1,1,0,1,"",3,false
+1025947,"chercheuse de l'expédition",0,"chercheuses de l'expédition",0,0,1,1,0,"",3,false
+1025948,"chroniqueuse de l'expédition",0,"chroniqueuses de l'expédition",0,0,1,1,0,"",3,false
+1025949,"ravitailleur de l'expédition",0,"ravitailleurs de l'expédition",0,0,1,0,0,"Divers",3,true
+1025950,"intendante de l'expédition",0,"intendantes de l'expédition",0,1,1,1,0,"Déverrouillage",3,true
+1025951,"artisane de l'expédition",0,"artisanes de l'expédition",0,1,1,1,0,"Réparations",3,true
+1025952,"météorologue de l'expédition",0,"météorologues de l'expédition",0,0,1,0,0,"",3,true
 1025953,"",0,"",0,0,1,0,0,"",5,false
 1025954,"",0,"",0,0,1,0,0,"",5,false
-1025955,"",0,"",0,0,0,0,0,"",0,false
+1025955,"Staelhundr",0,"Staelhundr",0,0,1,0,1,"Répliques d'armes",3,true
 1025956,"jeune Mog amoureux",0,"jeunes Mogs amoureux",0,0,1,0,0,"",3,false
 1025957,"demoiselle mog",0,"demoiselles mogs",0,0,1,1,0,"",3,false
 1025958,"",0,"",0,0,1,0,0,"",5,false
@@ -26022,7 +26022,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1026020,"",0,"",0,0,0,0,0,"",0,false
 1026021,"",0,"",0,0,0,0,0,"",0,false
 1026022,"",0,"",0,0,0,0,0,"",0,false
-1026023,"",0,"",0,0,0,0,0,"",0,false
+1026023,"",0,"",0,0,1,0,0,"",2,false
 1026024,"acteur macho",0,"acteurs machos",0,1,1,0,0,"",3,false
 1026025,"danseuse de la troupe",0,"danseuses de la troupe",0,0,1,1,0,"",3,false
 1026026,"acteur séduisant",0,"acteurs séduisants",0,1,1,0,0,"",3,false
@@ -26167,27 +26167,27 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1026165,"",0,"",0,0,1,0,0,"",4,false
 1026166,"jeune homme amoureux",0,"jeunes hommes amoureux",0,0,1,0,0,"",3,false
 1026167,"Yotsuyu",0,"Yotsuyu",0,0,1,1,1,"",4,false
-1026168,"J'tandhaa",0,"J'tandhaa",0,0,1,1,1,"Avoirs de l'armée de libération",3,false
+1026168,"J'tandhaa",0,"J'tandhaa",0,0,1,1,1,"Avoirs de l'armée de libération",3,true
 1026169,"vendeur namazu",0,"vendeurs namazu",0,0,1,0,0,"Matériaux",3,true
 1026170,"quincailler namazu",0,"quincaillers namazu",0,0,1,0,0,"Divers",3,true
 1026171,"réparateur namazu",0,"réparateurs namazu",0,0,1,0,0,"Réparations",3,true
 1026172,"employé namazu",0,"employés namazu",0,0,1,0,0,"Ameublement",3,true
-1026173,"",0,"",0,0,0,0,0,"",0,false
-1026174,"",0,"",0,0,0,0,0,"",0,false
-1026175,"",0,"",0,0,0,0,0,"",0,false
-1026176,"",0,"",0,0,0,0,0,"",0,false
-1026177,"",0,"",0,0,0,0,0,"",0,false
-1026178,"",0,"",0,0,0,0,0,"",0,false
-1026179,"",0,"",0,0,0,0,0,"",0,false
-1026180,"",0,"",0,0,0,0,0,"",0,false
-1026181,"",0,"",0,0,0,0,0,"",0,false
-1026182,"",0,"",0,0,0,0,0,"",0,false
-1026183,"",0,"",0,0,0,0,0,"",0,false
-1026184,"",0,"",0,0,0,0,0,"",0,false
-1026185,"",0,"",0,0,0,0,0,"",0,false
-1026186,"",0,"",0,0,0,0,0,"",0,false
-1026187,"",0,"",0,0,0,0,0,"",0,false
-1026188,"",0,"",0,0,0,0,0,"",0,false
+1026173,"ouvrier de l'expédition",0,"ouvriers de l'expédition",0,1,1,0,0,"",3,false
+1026174,"",0,"",0,0,1,0,0,"",5,false
+1026175,"",0,"",0,0,1,0,0,"",5,false
+1026176,"",0,"",0,0,1,0,0,"",5,false
+1026177,"",0,"",0,0,1,0,0,"",5,false
+1026178,"",0,"",0,0,1,0,0,"",5,false
+1026179,"",0,"",0,0,1,0,0,"",5,false
+1026180,"",0,"",0,0,1,0,0,"",5,false
+1026181,"",0,"",0,0,1,0,0,"",5,false
+1026182,"",0,"",0,0,1,0,0,"",5,false
+1026183,"",0,"",0,0,1,0,0,"",5,false
+1026184,"",0,"",0,0,1,0,0,"",5,false
+1026185,"sentinelle de l'expédition",0,"sentinelles de l'expédition",0,0,1,1,0,"",3,true
+1026186,"",0,"",0,0,1,0,0,"",5,false
+1026187,"",0,"",0,0,1,0,0,"",5,false
+1026188,"",0,"",0,0,1,0,0,"",5,false
 1026189,"",0,"",0,0,1,0,0,"",5,false
 1026190,"",0,"",0,0,1,0,0,"",5,false
 1026191,"",0,"",0,0,1,0,0,"",5,false

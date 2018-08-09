@@ -162,5 +162,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="742,380,0,0" TextWrapping="Wrap" Text="{DynamicResource EmoteChecker}" VerticalAlignment="Top" FontWeight="Bold" Width="102"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="849,376,0,0" TextWrapping="Wrap" Text="{Binding CharacterDetails.EmoteX.value}" VerticalAlignment="Top" Width="85" IsEnabled="False" IsTabStop="False"/>
         <Button x:Name="Refresh" Content="{DynamicResource RefreshCharacter}" HorizontalAlignment="Left" Margin="908,329,0,0" VerticalAlignment="Top" Width="132" Height="42" FontSize="11" FontWeight="Bold" Click="Refresh_Click" BorderThickness="1"/>
+        <CheckBox IsChecked="{Binding CharacterDetails.Transparency.freeze}" Content="{DynamicResource Transparency}" HorizontalAlignment="Left" Margin="740,407,0,0" VerticalAlignment="Top" FontWeight="Bold" Padding="2,0,0,0"/>
+        <mah:NumericUpDown StringFormat="F2" x:Name="Transp" Value="{Binding CharacterDetails.Transparency.value, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="843,403,0,0" VerticalAlignment="Top" Width="100" Interval="0.05" RenderTransformOrigin="0.494,0.475" Height="22" TextAlignment="Justify" SourceUpdated="Transp_SourceUpdated" Maximum="1" Minimum="0"/>
     </Grid>
 </UserControl>

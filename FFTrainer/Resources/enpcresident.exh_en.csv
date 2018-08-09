@@ -1,4 +1,4 @@
-Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0xf],6 [0x2][0x10],7 [0x2][0x11],8 [0x0][0x8],9 [0x3][0x14],10 [0x19][0x15]
+Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)][0xd],4 [BYTE(0x2)][0xe],5 [BYTE(0x2)][0xf],6 [BYTE(0x2)][0x10],7 [BYTE(0x2)][0x11],8 [STRING(0x0)][0x8],9 [UBYTE(0x3)][0x14],10 [BBOOL(0x19)][0x15]
 1000000,"",0,"",0,0,1,0,0,"",3,false
 1000001,"",0,"",0,0,0,0,0,"",0,false
 1000002,"",0,"",0,0,0,0,0,"",0,false
@@ -5242,7 +5242,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1005240,"ferry skipper",0,"ferry skippers",0,0,1,0,0,"",3,true
 1005241,"storm private",0,"storm privates",0,0,1,0,0,"Disciple of Magic Arms Supplier",3,true
 1005242,"storm sergeant",0,"storm sergeants",0,0,1,1,0,"Disciple of War Arms Supplier",3,true
-1005243,"storm sergeant",0,"storm sergeants",0,0,1,0,0,"Materia Provisioner",3,true
+1005243,"storm sergeant",0,"storm sergeants",0,0,1,0,0,"Wolves' Den Provisioner",3,true
 1005244,"storm private",0,"storm privates",0,0,1,0,0,"Disciple of War Armor Outfitter",3,true
 1005245,"storm sergeant",0,"storm sergeants",0,0,1,0,0,"Disciple of Magic Armor Outfitter",3,true
 1005246,"Boilstox",0,"Boilstox",0,0,1,1,1,"",4,false
@@ -13390,7 +13390,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1013388,"",0,"",0,0,1,0,0,"",5,false
 1013389,"",0,"",0,0,0,0,0,"",0,false
 1013390,"",0,"",0,0,0,0,0,"",0,false
-1013391,"",0,"",0,0,0,0,0,"",0,false
+1013391,"moogle adventurer",0,"moogle adventurer",0,0,1,0,0,"",4,false
 1013392,"Meriel",0,"Meriel",0,0,1,1,1,"",3,false
 1013393,"",0,"",0,0,1,0,0,"",3,false
 1013394,"",0,"",0,0,1,0,0,"",3,false
@@ -23953,23 +23953,23 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1023951,"",0,"",0,0,1,0,0,"",4,false
 1023952,"",0,"",0,0,1,0,0,"",4,false
 1023953,"wandering minstrel",0,"wandering minstrels",0,0,1,0,0,"",3,false
-1023954,"",0,"",0,0,0,0,0,"",0,false
-1023955,"",0,"",0,0,0,0,0,"",0,false
-1023956,"",0,"",0,0,0,0,0,"",0,false
-1023957,"",0,"",0,0,0,0,0,"",0,false
-1023958,"",0,"",0,0,0,0,0,"",0,false
-1023959,"",0,"",0,0,0,0,0,"",0,false
-1023960,"",0,"",0,0,0,0,0,"",0,false
-1023961,"",0,"",0,0,0,0,0,"",0,false
+1023954,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1023955,"wandering minstrel",0,"wandering minstrels",0,0,1,0,0,"",3,false
+1023956,"Rising attendant",0,"Rising attendants",0,0,1,0,0,"",3,true
+1023957,"Rising attendant",0,"Rising attendants",0,0,1,0,0,"",3,true
+1023958,"Rising attendant",0,"Rising attendants",0,0,1,0,0,"",3,true
+1023959,"Rising recruiter",0,"Rising recruiters",0,0,1,0,0,"",3,true
+1023960,"Rising recruiter",0,"Rising recruiters",0,0,1,0,0,"",3,true
+1023961,"Rising recruiter",0,"Rising recruiters",0,0,1,0,0,"",3,true
 1023962,"",0,"",0,0,0,0,0,"",0,false
 1023963,"",0,"",0,0,0,0,0,"",0,false
 1023964,"",0,"",0,0,0,0,0,"",0,false
-1023965,"",0,"",0,0,0,0,0,"",0,false
-1023966,"",0,"",0,0,0,0,0,"",0,false
-1023967,"",0,"",0,0,0,0,0,"",0,false
-1023968,"",0,"",0,0,0,0,0,"",0,false
-1023969,"",0,"",0,0,0,0,0,"",0,false
-1023970,"",0,"",0,0,0,0,0,"",0,false
+1023965,"flame commander",0,"flame commanders",0,0,1,0,0,"",3,false
+1023966,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1023967,"veteran adventurer",0,"veteren adventurers",0,0,1,0,0,"",3,false
+1023968,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1023969,"careworn thaumaturge",0,"careworn thaumaturges",0,0,1,0,0,"",3,false
+1023970,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
 1023971,"",0,"",0,0,1,0,0,"",4,false
 1023972,"",0,"",0,0,1,0,0,"",4,false
 1023973,"",0,"",0,0,1,0,0,"",4,false
@@ -24184,7 +24184,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1024182,"",0,"",0,0,0,0,0,"",0,false
 1024183,"",0,"",0,0,0,0,0,"",0,false
 1024184,"",0,"",0,0,0,0,0,"",0,false
-1024185,"",0,"",0,0,0,0,0,"",0,false
+1024185,"expedition liaison",0,"expedition liaisons",0,1,1,1,0,"",3,true
 1024186,"",0,"",0,0,0,0,0,"",0,false
 1024187,"Pipin",0,"Pipin",0,0,1,0,1,"",3,false
 1024188,"",0,"",0,0,1,0,0,"",5,false
@@ -24950,7 +24950,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1024948,"",0,"",0,0,1,0,0,"",5,false
 1024949,"",0,"",0,0,1,0,0,"",5,false
 1024950,"",0,"",0,0,1,0,0,"",5,false
-1024951,"expedition provisioner",0,"expedition provisioners",0,1,1,0,0,"",3,false
+1024951,"expedition provisioner",0,"expedition provisioners",0,1,1,0,0,"",3,true
 1024952,"Alpa",0,"Alpa",0,0,1,1,1,"",3,false
 1024953,"",0,"",0,0,1,0,0,"",4,false
 1024954,"",0,"",0,0,1,0,0,"",4,false
@@ -25368,7 +25368,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025366,"",0,"",0,0,1,0,0,"",4,false
 1025367,"",0,"",0,0,1,0,0,"",4,false
 1025368,"",0,"",0,0,1,0,0,"",4,false
-1025369,"",0,"",0,0,0,0,0,"",0,false
+1025369,"",0,"",0,0,1,0,0,"",4,false
 1025370,"",0,"",0,0,1,0,0,"",4,false
 1025371,"",0,"",0,0,1,0,0,"",4,false
 1025372,"",0,"",0,0,1,0,0,"",4,false
@@ -25380,10 +25380,10 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025378,"",0,"",0,0,1,0,0,"",4,false
 1025379,"",0,"",0,0,1,0,0,"",4,false
 1025380,"",0,"",0,0,1,0,0,"",4,false
-1025381,"",0,"",0,0,0,0,0,"",0,false
-1025382,"",0,"",0,0,0,0,0,"",0,false
-1025383,"",0,"",0,0,0,0,0,"",0,false
-1025384,"",0,"",0,0,0,0,0,"",0,false
+1025381,"",0,"",0,0,1,0,0,"",4,false
+1025382,"",0,"",0,0,1,0,0,"",4,false
+1025383,"",0,"",0,0,1,0,0,"",4,false
+1025384,"",0,"",0,0,1,0,0,"",4,false
 1025385,"",0,"",0,0,0,0,0,"",0,false
 1025386,"",0,"",0,0,0,0,0,"",0,false
 1025387,"",0,"",0,0,0,0,0,"",0,false
@@ -25656,33 +25656,33 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025654,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
 1025655,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
 1025656,"Wiscar",0,"Wiscar",0,0,1,0,1,"",3,false
-1025657,"",0,"",0,0,0,0,0,"",0,false
-1025658,"",0,"",0,0,0,0,0,"",0,false
-1025659,"",0,"",0,0,0,0,0,"",0,false
+1025657,"",0,"",0,0,1,0,0,"",4,false
+1025658,"Felyne",0,"Felynes",0,0,1,0,0,"",4,false
+1025659,"smithy",0,"smithies",0,0,1,0,0,"",4,false
 1025660,"Sanana",0,"Sanana",0,0,1,1,1,"",4,false
 1025661,"Hisui",0,"Hisui",0,0,1,1,1,"",4,false
 1025662,"Kurenai",0,"Kurenai",0,0,1,1,1,"",4,false
 1025663,"Hisui",0,"Hisui",0,0,1,1,1,"",4,false
 1025664,"Jikkan",0,"Jikkan",0,0,1,0,1,"",4,false
-1025665,"",0,"",0,0,0,0,0,"",0,false
-1025666,"",0,"",0,0,0,0,0,"",0,false
-1025667,"",0,"",0,0,0,0,0,"",0,false
-1025668,"",0,"",0,0,0,0,0,"",0,false
-1025669,"",0,"",0,0,0,0,0,"",0,false
-1025670,"",0,"",0,0,0,0,0,"",0,false
-1025671,"",0,"",0,0,0,0,0,"",0,false
-1025672,"",0,"",0,0,0,0,0,"",0,false
-1025673,"",0,"",0,0,0,0,0,"",0,false
-1025674,"",0,"",0,0,0,0,0,"",0,false
-1025675,"",0,"",0,0,0,0,0,"",0,false
-1025676,"",0,"",0,0,0,0,0,"",0,false
-1025677,"",0,"",0,0,0,0,0,"",0,false
-1025678,"",0,"",0,0,0,0,0,"",0,false
+1025665,"dead-eyed miscreant",0,"dead-eyed miscreants",0,0,1,0,0,"",4,false
+1025666,"Chiyoume",0,"Chiyoume",0,0,1,1,1,"",4,false
+1025667,"Chiyoume",0,"Chiyoume",0,0,1,1,1,"",4,false
+1025668,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",4,false
+1025669,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",4,false
+1025670,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",4,false
+1025671,"Yojimbo",0,"Yojimbo",0,0,1,0,1,"",4,false
+1025672,"Shigure",0,"Shigure",0,0,1,0,1,"",4,false
+1025673,"Shigure",0,"Shigure",0,0,1,0,1,"",4,false
+1025674,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",4,false
+1025675,"pungent Namazu",0,"pungent Namazu",0,0,1,0,0,"",4,false
+1025676,"",0,"",0,0,1,0,0,"",4,false
+1025677,"",0,"",0,0,1,0,0,"",4,false
+1025678,"Daigoro",0,"Daigoro",0,0,1,0,1,"",4,false
 1025679,"",0,"",0,0,1,0,0,"",4,false
 1025680,"",0,"",0,0,1,0,0,"",4,false
 1025681,"",0,"",0,0,1,0,0,"",4,false
 1025682,"",0,"",0,0,1,0,0,"",4,false
-1025683,"",0,"",0,0,0,0,0,"",0,false
+1025683,"",0,"",0,0,1,0,0,"",4,false
 1025684,"",0,"",0,0,1,0,0,"",4,false
 1025685,"",0,"",0,0,1,0,0,"",4,false
 1025686,"",0,"",0,0,1,0,0,"",4,false
@@ -25720,13 +25720,13 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025718,"Namazu junkmonger",0,"Namazu junkmongers",0,0,1,0,0,"",3,true
 1025719,"Namazu mender",0,"Namazu menders",0,0,1,0,0,"",3,true
 1025720,"Namazu manservant",0,"Namazu manservants",0,0,1,0,0,"",3,true
-1025721,"",0,"",0,0,0,0,0,"",0,false
-1025722,"",0,"",0,0,0,0,0,"",0,false
-1025723,"",0,"",0,0,0,0,0,"",0,false
-1025724,"",0,"",0,0,0,0,0,"",0,false
-1025725,"",0,"",0,0,0,0,0,"",0,false
-1025726,"",0,"",0,0,0,0,0,"",0,false
-1025727,"",0,"",0,0,0,0,0,"",0,false
+1025721,"hearty hunter",0,"hearty hunters",0,0,1,0,0,"",3,false
+1025722,"smithy",0,"smithies",0,0,1,0,0,"",3,true
+1025723,"adamant Oroniri warrior",0,"adamant Oronir",0,0,1,0,0,"",3,false
+1025724,"apprehensive Auri traveler",0,"apprehensive Auri travelers",0,0,1,1,0,"",3,false
+1025725,"wayfaring Kha hunter",0,"wayfaring Kha hunters",0,0,1,1,0,"",3,false
+1025726,"concerned Qestir",0,"concerned Qestir",0,0,1,0,0,"",3,false
+1025727,"Felyne",0,"Felynes",0,0,1,0,0,"",3,false
 1025728,"Alma bas Lexentale",0,"Alma bas Lexentale",0,0,1,1,1,"",3,false
 1025729,"Jenomis cen Lexentale",0,"Jenomis cen Lexentale",0,0,1,0,1,"",3,false
 1025730,"Lina Mewrilah",0,"Lina Mewrilah",0,0,1,1,1,"",3,false
@@ -25766,7 +25766,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025764,"",0,"",0,0,1,0,0,"",4,false
 1025765,"",0,"",0,0,1,0,0,"",4,false
 1025766,"",0,"",0,0,1,0,0,"",4,false
-1025767,"",0,"",0,0,0,0,0,"",0,false
+1025767,"",0,"",0,0,1,0,0,"",2,false
 1025768,"Gyorin",0,"Gyorin",0,0,1,0,1,"",3,false
 1025769,"earnest Namazu",0,"earnest Namazu",0,1,1,0,0,"",3,false
 1025770,"cumbersome crate",0,"cumbersome crates",0,0,1,0,0,"",3,false
@@ -25845,16 +25845,16 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025843,"Gyorei",0,"Gyorei",0,0,1,1,1,"",3,false
 1025844,"Gyoshin",0,"Gyoshin",0,0,1,0,1,"",3,false
 1025845,"Gyorei",0,"Gyorei",0,0,1,1,1,"",3,false
-1025846,"",0,"",0,0,0,0,0,"",0,false
-1025847,"",0,"",0,0,0,0,0,"",0,false
-1025848,"",0,"",0,0,0,0,0,"",0,false
-1025849,"",0,"",0,0,0,0,0,"",0,false
-1025850,"",0,"",0,0,0,0,0,"",0,false
-1025851,"",0,"",0,0,0,0,0,"",0,false
-1025852,"",0,"",0,0,0,0,0,"",0,false
-1025853,"",0,"",0,0,0,0,0,"",0,false
-1025854,"",0,"",0,0,0,0,0,"",0,false
-1025855,"",0,"",0,0,0,0,0,"",0,false
+1025846,"Kyusei",0,"Kyusei",0,0,1,0,1,"",3,true
+1025847,"Confederate appraiser",0,"Confederate appraisers",0,0,1,1,0,"",3,true
+1025848,"Confederate custodian",0,"Confederate custodians",0,0,1,1,0,"",3,true
+1025849,"cast-off Confederate",0,"cast-off Confederates",0,0,1,0,0,"",3,true
+1025850,"Kyusei",0,"Kyusei",0,0,1,0,1,"",4,false
+1025851,"Kyusei",0,"Kyusei",0,0,1,0,1,"",4,false
+1025852,"Confederate appraiser",0,"Confederate appraisers",0,0,1,1,0,"",4,false
+1025853,"Confederate custodian",0,"Confederate custodians",0,0,1,1,0,"",4,false
+1025854,"Onishishu leader",0,"Onishishu leaders",0,1,1,0,0,"",4,false
+1025855,"Onishishu scholar",0,"Onishishu scholars",0,1,1,1,0,"",4,false
 1025856,"Gyofuku",0,"Gyofuku",0,0,1,0,1,"",3,false
 1025857,"Gyoshin",0,"Gyoshin",0,0,1,0,1,"",3,false
 1025858,"Namazu gatherer",0,"Namazu gatherers",0,0,1,0,0,"",3,false
@@ -25884,34 +25884,34 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025882,"Namazu gatherer",0,"Namazu gatherers",0,0,1,0,0,"",5,false
 1025883,"Namazu gatherer",0,"Namazu gatherers",0,0,1,0,0,"",5,false
 1025884,"shuttle pilot",0,"shuttle pilots",0,0,1,0,0,"",3,false
-1025885,"",0,"",0,0,0,0,0,"",0,false
-1025886,"",0,"",0,0,0,0,0,"",0,false
-1025887,"",0,"",0,0,0,0,0,"",0,false
-1025888,"",0,"",0,0,0,0,0,"",0,false
-1025889,"",0,"",0,0,0,0,0,"",0,false
-1025890,"",0,"",0,0,0,0,0,"",0,false
-1025891,"",0,"",0,0,0,0,0,"",0,false
-1025892,"",0,"",0,0,0,0,0,"",0,false
-1025893,"",0,"",0,0,0,0,0,"",0,false
-1025894,"",0,"",0,0,0,0,0,"",0,false
-1025895,"",0,"",0,0,0,0,0,"",0,false
-1025896,"",0,"",0,0,0,0,0,"",0,false
-1025897,"",0,"",0,0,0,0,0,"",0,false
-1025898,"",0,"",0,0,0,0,0,"",0,false
-1025899,"",0,"",0,0,0,0,0,"",0,false
-1025900,"",0,"",0,0,0,0,0,"",0,false
-1025901,"",0,"",0,0,0,0,0,"",0,false
-1025902,"",0,"",0,0,0,0,0,"",0,false
-1025903,"",0,"",0,0,0,0,0,"",0,false
-1025904,"",0,"",0,0,0,0,0,"",0,false
-1025905,"",0,"",0,0,0,0,0,"",0,false
-1025906,"",0,"",0,0,0,0,0,"",0,false
-1025907,"",0,"",0,0,0,0,0,"",0,false
-1025908,"",0,"",0,0,0,0,0,"",0,false
-1025909,"",0,"",0,0,0,0,0,"",0,false
-1025910,"",0,"",0,0,0,0,0,"",0,false
-1025911,"",0,"",0,0,0,0,0,"",0,false
-1025912,"",0,"",0,0,0,0,0,"",0,false
+1025885,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025886,"Akebono",0,"Akebono",0,0,1,0,1,"",3,false
+1025887,"Akebono's bodyguard",0,"Akebono's bodyguards",0,1,1,0,1,"",3,false
+1025888,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025889,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",3,false
+1025890,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
+1025891,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025892,"okiya proprietress",0,"okiya proprietresses",0,1,1,1,0,"",3,false
+1025893,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
+1025894,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025895,"Yojimbo",0,"Yojimbo",0,0,1,0,1,"",3,false
+1025896,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025897,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",3,false
+1025898,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
+1025899,"Yojimbo",0,"Yojimbo",0,0,1,0,1,"",3,false
+1025900,"Daigoro",0,"Daigoro",0,0,1,0,1,"",3,false
+1025901,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025902,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",3,false
+1025903,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
+1025904,"Yojimbo",0,"Yojimbo",0,0,1,0,1,"",3,false
+1025905,"Daigoro",0,"Daigoro",0,0,1,0,1,"",3,false
+1025906,"pungent Namazu",0,"pungent Namazu",0,0,1,0,0,"",3,false
+1025907,"Hildibrand",0,"Hildibrand",0,0,1,0,1,"",3,false
+1025908,"Nashu Mhakaracca",0,"Nashu Mhakaracca",0,0,1,1,1,"",3,false
+1025909,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
+1025910,"Yojimbo",0,"Yojimbo",0,0,1,0,1,"",3,false
+1025911,"Daigoro",0,"Daigoro",0,0,1,0,1,"",3,false
+1025912,"Shigure",0,"Shigure",0,0,1,0,1,"",3,false
 1025913,"journeyman salvager",0,"journeyman salvagers",0,0,1,0,0,"",3,true
 1025914,"journeyman salvager",0,"journeyman salvagers",0,0,1,1,0,"",3,true
 1025915,"journeyman salvager",0,"journeyman salvagers",0,0,1,0,0,"",3,true
@@ -25943,18 +25943,18 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1025941,"Namazu target",0,"Namazu targets",0,0,1,0,0,"",3,false
 1025942,"Namazu target",0,"Namazu targets",0,0,1,0,0,"",3,false
 1025943,"Namazu target",0,"Namazu targets",0,0,1,0,0,"",3,false
-1025944,"",0,"",0,0,0,0,0,"",0,false
-1025945,"",0,"",0,0,0,0,0,"",0,false
-1025946,"",0,"",0,0,0,0,0,"",0,false
-1025947,"",0,"",0,0,0,0,0,"",0,false
-1025948,"",0,"",0,0,0,0,0,"",0,false
-1025949,"",0,"",0,0,0,0,0,"",0,false
-1025950,"",0,"",0,0,0,0,0,"",0,false
-1025951,"",0,"",0,0,0,0,0,"",0,false
-1025952,"",0,"",0,0,0,0,0,"",0,false
+1025944,"Krile",0,"Krile",0,0,1,1,1,"",3,false
+1025945,"Gerolt",0,"Gerolt",0,0,1,0,1,"",3,false
+1025946,"Ejika Tsunjika",0,"Ejika Tsunjika",0,0,1,0,1,"",3,false
+1025947,"expedition scholar",0,"expedition scholars",0,1,1,0,0,"",3,false
+1025948,"expedition chronicler",0,"expedition chroniclers",0,1,1,0,0,"",3,false
+1025949,"expedition provisioner",0,"expedition provisioners",0,1,1,0,0,"",3,true
+1025950,"expedition lockpick",0,"expedition lockpicks",0,1,1,1,0,"",3,true
+1025951,"expedition mender",0,"expedition menders",0,1,1,1,0,"",3,true
+1025952,"expedition skywatcher",0,"expedition skywatcher",0,1,1,0,0,"",3,true
 1025953,"",0,"",0,0,1,0,0,"",5,false
 1025954,"",0,"",0,0,1,0,0,"",5,false
-1025955,"",0,"",0,0,0,0,0,"",0,false
+1025955,"Staelhundr",0,"Staelhundr",0,0,1,0,1,"Replica Vendor",3,true
 1025956,"moogle suitor",0,"moogle suitors",0,0,1,0,0,"",3,false
 1025957,"moogle maiden",0,"moogle maidens",0,0,1,1,0,"",3,false
 1025958,"",0,"",0,0,1,0,0,"",5,false
@@ -26022,7 +26022,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1026020,"",0,"",0,0,0,0,0,"",0,false
 1026021,"",0,"",0,0,0,0,0,"",0,false
 1026022,"",0,"",0,0,0,0,0,"",0,false
-1026023,"",0,"",0,0,0,0,0,"",0,false
+1026023,"",0,"",0,0,1,0,0,"",2,false
 1026024,"company muscle",0,"company muscles",0,0,1,0,0,"",3,false
 1026025,"company dancer",0,"company dancers",0,0,1,0,0,"",3,false
 1026026,"company tragedian",0,"company tragedians",0,0,1,0,0,"",3,false
@@ -26061,11 +26061,11 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1026059,"company tragedian",0,"company tragedians",0,0,1,0,0,"",3,false
 1026060,"company tragedienne",0,"company tragediennes",0,0,1,1,0,"",3,false
 1026061,"company thespian",0,"company thespians",0,0,1,0,0,"",3,false
-1026062,"",0,"",0,0,0,0,0,"",0,false
-1026063,"",0,"",0,0,0,0,0,"",0,false
-1026064,"",0,"",0,0,0,0,0,"",0,false
-1026065,"",0,"",0,0,0,0,0,"",0,false
-1026066,"",0,"",0,0,0,0,0,"",0,false
+1026062,"humble Brass Blade",0,"humble Brass Blades",0,0,1,0,0,"",3,false
+1026063,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1026064,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1026065,"Dural Tharal",0,"Dural Tharal",0,0,1,0,1,"",3,false
+1026066,"wandering minstrel",0,"wandering minstrels",0,0,1,0,0,"",3,false
 1026067,"",0,"",0,0,1,0,0,"",5,false
 1026068,"",0,"",0,0,1,0,0,"",6,false
 1026069,"",0,"",0,0,1,0,0,"",6,false
@@ -26084,7 +26084,7 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1026082,"earnest fisherman",0,"earnest fishermen",0,1,1,0,0,"",4,false
 1026083,"Araragi",0,"Araragi",0,0,1,0,1,"",4,false
 1026084,"",0,"",0,0,1,0,0,"",4,false
-1026085,"",0,"",0,0,0,0,0,"",0,false
+1026085,"",0,"",0,0,1,0,0,"",4,false
 1026086,"",0,"",0,0,1,0,0,"",5,false
 1026087,"",0,"",0,0,1,0,0,"",5,false
 1026088,"",0,"",0,0,1,0,0,"",5,false
@@ -26165,38 +26165,38 @@ Index,0 [0x0][0x0],1 [0x2][0xc],2 [0x0][0x4],3 [0x2][0xd],4 [0x2][0xe],5 [0x2][0
 1026163,"",0,"",0,0,1,0,0,"",4,false
 1026164,"",0,"",0,0,1,0,0,"",4,false
 1026165,"",0,"",0,0,1,0,0,"",4,false
-1026166,"star-struck youth",0,"star-struck youths",0,0,1,0,0,"",3,false
+1026166,"starstruck youth",0,"starstruck youths",0,0,1,0,0,"",3,false
 1026167,"Yotsuyu",0,"Yotsuyu",0,0,1,1,1,"",4,false
-1026168,"J'tandhaa",0,"J'tandhaa",0,0,1,1,1,"Exchange",3,false
+1026168,"J'tandhaa",0,"J'tandhaa",0,0,1,1,1,"Exchange",3,true
 1026169,"Namazu material supplier",0,"Namazu material suppliers",0,0,1,0,0,"",3,true
 1026170,"Namazu junkmonger",0,"Namazu junkmongers",0,0,1,0,0,"",3,true
 1026171,"Namazu mender",0,"Namazu menders",0,0,1,0,0,"",3,true
 1026172,"Namazu manservant",0,"Namazu manservants",0,0,1,0,0,"",3,true
-1026173,"",0,"",0,0,0,0,0,"",0,false
-1026174,"",0,"",0,0,0,0,0,"",0,false
-1026175,"",0,"",0,0,0,0,0,"",0,false
-1026176,"",0,"",0,0,0,0,0,"",0,false
-1026177,"",0,"",0,0,0,0,0,"",0,false
-1026178,"",0,"",0,0,0,0,0,"",0,false
-1026179,"",0,"",0,0,0,0,0,"",0,false
-1026180,"",0,"",0,0,0,0,0,"",0,false
-1026181,"",0,"",0,0,0,0,0,"",0,false
-1026182,"",0,"",0,0,0,0,0,"",0,false
-1026183,"",0,"",0,0,0,0,0,"",0,false
-1026184,"",0,"",0,0,0,0,0,"",0,false
-1026185,"",0,"",0,0,0,0,0,"",0,false
-1026186,"",0,"",0,0,0,0,0,"",0,false
-1026187,"",0,"",0,0,0,0,0,"",0,false
-1026188,"",0,"",0,0,0,0,0,"",0,false
-1026189,"",0,"",0,0,0,0,0,"",0,false
-1026190,"",0,"",0,0,0,0,0,"",0,false
-1026191,"",0,"",0,0,0,0,0,"",0,false
-1026192,"",0,"",0,0,0,0,0,"",0,false
-1026193,"",0,"",0,0,0,0,0,"",0,false
-1026194,"",0,"",0,0,0,0,0,"",0,false
-1026195,"",0,"",0,0,0,0,0,"",0,false
-1026196,"",0,"",0,0,0,0,0,"",0,false
-1026197,"",0,"",0,0,0,0,0,"",0,false
+1026173,"expedition digger",0,"expedition diggers",0,1,1,0,0,"",3,false
+1026174,"",0,"",0,0,1,0,0,"",5,false
+1026175,"",0,"",0,0,1,0,0,"",5,false
+1026176,"",0,"",0,0,1,0,0,"",5,false
+1026177,"",0,"",0,0,1,0,0,"",5,false
+1026178,"",0,"",0,0,1,0,0,"",5,false
+1026179,"",0,"",0,0,1,0,0,"",5,false
+1026180,"",0,"",0,0,1,0,0,"",5,false
+1026181,"",0,"",0,0,1,0,0,"",5,false
+1026182,"",0,"",0,0,1,0,0,"",5,false
+1026183,"",0,"",0,0,1,0,0,"",5,false
+1026184,"",0,"",0,0,1,0,0,"",5,false
+1026185,"expedition birdwatcher",0,"expedition birdwatchers",0,1,1,0,0,"",3,true
+1026186,"",0,"",0,0,1,0,0,"",5,false
+1026187,"",0,"",0,0,1,0,0,"",5,false
+1026188,"",0,"",0,0,1,0,0,"",5,false
+1026189,"",0,"",0,0,1,0,0,"",5,false
+1026190,"",0,"",0,0,1,0,0,"",5,false
+1026191,"",0,"",0,0,1,0,0,"",5,false
+1026192,"",0,"",0,0,1,0,0,"",5,false
+1026193,"",0,"",0,0,1,0,0,"",5,false
+1026194,"",0,"",0,0,1,0,0,"",5,false
+1026195,"",0,"",0,0,1,0,0,"",5,false
+1026196,"",0,"",0,0,1,0,0,"",5,false
+1026197,"",0,"",0,0,1,0,0,"",5,false
 1026198,"",0,"",0,0,0,0,0,"",0,false
 1026199,"",0,"",0,0,0,0,0,"",0,false
 1026200,"",0,"",0,0,0,0,0,"",0,false

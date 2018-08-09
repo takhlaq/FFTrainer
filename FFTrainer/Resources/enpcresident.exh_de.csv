@@ -13390,7 +13390,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1013388,"",0,"",0,0,1,0,0,"",5,false
 1013389,"",0,"",0,0,0,0,0,"",0,false
 1013390,"",0,"",0,0,0,0,0,"",0,false
-1013391,"",0,"",0,0,0,0,0,"",0,false
+1013391,"Mogry-Abenteurer",4,"Mogry-Abenteurer",1,0,1,0,0,"",4,false
 1013392,"Meriel",3,"NONE",1,0,0,1,1,"",3,false
 1013393,"",0,"",0,0,1,0,0,"",3,false
 1013394,"",0,"",0,0,1,0,0,"",3,false
@@ -24184,7 +24184,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1024182,"",0,"",0,0,0,0,0,"",0,false
 1024183,"",0,"",0,0,0,0,0,"",0,false
 1024184,"",0,"",0,0,0,0,0,"",0,false
-1024185,"",0,"",0,0,0,0,0,"",0,false
+1024185,"Expeditionssprecherin",3,"Expeditionssprecherinnen",1,0,1,1,0,"Handel",3,true
 1024186,"",0,"",0,0,0,0,0,"",0,false
 1024187,"Pipin",3,"NONE",1,0,0,0,1,"",3,false
 1024188,"",0,"",0,0,1,0,0,"",5,false
@@ -24950,7 +24950,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1024948,"",0,"",0,0,1,0,0,"",5,false
 1024949,"",0,"",0,0,1,0,0,"",5,false
 1024950,"",0,"",0,0,1,0,0,"",5,false
-1024951,"Materialverwalter",4,"Materialverwalter",2,0,1,0,0,"Expeditionsbedarf",3,false
+1024951,"Materialverwalter",4,"Materialverwalter",2,0,1,0,0,"Expeditionsbedarf",3,true
 1024952,"Alpa",3,"NONE",1,0,0,1,1,"",3,false
 1024953,"",0,"",0,0,1,0,0,"",4,false
 1024954,"",0,"",0,0,1,0,0,"",4,false
@@ -25381,9 +25381,9 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025379,"",0,"",0,0,1,0,0,"",4,false
 1025380,"",0,"",0,0,1,0,0,"",4,false
 1025381,"",0,"",0,0,1,0,0,"",4,false
-1025382,"",0,"",0,0,0,0,0,"",0,false
-1025383,"",0,"",0,0,0,0,0,"",0,false
-1025384,"",0,"",0,0,0,0,0,"",0,false
+1025382,"",0,"",0,0,1,0,0,"",4,false
+1025383,"",0,"",0,0,1,0,0,"",4,false
+1025384,"",0,"",0,0,1,0,0,"",4,false
 1025385,"",0,"",0,0,0,0,0,"",0,false
 1025386,"",0,"",0,0,0,0,0,"",0,false
 1025387,"",0,"",0,0,0,0,0,"",0,false
@@ -25656,9 +25656,9 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025654,"Wiscar",3,"NONE",1,0,0,0,1,"",3,false
 1025655,"Wiscar",3,"NONE",1,0,0,0,1,"",3,false
 1025656,"Wiscar",3,"NONE",1,0,0,0,1,"",3,false
-1025657,"",0,"",0,0,0,0,0,"",0,false
-1025658,"",0,"",0,0,0,0,0,"",0,false
-1025659,"",0,"",0,0,0,0,0,"",0,false
+1025657,"",0,"",0,0,1,0,0,"",4,false
+1025658,"Felyne",3,"Felynen",1,0,1,1,0,"",4,false
+1025659,"Schmied",4,"Schmiede",2,0,1,0,0,"",4,false
 1025660,"Sanana",3,"NONE",1,0,0,1,1,"",4,false
 1025661,"Hisui",3,"NONE",1,0,0,1,1,"",4,false
 1025662,"Kurenai",3,"NONE",1,0,0,1,1,"",4,false
@@ -25682,7 +25682,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025680,"",0,"",0,0,1,0,0,"",4,false
 1025681,"",0,"",0,0,1,0,0,"",4,false
 1025682,"",0,"",0,0,1,0,0,"",4,false
-1025683,"",0,"",0,0,0,0,0,"",0,false
+1025683,"",0,"",0,0,1,0,0,"",4,false
 1025684,"",0,"",0,0,1,0,0,"",4,false
 1025685,"",0,"",0,0,1,0,0,"",4,false
 1025686,"",0,"",0,0,1,0,0,"",4,false
@@ -25720,13 +25720,13 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025718,"Namazuo-Krämer",4,"Namazuo-Krämer",2,0,1,0,0,"",3,true
 1025719,"Namazuo-Reparateur",4,"Namazuo-Reparateure",2,0,1,0,0,"",3,true
 1025720,"Namazuo-Diener",4,"Namazuo-Diener",2,0,1,0,0,"",3,true
-1025721,"",0,"",0,0,0,0,0,"",0,false
-1025722,"",0,"",0,0,0,0,0,"",0,false
-1025723,"",0,"",0,0,0,0,0,"",0,false
-1025724,"",0,"",0,0,0,0,0,"",0,false
-1025725,"",0,"",0,0,0,0,0,"",0,false
-1025726,"",0,"",0,0,0,0,0,"",0,false
-1025727,"",0,"",0,0,0,0,0,"",0,false
+1025721,"Monsterjäger",4,"Monsterjäger",2,0,1,0,0,"",3,false
+1025722,"Schmied",2,"Schmiede",2,0,1,0,0,"Rüstungen und mehr",3,true
+1025723,"grimmig[a] Oronir-Jäger",4,"grimmig[a] Oronir-Jäger",2,0,1,0,0,"",3,false
+1025724,"gesprächig[a] Au Ra-Sammlerin",3,"gesprächig[a] Au Ra-Sammlerinnen",1,0,1,1,0,"",3,false
+1025725,"bescheiden[a] Kha-Reisend[a]",3,"bescheiden[a] Kha-Reisend[a]",1,0,1,1,0,"",3,false
+1025726,"besorgt[a] Qestir-Händler",4,"besorgt[a] Qestir-Händler",2,0,1,0,0,"",3,false
+1025727,"Felyne",3,"Felynen",1,0,1,1,0,"",3,false
 1025728,"Alma bas Lexentale",3,"NONE",1,0,0,1,1,"",3,false
 1025729,"Jenomis cen Lexentale",3,"NONE",1,0,0,0,1,"",3,false
 1025730,"Lina Mewrilah",3,"NONE",1,0,0,1,1,"",3,false
@@ -25766,7 +25766,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025764,"",0,"",0,0,1,0,0,"",4,false
 1025765,"",0,"",0,0,1,0,0,"",4,false
 1025766,"",0,"",0,0,1,0,0,"",4,false
-1025767,"",0,"",0,0,0,0,0,"",0,false
+1025767,"",0,"",0,0,1,0,0,"",2,false
 1025768,"Gyorin",3,"NONE",1,0,0,0,1,"",3,false
 1025769,"gewissenhaft[a] Namazuo",3,"gewissenhaft[a] Namazuo",1,0,1,0,0,"",3,false
 1025770,"Materialkiste",3,"Materialkisten",1,0,1,1,0,"",3,false
@@ -25943,18 +25943,18 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1025941,"Namazuo",3,"Namazuo",1,0,1,0,0,"",3,false
 1025942,"Namazuo",3,"Namazuo",1,0,1,0,0,"",3,false
 1025943,"Namazuo",3,"Namazuo",1,0,1,0,0,"",3,false
-1025944,"",0,"",0,0,0,0,0,"",0,false
-1025945,"",0,"",0,0,0,0,0,"",0,false
-1025946,"",0,"",0,0,0,0,0,"",0,false
-1025947,"",0,"",0,0,0,0,0,"",0,false
-1025948,"",0,"",0,0,0,0,0,"",0,false
-1025949,"",0,"",0,0,0,0,0,"",0,false
-1025950,"",0,"",0,0,0,0,0,"",0,false
-1025951,"",0,"",0,0,0,0,0,"",0,false
-1025952,"",0,"",0,0,0,0,0,"",0,false
+1025944,"Krile",3,"NONE",1,0,0,1,1,"",3,false
+1025945,"Gerolt",3,"NONE",1,0,0,0,1,"",3,false
+1025946,"Ejika Tsunjika",3,"NONE",1,0,0,0,1,"",3,false
+1025947,"Inselforscherin",3,"Inselforscherinnen",1,0,1,1,0,"",3,false
+1025948,"Expeditionschronistin",3,"Expeditionschronistinnen",1,0,1,1,0,"",3,false
+1025949,"Materialverwalter",4,"Materialverwalter",2,0,1,0,0,"Expeditionsbedarf",3,true
+1025950,"Schlüsselmeisterin",3,"Schlüsselmeisterinnen",1,0,1,1,0,"",3,true
+1025951,"Reparateurin",3,"Reparateurinnen",1,0,1,1,0,"",3,true
+1025952,"Meteorologe",8,"Meteorologen",1,0,1,0,0,"",3,true
 1025953,"",0,"",0,0,1,0,0,"",5,false
 1025954,"",0,"",0,0,1,0,0,"",5,false
-1025955,"",0,"",0,0,0,0,0,"",0,false
+1025955,"Staelhundr",3,"NONE",1,0,0,0,1,"Repliken",3,true
 1025956,"Mogry-Jüngling",4,"Mogry-Jünglinge",2,0,1,0,0,"",3,false
 1025957,"Mogry-Fräulein",4,"Mogry-Fräulein",1,0,1,2,0,"",3,false
 1025958,"",0,"",0,0,1,0,0,"",5,false
@@ -26022,7 +26022,7 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1026020,"",0,"",0,0,0,0,0,"",0,false
 1026021,"",0,"",0,0,0,0,0,"",0,false
 1026022,"",0,"",0,0,0,0,0,"",0,false
-1026023,"",0,"",0,0,0,0,0,"",0,false
+1026023,"",0,"",0,0,1,0,0,"",2,false
 1026024,"muskulös[a] Schauspieler",4,"muskulös[a] Schauspieler",2,0,1,0,0,"",3,false
 1026025,"Tänzerin",3,"Tänzerinnen",1,0,1,1,0,"",3,false
 1026026,"verführerisch[a] Schauspieler",4,"verführerisch[a] Schauspieler",2,0,1,0,0,"",3,false
@@ -26167,27 +26167,27 @@ Index,0 [STRING(0x0)][0x0],1 [BYTE(0x2)][0xc],2 [STRING(0x0)][0x4],3 [BYTE(0x2)]
 1026165,"",0,"",0,0,1,0,0,"",4,false
 1026166,"verliebt[a] Junge",8,"verliebt[a] Jungen",1,0,1,0,0,"",3,false
 1026167,"Yotsuyu",3,"NONE",1,0,0,1,1,"",4,false
-1026168,"J'tandhaa",3,"NONE",1,0,0,1,1,"Armeemarken",3,false
+1026168,"J'tandhaa",3,"NONE",1,0,0,1,1,"Armeemarken",3,true
 1026169,"Namazuo-Materiallieferant",6,"Namazuo-Materiallieferanten",1,0,1,0,0,"",3,true
 1026170,"Namazuo-Händler",4,"Namazuo-Händler",2,0,1,0,0,"",3,true
 1026171,"Namazuo-Reparateur",4,"Namazuo-Reparateure",2,0,1,0,0,"",3,true
 1026172,"Namazuo-Diener",4,"Namazuo-Diener",2,0,1,0,0,"",3,true
-1026173,"",0,"",0,0,0,0,0,"",0,false
-1026174,"",0,"",0,0,0,0,0,"",0,false
-1026175,"",0,"",0,0,0,0,0,"",0,false
-1026176,"",0,"",0,0,0,0,0,"",0,false
-1026177,"",0,"",0,0,0,0,0,"",0,false
-1026178,"",0,"",0,0,0,0,0,"",0,false
-1026179,"",0,"",0,0,0,0,0,"",0,false
-1026180,"",0,"",0,0,0,0,0,"",0,false
-1026181,"",0,"",0,0,0,0,0,"",0,false
-1026182,"",0,"",0,0,0,0,0,"",0,false
-1026183,"",0,"",0,0,0,0,0,"",0,false
-1026184,"",0,"",0,0,0,0,0,"",0,false
-1026185,"",0,"",0,0,0,0,0,"",0,false
-1026186,"",0,"",0,0,0,0,0,"",0,false
-1026187,"",0,"",0,0,0,0,0,"",0,false
-1026188,"",0,"",0,0,0,0,0,"",0,false
+1026173,"Expeditionsverwalter",4,"Expeditionsverwalter",2,0,1,0,0,"",3,false
+1026174,"",0,"",0,0,1,0,0,"",5,false
+1026175,"",0,"",0,0,1,0,0,"",5,false
+1026176,"",0,"",0,0,1,0,0,"",5,false
+1026177,"",0,"",0,0,1,0,0,"",5,false
+1026178,"",0,"",0,0,1,0,0,"",5,false
+1026179,"",0,"",0,0,1,0,0,"",5,false
+1026180,"",0,"",0,0,1,0,0,"",5,false
+1026181,"",0,"",0,0,1,0,0,"",5,false
+1026182,"",0,"",0,0,1,0,0,"",5,false
+1026183,"",0,"",0,0,1,0,0,"",5,false
+1026184,"",0,"",0,0,1,0,0,"",5,false
+1026185,"Expeditionswächter",4,"Expeditionswächter",2,0,1,0,0,"Handel",3,true
+1026186,"",0,"",0,0,1,0,0,"",5,false
+1026187,"",0,"",0,0,1,0,0,"",5,false
+1026188,"",0,"",0,0,1,0,0,"",5,false
 1026189,"",0,"",0,0,1,0,0,"",5,false
 1026190,"",0,"",0,0,1,0,0,"",5,false
 1026191,"",0,"",0,0,1,0,0,"",5,false

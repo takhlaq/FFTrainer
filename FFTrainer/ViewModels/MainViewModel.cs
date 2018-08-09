@@ -9,6 +9,8 @@ using System.Xml.Linq;
 using System.Net;
 using AutoUpdaterDotNET;
 using FFTrainer.Models;
+using System.Windows;
+using System.Threading.Tasks;
 
 namespace FFTrainer.ViewModels
 {
@@ -137,25 +139,33 @@ namespace FFTrainer.ViewModels
         public MainViewModel()
         {
             // open the process to FFXIV
-            mediator = new Mediator();
-            int gameProcId = MemLib.getProcIDFromName("ffxiv_dx11");
-            MemoryManager.Instance.MemLib.OpenProcess(gameProcId);
-            ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
-            AutoUpdater.RunUpdateAsAdmin = true;
-            AutoUpdater.DownloadPath = Environment.CurrentDirectory;
-            AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
-            // initialize a background worker
-            // load the settings
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "FFXIVTrainer.zip");
-            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "ZipExtractor.exe");
-            if (File.Exists(path))File.Delete(path);
-            if (File.Exists(path2))File.Delete(path2);
-            LoadSettings();
-            worker = new BackgroundWorker();
-            worker.DoWork += Worker_DoWork;
-            // run the worker
-            worker.RunWorkerAsync();
-            characterDetails = new CharacterDetailsViewModel(mediator);
+            try
+            {
+                mediator = new Mediator();
+                int gameProcId = MemLib.getProcIDFromName("ffxiv_dx11");
+                MemoryManager.Instance.MemLib.OpenProcess(gameProcId);
+                if (gameProcId <= 0) throw new ArgumentException("You must have ffxiv_dx11.exe running first before running this application!");
+                ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
+                AutoUpdater.RunUpdateAsAdmin = true;
+                AutoUpdater.DownloadPath = Environment.CurrentDirectory;
+                AutoUpdater.Start("https://raw.githubusercontent.com/SaberNaut/xd/master/Updates.xml");
+                // initialize a background worker
+                // load the settings
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "FFXIVTrainer.zip");
+                var path2 = Path.Combine(Directory.GetCurrentDirectory(), "ZipExtractor.exe");
+                if (File.Exists(path)) File.Delete(path);
+                if (File.Exists(path2)) File.Delete(path2);
+                LoadSettings();
+                worker = new BackgroundWorker();
+                worker.DoWork += Worker_DoWork;
+                // run the worker
+                worker.RunWorkerAsync();
+                characterDetails = new CharacterDetailsViewModel(mediator);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Oh no!");
+            }
         }
         private void LoadSettings()
         {
@@ -166,7 +176,7 @@ namespace FFTrainer.ViewModels
             // add blank namespaces
             ns.Add("", "");
            // string xmlData = Properties.Resources.Settings;
-            var document = XDocument.Load(@"https://raw.githubusercontent.com/SaberNaut/xd/master/Settingsx.xml");
+            var document = XDocument.Load(@"https://raw.githubusercontent.com/SaberNaut/xd/master/Settingsxd.xml");
             // using a stream reader
             using (StringReader reader = new StringReader(document.ToString()))
             {
@@ -196,8 +206,7 @@ namespace FFTrainer.ViewModels
                 // sleep for 500 ms
                 Thread.Sleep(Properties.Settings.Default.Read);
                 // check if our memory manager is set /saving
-               if(!MainWindow.CurrentlySaving) mediator.SendWork();
-
+                if (!MainWindow.CurrentlySaving) mediator.SendWork();
             }
         }
     }
