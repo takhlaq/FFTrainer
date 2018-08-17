@@ -114,7 +114,7 @@
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}" FontSize="16"/></Hyperlink></TextBlock>
         <Button Content="{DynamicResource Save}" HorizontalAlignment="Left" Margin="668,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" BorderThickness="1"/>
         <Button x:Name="Loadbutton" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" BorderThickness="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.5.4" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.6.0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="{DynamicResource Madeby}" HorizontalAlignment="Left" Margin="748,14,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
 
     </Grid>

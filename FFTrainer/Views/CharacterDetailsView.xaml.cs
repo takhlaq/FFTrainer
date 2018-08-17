@@ -844,7 +844,7 @@ namespace FFTrainer.Views
         private CmpReader _colorMap = new CmpReader(Properties.Resources.human);
         private void HairColor_Click(object sender, RoutedEventArgs e)
         {
-            var c = new CharaMakeColorSelector(_colorMap, 3584, 195, (int) CharacterDetails.HairTone.value);
+            var c = new CharaMakeColorSelector(_colorMap, 3584, 255, (int) CharacterDetails.HairTone.value);
             c.ShowDialog();
 
             if (c.Choice != -1)
@@ -871,7 +871,7 @@ namespace FFTrainer.Views
             if (CharacterDetails.Race.value == 3 && CharacterDetails.Clan.value == 5) seearchE = 4608;
             if (CharacterDetails.Race.value == 5 && CharacterDetails.Clan.value == 9) seearchE = 5120;
             if (CharacterDetails.Race.value == 5 && CharacterDetails.Clan.value == 10) seearchE = 8448;
-            var c = new CharaMakeColorSelector(_colorMap, seearchE, 193, (int)CharacterDetails.Skintone.value);
+            var c = new CharaMakeColorSelector(_colorMap, seearchE, 255, (int)CharacterDetails.Skintone.value);
             c.ShowDialog();
 
             if (c.Choice != -1)
@@ -885,7 +885,7 @@ namespace FFTrainer.Views
 
         private void LipColor_Click(object sender, RoutedEventArgs e)
         {
-            var c = new CharaMakeColorSelector(_colorMap, 1152, 97, (int)CharacterDetails.LipsTone.value);
+            var c = new CharaMakeColorSelector(_colorMap, 1152, 255, (int)CharacterDetails.LipsTone.value);
             c.ShowDialog();
 
             if (c.Choice != -1)
@@ -899,7 +899,7 @@ namespace FFTrainer.Views
 
         private void FacePaintColor_Click(object sender, RoutedEventArgs e)
         {
-            var c = new CharaMakeColorSelector(_colorMap, 1152, 97, (int)CharacterDetails.FacePaintColor.value);
+            var c = new CharaMakeColorSelector(_colorMap, 1152, 255, (int)CharacterDetails.FacePaintColor.value);
             c.ShowDialog();
 
             if (c.Choice != -1)
