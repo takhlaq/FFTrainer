@@ -8,6 +8,7 @@ using GearTuple = System.Tuple<int, int, int>;
 using WepTuple = System.Tuple<int, int, int, int>;
 using Newtonsoft.Json;
 using FFTrainer.Views;
+using System.Drawing;
 
 namespace FFTrainer
 {
@@ -98,6 +99,12 @@ namespace FFTrainer
                 return $"{CharacterDetailsView2.GearTupleToComma(Gear.HeadGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.BodyGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.HandsGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.LegsGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.FeetGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.EarGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.NeckGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.WristGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.LRingGear)} - {CharacterDetailsView2.GearTupleToComma(Gear.RRingGear)}";
             }
         }
+        public class CharaMakeCustomizeFeature
+        {
+            public int Index { get; set; }
+            public int FeatureID { get; set; }
+            public System.Drawing.Bitmap Icon { get; set; }
+        }
 
         public class Weather
         {
@@ -148,8 +155,121 @@ namespace FFTrainer
         public Dictionary<int, Tribe> Tribes = null;
         public Dictionary<int, Dye> Dyes = null;
         public Dictionary<int, Emote> Emotes = null;
+        public Dictionary<int, CharaMakeCustomizeFeature> CharaMakeFeatures = null;
 
+        public void MakeCharaMakeFeatureList()
+        {
+            CharaMakeFeatures = new Dictionary<int, CharaMakeCustomizeFeature>();
 
+            try
+            {
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.charamakecustomize_exh)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        CharaMakeCustomizeFeature feature = new CharaMakeCustomizeFeature();
+
+                        feature.Index = rowCount;
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+                        int fCount = 0;
+
+                        foreach (string field in fields)
+                        {
+                            fCount++;
+
+                            if (fCount == 2)
+                            {
+                                feature.FeatureID = int.Parse(field);
+                            }
+
+                            if (fCount == 3)
+                            {
+                                feature.Icon = Properties.Resources.ResourceManager.GetObject($"_{field}_tex") as Bitmap;
+                            }
+                        }
+
+                        Console.WriteLine($"{rowCount} - {feature.FeatureID}");
+                        CharaMakeFeatures.Add(rowCount, feature);
+                    }
+
+                    Console.WriteLine($"{rowCount} charaMakeFeatures read");
+                }
+            }
+            catch (Exception exc)
+            {
+                CharaMakeFeatures = null;
+#if DEBUG
+                throw exc;
+#endif
+            }
+        }
+        public CharaMakeCustomizeFeature GetCharaMakeCustomizeFeature(int index, bool getBitMap)
+        {
+            try
+            {
+                using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.charamakecustomize_exh)))
+                {
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters(",");
+                    int rowCount = 0;
+                    parser.ReadFields();
+                    while (!parser.EndOfData)
+                    {
+                        if (rowCount != index)
+                        {
+                            rowCount++;
+                            parser.ReadFields();
+                            continue;
+                        }
+
+                        CharaMakeCustomizeFeature feature = new CharaMakeCustomizeFeature();
+
+                        feature.Index = index;
+
+                        //Processing row
+                        rowCount++;
+                        string[] fields = parser.ReadFields();
+                        int fCount = 0;
+
+                        foreach (string field in fields)
+                        {
+                            fCount++;
+
+                            if (fCount == 2)
+                            {
+                                feature.FeatureID = int.Parse(field);
+                            }
+
+                            if (fCount == 3)
+                            {
+                                if (getBitMap)
+                                {
+
+                                    feature.Icon = Properties.Resources.ResourceManager.GetObject($"_{field}_tex") as Bitmap;
+                                }
+                            }
+                        }
+
+                        return feature;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+#if DEBUG
+                throw exc;
+#endif
+                return null;
+            }
+
+            return null;
+        }
         public void MakeResidentList()
         {
             Residents = new Dictionary<int, Resident>();

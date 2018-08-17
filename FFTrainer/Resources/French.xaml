@@ -139,4 +139,7 @@
     <system:String x:Key="RefreshCharacter">Actualiser le caractère</system:String>
     <system:String x:Key="HousingRestrict">Retirer le boîtier Restriction</system:String>
     <system:String x:Key="Transparency">Transparence</system:String>
+    <system:String x:Key="LoadAll">Tout importer</system:String>
+    <system:String x:Key="LoadApp">Apparence d'importation</system:String>
+    <system:String x:Key="LoadXuip">équipement d'importation</system:String>
 </ResourceDictionary>

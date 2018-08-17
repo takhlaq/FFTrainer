@@ -139,4 +139,7 @@
     <system:String x:Key="RefreshCharacter">Refresh Character</system:String>
     <system:String x:Key="HousingRestrict">Remove Housing restriction</system:String>
     <system:String x:Key="Transparency">Transparency</system:String>
+    <system:String x:Key="LoadAll">Load All</system:String>
+    <system:String x:Key="LoadApp">Load Appearance</system:String>
+    <system:String x:Key="LoadXuip">Load Equipment</system:String>
 </ResourceDictionary>

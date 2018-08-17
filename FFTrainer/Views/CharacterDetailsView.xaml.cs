@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Controls;
+using System.Data;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 using FFTrainer.Models;
+using System.Linq;
 using FFTrainer.ViewModels;
 using Newtonsoft.Json;
+using FFTrainer.Util;
 
 namespace FFTrainer.Views
 {
@@ -14,9 +20,9 @@ namespace FFTrainer.Views
     /// Interaction logic for CharacterDetailsView.xaml
     /// </summary>
     /// 
-
     public partial class CharacterDetailsView : UserControl
     {
+
         private ExdCsvReader _exdProvider = new ExdCsvReader();
         public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public CharacterDetailsView()
@@ -804,6 +810,157 @@ namespace FFTrainer.Views
             if (Transp.Value.HasValue)
                 MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Transparency), "float", Transp.Value.ToString());
             Transp.ValueChanged -= Transps;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (!CheckCharaMakeFeatureList())
+                return;
+
+            var c = new CharaMakeFeatureSelector(CharacterDetails.Clan.value, (int)CharacterDetails.Gender.value, _exdProvider);
+            c.ShowDialog();
+
+            if (c.Choice != null)
+            {
+                if (CharacterDetails.Hair.freeze == false) { CharacterDetails.Hair.freeze = true; CharacterDetails.Hair.freezetest = true; }
+                CharacterDetails.Hair.value = (byte)c.Choice.FeatureID;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Hair), CharacterDetails.Hair.GetBytes());
+                if (CharacterDetails.Hair.freezetest == true) CharacterDetails.Hair.freeze = false; CharacterDetails.Hair.freezetest = false;
+            }
+        }
+        public ExdCsvReader feature;
+        private bool CheckCharaMakeFeatureList()
+        {
+            if (_exdProvider.CharaMakeFeatures == null)
+            {
+                _exdProvider.MakeCharaMakeFeatureList();
+                if (_exdProvider.CharaMakeFeatures == null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private CmpReader _colorMap = new CmpReader(Properties.Resources.human);
+        private void HairColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 3584, 195, (int) CharacterDetails.HairTone.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.HairTone.freeze == false) { CharacterDetails.HairTone.freeze = true; CharacterDetails.HairTone.freezetest = true; }
+                CharacterDetails.HairTone.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairTone), CharacterDetails.HairTone.GetBytes());
+                if (CharacterDetails.HairTone.freezetest == true) CharacterDetails.HairTone.freeze = false; CharacterDetails.HairTone.freezetest = false;
+             //   FillDefaults();
+            }
+        }
+
+        private void SkinColor_Click(object sender, RoutedEventArgs e)
+        {
+            var seearchE = 3328; // leave this at default
+            if (CharacterDetails.Race.value == 1 && CharacterDetails.Clan.value == 1 
+                || CharacterDetails.Race.value == 1 && CharacterDetails.Clan.value == 2 || 
+                CharacterDetails.Race.value==2 && CharacterDetails.Clan.value==3 ||
+                CharacterDetails.Race.value==4 && CharacterDetails.Clan.value==7||
+                CharacterDetails.Race.value == 3 && CharacterDetails.Clan.value == 6) seearchE = 3328;
+            if (CharacterDetails.Race.value == 4 && CharacterDetails.Clan.value == 8||CharacterDetails.Race.value==2&&CharacterDetails.Clan.value==4) seearchE = 21248;
+            if (CharacterDetails.Race.value == 6 && CharacterDetails.Clan.value == 11) seearchE = 29440;
+            if (CharacterDetails.Race.value == 6 && CharacterDetails.Clan.value == 12) seearchE = 32768;
+            if (CharacterDetails.Race.value == 3 && CharacterDetails.Clan.value == 5) seearchE = 4608;
+            if (CharacterDetails.Race.value == 5 && CharacterDetails.Clan.value == 9) seearchE = 5120;
+            if (CharacterDetails.Race.value == 5 && CharacterDetails.Clan.value == 10) seearchE = 8448;
+            var c = new CharaMakeColorSelector(_colorMap, seearchE, 193, (int)CharacterDetails.Skintone.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.Skintone.freeze == false) { CharacterDetails.Skintone.freeze = true; CharacterDetails.Skintone.freezetest = true; }
+                CharacterDetails.Skintone.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Skintone), CharacterDetails.Skintone.GetBytes());
+                if (CharacterDetails.Skintone.freezetest == true) CharacterDetails.Skintone.freeze = false; CharacterDetails.Skintone.freezetest = false;
+            }
+        }
+
+        private void LipColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 1152, 97, (int)CharacterDetails.LipsTone.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.LipsTone.freeze == false) { CharacterDetails.LipsTone.freeze = true; CharacterDetails.LipsTone.freezetest = true; }
+                CharacterDetails.LipsTone.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LipsTone), CharacterDetails.LipsTone.GetBytes());
+                if (CharacterDetails.LipsTone.freezetest == true) CharacterDetails.LipsTone.freeze = false; CharacterDetails.LipsTone.freezetest = false;
+            }
+        }
+
+        private void FacePaintColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 1152, 97, (int)CharacterDetails.FacePaintColor.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.FacePaintColor.freeze == false) { CharacterDetails.FacePaintColor.freeze = true; CharacterDetails.FacePaintColor.freezetest = true; }
+                CharacterDetails.FacePaintColor.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), CharacterDetails.FacePaintColor.GetBytes());
+                if (CharacterDetails.FacePaintColor.freezetest == true) CharacterDetails.FacePaintColor.freeze = false; CharacterDetails.FacePaintColor.freezetest = false;
+            }
+        }
+
+        private void HighColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 6144, 255, (int)CharacterDetails.HighlightTone.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.HighlightTone.freeze == false) { CharacterDetails.HighlightTone.freeze = true; CharacterDetails.HighlightTone.freezetest = true; }
+                CharacterDetails.HighlightTone.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightTone), CharacterDetails.HighlightTone.GetBytes());
+                if (CharacterDetails.HighlightTone.freezetest == true) CharacterDetails.HighlightTone.freeze = false; CharacterDetails.HighlightTone.freezetest = false;
+            }
+        }
+
+        private void LeftEyeColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 6144, 255, (int)CharacterDetails.LeftEye.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.LeftEye.freeze == false) { CharacterDetails.LeftEye.freeze = true; CharacterDetails.LeftEye.freezetest = true; }
+                CharacterDetails.LeftEye.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LeftEye), CharacterDetails.LeftEye.GetBytes());
+                if (CharacterDetails.LeftEye.freezetest == true) CharacterDetails.LeftEye.freeze = false; CharacterDetails.LeftEye.freezetest = false;
+            }
+        }
+
+        private void RightEyeColor_Click(object sender, RoutedEventArgs e)
+        {
+            var c = new CharaMakeColorSelector(_colorMap, 6144, 255, (int)CharacterDetails.RightEye.value);
+            c.ShowDialog();
+
+            if (c.Choice != -1)
+            {
+                if (CharacterDetails.RightEye.freeze == false) { CharacterDetails.RightEye.freeze = true; CharacterDetails.RightEye.freezetest = true; }
+                CharacterDetails.RightEye.value = (byte)c.Choice;
+                MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RightEye), CharacterDetails.RightEye.GetBytes());
+                if (CharacterDetails.RightEye.freezetest == true) CharacterDetails.RightEye.freeze = false; CharacterDetails.RightEye.freezetest = false;
+            }
+        }
+
+        private void RefresHNPC_Click(object sender, RoutedEventArgs e)
+        {
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EntityType), "byte", "2");
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "2");
+            Task.Delay(50).Wait();
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RenderToggle), "int", "0");
+            Task.Delay(50).Wait();
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.EntityType), "byte", "1");
         }
     }
 }

@@ -208,11 +208,13 @@ namespace FFTrainer.Models
         [JsonIgnore] public  Address<string> ArmSlot { get; set; }
         [JsonIgnore] public Address<byte> TimeControl { get; set; }
         [JsonIgnore] public Address<byte> Weather { get; set; }
+        [JsonIgnore] public Address<byte> EntityType { get; set; }
         [JsonIgnore] public Address<int> Territoryxd { get; set; }
         [JsonIgnore] public Address<float> FreezeFacial { get; set; }
 
         public CharacterDetails()
         {
+            EntityType = new Address<byte>();
             FreezeFacial = new Address<float>();
             Territoryxd = new Address<int>();
             ScaleX = new Address<float>();

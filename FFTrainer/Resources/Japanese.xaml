@@ -139,4 +139,7 @@
     <system:String x:Key="RefreshCharacter">文字をリフレッシュする</system:String>
     <system:String x:Key="HousingRestrict">住宅の制限を削除します</system:String>
     <system:String x:Key="Transparency">透明性</system:String>
+    <system:String x:Key="LoadAll">すべてをロード</system:String>
+    <system:String x:Key="LoadApp">インポートの外観</system:String>
+    <system:String x:Key="LoadXuip">インポートギア</system:String>
 </ResourceDictionary>

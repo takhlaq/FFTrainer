@@ -139,4 +139,7 @@
     <system:String x:Key="RefreshCharacter">Charakter aktualisieren</system:String>
     <system:String x:Key="HousingRestrict">Gehäuse entfernen Einschränkung</system:String>
     <system:String x:Key="Transparency">Transparenz</system:String>
+    <system:String x:Key="LoadAll">Importieren Sie alle</system:String>
+    <system:String x:Key="LoadApp">Aussehen importieren</system:String>
+    <system:String x:Key="LoadXuip">Ausrüstung importieren</system:String>
 </ResourceDictionary>

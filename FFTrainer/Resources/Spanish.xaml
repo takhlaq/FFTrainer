@@ -139,4 +139,7 @@
     <system:String x:Key="RefreshCharacter">Actualizar el personaje</system:String>
     <system:String x:Key="HousingRestrict">Eliminar la restricción de la casa</system:String>
     <system:String x:Key="Transparency">Transparencia</system:String>
+    <system:String x:Key="LoadAll">Importar todo</system:String>
+    <system:String x:Key="LoadApp">Apariencia de importación</system:String>
+    <system:String x:Key="LoadXuip">Cargar equipo</system:String>
 </ResourceDictionary>

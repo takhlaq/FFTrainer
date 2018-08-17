@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
+using FFTrainer.Models;
 using FFTrainer.ViewModels;
 
 namespace FFTrainer.Views
@@ -9,6 +12,8 @@ namespace FFTrainer.Views
     /// </summary>
     public partial class CharacterDetailsView3 : UserControl
     {
+        private ExdCsvReader _exdProvider = new ExdCsvReader();
+        public CharacterDetails CharacterDetails { get => (CharacterDetails)BaseViewModel.model; set => BaseViewModel.model = value; }
         public CharacterDetailsView3()
         {
             InitializeComponent();
