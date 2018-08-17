@@ -774,14 +774,20 @@ namespace FFTrainer.Views
                 TailSize.ValueChanged += TailSz;
             }
         }
-
-        private void Emote_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void Emotexd(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
             if (Emote.Value.HasValue)
-                if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
-                    CharacterDetails.EmoteX.value = (int)Emote.Value;
+                if (Emote.Value <= 6558) CharacterDetails.EmoteX.value = (int)Emote.Value;
+            Emote.ValueChanged -= Emotexd;
         }
-
+        private void Emote_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            if (Emote.IsMouseOver || Emote.IsKeyboardFocusWithin)
+            {
+                Emote.ValueChanged -= Emotexd;
+                Emote.ValueChanged += Emotexd;
+            }
+        }
         private void Namexd_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key != System.Windows.Input.Key.Enter) return;
