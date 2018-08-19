@@ -142,4 +142,8 @@
     <system:String x:Key="LoadAll">Tout importer</system:String>
     <system:String x:Key="LoadApp">Apparence d'importation</system:String>
     <system:String x:Key="LoadXuip">équipement d'importation</system:String>
+    <system:String x:Key="SavePoint">sauver</system:String>
+    <system:String x:Key="Revert">revenir</system:String>
+    <system:String x:Key="BodyType">type de corps</system:String>
+    <system:String x:Key="ModelType">type de modèle</system:String>
 </ResourceDictionary>

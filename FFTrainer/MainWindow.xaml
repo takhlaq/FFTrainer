@@ -39,8 +39,8 @@
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-   
-    
+
+
     <Grid>
         <CheckBox x:Name="GposeMode" IsChecked="{Binding Path=CharacterDetails.CharacterDetails.GposeMode.Activated}" Content="{DynamicResource GposeMode}" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="GposeMode_Checked" Unchecked="GposeMode_Unchecked" Width="149"/>
         <TextBlock Text="{DynamicResource GposeNote}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="329,3,0,0" VerticalAlignment="Top" Width="233" Height="34" FontWeight="Bold"/>
@@ -78,12 +78,17 @@
             </TabItem>
             <TabItem Header="{DynamicResource Equipment}">
                 <Grid>
-                    <Views:CharacterDetailsView2 HorizontalAlignment="Left" Height="396" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
+                    <Views:CharacterDetailsView2 HorizontalAlignment="Left" Height="419" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{DynamicResource TheWorld}">
                 <Grid>
                     <Views:CharacterDetailsView4 HorizontalAlignment="Left" Height="389" Margin="0,10,0,0" VerticalAlignment="Top" Width="1073"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Extra">
+                <Grid>
+                    <Views:CharacterDetailsView2 HorizontalAlignment="Left" Height="959" Margin="0,-540,0,0" Width="1073" VerticalAlignment="Top" Padding="0" UseLayoutRounding="False"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="haha" Header="{DynamicResource About}">
@@ -114,7 +119,7 @@
                 NavigateUri="https://discord.gg/nxu2Ydp" FontWeight="Bold"><Run Text="{DynamicResource JoinourDiscord}" FontSize="16"/></Hyperlink></TextBlock>
         <Button Content="{DynamicResource Save}" HorizontalAlignment="Left" Margin="668,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" BorderThickness="1"/>
         <Button x:Name="Loadbutton" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" BorderThickness="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.6.1" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1057,6,0,0" TextWrapping="Wrap" Text="1.4.7.0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="{DynamicResource Madeby}" HorizontalAlignment="Left" Margin="748,14,-21,0" VerticalAlignment="Top" Width="382" FontWeight="Bold" FontSize="14"/>
 
     </Grid>

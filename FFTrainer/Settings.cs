@@ -46,6 +46,7 @@ namespace FFTrainer
         public string Gender { get; set; }
         public string EyeBrowType { get; set; }
         public string Clan { get; set; }
+        public string BodyType { get; set; }
         public string EntityType { get; set; }
         public string FreezeFacial { get; set; }
         public string Territory { get; set; }
@@ -53,6 +54,7 @@ namespace FFTrainer
         public string TailorMuscle { get; set; }
         public string NameHeight { get; set; }
         public string TailType { get; set; }
+        public string ModelType { get; set; }
         public string Transparency { get; set; }
         public string Head { get; set; }
         public string Hair { get; set; }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FFTrainer"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="FFTrainer.LoadOption"
         mc:Ignorable="d"
-        Title="Gear Finder" Height="168.02" Width="305.228" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Load Options" Height="168.02" Width="305.228" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid Margin="0,0,2,-2">
         <ListBox BorderThickness="1" FontSize="24" Margin="14,17,13,22">
             <ListBoxItem x:Name="All" MouseDoubleClick="ListBoxItem_MouseDoubleClick" Content="{DynamicResource LoadAll}" Uid="1" KeyDown="All_KeyDown"/>

@@ -115,6 +115,7 @@ namespace FFTrainer
         {
             public int Index { get; set; }
             public bool Realist { get; set; }
+            public bool SpeacialReal { get; set; }
             public string Name { get; set; }
             public override string ToString()
             {
@@ -264,8 +265,8 @@ namespace FFTrainer
             {
 #if DEBUG
                 throw exc;
+
 #endif
-                return null;
             }
 
             return null;
@@ -1953,6 +1954,8 @@ namespace FFTrainer
                                 }
                             }
                             if (emote.Name.Contains("normal/")){emote.Name = emote.Name.Remove(0, 7).ToString(); emote.Realist = true; }
+                            if (emote.Name.Contains("mon_sp/")) { emote.Name = emote.Name.Remove(0, 7).ToString(); emote.SpeacialReal = true; }
+                            if (emote.Name.Contains("human_sp/")) { emote.Name = emote.Name.Remove(0, 9).ToString(); emote.SpeacialReal = true; }
                             Console.WriteLine($"{rowCount} - {emote.Name}");
                             Emotes.Add(emote.Index, emote);
                         }

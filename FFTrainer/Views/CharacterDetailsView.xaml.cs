@@ -379,6 +379,11 @@ namespace FFTrainer.Views
             CharacterDetails.ScaleX.freeze = false;
             CharacterDetails.ScaleY.freeze = false;
             CharacterDetails.ScaleZ.freeze = false;
+            CharacterDetails.Transparency.freeze = false;
+            CharacterDetails.ModelType.freeze = false;
+            CharacterDetails.TestArray.freeze = false;
+            CharacterDetails.TestArray2.freeze = false;
+            CharacterDetails.BodyType.freeze = false;
         }
         private void Height2x_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {

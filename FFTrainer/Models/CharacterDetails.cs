@@ -211,9 +211,17 @@ namespace FFTrainer.Models
         [JsonIgnore] public Address<byte> EntityType { get; set; }
         [JsonIgnore] public Address<int> Territoryxd { get; set; }
         [JsonIgnore] public Address<float> FreezeFacial { get; set; }
+        [JsonIgnore] public Address<string> TestArray { get; set; } // Appereance
+        [JsonIgnore] public Address<string> TestArray2 { get; set; } // Equipment
+        [JsonIgnore] public Address<int> ModelType { get; set; } // Equipment
+        public Address<byte> BodyType { get; set; }
 
         public CharacterDetails()
         {
+            BodyType = new Address<byte>();
+            ModelType = new Address<int>();
+            TestArray2 = new Address<string>();
+            TestArray = new Address<string>();
             EntityType = new Address<byte>();
             FreezeFacial = new Address<float>();
             Territoryxd = new Address<int>();

@@ -6,6 +6,8 @@ using FFTrainer.Views;
 using Newtonsoft.Json;
 using System.Windows;
 using System.Collections.Generic;
+using System.Text;
+
 namespace FFTrainer.ViewModels
 {
     public class CharacterDetailsViewModel : BaseViewModel
@@ -380,6 +382,10 @@ namespace FFTrainer.ViewModels
 
                 if (!CharacterDetails.RHeight.freeze) CharacterDetails.RHeight.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RHeight));
                 if (!CharacterDetails.Transparency.freeze) CharacterDetails.Transparency.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Transparency));
+                if (!CharacterDetails.TestArray.freeze){ CharacterDetails.TestArray.value = ByteArrayToString(MemoryManager.Instance.MemLib.readBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), 26)); };
+                if (!CharacterDetails.TestArray2.freeze) CharacterDetails.TestArray2.value = ByteArrayToString(MemoryManager.Instance.MemLib.readBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece), 40));
+                if(!CharacterDetails.ModelType.freeze) CharacterDetails.ModelType.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ModelType)));
+                if (!CharacterDetails.BodyType.freeze)  CharacterDetails.BodyType.value = (byte)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType));
 
                 if (!CharacterDetails.RBust.freeze) CharacterDetails.RBust.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RBust));
                 if (!CharacterDetails.HeadPiece.Activated) CharacterDetails.HeadSlot.value = CharacterDetails.HeadPiece.value + "," + CharacterDetails.HeadV.value + "," + CharacterDetails.HeadDye.value;
@@ -400,6 +406,18 @@ namespace FFTrainer.ViewModels
                 System.Windows.MessageBox.Show(ex.Message, "Oh no!");
                 mediator.Work -= Work;
             }
+        }
+        public static string ByteArrayToString(byte[] ba)
+        {
+            if (ba != null)
+            {
+                StringBuilder hex = new StringBuilder(ba.Length * 2);
+                foreach (byte b in ba)
+                    hex.AppendFormat("{0:x2} ", b);
+                var str = hex.ToString();
+                return str.Remove(str.Length - 1);
+            }
+            else return "0";
         }
     }
 }

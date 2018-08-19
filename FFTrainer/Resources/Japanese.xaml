@@ -142,4 +142,8 @@
     <system:String x:Key="LoadAll">すべてをロード</system:String>
     <system:String x:Key="LoadApp">インポートの外観</system:String>
     <system:String x:Key="LoadXuip">インポートギア</system:String>
+    <system:String x:Key="SavePoint">セーブ</system:String>
+    <system:String x:Key="Revert">元に戻す</system:String>
+    <system:String x:Key="BodyType">ボディタイプ</system:String>
+    <system:String x:Key="ModelType">モデルタイプ</system:String>
 </ResourceDictionary>

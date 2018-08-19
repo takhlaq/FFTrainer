@@ -142,4 +142,8 @@
     <system:String x:Key="LoadAll">Load All</system:String>
     <system:String x:Key="LoadApp">Load Appearance</system:String>
     <system:String x:Key="LoadXuip">Load Equipment</system:String>
+    <system:String x:Key="SavePoint">Save Point</system:String>
+    <system:String x:Key="Revert">Revert</system:String>
+    <system:String x:Key="BodyType">Body Type</system:String>
+    <system:String x:Key="ModelType">Model Type</system:String>
 </ResourceDictionary>
