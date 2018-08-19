@@ -795,6 +795,30 @@ namespace FFTrainer.Views
         {
 
         }
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            if (!CheckMonsterList())
+                return;
+
+            MonsterWindow f = new MonsterWindow(_exdProvider.Monsters.Values.ToArray());
+            f.Owner = Application.Current.MainWindow;
+            f.ShowDialog();
+
+            if (f.Dontbother == false) 
+                return;
+            CharacterDetails.ModelType.value = (int)f.Choice;
+            MemoryManager.Instance.MemLib.writeMemory(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ModelType), "int", f.Choice.ToString());
+        }
+        private bool CheckMonsterList()
+        {
+            if (_exdProvider.Monsters == null)
+            {
+                _exdProvider.MonsterList();
+                if (_exdProvider.Monsters == null)
+                    return false;
+            }
+            return true;
+        }
         private bool CheckResidentList()
         {
             if (_exdProvider.Residents == null)
@@ -1492,7 +1516,7 @@ namespace FFTrainer.Views
                 return;
             var item = (ListBox)sender;
             var Value = (Emotexd)item.SelectedItem;
-            CharacterDetails.Emote.value = (int)Value.Index;
+            CharacterDetails.EmoteX.value = (int)Value.Index;
         }
 
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -1704,27 +1728,3 @@ namespace FFTrainer.Views
         }
     }
 }
-/*
- * 
- * 
- * 
-                 _cGearSet.Customize = StringToByteArray(customizeTextBox.Text.Replace(" ", string.Empty));
-               WriteCurrentCustomize();
-           }
-           catch (Exception exc)
-           {
-               ShowError("One or more fields were not formatted correctly.\n\n" + exc);
-           }
-       }
-       private void ApplyAoB2_Click(object sender, RoutedEventArgs e)
-       {
-           try
-           {
-               var EquipmentTest = StringToByteArray(customizeTextBox_Copy.Text.Replace(" ", string.Empty));
-               MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece), EquipmentTest);
-           }
-           catch (Exception exc)
-           {
-               ShowError("One or more fields were not formatted correctly.\n\n" + exc);
-           }
- * */

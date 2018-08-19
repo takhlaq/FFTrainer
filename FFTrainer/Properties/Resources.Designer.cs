@@ -18437,6 +18437,49 @@ namespace FFTrainer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1
+        ///0,&quot;Player&quot;
+        ///1,&quot;Chocobo&quot;
+        ///2,&quot;Magitek Reaper&quot;
+        ///3,&quot;Amalj&apos;aa&quot;
+        ///4,&quot;Ixal&quot;
+        ///5,&quot;Kobold&quot;
+        ///6,&quot;Goblin&quot;
+        ///7,&quot;Sylph&quot;
+        ///8,&quot;Moogle&quot;
+        ///9,&quot;Sahagin&quot;
+        ///10,&quot;Mamool Ja Warrior&quot;
+        ///11,&quot;Hecatonchier&quot;
+        ///12,&quot;Giant&quot;
+        ///13,&quot;Gigas&quot;
+        ///14,&quot;Qiqirn&quot;
+        ///15,&quot;Delivery Moogle&quot;
+        ///16,&quot;Lamia&quot;
+        ///17,&quot;Skeleton&quot;
+        ///18,&quot;Succubus&quot;
+        ///19,&quot;Demon&quot;
+        ///20,&quot;Miteling&quot;
+        ///21,&quot;Diremite&quot;
+        ///22,&quot;Banemite&quot;
+        ///23,&quot;Graffias&quot;
+        ///24,&quot;Rat&quot;
+        ///25,&quot;Squirrel&quot;
+        ///26,&quot;Marmot&quot;
+        ///27,&quot;Dormouse&quot;
+        ///28,&quot;Funguar&quot;
+        ///29,&quot;Myconid&quot;
+        ///30,&quot;Funguar C (Blue)&quot;
+        ///31,&quot;Galago&quot;
+        ///32,&quot;Lemur&quot;
+        ///33,&quot;Gala [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MonsterList {
+            get {
+                return ResourceManager.GetString("MonsterList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1 [STRING(0x0)][0x4],2 [INT(0x6)][0x8],3 [INT(0x6)][0x10],4 [INT(0x6)][0x18],5 [INT(0x6)][0x20],6 [INT(0x6)][0xc],7 [INT(0x6)][0x14],8 [INT(0x6)][0x1c],9 [INT(0x6)][0x24]
         ///0,&quot;Aucun&quot;,&quot;Aucun&quot;,0,0,0,0,0,0,0,0
         ///1,&quot;Hyur&quot;,&quot;Hyure&quot;,2983,3520,3296,3750,2984,3521,3297,3751

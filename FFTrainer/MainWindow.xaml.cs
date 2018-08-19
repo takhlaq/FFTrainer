@@ -250,7 +250,12 @@ namespace FFTrainer
                     if (CharacterDetails.Emote.value > 6558) CharacterDetails.Emote.value = 6558;
                     MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(MemoryManager.Instance.EmoteAddress, Settings.Instance.Character.Emote), CharacterDetails.Emote.GetBytes());
                 }
-                    Thread.Sleep(Properties.Settings.Default.Write);
+                    if(CharacterDetails.EmoteX.freeze)
+                {
+                    if (CharacterDetails.EmoteX.value > 6558) CharacterDetails.EmoteX.value = 6558;
+                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Emote), CharacterDetails.EmoteX.GetBytes());
+                }
+                Thread.Sleep(Properties.Settings.Default.Write);
                 }
         }
         private void GposeMode_Checked(object sender, RoutedEventArgs e)

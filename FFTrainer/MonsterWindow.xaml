@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FFTrainer"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="FFTrainer.MonsterWindow"
+        mc:Ignorable="d"
+        Title="MonsterWindow" Height="378" Width="322.5">
+    <Grid>
+
+        <TextBox x:Name="textbox" HorizontalAlignment="Left" Height="23" Margin="10,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" mah:TextBoxHelper.Watermark="Search..." TextChanged="textbox_TextChanged"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="229,284,0,0" VerticalAlignment="Top" Width="75" BorderThickness="1" FontWeight="Bold" Click="Button_Click"/>
+        <ListBox x:Name="monsterlist" HorizontalAlignment="Left" Height="272" Margin="10,10,0,0" VerticalAlignment="Top" Width="294" BorderThickness="1"/>
+
+    </Grid>
+</Window>

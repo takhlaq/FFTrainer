@@ -122,6 +122,16 @@ namespace FFTrainer
                 return Name;
             }
         }
+        public class Monster
+        {
+            public int Index { get; set; }
+            public bool Real { get; set; }
+            public string Name { get; set; }
+            public override string ToString()
+            {
+                return Name;
+            }
+        }
         public class Race
         {
             public int Index { get; set; }
@@ -156,6 +166,7 @@ namespace FFTrainer
         public Dictionary<int, Tribe> Tribes = null;
         public Dictionary<int, Dye> Dyes = null;
         public Dictionary<int, Emote> Emotes = null;
+        public Dictionary<int, Monster> Monsters = null;
         public Dictionary<int, CharaMakeCustomizeFeature> CharaMakeFeatures = null;
 
         public void MakeCharaMakeFeatureList()
@@ -1960,6 +1971,53 @@ namespace FFTrainer
                             Emotes.Add(emote.Index, emote);
                         }
                         Console.WriteLine($"{rowCount} Emotes read");
+                    }
+                }
+
+                catch (Exception exc)
+                {
+                    Emotes = null;
+#if DEBUG
+                    throw exc;
+#endif
+                }
+            }
+        }
+        public void MonsterList()
+        {
+            Monsters = new Dictionary<int, Monster>();
+            {
+                try
+                {
+                    using (TextFieldParser parser = new TextFieldParser(new StringReader(Resources.MonsterList)))
+                    {
+                        parser.TextFieldType = FieldType.Delimited;
+                        parser.SetDelimiters(",");
+                        int rowCount = 0;
+                        parser.ReadFields();
+                        while (!parser.EndOfData)
+                        {
+                            rowCount++;
+                            Monster monster = new Monster();
+                            //Processing row
+                            string[] fields = parser.ReadFields();
+                            int fCount = 0;
+                            monster.Index = int.Parse(fields[0]);
+                            foreach (string field in fields)
+                            {
+                                fCount++;
+
+                                if (fCount == 2)
+                                {
+                                    monster.Name = field;
+                                }
+                            }
+                            if (monster.Name.Length>=1)
+                                { monster.Real = true; }
+                            Console.WriteLine($"{rowCount} - {monster.Name}");
+                            Monsters.Add(monster.Index, monster);
+                        }
+                        Console.WriteLine($"{rowCount} Monsters read");
                     }
                 }
 
