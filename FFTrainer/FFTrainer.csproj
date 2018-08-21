@@ -72,11 +72,10 @@
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FFTrainer.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -86,7 +85,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET">
-      <HintPath>..\packages\AutoUpdater.net\lib\net462\AutoUpdater.NET.dll</HintPath>
+      <HintPath>..\packages\AutoUpdater.net\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="ControlzEx">
       <HintPath>..\packages\MahApps\bin\Release\net47\ControlzEx.dll</HintPath>
@@ -321,6 +320,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app.manifest" />
     <EmbeddedResource Include="packages.config" />
+    <None Include="FFTrainer.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

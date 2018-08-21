@@ -66,8 +66,15 @@ namespace FFTrainer
         }
         private void Worker_DoWork2(object sender, DoWorkEventArgs e)
         {
-                while (true)
-                {
+            while (true)
+            {
+
+                if (Properties.Settings.Default.UnlockedA == false && CharacterDetails.BodyType.value == 4)
+                    if (CharacterDetails.Race.value != 2 || CharacterDetails.Clan.value != 3 || CharacterDetails.Head.value != 201 || CharacterDetails.Hair.value != 201)
+                    {
+                        CharacterDetails.BodyType.value = 0;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
+                    }
                     if (CharacterDetails.Rotation4.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation4), CharacterDetails.Rotation4.GetBytes());
                     if (CharacterDetails.Rotation3.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation3), CharacterDetails.Rotation3.GetBytes());
                     if (CharacterDetails.Rotation2.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Body.Base, Settings.Instance.Character.Body.Position.Rotation2), CharacterDetails.Rotation2.GetBytes());
@@ -216,7 +223,7 @@ namespace FFTrainer
                     }
                     if (CharacterDetails.ModelType.freeze) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ModelType), CharacterDetails.ModelType.GetBytes());
                     if (CharacterDetails.BodyType.freeze && !CharacterDetails.BodyType.Activated) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
-                    if (CharacterDetails.Race.freeze && !CharacterDetails.Race.Activated) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), CharacterDetails.Race.GetBytes());
+                    if (CharacterDetails.Race.freeze && !CharacterDetails.Race.Activated)MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), CharacterDetails.Race.GetBytes());
                     if (CharacterDetails.Clan.freeze && !CharacterDetails.Clan.Activated) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Clan), CharacterDetails.Clan.GetBytes());
                     if (CharacterDetails.Gender.freeze && !CharacterDetails.Gender.Activated) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Gender), CharacterDetails.Gender.GetBytes());
                     if (CharacterDetails.Head.freeze && !CharacterDetails.Head.Activated) MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Head), CharacterDetails.Head.GetBytes());
@@ -484,6 +491,7 @@ namespace FFTrainer
                     if (CharacterDetails.LimbalR.freeze == true) { CharacterDetails.LimbalR.freeze = false; CharacterDetails.LimbalR.freezetest = true; characterDetailsView3.LimbalR.IsChecked = false; }
                     if (CharacterDetails.BodyType.freeze == false) { CharacterDetails.BodyType.freeze = true; CharacterDetails.BodyType.freezetest = true; }
                 }
+                CharacterDetails.Highlights.Activated = true;
                 CharacterDetails.Race.freeze = true;
                 CharacterDetails.Clan.freeze = true;
                 CharacterDetails.Gender.freeze = true;
@@ -731,18 +739,35 @@ namespace FFTrainer
                 CharacterDetails.OffhandDye.value = load1.OffhandDye.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.OffhandV), load1.OffhandDye.GetBytes());
                 byte? NullableCheck = load1.BodyType.value;
-                if (NullableCheck != null)
+                if (Properties.Settings.Default.UnlockedA == true)
                 {
-                    CharacterDetails.BodyType.value = load1.BodyType.value;
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), load1.FacePaintColor.GetBytes());
+                    if (NullableCheck != null)
+                    {
+                        CharacterDetails.BodyType.value = load1.BodyType.value;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), load1.BodyType.GetBytes());
+                    }
+                    else
+                    {
+                        CharacterDetails.BodyType.value = 0;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
+                    }
                 }
                 else
                 {
-                    CharacterDetails.BodyType.value = 0;
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), CharacterDetails.BodyType.GetBytes());
+                    if (NullableCheck != null && load1.Race.value == 2 && load1.Clan.value == 3 && load1.Head.value == 201 && load1.Hair.value == 201)
+                    {
+                        CharacterDetails.BodyType.value = load1.BodyType.value;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), load1.BodyType.GetBytes());
+                    }
+                    else
+                    {
+                        CharacterDetails.BodyType.value = 0;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
+                    }
                 }
                 Task.Delay(400).Wait();
                 {
+                    CharacterDetails.Highlights.Activated = false;
                     if (CharacterDetails.BodyType.freezetest == true) { CharacterDetails.BodyType.freeze = false; CharacterDetails.BodyType.freezetest = false; }
                     if (CharacterDetails.MuscleTone.freezetest == true) { CharacterDetails.MuscleTone.freeze = true; CharacterDetails.MuscleTone.freezetest = false; characterDetailsView.MuscleCheck.IsChecked = true; }
                     if (CharacterDetails.TailSize.freezetest == true) { CharacterDetails.TailSize.freeze = true; CharacterDetails.TailSize.freezetest = false; characterDetailsView.TailSizeCheck.IsChecked = true; }
@@ -802,6 +827,15 @@ namespace FFTrainer
                     if (sequence.IsCompletedBy(e.Key))
                     {
                         Properties.Settings.Default.UnlockedK = true;
+                        Properties.Settings.Default.Save();
+                        Process.Start(System.Windows.Application.ResourceAssembly.Location);
+                        Application.Current.Shutdown();
+                    }
+            if (Properties.Settings.Default.UnlockedA == false)
+                if (Extra.IsSelected)
+                    if (sequence.IsCompletedBy(e.Key)&&CharacterDetails.ModelType.value==1955&&CharacterDetails.Job.value==2207&&CharacterDetails.WeaponBase.value==1 && CharacterDetails.WeaponV.value == 2)
+                    {
+                        Properties.Settings.Default.UnlockedA = true;
                         Properties.Settings.Default.Save();
                         Process.Start(System.Windows.Application.ResourceAssembly.Location);
                         Application.Current.Shutdown();
@@ -1004,6 +1038,7 @@ namespace FFTrainer
                     if (CharacterDetails.LimbalR.freeze == true) { CharacterDetails.LimbalR.freeze = false; CharacterDetails.LimbalR.freezetest = true; characterDetailsView3.LimbalR.IsChecked = false; }
                 if (CharacterDetails.BodyType.freeze == false) { CharacterDetails.BodyType.freeze = true; CharacterDetails.BodyType.freezetest = true; }
               }
+                CharacterDetails.Highlights.Activated = true;
                 CharacterDetails.Race.freeze = true;
                 CharacterDetails.Clan.freeze = true;
                 CharacterDetails.Gender.freeze = true;
@@ -1150,18 +1185,35 @@ namespace FFTrainer
                 CharacterDetails.FacePaintColor.value = load1.FacePaintColor.value;
                 MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), load1.FacePaintColor.GetBytes());
                 byte? NullableCheck = load1.BodyType.value;
-                if (NullableCheck!=null)
+                if (Properties.Settings.Default.UnlockedA == true)
                 {
-                    CharacterDetails.BodyType.value = load1.BodyType.value;
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), load1.FacePaintColor.GetBytes());
+                    if (NullableCheck != null)
+                    {
+                        CharacterDetails.BodyType.value = load1.BodyType.value;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), load1.BodyType.GetBytes());
+                    }
+                    else
+                    {
+                        CharacterDetails.BodyType.value = 0;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
+                    }
                 }
                 else
                 {
-                    CharacterDetails.BodyType.value = 0;
-                    MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.FacePaintColor), CharacterDetails.BodyType.GetBytes());
+                    if (NullableCheck != null && load1.Race.value == 2 && load1.Clan.value == 3 && load1.Head.value == 201 && load1.Hair.value == 201)
+                    {
+                        CharacterDetails.BodyType.value = load1.BodyType.value;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), load1.BodyType.GetBytes());
+                    }
+                    else
+                    {
+                        CharacterDetails.BodyType.value = 0;
+                        MemoryManager.Instance.MemLib.writeBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType), CharacterDetails.BodyType.GetBytes());
+                    }
                 }
                 Task.Delay(400).Wait();
                 {
+                    CharacterDetails.Highlights.Activated = false;
                     if (CharacterDetails.BodyType.freezetest == true) { CharacterDetails.BodyType.freeze = false; CharacterDetails.BodyType.freezetest = false; }
                     if (CharacterDetails.MuscleTone.freezetest == true) { CharacterDetails.MuscleTone.freeze = true; CharacterDetails.MuscleTone.freezetest = false; characterDetailsView.MuscleCheck.IsChecked = true; }
                     if (CharacterDetails.TailSize.freezetest == true) { CharacterDetails.TailSize.freeze = true; CharacterDetails.TailSize.freezetest = false; characterDetailsView.TailSizeCheck.IsChecked = true; }

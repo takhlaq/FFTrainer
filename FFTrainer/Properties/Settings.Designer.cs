@@ -118,5 +118,17 @@ namespace FFTrainer.Properties {
                 this["UnlockedK"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UnlockedA {
+            get {
+                return ((bool)(this["UnlockedA"]));
+            }
+            set {
+                this["UnlockedA"] = value;
+            }
+        }
     }
 }

@@ -4679,7 +4679,7 @@ Index,0 [UBYTE(0x3)][0x6],1 [UBYTE(0x3)][0x7],2 [BBOOL(0x19)][0x10],3 [UBYTE(0x3
 4677,0,1,false,0,1,1,"normal/Specticles (upperbodyonly)",0,2,1,2,0,0,true,false,false,false,true
 4678,0,1,false,7,0,0,"normal/Hand into fist (movement)",0,2,1,2,3,0,true,true,false,false,true
 4679,0,1,false,0,1,0,"normal/Hand into fist (upperbodyonly)",0,2,1,2,3,0,true,false,false,false,true
-4680,0,1,false,7,0,1,"normal/Blackflip",0,2,1,2,3,0,true,true,false,false,true
+4680,0,1,false,7,0,1,"normal/Backflip",0,2,1,2,3,0,true,true,false,false,true
 4681,0,1,false,7,0,0,"normal/Eureka!(happy face+movement) with effect",0,2,1,2,3,0,true,true,false,false,true
 4682,0,1,false,0,1,0,"normal/Eureka!(Upperbodyonly Happy face) with effect",0,2,1,2,3,0,true,false,false,false,true
 4683,0,1,false,0,3,0,"normal/Eureka!(Happy Face only) With effect",0,0,1,0,3,0,true,true,false,false,true

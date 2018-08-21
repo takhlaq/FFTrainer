@@ -120,6 +120,7 @@ namespace FFTrainer.ViewModels
                 baseAddr = MemoryManager.Add(MemoryManager.Instance.BaseAddress, eOffset);
                 if (CharacterDetails.GposeMode.Activated) baseAddr = MemoryManager.Instance.GposeAddress;
                 var nameAddr = MemoryManager.GetAddressString(baseAddr, Settings.Instance.Character.Name);
+
                 if (!CharacterDetails.LimbalG.freeze)CharacterDetails.LimbalG.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalG));
 
                 if (!CharacterDetails.LimbalB.freeze) MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.LimbalB));
@@ -265,9 +266,7 @@ namespace FFTrainer.ViewModels
                 {
                     var name = MemoryManager.Instance.MemLib.readString(nameAddr);
                     if (name.IndexOf('\0') != -1)
-                    {
-                        name = name.Replace("\0", string.Empty);
-                    }
+                        name = name.Substring(0, name.IndexOf('\0'));
                     CharacterDetails.Name.value = name;
                 }
                 if (!CharacterDetails.Job.freeze && !CharacterDetails.Job.Activated)
@@ -354,7 +353,10 @@ namespace FFTrainer.ViewModels
 
                 if (!CharacterDetails.HairTone.freeze) CharacterDetails.HairTone.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HairTone));
 
-                CharacterDetails.Highlights.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Highlights));
+                if (!CharacterDetails.Highlights.Activated)
+                    CharacterDetails.Highlights.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Highlights));
+                if (CharacterDetails.Highlights.value >= 80) CharacterDetails.Highlights.freeze = true;
+                else CharacterDetails.Highlights.freeze = false;
 
                 if (!CharacterDetails.HighlightTone.freeze) CharacterDetails.HighlightTone.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HighlightTone));
 
@@ -384,7 +386,7 @@ namespace FFTrainer.ViewModels
                 if (!CharacterDetails.Transparency.freeze) CharacterDetails.Transparency.value = MemoryManager.Instance.MemLib.readFloat(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Transparency));
                 if (!CharacterDetails.TestArray.freeze){ CharacterDetails.TestArray.value = ByteArrayToString(MemoryManager.Instance.MemLib.readBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.Race), 26)); };
                 if (!CharacterDetails.TestArray2.freeze) CharacterDetails.TestArray2.value = ByteArrayToString(MemoryManager.Instance.MemLib.readBytes(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.HeadPiece), 40));
-                if(!CharacterDetails.ModelType.freeze) CharacterDetails.ModelType.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ModelType)));
+                if (!CharacterDetails.ModelType.freeze) CharacterDetails.ModelType.value = (int)MemoryManager.Instance.MemLib.read2Byte((MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.ModelType)));
                 if (!CharacterDetails.BodyType.freeze)  CharacterDetails.BodyType.value = (byte)MemoryManager.Instance.MemLib.read2Byte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.BodyType));
 
                 if (!CharacterDetails.RBust.freeze) CharacterDetails.RBust.value = (byte)MemoryManager.Instance.MemLib.readByte(MemoryManager.GetAddressString(CharacterDetailsViewModel.baseAddr, Settings.Instance.Character.RBust));
