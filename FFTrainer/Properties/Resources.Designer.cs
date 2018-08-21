@@ -18304,8 +18304,7 @@ namespace FFTrainer.Properties {
         ///18,54,131018,0,false
         ///19,101,131020,303,true
         ///20,104,131022,0,false
-        ///21,102,131021,0,false
-        ///22,105,13102 [rest of string was truncated]&quot;;.
+        ///21,102,13102 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string charamakecustomize_exh {
             get {
@@ -18437,8 +18436,7 @@ namespace FFTrainer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index,0 [STRING(0x0)][0x0],1
-        ///0,&quot;Player&quot;
+        ///   Looks up a localized string similar to 0,&quot;Player&quot;
         ///1,&quot;Chocobo&quot;
         ///2,&quot;Magitek Reaper&quot;
         ///3,&quot;Amalj&apos;aa&quot;
@@ -18471,7 +18469,9 @@ namespace FFTrainer.Properties {
         ///30,&quot;Funguar C (Blue)&quot;
         ///31,&quot;Galago&quot;
         ///32,&quot;Lemur&quot;
-        ///33,&quot;Gala [rest of string was truncated]&quot;;.
+        ///33,&quot;Galago (+ Collar)&quot;
+        ///34,&quot;Ochu&quot;
+        ///35, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MonsterList {
             get {
@@ -18709,7 +18709,7 @@ namespace FFTrainer.Properties {
         ///6,60206,&quot;Gales&quot;,&quot;gusty&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
         ///7,60207,&quot;Rain&quot;,&quot;rainy&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
         ///8,60208,&quot;Showers&quot;,&quot;showery&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;
-        ///9,60209,&quot;Thunder&quot;,&quot;thundery&quot;,&quot;&q....
+        ///9,60209,&quot;Thunder&quot;,&quot;thundery&quot....
         /// </summary>
         public static string weather_0_exh_en {
             get {

@@ -372,7 +372,7 @@ namespace FFTrainer
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.SystemDefault);
+            ServicePointManager.SecurityProtocol = (ServicePointManager.SecurityProtocol & SecurityProtocolType.Ssl3) | (SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 );
             AutoUpdater.RunUpdateAsAdmin = true;
             AutoUpdater.ShowRemindLaterButton = false;
             AutoUpdater.LetUserSelectRemindLater = false;
